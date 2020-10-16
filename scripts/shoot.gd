@@ -84,7 +84,7 @@ func multiShot():
 	
 	var bulletSpeed = default_bulletSpeed * 1000
 	var fireCooldown = default_fireCooldown* 0.8
-	var bulletDamage = default_bulletDamage * 3.5
+	var bulletDamage = default_bulletDamage * 4.5
 	var direction = Vector2(x,y)
 	var angle
 	

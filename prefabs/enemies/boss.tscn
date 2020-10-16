@@ -26,6 +26,7 @@ enemyMovementSpeed = 100
 position = Vector2( -0.66217, -16.6865 )
 scale = Vector2( 0.0698612, 0.0698612 )
 frames = SubResource( 1 )
+frame = 3
 playing = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
