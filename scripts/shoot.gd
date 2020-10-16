@@ -22,7 +22,7 @@ export var radius = 30
 var x = 0
 var y = 0
 
-func _process(delta):
+func _process(_delta):
 	if(Input.is_action_pressed("shot1")):
 		shootMode = 1
 	elif(Input.is_action_pressed("shot2")):
@@ -31,7 +31,7 @@ func _process(delta):
 		shootMode = 3
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	
 	var xDistance = player.xDistance
 	var yDistance = -player.yDistance + yOffSet

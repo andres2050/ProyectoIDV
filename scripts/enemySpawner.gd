@@ -17,8 +17,7 @@ func _ready():
 			enemy = preload("res://prefabs/enemies/boss.tscn")
 			
 
-func _process(delta):
-	
+func _process(_delta):
 	if canSpawn and spawnCount < maxEnemies:
 		canSpawn = false
 		

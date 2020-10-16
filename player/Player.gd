@@ -14,7 +14,7 @@ var playerPosition = Vector2(0,0)
 var initPosition = Vector2(0,0)
 var velocity
 
-func _process(delta):
+func _process(_delta):
 	# rotation start -------------------------------------------------------------------------------
 	
 	var mousePosition = get_global_mouse_position()
@@ -67,13 +67,13 @@ func _process(delta):
 		movementDirection += Vector2(0,1)
 
 	
-func _physics_process(delta):
+func _physics_process(_delta):
 	
 	if movementDirection.length() >= 0:
 		movementDirection = movementDirection.normalized()  * movementSpeed
 		movementDirection.y = movementDirection.y * 0.5
 
-		move_and_slide(movementDirection)
+		movementDirection = move_and_slide(movementDirection)
 #		if movementDirection.y != 0 and movementDirection.x != 0:
 #			move_and_collide(movementDirection)
 #			print("a")

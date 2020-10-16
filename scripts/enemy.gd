@@ -7,7 +7,7 @@ export var enemyMovementSpeed = 300
 
 onready var player = get_node("/root/Main/Scenario/Player")
 
-func _process(delta):
+func _process(_delta):
 	
 	var playerPosition = player.get_global_position()
 	var enemyPosition = get_global_position()
@@ -20,7 +20,7 @@ func _process(delta):
 	if movement.length() > 0: 		
 		movement = movement.normalized() * enemyMovementSpeed
 		movement.y = movement.y * 0.5
-		move_and_slide(movement)
+		movement = move_and_slide(movement)
 #		position += movement * delta
 		$AnimatedSprite.flip_h = xDistance < 0
 		
