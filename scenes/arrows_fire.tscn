@@ -1,0 +1,75 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://sprites/left.png" type="Texture" id=1]
+[ext_resource path="res://sprites/right.png" type="Texture" id=2]
+[ext_resource path="res://player/Player_arrow_shooting.gd" type="Script" id=3]
+[ext_resource path="res://sprites/leftUp.png" type="Texture" id=4]
+[ext_resource path="res://sprites/up.png" type="Texture" id=5]
+[ext_resource path="res://sprites/rightUp.png" type="Texture" id=6]
+[ext_resource path="res://sprites/down.png" type="Texture" id=7]
+[ext_resource path="res://sprites/rightDown.png" type="Texture" id=8]
+[ext_resource path="res://sprites/leftDown.png" type="Texture" id=9]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "down",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "rightDown",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "leftDown",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "rightUp",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "leftUp",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 52.9458, 56.0313 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" type="Area2D" parent="."]
+position = Vector2( 228.59, 386.415 )
+scale = Vector2( 0.291315, 0.291315 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
+frames = SubResource( 1 )
+animation = "down"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+visible = false
+shape = SubResource( 2 )

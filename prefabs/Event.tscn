@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://customTileSet.tres" type="TileSet" id=1]
+[ext_resource path="res://scripts/Event.gd" type="Script" id=3]
+
+[node name="Event" type="Node2D" groups=[
+"Event",
+]]
+script = ExtResource( 3 )
+spawnTime = 2
+spawners = [ NodePath("enemySpawner") ]
+
+[node name="EventTrigger" type="TileMap" parent="."]
+scale = Vector2( 1, 0.943 )
+mode = 1
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 128, 64 )
+cell_y_sort = true
+centered_textures = true
+collision_layer = 0
+collision_mask = 2147483652
+occluder_light_mask = 0
+format = 1
