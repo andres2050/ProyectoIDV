@@ -3,6 +3,7 @@ extends Area2D
 onready var bulletDamage = get_parent().bulletDamage
 
 onready var canPierce = get_parent().canPierce
+
 var canHit = true
 
 func _on_Hitbox_area_entered(area):

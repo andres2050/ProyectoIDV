@@ -63,7 +63,7 @@ func _physics_process(_delta):
 
 #shooting modes -----------------------------------------------------------------------------------
 func normalShot():
-	var bulletSpeed = default_bulletSpeed * 1500
+	var bulletSpeed = default_bulletSpeed * 1000
 	var fireCooldown = default_fireCooldown* 0.3
 	var bulletDamage = default_bulletDamage * 7.5
 	var direction = Vector2(x,y)
