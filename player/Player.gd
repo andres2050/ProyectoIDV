@@ -8,6 +8,8 @@ var yDistance = 0
 var tangent_1 = 0.41421
 var tangent_2 = 2.41421
 
+export var maxHealth = 100
+onready var health = maxHealth
 export var movementSpeed = 400
 var movementDirection = Vector2()
 var playerPosition = Vector2(0,0)
@@ -49,10 +51,6 @@ func _process(_delta):
 				direction = "right"
 	
 	$AnimatedSprite.animation = direction
-	#------------------------------------------------------------------------------------------------
-	#shooting
-	if Input.is_action_pressed("fire"):
-		get_node("Weapon").shoot()
 	#-----------------------------------------------------------------------------------------------
 	#playerMovement
 	movementDirection = Vector2()
@@ -74,16 +72,9 @@ func _physics_process(_delta):
 		movementDirection.y = movementDirection.y * 0.5
 
 		movementDirection = move_and_slide(movementDirection)
-#		if movementDirection.y != 0 and movementDirection.x != 0:
-#			move_and_collide(movementDirection)
-#			print("a")
-#		else:
-#			move_and_slide(movementDirection*50)
-#			print("b")
-#(-0.894427, -0.447214)
-#(-0.707107, -0.353553)
-#(282.842712, 141.421356)
-#(-282.842712, -141.421356)
+		
+func damage_health(damage):
+	health=health-damage
 
 
 # get velocity -------------------------------------------------

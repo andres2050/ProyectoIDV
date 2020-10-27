@@ -23,12 +23,28 @@ var x = 0
 var y = 0
 
 func _process(_delta):
+	
+	if Input.is_action_pressed("fire"):
+		if canFire == true:
+			canFire = false
+			match shootMode:
+				1:
+					normalShot()
+				2:
+					superFastShot()
+				3:
+					multiShot()
+				
+				
 	if(Input.is_action_pressed("shot1")):
 		shootMode = 1
 	elif(Input.is_action_pressed("shot2")):
 		shootMode = 2
 	elif(Input.is_action_pressed("shot3")):
 		shootMode = 3
+		
+		
+		
 
 
 func _physics_process(_delta):
@@ -45,22 +61,11 @@ func _physics_process(_delta):
 	
 
 
-func shoot():
-	if canFire == true:
-
-		canFire = false
-		match shootMode:
-			1:
-				normalShot()
-			2:
-				superFastShot()
-			3:
-				multiShot()
 #shooting modes -----------------------------------------------------------------------------------
 func normalShot():
 	var bulletSpeed = default_bulletSpeed * 1500
-	var fireCooldown = default_fireCooldown* 0.1
-	var bulletDamage = default_bulletDamage * 2.5
+	var fireCooldown = default_fireCooldown* 0.3
+	var bulletDamage = default_bulletDamage * 7.5
 	var direction = Vector2(x,y)
 		
 	instantiateBullet(bulletDamage, bulletSpeed, direction, !canPierce)

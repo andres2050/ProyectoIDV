@@ -51,20 +51,46 @@ region_rect = Rect2( 259, 241, 55, 95 )
 position = Vector2( 2, 0 )
 polygon = PoolVector2Array( -24, 2, -10, 12, 10, 12, 24, 2, 24, -12, 10, -22, -10, -22, -24, -12 )
 
-[node name="Door1" type="Sprite" parent="."]
+[node name="Door" type="Sprite" parent="."]
 position = Vector2( 800, 0 )
 texture = ExtResource( 1 )
-offset = Vector2( 0, -25 )
+offset = Vector2( 0, -30 )
 region_enabled = true
 region_rect = Rect2( 54, 426, 85, 110 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Door1"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Door"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Door1/StaticBody2D"]
-polygon = PoolVector2Array( -24, 24, 40, -8, 24, -16, -40, 16 )
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Door/StaticBody2D"]
+polygon = PoolVector2Array( 10, -27, 54, -5, -10, 27, -54, 5 )
+
+[node name="DoorOpen" type="Sprite" parent="."]
+position = Vector2( 946.21, 0 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, -45 )
+region_enabled = true
+region_rect = Rect2( 449, 424, 74, 81 )
+
+[node name="Door2" type="Sprite" parent="."]
+position = Vector2( 1124.75, 0 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, -30 )
+region_enabled = true
+region_rect = Rect2( 246, 427, 85, 106 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Door2"]
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Door2/StaticBody2D"]
+polygon = PoolVector2Array( -10, -27, -54, -5, 10, 27, 54, 5 )
+
+[node name="DoorOpen2" type="Sprite" parent="."]
+position = Vector2( 1285.45, 0 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, -45 )
+region_enabled = true
+region_rect = Rect2( 822, 423, 75, 83 )
 
 [node name="WallUp" type="Sprite" parent="."]
-position = Vector2( 991.364, 0 )
+position = Vector2( 1484.64, 0 )
 texture = ExtResource( 1 )
 offset = Vector2( 0, -50 )
 region_enabled = true
@@ -77,7 +103,7 @@ region_filter_clip = true
 polygon = PoolVector2Array( -64, 0, 0, -32, 64, 0 )
 
 [node name="WallDown" type="Sprite" parent="."]
-position = Vector2( 1236.52, 0 )
+position = Vector2( 1729.79, 0 )
 texture = ExtResource( 1 )
 offset = Vector2( 0, -20 )
 region_enabled = true
@@ -90,7 +116,7 @@ region_filter_clip = true
 polygon = PoolVector2Array( -64, 0, 0, 32, 64, 0 )
 
 [node name="WallLeft" type="Sprite" parent="."]
-position = Vector2( 1470.76, 0 )
+position = Vector2( 1964.03, 0 )
 texture = ExtResource( 1 )
 offset = Vector2( -30, -30 )
 region_enabled = true
@@ -103,7 +129,7 @@ region_filter_clip = true
 polygon = PoolVector2Array( -64, 0, 0, -32, 0, 32 )
 
 [node name="WallUp4" type="Sprite" parent="."]
-position = Vector2( 1654.1, 0 )
+position = Vector2( 2147.37, 0 )
 texture = ExtResource( 1 )
 offset = Vector2( 30, -30 )
 region_enabled = true
