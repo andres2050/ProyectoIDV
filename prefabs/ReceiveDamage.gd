@@ -7,8 +7,6 @@ var damageCooldown=0.5
 var enemiesTouching = 0
 
 func _process(_delta):
-	var bodies = get_overlapping_bodies()
-
 	if (enemiesTouching > 0 and canDamage):
 		canDamage = false
 		player.damage_health(5)
