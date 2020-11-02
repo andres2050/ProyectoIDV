@@ -20,26 +20,33 @@ radius = 10.1004
 "bullet",
 ]]
 collision_layer = 2
-collision_mask = 2147483648
+collision_mask = 2147483650
 gravity_scale = 0.0
 contacts_reported = 1
 contact_monitor = true
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 0.175, 0.175 )
+scale = Vector2( 0.171959, 0.171959 )
 frames = SubResource( 1 )
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2( 0.5, 0.5 )
+visible = false
+scale = Vector2( 0.375, 0.375 )
 shape = SubResource( 2 )
+disabled = true
 
 [node name="Hitbox" parent="." instance=ExtResource( 4 )]
+scale = Vector2( 0.75, 0.75 )
 collision_layer = 2
 collision_mask = 0
 script = ExtResource( 3 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hitbox"]
+scale = Vector2( 0.859525, 0.859525 )
 polygon = PoolVector2Array( 6, 0, 3, -5, -3, -5, -6, 0, -3, 5, 3, 5 )
 __meta__ = {
 "_editor_description_": ""

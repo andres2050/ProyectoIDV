@@ -127,4 +127,4 @@ func instantiateBullet(bulletDamage, bulletSpeed, direction, canPierce):
 	bullet_instance.canPierce = canPierce	
 	bullet_instance.apply_impulse(Vector2(), direction.normalized() * bulletSpeed)
 	
-	get_node("/root/Main").add_child(bullet_instance)
+	get_node("/root/Main/Scenario").add_child(bullet_instance)

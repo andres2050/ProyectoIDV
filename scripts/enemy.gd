@@ -3,11 +3,13 @@ extends KinematicBody2D
 export var health = 15
 export var enemyMovementSpeed = 300
 
+var path_to_event
+onready var event = get_node(path_to_event)
 #export var path_to_player: NodePath
 
 onready var player = get_node("/root/Main/Scenario/Player")
 
-func _process(_delta):
+func _physics_process(delta):
 	
 	var playerPosition = player.get_global_position()
 	var enemyPosition = get_global_position()
@@ -31,6 +33,7 @@ func damage_health(damage):
 	health=health-damage
 
 func die():
+	event.enemyCount -= 1
 	queue_free()
 
 
