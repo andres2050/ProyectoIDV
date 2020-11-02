@@ -9,7 +9,7 @@ onready var event = get_node(path_to_event)
 
 onready var player = get_node("/root/Main/Scenario/Player")
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	
 	var playerPosition = player.get_global_position()
 	var enemyPosition = get_global_position()

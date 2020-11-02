@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="ProyectoIDV"
-run/main_scene="res://scenes/main.tscn"
+run/main_scene="res://scenes/Start_Menu.tscn"
 config/icon="res://sprites/rightDown.png"
 
 [display]

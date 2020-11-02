@@ -1,7 +1,6 @@
 extends TileMap
 
 func _ready():
-	print(get_cell(7, -4), get_cell(6, -4), get_cell(7, -3), get_cell(0, 0))
 	set_cell(0,-1, -1)
 	set_cell(0,0, 0)
 	#floor
