@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://player/Player.gd" type="Script" id=1]
 [ext_resource path="res://sprites/leftUp.png" type="Texture" id=2]
@@ -22,17 +22,18 @@
 [ext_resource path="res://prefabs/Hurtbox.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Interface/Pause.gd" type="Script" id=21]
 [ext_resource path="res://Interface/Button.tscn" type="PackedScene" id=22]
+[ext_resource path="res://prefabs/Fading.tscn" type="PackedScene" id=23]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 7 ) ],
-"loop": true,
-"name": "right",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "right",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 8 ) ],
@@ -45,9 +46,9 @@ animations = [ {
 "name": "leftDown",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ) ],
+"frames": [ ExtResource( 3 ) ],
 "loop": true,
-"name": "rightDown",
+"name": "rightUp",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ) ],
@@ -55,14 +56,14 @@ animations = [ {
 "name": "down",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "rightUp",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "leftUp",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "rightDown",
 "speed": 5.0
 } ]
 
@@ -174,9 +175,9 @@ position = Vector2( 1731.9, 762.277 )
 spawnOf = "ghost"
 maxEnemies = 15
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="ScreenCanvas" type="CanvasLayer" parent="."]
 
-[node name="Interface" parent="CanvasLayer" instance=ExtResource( 18 )]
+[node name="Interface" parent="ScreenCanvas" instance=ExtResource( 18 )]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -186,10 +187,13 @@ margin_top = -40.0
 margin_right = 20.0
 margin_bottom = 0.0
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+[node name="Fading" parent="ScreenCanvas" instance=ExtResource( 23 )]
+pause_mode = 2
+
+[node name="PauseCanvas" type="CanvasLayer" parent="."]
 process_priority = 10
 
-[node name="Pause" type="Control" parent="CanvasLayer2"]
+[node name="Pause" type="Control" parent="PauseCanvas"]
 pause_mode = 2
 visible = false
 anchor_right = 1.0
@@ -199,15 +203,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer2/Pause"]
+[node name="ColorRect" type="ColorRect" parent="PauseCanvas/Pause"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 0.352941 )
 
-[node name="Button" parent="CanvasLayer2/Pause" instance=ExtResource( 22 )]
+[node name="Button" parent="PauseCanvas/Pause" instance=ExtResource( 22 )]
 margin_right = 58.5
 text = "getout"
 scene = "Start_Menu.tscn"
+animation_path = NodePath("../../../ScreenCanvas/Fading/FadingPlayer")
 [connection signal="body_entered" from="Scenario/Player/EventTrigger" to="Scenario/Player/EventTrigger" method="_on_EventTrigger_body_entered"]
 [connection signal="body_entered" from="Scenario/Player/Hurtbox" to="Scenario/Player/Hurtbox" method="_on_Hurtbox_body_entered"]
 [connection signal="body_exited" from="Scenario/Player/Hurtbox" to="Scenario/Player/Hurtbox" method="_on_Hurtbox_body_exited"]
@@ -216,4 +221,4 @@ scene = "Start_Menu.tscn"
 
 [editable path="Event"]
 
-[editable path="CanvasLayer/Interface"]
+[editable path="ScreenCanvas/Fading"]
