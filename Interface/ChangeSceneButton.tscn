@@ -3,7 +3,7 @@
 [ext_resource path="res://Interface/ChangeScene.gd" type="Script" id=1]
 [ext_resource path="res://Interface/theme/font/default_font.tres" type="DynamicFont" id=3]
 
-[node name="Button" type="Button"]
+[node name="ChangeSceneButton" type="Button"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5

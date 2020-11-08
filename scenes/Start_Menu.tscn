@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Interface/fondo.png" type="Texture" id=1]
-[ext_resource path="res://Interface/Button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Interface/ChangeSceneButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://prefabs/Fading.tscn" type="PackedScene" id=3]
 
 [node name="Start_Menu" type="Control"]
@@ -44,8 +44,5 @@ margin_top = 34.9712
 margin_right = 41.5
 margin_bottom = 75.9712
 text = "EXIT"
-animation_path = NodePath("relleno")
-
-[node name="relleno" type="AnimationPlayer" parent="ReferenceRect/Exit"]
 
 [editable path="Fading"]
