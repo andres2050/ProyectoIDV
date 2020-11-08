@@ -1,0 +1,124 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://scripts/shoot.gd" type="Script" id=1]
+[ext_resource path="res://player/Player.gd" type="Script" id=2]
+[ext_resource path="res://player/ReceiveDamage.gd" type="Script" id=3]
+[ext_resource path="res://sprites/left.png" type="Texture" id=4]
+[ext_resource path="res://sprites/right.png" type="Texture" id=5]
+[ext_resource path="res://sprites/weapon.png" type="Texture" id=6]
+[ext_resource path="res://sprites/up.png" type="Texture" id=7]
+[ext_resource path="res://sprites/rightDown.png" type="Texture" id=8]
+[ext_resource path="res://sprites/leftDown.png" type="Texture" id=9]
+[ext_resource path="res://sprites/down.png" type="Texture" id=10]
+[ext_resource path="res://prefabs/Hurtbox.tscn" type="PackedScene" id=11]
+[ext_resource path="res://prefabs/Hitbox.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scripts/EventTrigger.gd" type="Script" id=13]
+[ext_resource path="res://sprites/rightUp.png" type="Texture" id=14]
+[ext_resource path="res://sprites/leftUp.png" type="Texture" id=15]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "leftDown",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "rightDown",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "leftUp",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "down",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "rightUp",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "up",
+"speed": 5.0
+} ]
+
+[node name="Player" type="KinematicBody2D" groups=[
+"player",
+]]
+position = Vector2( -18.8374, 235.035 )
+scale = Vector2( 0.836597, 0.887165 )
+collision/safe_margin = 2.0
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -12 )
+scale = Vector2( 0.271239, 0.271239 )
+frames = SubResource( 1 )
+animation = "rightUp"
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2( 1.07105, 1.07105 )
+build_mode = 1
+polygon = PoolVector2Array( 24, 0, 15, 9, 0, 12, -15, 9, -24, 0, -15, -9, 0, -11, 15, -9 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+limit_left = -1800
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+drag_margin_left = 0.1
+drag_margin_top = 0.1
+drag_margin_right = 0.1
+drag_margin_bottom = 0.1
+editor_draw_limits = true
+editor_draw_drag_margin = true
+
+[node name="EventTrigger" type="Area2D" parent="." instance=ExtResource( 12 )]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource( 13 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="EventTrigger"]
+polygon = PoolVector2Array( 15, 0, 10, -8, -10, -8, -15, 0, -10, 8, 10, 8 )
+
+[node name="Weapon" type="Sprite" parent="." groups=[
+"weapon",
+]]
+scale = Vector2( 3.23889, 3.23889 )
+texture = ExtResource( 6 )
+script = ExtResource( 1 )
+
+[node name="Hurtbox" type="Area2D" parent="." instance=ExtResource( 11 )]
+scale = Vector2( 0.944666, 0.944666 )
+collision_layer = 2
+collision_mask = 0
+script = ExtResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hurtbox"]
+scale = Vector2( 1.11744, 1.11744 )
+build_mode = 1
+polygon = PoolVector2Array( 24, 0, 15, 9, 0, 12, -15, 9, -24, 0, -15, -9, 0, -11, 15, -9 )
+__meta__ = {
+"_editor_description_": ""
+}
+[connection signal="body_entered" from="EventTrigger" to="EventTrigger" method="_on_EventTrigger_body_entered"]
+[connection signal="body_entered" from="Hurtbox" to="Hurtbox" method="_on_Hurtbox_body_entered"]
+[connection signal="body_exited" from="Hurtbox" to="Hurtbox" method="_on_Hurtbox_body_exited"]
