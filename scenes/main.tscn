@@ -77,7 +77,6 @@ margin_bottom = 0.0
 pause_mode = 2
 margin_top = -1.78174
 margin_bottom = -1.78174
-color = Color( 0, 0, 0, 1 )
 
 [node name="PauseCanvas" type="CanvasLayer" parent="."]
 process_priority = 10
@@ -106,6 +105,7 @@ animation_path = NodePath("../../../ScreenCanvas/Fading/FadingPlayer")
 [node name="DefeatCanvas" type="CanvasLayer" parent="."]
 
 [node name="Defeat" type="Control" parent="DefeatCanvas"]
+pause_mode = 2
 visible = false
 margin_right = 1360.0
 margin_bottom = 768.0
@@ -122,21 +122,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button2" parent="DefeatCanvas/Defeat" instance=ExtResource( 22 )]
-margin_left = -295.885
-margin_top = 271.802
-margin_right = -180.885
-margin_bottom = 312.802
-text = "Reintentar"
-scene = "Start_Menu.tscn"
-animation_path = NodePath("../../../ScreenCanvas/Fading/FadingPlayer")
-
-[node name="Button3" parent="DefeatCanvas/Defeat" instance=ExtResource( 22 )]
-margin_left = 172.806
-margin_top = 269.282
-margin_right = 287.806
-margin_bottom = 310.282
-text = "Volver"
+[node name="ChangeSceneButton" parent="DefeatCanvas/Defeat" instance=ExtResource( 22 )]
+margin_left = 305.539
+margin_top = 299.112
+margin_right = 418.539
+margin_bottom = 340.112
+text = "aaaaa"
 scene = "Start_Menu.tscn"
 animation_path = NodePath("../../../ScreenCanvas/Fading/FadingPlayer")
 
