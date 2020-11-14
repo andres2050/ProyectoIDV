@@ -1,7 +1,7 @@
 extends Control
 
 onready var playerNode =  get_node("/root/Main/Scenario/Player")
-onready var animationPlayer = get_node("ColorRect/AnimationPlayer")
+onready var animationPlayer = get_node("ColorRect/DefeatAnimationPlayer")
 var canDie = true
 func _process(_delta):
 	if playerNode.health <= 0 and canDie:

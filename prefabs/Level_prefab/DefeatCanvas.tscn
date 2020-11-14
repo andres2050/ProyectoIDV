@@ -62,12 +62,12 @@ __meta__ = {
 [node name="ColorRect" type="ColorRect" parent="Defeat"]
 margin_right = 1360.0
 margin_bottom = 768.0
-color = Color( 0, 0, 0, 0 )
+color = Color( 0.117647, 0.117647, 0.117647, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Defeat/ColorRect"]
+[node name="DefeatAnimationPlayer" type="AnimationPlayer" parent="Defeat/ColorRect"]
 anims/DeadFading = SubResource( 1 )
 anims/DeadScreen = ExtResource( 1 )
 
@@ -88,7 +88,6 @@ margin_right = 566.676
 margin_bottom = -62.2263
 text = "Back to title screen"
 scene = "Start_Menu.tscn"
-animation_path = NodePath("../../../ScreenCanvas/Fading/FadingPlayer")
 
 [node name="ButtonRetry" parent="Defeat/Buttons" instance=ExtResource( 4 )]
 anchor_top = 1.0
@@ -100,7 +99,7 @@ margin_bottom = -63.9082
 text = "Retry"
 scene = "Level_0.tscn"
 animation = "DeadFading"
-animation_path = NodePath("../../ColorRect/AnimationPlayer")
+animation_path = NodePath("../../ColorRect/DefeatAnimationPlayer")
 
 [node name="Label" type="Label" parent="Defeat"]
 visible = false

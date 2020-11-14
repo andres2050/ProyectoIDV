@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://prefabs/Level_prefab/Scenario.tscn" type="PackedScene" id=1]
 [ext_resource path="res://prefabs/Level_prefab/ScreenCanvas.tscn" type="PackedScene" id=2]
 [ext_resource path="res://prefabs/Level_prefab/PauseCanvas.tscn" type="PackedScene" id=3]
 [ext_resource path="res://prefabs/Level_prefab/DefeatCanvas.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Test_sprites/tileset.tres" type="TileSet" id=5]
-[ext_resource path="res://Interface/Animations/Fading.tres" type="Animation" id=6]
 
 [node name="Main" type="Node2D"]
 
@@ -37,8 +36,8 @@ animation_path = NodePath("../../../../Main/ScreenCanvas/Fading/FadingPlayer")
 [node name="Defeat" parent="DefeatCanvas" index="0"]
 visible = false
 
-[node name="AnimationPlayer" parent="DefeatCanvas/Defeat/ColorRect" index="0"]
-anims/Fading = ExtResource( 6 )
+[node name="ButtonBacktoTitleScreen" parent="DefeatCanvas/Defeat/Buttons" index="0"]
+animation_path = NodePath("../../../../ScreenCanvas/Fading/FadingPlayer")
 
 [editable path="Scenario"]
 
