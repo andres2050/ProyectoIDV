@@ -4,6 +4,7 @@
 [ext_resource path="res://Interface/theme/font/default_font.tres" type="DynamicFont" id=3]
 
 [node name="ChangeSceneButton" type="Button"]
+pause_mode = 2
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -17,5 +18,5 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-scene = "main.tscn"
+scene = "Test_level.tscn"
 [connection signal="pressed" from="." to="." method="_on_Button_pressed"]

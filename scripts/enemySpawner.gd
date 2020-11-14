@@ -15,13 +15,14 @@ func _ready():
 	event = get_parent()
 	path_to_event += get_parent().get_name()
 	
-	match spawnOf:
-		"ghost":
-			enemy = preload("res://prefabs/enemies/ghost.tscn")
-		"boss":
-			enemy = preload("res://prefabs/enemies/boss.tscn")
-		"":
-			pass
+	enemy = load("res://enemies/" + spawnOf + ".tscn")
+#	match spawnOf:
+#		"ghost":
+#			enemy = preload("res://enemies/ghost.tscn")
+#		"boss":
+#			enemy = preload("res://enemies/boss.tscn")
+#		"":
+#			pass
 
 func _process(_delta):
 	if canSpawn and spawnCount < maxEnemies:

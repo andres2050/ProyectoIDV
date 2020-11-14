@@ -1,6 +1,6 @@
 extends Button
 
-export(String, "main.tscn","Start_Menu.tscn") var scene
+export(String, "Test_level.tscn","Start_Menu.tscn") var scene
  
 export var animation_path :NodePath
 var animation_duration
@@ -10,7 +10,6 @@ func _ready():
 		animation = get_node(animation_path)
 		
 func _on_Button_pressed():
-	
 	if get_name() == "Exit":
 		get_tree().quit()
 	else:
@@ -20,5 +19,5 @@ func _on_Button_pressed():
 			animation.play_backwards("Fading")
 			yield(get_tree().create_timer(animation_duration),"timeout")
 		get_tree().paused = false
-		if get_tree().change_scene("res://scenes/"+scene) != OK:
+		if get_tree().change_scene("res://scenes/" + scene) != OK:
 			print("An unexpected error occured when trying to switch to the Readme scene")

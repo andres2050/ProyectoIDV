@@ -32,7 +32,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" parent="ReferenceRect" instance=ExtResource( 2 )]
+[node name="StartButton" parent="ReferenceRect" instance=ExtResource( 2 )]
 margin_top = -50.4661
 margin_bottom = -9.46613
 text = "START"

@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Interface/theme/font/default_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scripts/Defeat.gd" type="Script" id=2]
+[ext_resource path="res://Interface/ChangeScene.gd" type="Script" id=3]
+[ext_resource path="res://Interface/ChangeSceneButton.tscn" type="PackedScene" id=4]
+
+
+[node name="DefeatCanvas" type="CanvasLayer"]
+
+[node name="Defeat" type="Control" parent="."]
+pause_mode = 2
+visible = false
+margin_right = 1360.0
+margin_bottom = 768.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Defeat"]
+margin_right = 1360.0
+margin_bottom = 768.0
+color = Color( 0, 0, 0, 0.6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ChangeSceneButton" type="Button" parent="Defeat" instance=ExtResource( 4 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 305.539
+margin_top = 299.112
+margin_right = 418.539
+margin_bottom = 340.112
+custom_fonts/font = ExtResource( 1 )
+text = "aaaaa"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+scene = "Start_Menu.tscn"
+animation_path = NodePath("../../../ScreenCanvas/Fading/FadingPlayer")
+[connection signal="pressed" from="Defeat/ChangeSceneButton" to="Defeat/ChangeSceneButton" method="_on_Button_pressed"]
