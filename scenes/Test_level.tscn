@@ -53,12 +53,10 @@ tile_data = PoolIntArray( -65525, 1, 0, -65524, 1, 0, 12, 1, 0, 65548, 1, 0, 131
 
 [node name="enemySpawner" parent="Event" instance=ExtResource( 17 )]
 position = Vector2( 1454.72, 195.917 )
-spawnOf = "ghost"
 maxEnemies = 15
 
 [node name="enemySpawner2" parent="Event" instance=ExtResource( 17 )]
 position = Vector2( 1731.9, 762.277 )
-spawnOf = "ghost"
 maxEnemies = 15
 
 [node name="ScreenCanvas" type="CanvasLayer" parent="."]

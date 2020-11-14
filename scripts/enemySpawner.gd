@@ -1,6 +1,6 @@
 extends Node2D
 
-export (String, "", "ghost", "boss") var spawnOf
+export (String,"ghost", "boss") var spawnOf
 var enemy
 
 export var maxEnemies = 10

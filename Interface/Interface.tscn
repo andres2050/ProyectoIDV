@@ -4,7 +4,6 @@
 [ext_resource path="res://Interface/healthBar/bg.png" type="Texture" id=2]
 [ext_resource path="res://Interface/healthBar/fill.png" type="Texture" id=3]
 
-
 [node name="Interface" type="Control"]
 margin_right = 40.0
 margin_bottom = 40.0
@@ -12,7 +11,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureProgress" type="TextureProgress" parent="."]
+[node name="HealthBar" type="TextureProgress" parent="."]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -23,3 +22,6 @@ margin_right = 198.0
 texture_under = ExtResource( 2 )
 texture_progress = ExtResource( 3 )
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

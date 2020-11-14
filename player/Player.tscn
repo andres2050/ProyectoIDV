@@ -16,36 +16,8 @@
 [ext_resource path="res://Test_sprites/rightUp.png" type="Texture" id=14]
 [ext_resource path="res://Test_sprites/leftUp.png" type="Texture" id=15]
 
-
-
-
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 9 ) ],
-"loop": true,
-"name": "leftDown",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 8 ) ],
-"loop": true,
-"name": "rightDown",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 15 ) ],
-"loop": true,
-"name": "leftUp",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 10 ) ],
-"loop": true,
-"name": "down",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 14 ) ],
-"loop": true,
-"name": "rightUp",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "right",
@@ -59,6 +31,31 @@ animations = [ {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "down",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "leftUp",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "rightUp",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "leftDown",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "rightDown",
 "speed": 5.0
 } ]
 
@@ -94,7 +91,7 @@ drag_margin_bottom = 0.1
 editor_draw_limits = true
 editor_draw_drag_margin = true
 
-[node name="EventTrigger" type="Area2D" parent="." instance=ExtResource( 12 )]
+[node name="EventTrigger" parent="." instance=ExtResource( 12 )]
 collision_layer = 4
 collision_mask = 0
 script = ExtResource( 13 )
@@ -109,10 +106,9 @@ scale = Vector2( 3.23889, 3.23889 )
 texture = ExtResource( 6 )
 script = ExtResource( 1 )
 
-[node name="Hurtbox" type="Area2D" parent="." instance=ExtResource( 11 )]
+[node name="Hurtbox" parent="." instance=ExtResource( 11 )]
 scale = Vector2( 0.944666, 0.944666 )
 collision_layer = 2
-collision_mask = 0
 script = ExtResource( 3 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hurtbox"]

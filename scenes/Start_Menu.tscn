@@ -17,7 +17,6 @@ scale = Vector2( 1.05954, 1.03301 )
 texture = ExtResource( 1 )
 
 [node name="Fading" parent="." instance=ExtResource( 3 )]
-color = Color( 0, 0, 0, 1 )
 
 [node name="ReferenceRect" type="ReferenceRect" parent="."]
 anchor_left = 0.5
@@ -36,6 +35,7 @@ __meta__ = {
 margin_top = -50.4661
 margin_bottom = -9.46613
 text = "START"
+scene = "Level_0.tscn"
 animation_path = NodePath("../../Fading/FadingPlayer")
 
 [node name="Exit" parent="ReferenceRect" instance=ExtResource( 2 )]
@@ -44,5 +44,6 @@ margin_top = 34.9712
 margin_right = 41.5
 margin_bottom = 75.9712
 text = "EXIT"
+animation_path = NodePath("../../Fading/FadingPlayer")
 
 [editable path="Fading"]
