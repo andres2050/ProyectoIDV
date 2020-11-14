@@ -36,9 +36,6 @@ animation_path = NodePath("../../../../Main/ScreenCanvas/Fading/FadingPlayer")
 [node name="Defeat" parent="DefeatCanvas" index="0"]
 visible = false
 
-[node name="ButtonBacktoTitleScreen" parent="DefeatCanvas/Defeat/Buttons" index="0"]
-animation_path = NodePath("../../../../ScreenCanvas/Fading/FadingPlayer")
-
 [editable path="Scenario"]
 
 [editable path="ScreenCanvas"]

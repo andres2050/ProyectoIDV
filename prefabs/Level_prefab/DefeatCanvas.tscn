@@ -88,6 +88,8 @@ margin_right = 566.676
 margin_bottom = -62.2263
 text = "Back to title screen"
 scene = "Start_Menu.tscn"
+animation = "DeadFading"
+animation_path = NodePath("../../ColorRect/DefeatAnimationPlayer")
 
 [node name="ButtonRetry" parent="Defeat/Buttons" instance=ExtResource( 4 )]
 anchor_top = 1.0
