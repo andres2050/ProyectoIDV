@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://prefabs/Hurtbox.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/enemy.gd" type="Script" id=2]
@@ -15,19 +15,24 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="enemy" type="KinematicBody2D" groups=[
+[sub_resource type="CapsuleShape2D" id=2]
+height = 35.9461
+
+[node name="ghost" type="KinematicBody2D" groups=[
 "enemy",
 ]]
 collision_layer = 2
 collision_mask = 2
 collision/safe_margin = 1.0
 script = ExtResource( 2 )
+health = 20
+enemyMovementSpeed = 340
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -0.66217, -16.6865 )
 scale = Vector2( 0.0698612, 0.0698612 )
 frames = SubResource( 1 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
@@ -43,11 +48,9 @@ __meta__ = {
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hurtbox"]
-scale = Vector2( 0.674196, 0.674196 )
-polygon = PoolVector2Array( 15.815, -53.2622, 14.94, 9.03787, -0.109976, 13.0629, -14.985, 9.56287, -14.11, -53.4372, -9.20998, -59.7372, 0.240025, -63.9372, 11.09, -59.9122 )
-__meta__ = {
-"_editor_description_": ""
-}
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2( 0.749153, -17.2305 )
+scale = Vector2( 0.9624, 0.900826 )
+shape = SubResource( 2 )
 
 [editable path="Hurtbox"]

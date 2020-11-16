@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 export var health = 15
 export var enemyMovementSpeed = 300
+export var damage = 10
 
 var path_to_event
 onready var event = get_node(path_to_event)
@@ -29,8 +30,8 @@ func _physics_process(_delta):
 	if health <= 0:
 		die()
 
-func damage_health(damage):
-	health=health-damage
+func damage_health(incoming_damage):
+	health=health - incoming_damage
 
 func die():
 	event.enemyCount -= 1

@@ -62,7 +62,7 @@ __meta__ = {
 [node name="ColorRect" type="ColorRect" parent="Defeat"]
 margin_right = 1360.0
 margin_bottom = 768.0
-color = Color( 0.117647, 0.117647, 0.117647, 1 )
+color = Color( 0, 0, 0, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -87,7 +87,7 @@ margin_top = -103.226
 margin_right = 566.676
 margin_bottom = -62.2263
 text = "Back to title screen"
-scene = "Start_Menu.tscn"
+scene = "Start_Menu"
 animation = "DeadFading"
 animation_path = NodePath("../../ColorRect/DefeatAnimationPlayer")
 
@@ -96,10 +96,10 @@ anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = -465.176
 margin_top = -104.908
-margin_right = -352.176
-margin_bottom = -63.9082
+margin_right = -348.176
+margin_bottom = -53.908
 text = "Retry"
-scene = "Level_0.tscn"
+scene = "Level_1"
 animation = "DeadFading"
 animation_path = NodePath("../../ColorRect/DefeatAnimationPlayer")
 

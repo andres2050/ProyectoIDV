@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Test_sprites/bullet.png" type="Texture" id=1]
 [ext_resource path="res://scripts/bullet.gd" type="Script" id=2]
 [ext_resource path="res://scripts/BulletHitbox.gd" type="Script" id=3]
 [ext_resource path="res://prefabs/Hitbox.tscn" type="PackedScene" id=4]
-
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -16,6 +15,9 @@ animations = [ {
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 10.1004
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 5.49845
 
 [node name="bullet" type="RigidBody2D" groups=[
 "bullet",
@@ -35,7 +37,6 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 scale = Vector2( 0.375, 0.375 )
 shape = SubResource( 2 )
 disabled = true
@@ -46,12 +47,8 @@ collision_layer = 2
 collision_mask = 0
 script = ExtResource( 3 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hitbox"]
-scale = Vector2( 0.859525, 0.859525 )
-polygon = PoolVector2Array( 6, 0, 3, -5, -3, -5, -6, 0, -3, 5, 3, 5 )
-__meta__ = {
-"_editor_description_": ""
-}
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource( 3 )
 [connection signal="area_entered" from="Hitbox" to="Hitbox" method="_on_Hitbox_area_entered"]
 [connection signal="body_entered" from="Hitbox" to="Hitbox" method="_on_Hitbox_body_entered"]
 

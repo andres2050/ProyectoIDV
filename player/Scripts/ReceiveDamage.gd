@@ -9,7 +9,7 @@ var enemiesTouching = 0
 func _process(_delta):
 	if (enemiesTouching > 0 and canDamage):
 		canDamage = false
-		player.damage_health(50)
+		player.damage_health(5)
 		yield(get_tree().create_timer(damageCooldown), "timeout")
 		canDamage = true
 		
