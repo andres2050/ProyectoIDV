@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 export var health = 15
 export var enemyMovementSpeed = 300
+onready var defaultMovementSpeed = enemyMovementSpeed
 export var damage = 10
 
 var path_to_event
@@ -9,6 +10,9 @@ onready var event = get_node(path_to_event)
 #export var path_to_player: NodePath
 
 onready var player = get_node("/root/Main/Scenario/Player")
+func _process(_delta):
+	if enemyMovementSpeed < defaultMovementSpeed:
+		enemyMovementSpeed += 15
 
 func _physics_process(_delta):
 	
@@ -30,8 +34,10 @@ func _physics_process(_delta):
 	if health <= 0:
 		die()
 
-func damage_health(incoming_damage):
+func damage_health(incoming_damage, direction, knockbackForce):
 	health=health - incoming_damage
+#	var move = move_and_collide(direction * knockbackForce)
+	enemyMovementSpeed -= knockbackForce*30
 
 func die():
 	event.enemyCount -= 1

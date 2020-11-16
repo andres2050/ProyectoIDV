@@ -1,15 +1,28 @@
 extends Area2D
 
-onready var bulletDamage = get_parent().bulletDamage
+var bullet
 
-onready var canPierce = get_parent().canPierce
+var bulletDamage
+var direction
+var canPierce
+var knockbackForce
 
 var canHit = true
+var enemy
+
+func _ready():
+	 bullet = get_parent()
+	 bulletDamage = bullet.bulletDamage
+	 direction = bullet.direction
+	 canPierce = bullet.canPierce
+	 knockbackForce = bullet.knockbackForce
+
 
 func _on_Hitbox_area_entered(area):
-	if canHit:
+	enemy = area.get_parent()
+	if canHit and enemy.is_in_group("enemy"):
 		canHit = false
-		area.get_parent().damage_health(bulletDamage)
+		enemy.damage_health(bulletDamage, direction, knockbackForce)
 		if !canPierce:
 			get_parent().queue_free()
 		canHit = true

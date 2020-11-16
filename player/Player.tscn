@@ -112,6 +112,7 @@ polygon = PoolVector2Array( 15, 0, 10, -8, -10, -8, -15, 0, -10, 8, 10, 8 )
 scale = Vector2( 3.23889, 3.23889 )
 texture = ExtResource( 6 )
 script = ExtResource( 1 )
+default_bulletDamage = 0.75
 
 [node name="Hurtbox" parent="." instance=ExtResource( 11 )]
 scale = Vector2( 0.944666, 0.944666 )
