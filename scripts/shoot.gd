@@ -13,7 +13,7 @@ const canPierce = true
 var canFire = true
 const angleOpening = PI/24
 
-
+onready var scenario = 	get_tree().get_nodes_in_group("Scenario")[0]
 onready var player = get_parent()
 
 export var yOffSet= 10
@@ -126,10 +126,9 @@ func instantiateBullet(bulletDamage, bulletSpeed, direction, canPierce, knockbac
 	bullet_instance = bullet.instance()
 	
 	bullet_instance.knockbackForce = knockbackForce
-	bullet_instance.direction = direction.normalized()
 	bullet_instance.bulletDamage = bulletDamage
 	bullet_instance.position = get_parent().get_global_position() + position
 	bullet_instance.canPierce = canPierce	
 	bullet_instance.apply_impulse(Vector2(), direction.normalized() * bulletSpeed)
 	
-	get_node("/root/Main/Scenario").add_child(bullet_instance)
+	scenario.add_child(bullet_instance)

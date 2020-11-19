@@ -4,7 +4,6 @@
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Test_sprites/tileset.tres" type="TileSet" id=4]
 
-
 [node name="Scenario" type="TileMap"]
 z_index = 2
 mode = 1

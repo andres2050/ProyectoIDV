@@ -1,6 +1,6 @@
 extends Control
 
-onready var playerNode =  get_node("/root/Main/Scenario/Player")
+onready var playerNode =  get_tree().get_nodes_in_group("player")[0]
 onready var animationPlayer = get_node("ColorRect/DefeatAnimationPlayer")
 var canDie = true
 func _process(_delta):

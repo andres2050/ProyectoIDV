@@ -1,0 +1,112 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Textures/Scenario/isotiles.png" type="Texture" id=1]
+
+[node name="Isotiles_edit" type="Node2D"]
+
+[node name="Road" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+offset = Vector2( 0, 6.523 )
+region_enabled = true
+region_rect = Rect2( 456, 146, 267, 171 )
+
+[node name="Road_edge_left" type="Sprite" parent="."]
+position = Vector2( 347.964, 0 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 51, 130, 268, 185 )
+
+[node name="Road_edge_right" type="Sprite" parent="."]
+position = Vector2( 709.397, 0 )
+texture = ExtResource( 1 )
+flip_h = true
+region_enabled = true
+region_rect = Rect2( 51, 130, 268, 185 )
+
+[node name="Sidewalk" type="Sprite" parent="."]
+position = Vector2( 1159.69, 0 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1262, 145, 252, 186 )
+
+[node name="Building_left" type="Sprite" parent="."]
+position = Vector2( 1460.41, 0 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, -105 )
+region_enabled = true
+region_rect = Rect2( 1638, 0, 293, 365 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Building_left"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Building_left/StaticBody2D"]
+
+[node name="Building_right" type="Sprite" parent="."]
+position = Vector2( 1855.96, 0 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, -105 )
+flip_h = true
+region_enabled = true
+region_rect = Rect2( 1638, 0, 293, 365 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Building_right"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Building_right/StaticBody2D"]
+
+[node name="Building_wide_left" type="Sprite" parent="."]
+position = Vector2( 2317.74, 0 )
+scale = Vector2( 0.686706, 0.686706 )
+texture = ExtResource( 1 )
+offset = Vector2( -57.109, -114.296 )
+flip_h = true
+region_enabled = true
+region_rect = Rect2( 0, 689, 494, 437 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Building_wide_left"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Building_wide_left/StaticBody2D"]
+
+[node name="Building_wide_left2" type="Sprite" parent="."]
+position = Vector2( 2850.5, 0 )
+scale = Vector2( 0.686706, 0.686706 )
+texture = ExtResource( 1 )
+offset = Vector2( 57.109, -114.296 )
+region_enabled = true
+region_rect = Rect2( 0, 689, 494, 437 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Building_wide_left2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Building_wide_left2/StaticBody2D"]
+
+[node name="Building_tall_left" type="Sprite" parent="."]
+position = Vector2( 3411.21, 0 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, -105 )
+region_enabled = true
+region_rect = Rect2( 849, 627, 256, 531 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Building_tall_left"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Building_tall_left/StaticBody2D"]
+
+[node name="Building_tall_right" type="Sprite" parent="."]
+position = Vector2( 3908.64, 0 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, -105 )
+flip_h = true
+region_enabled = true
+region_rect = Rect2( 849, 627, 256, 531 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Building_tall_right"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Building_tall_right/StaticBody2D"]
+
+[node name="Obstacle" type="Sprite" parent="."]
+position = Vector2( 4444.41, 0 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, -105 )
+region_enabled = true
+region_rect = Rect2( 2091, 54, 233, 285 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Obstacle"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacle/StaticBody2D"]

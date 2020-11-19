@@ -4,7 +4,7 @@ onready var animation_player = get_node("/root/Main/ScreenCanvas/Fading/FadingPl
 onready var event = get_parent()
 
 var isInEvent =false
-func _process(delta):
+func _process(_delta):
 	if (!event.canSpawn and !isInEvent):
 		isInEvent = true
 		animation_player.play("EnterBuilding")

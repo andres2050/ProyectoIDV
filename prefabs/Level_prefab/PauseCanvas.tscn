@@ -1,8 +1,6 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Interface/theme/font/default_font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Interface/Pause.gd" type="Script" id=2]
-[ext_resource path="res://Interface/ChangeScene.gd" type="Script" id=3]
 [ext_resource path="res://Interface/ChangeSceneButton.tscn" type="PackedScene" id=4]
 
 [node name="PauseCanvas" type="CanvasLayer"]
@@ -23,21 +21,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 0.352941 )
 
-[node name="Button" type="Button" parent="Pause" instance=ExtResource( 4 )]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -56.5
-margin_top = -20.5
+[node name="BackToMenuButton" parent="Pause" instance=ExtResource( 4 )]
 margin_right = 58.5
-margin_bottom = 20.5
-custom_fonts/font = ExtResource( 1 )
 text = "getout"
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 scene = "Start_Menu.tscn"
 animation_path = NodePath("../../../ScreenCanvas/Fading/FadingPlayer")
-[connection signal="pressed" from="Pause/Button" to="Pause/Button" method="_on_Button_pressed"]

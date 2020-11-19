@@ -3,7 +3,6 @@ extends Area2D
 var bullet
 
 var bulletDamage
-var direction
 var canPierce
 var knockbackForce
 
@@ -13,7 +12,6 @@ var enemy
 func _ready():
 	 bullet = get_parent()
 	 bulletDamage = bullet.bulletDamage
-	 direction = bullet.direction
 	 canPierce = bullet.canPierce
 	 knockbackForce = bullet.knockbackForce
 
@@ -22,7 +20,7 @@ func _on_Hitbox_area_entered(area):
 	enemy = area.get_parent()
 	if canHit and enemy.is_in_group("enemy"):
 		canHit = false
-		enemy.damage_health(bulletDamage, direction, knockbackForce)
+		enemy.damage_health(bulletDamage, knockbackForce)
 		if !canPierce:
 			get_parent().queue_free()
 		canHit = true

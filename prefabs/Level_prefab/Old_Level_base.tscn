@@ -9,6 +9,7 @@
 [node name="Main" type="Node2D"]
 
 [node name="Scenario" parent="." instance=ExtResource( 1 )]
+z_index = 1
 
 [node name="Floor" type="TileMap" parent="."]
 z_index = 1
@@ -27,9 +28,6 @@ __meta__ = {
 [node name="ScreenCanvas" parent="." instance=ExtResource( 2 )]
 
 [node name="PauseCanvas" parent="." instance=ExtResource( 3 )]
-
-[node name="Button" parent="PauseCanvas/Pause" index="1"]
-animation_path = NodePath("../../../../Main/ScreenCanvas/Fading/FadingPlayer")
 
 [node name="DefeatCanvas" parent="." instance=ExtResource( 4 )]
 

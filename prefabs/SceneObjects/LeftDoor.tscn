@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Test_sprites/isotiles.png" type="Texture" id=1]
+[ext_resource path="res://prefabs/SceneObjects/_Object_prefab.tscn" type="PackedScene" id=2]
+
+[node name="LeftDoor" instance=ExtResource( 2 )]
+
+[node name="Sprite" parent="." index="0"]
+position = Vector2( 0, -23.2238 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 56, 427, 83, 105 )
+
+[node name="CollisionPolygon2D" parent="." index="1"]
+polygon = PoolVector2Array( 41.0312, -0.84977, -25.3407, 32.1135, -40.2447, 22.0909, -40.2447, 4.2729, 9.81047, -18.445 )

@@ -34,7 +34,7 @@ func _physics_process(_delta):
 	if health <= 0:
 		die()
 
-func damage_health(incoming_damage, direction, knockbackForce):
+func damage_health(incoming_damage, knockbackForce):
 	health=health - incoming_damage
 #	var move = move_and_collide(direction * knockbackForce)
 	enemyMovementSpeed -= knockbackForce*30
