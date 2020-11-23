@@ -13,7 +13,7 @@ const canPierce = true
 var canFire = true
 const angleOpening = PI/24
 
-onready var scenario = 	get_tree().get_nodes_in_group("Scenario")[0]
+onready var scenario =  get_tree().get_nodes_in_group("Scenario")[0]
 onready var player = get_parent()
 
 export var yOffSet= 10

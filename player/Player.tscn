@@ -38,14 +38,9 @@ animations = [ {
 "name": "rightUp",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 8 ) ],
+"frames": [ ExtResource( 15 ) ],
 "loop": true,
-"name": "rightDown",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 9 ) ],
-"loop": true,
-"name": "leftDown",
+"name": "leftUp",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 10 ) ],
@@ -53,9 +48,14 @@ animations = [ {
 "name": "down",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 15 ) ],
+"frames": [ ExtResource( 9 ) ],
 "loop": true,
-"name": "leftUp",
+"name": "leftDown",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "rightDown",
 "speed": 5.0
 } ]
 
@@ -66,7 +66,6 @@ animations = [ {
 [node name="Player" type="KinematicBody2D" groups=[
 "player",
 ]]
-scale = Vector2( 0.836597, 0.887165 )
 collision/safe_margin = 2.0
 script = ExtResource( 2 )
 
@@ -84,21 +83,20 @@ shape = SubResource( 2 )
 disabled = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-scale = Vector2( 1, 1 )
 polygon = PoolVector2Array( 0, -12, -17, -9.017, -27.7758, 0, -21, 9, 0, 14.3716, 21, 9, 28.6876, 0, 19.1251, -9.01749 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2( 0.998784, 1 )
 current = true
-zoom = Vector2( 0.8, 0.8 )
 limit_left = -1540
 limit_smoothed = true
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
 smoothing_enabled = true
-drag_margin_left = 0.1
-drag_margin_top = 0.1
-drag_margin_right = 0.1
-drag_margin_bottom = 0.1
+drag_margin_left = 0.08
+drag_margin_top = 0.08
+drag_margin_right = 0.08
+drag_margin_bottom = 0.08
 editor_draw_limits = true
 editor_draw_drag_margin = true
 

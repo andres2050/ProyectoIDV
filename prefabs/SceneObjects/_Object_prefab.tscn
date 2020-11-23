@@ -1,6 +1,8 @@
 [gd_scene format=2]
 
 [node name="_Object_prefab" type="StaticBody2D"]
+collision_layer = 7
+collision_mask = 7
 
 [node name="Sprite" type="Sprite" parent="."]
 
