@@ -76,6 +76,8 @@ func _physics_process(_delta):
 func damage_health(damage):
 	health=health-damage
 
+func pickup_item():
+	pass
 
 # get velocity -------------------------------------------------
 #		velocity = playerPosition - initPosition
