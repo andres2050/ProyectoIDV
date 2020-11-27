@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Test_sprites/isotiles_proto_1.png" type="Texture" id=1]
+[ext_resource path="res://prefabs/SceneObjects/_Object_prefab.tscn" type="PackedScene" id=2]
+
+[node name="Building3_left" instance=ExtResource( 2 )]
+
+[node name="Sprite" parent="." index="0"]
+position = Vector2( 0, -170.859 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 849, 627, 256, 531 )
+
+[node name="CollisionPolygon2D" parent="." index="1"]
+position = Vector2( 0, -170.859 )
+polygon = PoolVector2Array( 33.6296, 265.673, -129.221, 170.899, -21.0988, 119.508, 126.401, 192.257, 126.401, 213.614 )

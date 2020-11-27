@@ -6,4 +6,7 @@
 health = 15
 enemyMovementSpeed = 500
 
+[node name="AnimatedSprite" parent="." index="0"]
+frame = 0
+
 [editable path="Hurtbox"]

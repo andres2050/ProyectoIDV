@@ -19,3 +19,7 @@ format = 1
 [node name="PauseCanvas" parent="." instance=ExtResource( 3 )]
 
 [node name="DefeatCanvas" parent="." instance=ExtResource( 5 )]
+
+[node name="YSort" type="YSort" parent="." groups=[
+"Scenario",
+]]

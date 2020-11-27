@@ -10,10 +10,13 @@ var spawnRate = 1
 
 var event
 var path_to_event = "/root/Main/"
+var scenario
 
 func _ready():
-	event = get_parent()
-	path_to_event += get_parent().get_name()
+	if (get_tree().get_nodes_in_group("Scenario").size() >0):
+		scenario = get_tree().get_nodes_in_group("Scenario")[0]
+	event = get_node("../..")
+	path_to_event += event.get_name()
 	
 	enemy = load("res://enemies/" + spawnOf + ".tscn")
 #	match spawnOf:
@@ -43,4 +46,4 @@ func spawnEnemy():
 	enemy_instance.position = get_global_position()
 	enemy_instance.path_to_event = path_to_event
 	
-	get_node("/root/Main/Scenario").add_child(enemy_instance)
+	scenario.add_child(enemy_instance)

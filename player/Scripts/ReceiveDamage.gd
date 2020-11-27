@@ -3,7 +3,7 @@ extends Area2D
 onready var player = get_parent()
 
 var canDamage = true
-var damageCooldown=0.2
+var damageCooldown=0.4
 var enemiesTouching = 0
 
 func _process(_delta):

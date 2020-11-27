@@ -1,13 +1,13 @@
 [gd_resource type="Theme" load_steps=3 format=2]
 
-[ext_resource path="res://Interface/theme/font/FireBrathers-PersonalUse.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://Interface/theme/font/Ghost Of The Wild West.ttf" type="DynamicFontData" id=1]
 
 [sub_resource type="DynamicFont" id=1]
-size = 120
+size = 50
 font_data = ExtResource( 1 )
 
 [resource]
-Label/colors/font_color = Color( 0.756863, 0.054902, 0.054902, 1 )
+Label/colors/font_color = Color( 0, 0, 0, 1 )
 Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
 Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 Label/constants/line_spacing = 3

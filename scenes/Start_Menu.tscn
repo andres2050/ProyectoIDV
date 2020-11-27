@@ -45,6 +45,5 @@ margin_right = 41.5
 margin_bottom = 75.9712
 text = "EXIT"
 animation_path = NodePath("../../Fading/FadingPlayer")
-[connection signal="pressed" from="ReferenceRect/StartButton" to="ReferenceRect/StartButton" method="_on_StartButton_pressed"]
 
 [editable path="Fading"]

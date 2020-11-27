@@ -52,7 +52,6 @@ tracks/3/keys = {
 
 [node name="Defeat" type="Control" parent="."]
 pause_mode = 2
-visible = false
 margin_right = 1360.0
 margin_bottom = 768.0
 script = ExtResource( 2 )
@@ -61,9 +60,10 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="Defeat"]
+visible = false
 margin_right = 1360.0
 margin_bottom = 768.0
-color = Color( 0, 0, 0, 0 )
+color = Color( 0.117647, 0.117647, 0.117647, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -124,7 +124,7 @@ __meta__ = {
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.117647, 0.117647, 0.117647, 0 )
+color = Color( 0.117647, 0.117647, 0.117647, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

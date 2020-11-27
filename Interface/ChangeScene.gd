@@ -10,19 +10,19 @@ func _ready():
 	if (animation_path):
 		animationPlayer = get_node(animation_path)
 		
+var already_pressed = false
+		
 func _on_Button_pressed():
-	if get_name() == "Exit":
-		get_tree().quit()
-	else:
-		if animationPlayer:
-			animationPlayer.play_backwards(animation)
-			
-			animation_duration = animationPlayer.current_animation_length
-			yield(get_tree().create_timer(animation_duration), "timeout")
-		get_tree().paused = false
-		if get_tree().change_scene("res://scenes/" + scene + ".tscn") != OK:
-			print("An unexpected error occured when trying to switch to the Readme scene")
-
-
-func _on_StartButton_pressed():
-	pass # Replace with function body.
+	if (already_pressed == false) :
+		already_pressed = true
+		if get_name() == "Exit":
+			get_tree().quit()
+		else:
+			if animationPlayer:
+				animationPlayer.play_backwards(animation)
+				
+				animation_duration = animationPlayer.current_animation_length
+				yield(get_tree().create_timer(animation_duration),"timeout")
+			get_tree().paused = false
+			if get_tree().change_scene("res://scenes/" + scene + ".tscn") != OK:
+				print("An unexpected error occured when trying to switch to the Readme scene")

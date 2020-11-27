@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://prefabs/Hurtbox.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/enemy.gd" type="Script" id=2]
@@ -18,15 +18,60 @@ animations = [ {
 [sub_resource type="CapsuleShape2D" id=2]
 height = 35.9461
 
+[sub_resource type="Animation" id=3]
+resource_name = "Die"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:alfa")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:blue")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:green")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
 [node name="ghost" type="KinematicBody2D" groups=[
 "enemy",
 ]]
+position = Vector2( -1, 0 )
 collision_layer = 2
 collision_mask = 2
 collision/safe_margin = 1.0
 script = ExtResource( 2 )
+alfa = 0.0
+blue = 0.0
+green = 0.0
 health = 20
-enemyMovementSpeed = 380
+enemyMovementSpeed = 340
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -0.66217, -16.6865 )
@@ -52,5 +97,9 @@ collision_mask = 2
 position = Vector2( 0.749153, -17.2305 )
 scale = Vector2( 0.9624, 0.900826 )
 shape = SubResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Die = SubResource( 3 )
+anims/ReceiveDamage = SubResource( 4 )
 
 [editable path="Hurtbox"]
