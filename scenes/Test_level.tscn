@@ -44,7 +44,7 @@ tile_data = PoolIntArray( -1245199, 0, 0, -1245198, 0, 0, -1245197, 0, 0, -12451
 
 [node name="Event" parent="." instance=ExtResource( 14 )]
 z_index = 1
-spawnTime = 1
+spawnTime = 1.0
 spawners = [ NodePath("enemySpawner"), NodePath("enemySpawner2") ]
 doors = [ Vector2( 10, 0 ), Vector2( 10, 1 ) ]
 

@@ -35,7 +35,7 @@ __meta__ = {
 margin_top = -50.4661
 margin_bottom = -9.46613
 text = "START"
-scene = "Level_1"
+scene = "Introduction_Level_1"
 animation_path = NodePath("../../Fading/FadingPlayer")
 
 [node name="Exit" parent="ReferenceRect" instance=ExtResource( 2 )]
@@ -45,5 +45,6 @@ margin_right = 41.5
 margin_bottom = 75.9712
 text = "EXIT"
 animation_path = NodePath("../../Fading/FadingPlayer")
+[connection signal="pressed" from="ReferenceRect/StartButton" to="ReferenceRect/StartButton" method="_on_StartButton_pressed"]
 
 [editable path="Fading"]
