@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Test_sprites/Color_test.png" type="Texture" id=1]
+[ext_resource path="res://Color_test.gd" type="Script" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Color_test" type="Sprite" parent="."]
+position = Vector2( 535.385, 326.11 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+red = 0.558
+blue = 0.836
+green = 0.954
