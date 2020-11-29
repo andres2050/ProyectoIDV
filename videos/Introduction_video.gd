@@ -7,6 +7,8 @@ onready var video_player = get_node("VideoPlayer")
 onready var label = get_node("Label")
 var canSkip = false
 
+var bgm_volume = 0.6
+var sfx_volume = 0.6
 
 func _on_VideoPlayer_finished():
 	change_scene_manually()

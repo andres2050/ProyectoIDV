@@ -1,5 +1,8 @@
 extends Control
 
+func _ready():
+	visible = false
+
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		var new_pause_state = not get_tree().paused
