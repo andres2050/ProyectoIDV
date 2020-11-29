@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://prefabs/SceneObjects/Scene_objects_sprites.png" type="Texture" id=1]
 [ext_resource path="res://prefabs/SceneObjects/_Object_prefab.tscn" type="PackedScene" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 109.968, 80.0936 )
 
 [node name="House_square" instance=ExtResource( 2 )]
 
@@ -13,3 +16,7 @@ region_rect = Rect2( 838, 767, 282, 250 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
 polygon = PoolVector2Array( -120.125, 1.375, -0.792152, 60.534, 117.428, 0.111155, 1.05051, -58.4298 )
+
+[node name="CollisionShape2D" parent="Detect_player" index="0"]
+position = Vector2( -0.561218, -80.2561 )
+shape = SubResource( 1 )
