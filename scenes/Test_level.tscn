@@ -9,7 +9,7 @@
 [ext_resource path="res://prefabs/SceneObjects/test_objects/building1_right.tscn" type="PackedScene" id=7]
 [ext_resource path="res://prefabs/SceneObjects/test_objects/Building3_left.tscn" type="PackedScene" id=8]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=9]
-[ext_resource path="res://prefabs/SceneObjects/Items/pickup_item.tscn" type="PackedScene" id=10]
+[ext_resource path="res://prefabs/SceneObjects/Pickup_items/pickup_item.tscn" type="PackedScene" id=10]
 [ext_resource path="res://prefabs/SceneObjects/test_objects/wall_plane.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Test_sprites/floor.png" type="Texture" id=12]
 [ext_resource path="res://prefabs/Event/Event.tscn" type="PackedScene" id=13]
@@ -17,6 +17,7 @@
 [ext_resource path="res://prefabs/Event/Dialog_event.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Interface/Dialog/Line.tscn" type="PackedScene" id=16]
 [ext_resource path="res://enemies/static/static_base.tscn" type="PackedScene" id=17]
+
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( -8.62218, 0, 0, -4.34946, 8.56552, -0.210382, 0, 4.20931 )

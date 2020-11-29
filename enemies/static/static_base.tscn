@@ -1,8 +1,10 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Test_sprites/static_enemie.png" type="Texture" id=1]
-[ext_resource path="res://scripts/static.gd" type="Script" id=2]
+[ext_resource path="res://enemies/static/static.gd" type="Script" id=2]
 [ext_resource path="res://prefabs/Hurtbox.tscn" type="PackedScene" id=3]
+
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 40.25, 46.5 )
