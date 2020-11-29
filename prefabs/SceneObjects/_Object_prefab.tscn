@@ -1,7 +1,16 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://prefabs/SceneObjects/Obstacles.gd" type="Script" id=1]
 
 [node name="_Object_prefab" type="StaticBody2D"]
 collision_layer = 7
 collision_mask = 7
+script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
+
+[node name="Detect_player" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detect_player"]
+[connection signal="body_entered" from="Detect_player" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Detect_player" to="." method="_on_Area2D_body_exited"]
