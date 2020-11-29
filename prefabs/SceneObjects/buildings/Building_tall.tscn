@@ -4,7 +4,7 @@
 [ext_resource path="res://prefabs/SceneObjects/_Object_prefab.tscn" type="PackedScene" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 106.029, 159.13 )
+extents = Vector2( 97.6188, 122.972 )
 
 [node name="Building_tall" instance=ExtResource( 2 )]
 
@@ -17,6 +17,6 @@ region_rect = Rect2( 842, 0, 228, 389 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
 polygon = PoolVector2Array( -112.008, 21.0128, -18.8534, 66.2358, 46.9602, 34.6167, 88.059, 56.1647, 110.989, 44.4017, 91.0056, 12.5449, 114.642, 0.215965, 0.71701, -55.3791, -112.017, 0.0285721 )
 
-[node name="CollisionShape2D" parent="Area2D" index="0"]
-position = Vector2( -1.68176, -153.043 )
+[node name="CollisionShape2D" parent="Detect_player" index="0"]
+position = Vector2( -0.840881, -143.793 )
 shape = SubResource( 1 )
