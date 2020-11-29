@@ -17,7 +17,7 @@ func _input(event):
 	if event.is_action_pressed("ui_accept"):
 		if canSkip:
 			animation_player.play_backwards("Fading")
-			yield(get_tree().create_timer(animation_player.current_animation_length),"timeout")
+			yield(get_tree().create_timer(2),"timeout")
 			_on_VideoPlayer_finished()
 		else:
 			canSkip = true

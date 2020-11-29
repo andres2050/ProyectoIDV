@@ -23,3 +23,6 @@ format = 1
 [node name="YSort" type="YSort" parent="." groups=[
 "Scenario",
 ]]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = 5.0

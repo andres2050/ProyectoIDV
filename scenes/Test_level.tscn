@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://prefabs/Level_prefab/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Test_sprites/tilemap_beta_2.tres" type="TileSet" id=2]
@@ -17,6 +17,8 @@
 [ext_resource path="res://prefabs/Event/Dialog_event.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Interface/Dialog/Line.tscn" type="PackedScene" id=16]
 [ext_resource path="res://enemies/static/static_base.tscn" type="PackedScene" id=17]
+[ext_resource path="res://sound/bgm/3.ogg" type="AudioStream" id=18]
+[ext_resource path="res://sound/Audio_manager.gd" type="Script" id=19]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( -8.62218, 0, 0, -4.34946, 8.56552, -0.210382, 0, 4.20931 )
@@ -240,6 +242,11 @@ text = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAA
 margin_top = 15.0
 margin_bottom = 16.0
 text = "vuelva pronto."
+
+[node name="AudioStreamPlayer" parent="." index="8"]
+stream = ExtResource( 18 )
+script = ExtResource( 19 )
+[connection signal="finished" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_AudioStreamPlayer_finished"]
 
 [editable path="ScreenCanvas"]
 
