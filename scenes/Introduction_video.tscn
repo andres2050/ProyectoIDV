@@ -1,18 +1,50 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://videos/introduction.webm" type="VideoStream" id=1]
-[ext_resource path="res://videos/VideoPlayer.gd" type="Script" id=2]
+[ext_resource path="res://Interface/Fading.tscn" type="PackedScene" id=2]
+[ext_resource path="res://videos/Introduction_video.gd" type="Script" id=3]
+[ext_resource path="res://Interface/theme/font/Comfortaa-Bold.ttf" type="DynamicFontData" id=4]
 
+[sub_resource type="DynamicFont" id=1]
+size = 26
+font_data = ExtResource( 4 )
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="Theme" id=2]
+Label/colors/font_color = Color( 1, 1, 1, 0.54902 )
+Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+Label/constants/line_spacing = 3
+Label/constants/shadow_as_outline = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/fonts/font = SubResource( 1 )
+Label/styles/normal = null
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource( 3 )
+scene = "Test_level"
 
 [node name="VideoPlayer" type="VideoPlayer" parent="."]
-margin_right = 1360.0
-margin_bottom = 768.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 stream = ExtResource( 1 )
-script = ExtResource( 2 )
+autoplay = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
-scene = "Test_level"
-[connection signal="finished" from="VideoPlayer" to="VideoPlayer" method="_on_VideoPlayer_finished"]
+
+[node name="Fading" parent="." instance=ExtResource( 2 )]
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -727.0
+margin_top = -30.0
+theme = SubResource( 2 )
+text = "presiona \"Barra Espaciadora\" de nuevo para saltar..."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="finished" from="VideoPlayer" to="." method="_on_VideoPlayer_finished"]

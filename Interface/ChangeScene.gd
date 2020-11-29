@@ -1,6 +1,6 @@
 extends Button
 
-export(String, "Test_level","Start_Menu","Level_0", "Level_1", "Introduction_video" ) var scene
+export(String,"none", "Test_level","Start_Menu","Level_0", "Level_1", "Introduction_video" ) var scene
 export(String, "Fading", "DeadFading", "DeadScreen") var animation
 
 export var animation_path :NodePath
