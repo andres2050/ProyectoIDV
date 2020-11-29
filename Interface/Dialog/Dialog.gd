@@ -39,7 +39,7 @@ func Show_text():
 	var text_aux = line_text
 	for _i in range (line_text.length()): 
 		if actual_line_aux == actual_line and showing_text:
-			if(text_aux.left(1) != ""): 
+			if(text_aux.left(1) != " "): 
 				audio_player.play()
 			label.text += text_aux.left(1)
 			text_aux.erase(0,1)
