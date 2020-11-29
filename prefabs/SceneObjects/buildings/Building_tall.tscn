@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://prefabs/SceneObjects/Scene_objects_sprites.png" type="Texture" id=1]
+[ext_resource path="res://prefabs/SceneObjects/_Object_prefab.tscn" type="PackedScene" id=2]
+
+[node name="Building_tall" instance=ExtResource( 2 )]
+
+[node name="Sprite" parent="." index="0"]
+position = Vector2( 0, -127.952 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 842, 0, 228, 389 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+polygon = PoolVector2Array( -112.008, 21.0128, -18.8534, 66.2358, 46.9602, 34.6167, 88.059, 56.1647, 110.989, 44.4017, 69.5146, 23.7159, 114.642, 0.215965, 0.71701, -55.3791, -112.017, 0.0285721 )

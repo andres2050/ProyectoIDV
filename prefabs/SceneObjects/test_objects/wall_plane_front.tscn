@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Test_sprites/pared.png" type="Texture" id=1]
+[ext_resource path="res://prefabs/SceneObjects/_Object_prefab.tscn" type="PackedScene" id=2]
+[ext_resource path="res://prefabs/SceneObjects/test_objects/translucid_wall.gd" type="Script" id=3]
+
+[node name="wall_plane_front" instance=ExtResource( 2 )]
+
+[node name="Sprite" parent="." index="0"]
+position = Vector2( 0, -16.9233 )
+scale = Vector2( 1.01482, 1.01482 )
+texture = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+position = Vector2( 0.157494, 91.3156 )
+polygon = PoolVector2Array( -87.3038, -2.06145, -87.647, -22.061, 88.213, -109.486, 87.7349, -89.4863 )
+__meta__ = {
+"_editor_description_": ""
+}
