@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 
 onready var animation_player = get_node("reference/AnimationPlayer")
 onready var label = get_node("reference/walkitalki/bubble/Label")

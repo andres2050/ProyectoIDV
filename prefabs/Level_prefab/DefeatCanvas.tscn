@@ -5,7 +5,6 @@
 [ext_resource path="res://Interface/theme/DeadScreen_theme.tres" type="Theme" id=3]
 [ext_resource path="res://Interface/ChangeSceneButton.tscn" type="PackedScene" id=4]
 
-
 [sub_resource type="Animation" id=1]
 resource_name = "DeadFading"
 tracks/0/type = "bezier"
@@ -53,6 +52,7 @@ tracks/3/keys = {
 
 [node name="Defeat" type="Control" parent="."]
 pause_mode = 2
+visible = false
 margin_right = 1360.0
 margin_bottom = 768.0
 script = ExtResource( 2 )
