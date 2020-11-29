@@ -9,10 +9,18 @@ var canSkip = false
 
 
 func _on_VideoPlayer_finished():
-	if get_tree().change_scene("res://scenes/" + scene + ".tscn") != OK:
-		print("An unexpected error occured when trying to switch to the scene")
+	change_scene_manually()
 
 
+func change_scene_manually():
+	var next_scene = load("res://scenes/"+ scene + ".tscn").instance()
+	get_tree().get_root().add_child(next_scene)
+	var main_node = self
+	while(main_node.get_parent() != get_tree().get_root()):
+		print(main_node.get_parent(), get_tree().get_root())
+		main_node = main_node.get_parent()
+	main_node.queue_free()
+		
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
 		if canSkip:
