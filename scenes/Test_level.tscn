@@ -237,14 +237,17 @@ text = "NO SE MASTURBEN!!!!!!!!!!!"
 margin_top = 15.0
 margin_bottom = 16.0
 text = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA!!!!!"
+time_between_letters = 0.008
 
 [node name="Line4" parent="Dialog_event/Dialog_lines" index="3" instance=ExtResource( 16 )]
 margin_top = 15.0
 margin_bottom = 16.0
 text = "vuelva pronto."
+time_between_letters = 0.5
 
 [node name="AudioStreamPlayer" parent="." index="8"]
 stream = ExtResource( 18 )
+volume_db = 3.0
 script = ExtResource( 19 )
 [connection signal="finished" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_AudioStreamPlayer_finished"]
 
