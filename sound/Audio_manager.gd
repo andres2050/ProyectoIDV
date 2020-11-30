@@ -9,7 +9,7 @@ export(String, "","Start_menu","Ambiental_city", "Combat") var soundtrack_name
 func _ready():
 	while(main_node.get_parent() != get_tree().get_root()):
 		main_node = main_node.get_parent()
-	
+	volume_db = main_node.bgm_volume
 	self.stream = load("res://sound/bgm/"+soundtrack_name + ".ogg")
 	yield(get_tree().create_timer(1), "timeout")
 	play()
