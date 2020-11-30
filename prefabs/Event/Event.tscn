@@ -7,6 +7,7 @@
 "Event",
 ]]
 script = ExtResource( 3 )
+soundtrack = "Combat"
 
 [node name="EventDetector" parent="." instance=ExtResource( 1 )]
 

@@ -27,7 +27,13 @@ format = 1
 "Scenario",
 ]]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="BgmStreamPlayer" type="AudioStreamPlayer" parent="." groups=[
+"bgm_player",
+]]
 pause_mode = 2
 volume_db = 5.0
 script = ExtResource( 6 )
+
+[node name="SfxStreamPlayer" type="AudioStreamPlayer" parent="." groups=[
+"sfx_player",
+]]

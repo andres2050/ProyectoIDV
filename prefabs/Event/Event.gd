@@ -2,6 +2,7 @@ extends Node2D
 
 export var canSpawn = true 
 export var spawnTime = 1.0
+export(String, "","Start_menu","Ambiental_city", "Combat") var soundtrack
 
 var spawners
 var obstacles
@@ -12,14 +13,17 @@ var enemyCount = 0
 
 var event_ended = false
 
-
+var bgm_player
 var scenario
 var tilemap
 func _ready():
 	spawners = get_tree().get_nodes_in_group("spawner")
-	
-	if (get_tree().get_nodes_in_group("scenario_collisions").size() > 0):
-		scenario = get_tree().get_nodes_in_group("scenario_collisions")[0]
+	var aux = get_tree().get_nodes_in_group("bgm_player")
+	if(aux.size() > 0):
+		bgm_player = aux[0]
+	aux = get_tree().get_nodes_in_group("scenario_collisions")
+	if (aux.size() > 0):
+		scenario = aux[0]
 	tilemap = get_node("EventDetector")
 	
 	obstacles = tilemap.get_used_cells_by_id(1)
@@ -30,6 +34,7 @@ func _ready():
 func Start_Event():
 	if canSpawn: 
 		canSpawn = false
+		bgm_player.change_soundtrack(soundtrack)
 		for i in range(spawners.size()):
 			spawners[i].canSpawn = true
 			spawners[i].spawnRate = spawnTime
@@ -47,6 +52,7 @@ func Start_Event():
 func EndEvent():
 	if event_ended == false:
 		event_ended = true
+		bgm_player.change_soundtrack("Ambiental_city")
 		Open_doors()
 		Clear_obstacles()
 		

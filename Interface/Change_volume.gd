@@ -13,8 +13,8 @@ func _on_Volume_button_pressed():
 	self.visible = !self.visible
 
 func _on_bgm_ScrollBar_value_changed(value):
-	main_node.bgm_volume = value/100
+	main_node.change_bgm_volume(value/100) 
 
 
 func _on_sfx_HScrollBar_value_changed(value):
-	main_node.sfx_volume = value/100
+	main_node.change_sfx_volume(value/100)
