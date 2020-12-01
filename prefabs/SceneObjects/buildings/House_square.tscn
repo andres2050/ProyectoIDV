@@ -15,7 +15,11 @@ region_enabled = true
 region_rect = Rect2( 838, 767, 282, 250 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+visible = false
 polygon = PoolVector2Array( -120.125, 1.375, -0.792152, 60.534, 117.428, 0.111155, 1.05051, -58.4298 )
+
+[node name="Detect_player" parent="." index="2"]
+visible = false
 
 [node name="CollisionShape2D" parent="Detect_player" index="0"]
 position = Vector2( -0.561218, -74.0826 )
