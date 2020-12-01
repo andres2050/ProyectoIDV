@@ -7,7 +7,6 @@
 [ext_resource path="res://Test_sprites/d.png" type="Texture" id=5]
 [ext_resource path="res://Test_sprites/b.png" type="Texture" id=6]
 
-
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 3 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 5 ) ],
@@ -72,13 +71,13 @@ alfa = 0.0
 blue = 0.0
 green = 0.0
 health = 20
-enemyMovementSpeed = 340
+enemyMovementSpeed = 450
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -0.66217, -16.6865 )
 scale = Vector2( 0.0698612, 0.0698612 )
 frames = SubResource( 1 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]

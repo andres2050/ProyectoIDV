@@ -34,25 +34,51 @@ func _process(_delta):
 	modulate.r = red
 	modulate.b = blue
 	modulate.g = green
-	
 	if (enemyMovementSpeed < defaultMovementSpeed and !isdead):
 		enemyMovementSpeed += 15
 
+var playerPosition
+var enemyPosition
+var canMove = true
+var direction
+var attackDistance = 200
+var distance
 func _physics_process(_delta):
-	var playerPosition = player.get_global_position()
-	var enemyPosition = get_global_position()
-	
-	var xDistance = playerPosition.x - enemyPosition.x
-	var yDistance = (playerPosition.y - enemyPosition.y) *2
-	
-	var movement = Vector2(xDistance,yDistance)
+	if canMove:
+		attackMoment = 0
+		playerPosition = player.get_global_position()
+		enemyPosition = get_global_position()
+		
+		direction = Vector2(playerPosition.x - enemyPosition.x , (playerPosition.y - enemyPosition.y) * 2)
+		
+		distance = sqrt((direction.x * direction.x) + (direction.y * direction.y))
+		
+		if (distance < attackDistance):
+			canMove = false
+		else:
+			move(direction.normalized())
+	else:
+		attack(direction.normalized())
+		
+func move(movement):
+	movement = movement * enemyMovementSpeed
+	movement.y = movement.y * 0.5
+	movement = move_and_slide(movement)
+	$AnimatedSprite.flip_h = movement.x < 0
 
-	if movement.length() > 0: 		
-		movement = movement.normalized() * enemyMovementSpeed
-		movement.y = movement.y * 0.5
+var attackMoment = 0
+var attackVelocity
+
+func attack(movement):
+	attackMoment += 0.02
+	if attackMoment <= 1:
+		attackVelocity = sqrt(-attackMoment +1 )*defaultMovementSpeed*2
+		movement = movement*attackVelocity
+		movement.y = movement.y *0.5
 		movement = move_and_slide(movement)
-#		position += movement * delta
-		$AnimatedSprite.flip_h = xDistance < 0
+		$AnimatedSprite.flip_h = movement.x < 0	
+	else:
+		canMove = true
 		
 
 func damage_health(incoming_damage, knockbackForce):
@@ -61,7 +87,8 @@ func damage_health(incoming_damage, knockbackForce):
 		
 	health=health - incoming_damage
 #	var move = move_and_collide(direction * knockbackForce)
-	enemyMovementSpeed -= knockbackForce*30
+	if canMove:
+		enemyMovementSpeed -= knockbackForce*30
 	animation_player.play("ReceiveDamage")
 	if health <= 0:
 		isdead = true
