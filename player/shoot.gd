@@ -77,8 +77,8 @@ func normalShot():
 func superFastShot():
 	var bulletSpeed = default_bulletSpeed * 1000
 	var fireCooldown = default_fireCooldown * 0.01
-	var bulletDamage = default_bulletDamage * 0.25
-	var knockbackForce = 1
+	var bulletDamage = default_bulletDamage * 0.2
+	var knockbackForce = 1.5
 	
 	var direction = Vector2(x,y)	
 	

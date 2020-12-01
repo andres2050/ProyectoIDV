@@ -77,11 +77,11 @@ enemyMovementSpeed = 450
 position = Vector2( -0.66217, -16.6865 )
 scale = Vector2( 0.0698612, 0.0698612 )
 frames = SubResource( 1 )
-frame = 3
 playing = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-scale = Vector2( 0.674196, 0.674196 )
+position = Vector2( 0.420448, 0.327332 )
+scale = Vector2( 0.439979, 0.439979 )
 polygon = PoolVector2Array( 24, 0, 15, 9, 0, 12, -15, 9, -24, 0, -15, -9, 0, -11, 15, -9 )
 __meta__ = {
 "_editor_description_": ""

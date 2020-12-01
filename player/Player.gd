@@ -76,8 +76,17 @@ func _physics_process(_delta):
 func damage_health(damage):
 	health=health-damage
 
-func pickup_item():
-	pass
+func pickup_item(pickup):
+	var healAmount = maxHealth*2/3
+	match pickup:
+		"":
+			pass
+		"heal":
+			for _i in range(healAmount):
+				health += 1
+				yield(get_tree().create_timer(0.03),"timeout")
+				if health == maxHealth:
+					break
 
 # get velocity -------------------------------------------------
 #		velocity = playerPosition - initPosition
