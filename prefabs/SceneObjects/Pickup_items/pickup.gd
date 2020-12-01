@@ -1,11 +1,11 @@
 extends Area2D
 
-
+export(String, "", "heal", "buff")var pickupType
 
 
 func _on_pickupDetector_body_entered(body):
 	if(body.is_in_group("player")):
-		body.pickup_item()
+		body.pickup_item(pickupType)
 		pickup()
 		
 
