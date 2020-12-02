@@ -10,26 +10,49 @@ var time_between_letters = []
 var actual_line = 0
 var isInDialog = false
 var showing_text = false
+var answered_call = false 
 
+var dialog_bus = []
 
 func Begin_dialog(lines, letters_duration):
-	isInDialog = true
-	if (is_animation_over == true):
+	if !isInDialog:
+		isInDialog = true
 		is_animation_over = false
-		dialogue_lines = lines
-		time_between_letters = letters_duration
-		animation_player.play("Dialogue")
-		yield(get_tree().create_timer(1.3),"timeout")
+		animation_player.play("show_walkitalki")
+		yield(get_tree().create_timer(animation_player.current_animation_length),"timeout")
+		
+		answered_call = false 
+		animation_player.play("ring_walkitalki")
+		while(!answered_call):
+			yield(get_tree().create_timer(animation_player.current_animation_length),"timeout")
+			animation_player.play("ring_walkitalki")
 		is_animation_over = true
-		Show_text()
+		
+		if (is_animation_over):
+			is_animation_over = false
+			dialogue_lines = lines
+			time_between_letters = letters_duration
+			animation_player.play("show_bubble")
+			yield(get_tree().create_timer(animation_player.current_animation_length),"timeout")
+			is_animation_over = true
+			if lines.size() > 0:
+				Show_text()
+	else:
+		dialog_bus.push_back([lines, letters_duration])
 
 func End_dialogue():
 	if (is_animation_over == true):
 		is_animation_over = false
 		Hide_text()
-		animation_player.play_backwards("Dialogue")
-		yield(get_tree().create_timer(1.3),"timeout")
+		animation_player.play_backwards("show_bubble")
+		yield(get_tree().create_timer(animation_player.current_animation_length),"timeout")
+		animation_player.play_backwards("show_walkitalki")
+		yield(get_tree().create_timer(animation_player.current_animation_length),"timeout")
+		
 		is_animation_over = true
+		if dialog_bus.size() > 0:
+			var next_dialog = dialog_bus.pop_front()
+			Begin_dialog(next_dialog[0],next_dialog[1])
 
 func Show_text():
 	showing_text = true
@@ -52,22 +75,23 @@ func Instant_show_text():
 
 func _input(event):
 	if isInDialog and event.is_action_pressed("ui_accept"):
-		if showing_text == true :
-			showing_text = false
-			yield(get_tree().create_timer(0.1),"timeout")
-			Instant_show_text()
-		else:
-			actual_line += 1
-			if actual_line < dialogue_lines.size():
-				Hide_text()
+		if is_animation_over:
+			if showing_text == true :
+				showing_text = false
 				yield(get_tree().create_timer(0.1),"timeout")
-				Show_text()
+				Instant_show_text()
 			else:
-				isInDialog = false
-				actual_line=0
-				End_dialogue()
-		
-
+				actual_line += 1
+				if actual_line < dialogue_lines.size():
+					Hide_text()
+					yield(get_tree().create_timer(0.1),"timeout")
+					Show_text()
+				else:
+					isInDialog = false
+					actual_line=0
+					End_dialogue()
+		else:
+			answered_call = true
 
 func Hide_text():
 	label.text = ""

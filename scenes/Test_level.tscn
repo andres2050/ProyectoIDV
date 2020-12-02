@@ -141,10 +141,6 @@ points = PoolVector2Array( 8.566, 0, 0, 4.283, -8.566, 0, -8, 0 )
 
 [node name="Main" instance=ExtResource( 1 )]
 
-[node name="Floor" parent="." index="0"]
-scale = Vector2( 0.564405, 0.564405 )
-tile_data = PoolIntArray( -655366, 0, 0, -655365, 0, 0, -655364, 0, 0, -655363, 0, 0, -655362, 0, 0, -655361, 0, 0, -720896, 0, 0, -720895, 0, 0, -589831, 5, 0, -589830, 5, 0, -589829, 5, 0, -589828, 5, 0, -589827, 5, 0, -589826, 5, 0, -589825, 0, 0, -655360, 0, 0, -655359, 536870915, 0, -524294, 1073741827, 0, -524293, 1073741827, 0, -524292, 1073741827, 0, -524291, 5, 0, -524290, 5, 0, -524289, 0, 0, -589824, 3, 0, -458758, 0, 0, -458757, 0, 0, -458756, 0, 0, -458755, 3, 0, -458754, 5, 0, -458753, 0, 0, -524288, 3, 0, -393222, 0, 0, -393221, 0, 0, -393220, 0, 0, -393219, 3, 0, -393218, 5, 0, -393217, 0, 0, -458752, 3, 0, -327685, 0, 0, -327684, 0, 0, -327683, 3, 0, -327682, 5, 0, -327681, 0, 0, -393216, 5, 0, -393215, 1073741827, 0, -262148, 0, 0, -262147, 3, 0, -262146, 5, 0, -262145, 0, 0, -327680, 0, 0, -327679, 0, 0, -327678, 0, 0 )
-
 [node name="Collision" type="TileMap" parent="." index="1" groups=[
 "scenario_collisions",
 ]]
@@ -157,7 +153,49 @@ collision_mask = 7
 format = 1
 tile_data = PoolIntArray( -2752545, 0, 0, -2752543, 0, 0, -2752541, 0, 0, -2752539, 0, 0, -2621473, 0, 0, -2621467, 0, 0, -2555937, 0, 0, -2555931, 0, 0, -2424865, 0, 0, -2424859, 0, 0, -2293793, 0, 0, -2293791, 0, 0, -2293789, 0, 0, -2293787, 0, 0, -2162718, 0, 0, -2162716, 0, 0, -2162714, 0, 0, -2031646, 0, 0, -2031644, 0, 0, -2031642, 0, 0, -1900574, 0, 0, -1900570, 0, 0, -1900568, 0, 0, -1769502, 0, 0, -1769498, 0, 0, -1638430, 0, 0, -1638428, 0, 0, -1638426, 0, 0, 589815, 0, 0, 655351, 0, 0, 655352, 0, 0, 655353, 0, 0, 655354, 0, 0, 589829, 0, 0, 589830, 0, 0, 720887, 0, 0, 720890, 0, 0, 786423, 0, 0, 786425, 0, 0, 786426, 0, 0, 851959, 0, 0, 851961, 0, 0, 851962, 0, 0, 917496, 0, 0, 917497, 0, 0, 917498, 0, 0, 917525, 2, 0, 917529, 1, 0, 1114109, 0, 0, 1048579, 0, 0, 1179645, 0, 0, 1114115, 0, 0, 1245181, 0, 0, 1179651, 0, 0, 1179671, 3, 0, 1310717, 0, 0, 1245187, 0, 0, 1245211, 4, 0, 1376253, 0, 0, 1310723, 0, 0, 1441789, 0, 0, 1376259, 0, 0, 1507325, 0, 0, 1441795, 0, 0, 1572861, 0, 0, 1507331, 0, 0, 1638397, 0, 0, 1572867, 0, 0, 1703933, 0, 0, 1638403, 0, 0, 1703939, 0, 0 )
 
-[node name="YSort" parent="." index="5"]
+[node name="Floor" parent="." index="2"]
+scale = Vector2( 0.564405, 0.564405 )
+tile_data = PoolIntArray( -655366, 0, 0, -655365, 0, 0, -655364, 0, 0, -655363, 0, 0, -655362, 0, 0, -655361, 0, 0, -720896, 0, 0, -720895, 0, 0, -589831, 5, 0, -589830, 5, 0, -589829, 5, 0, -589828, 5, 0, -589827, 5, 0, -589826, 5, 0, -589825, 0, 0, -655360, 0, 0, -655359, 536870915, 0, -524294, 1073741827, 0, -524293, 1073741827, 0, -524292, 1073741827, 0, -524291, 5, 0, -524290, 5, 0, -524289, 0, 0, -589824, 3, 0, -458758, 0, 0, -458757, 0, 0, -458756, 0, 0, -458755, 3, 0, -458754, 5, 0, -458753, 0, 0, -524288, 3, 0, -393222, 0, 0, -393221, 0, 0, -393220, 0, 0, -393219, 3, 0, -393218, 5, 0, -393217, 0, 0, -458752, 3, 0, -327685, 0, 0, -327684, 0, 0, -327683, 3, 0, -327682, 5, 0, -327681, 0, 0, -393216, 5, 0, -393215, 1073741827, 0, -262148, 0, 0, -262147, 3, 0, -262146, 5, 0, -262145, 0, 0, -327680, 0, 0, -327679, 0, 0, -327678, 0, 0 )
+
+[node name="Event" parent="." index="6" instance=ExtResource( 13 )]
+
+[node name="EventDetector" parent="Event" index="0"]
+tile_data = PoolIntArray( 1114110, 5, 0, 1114111, 5, 0, 1048576, 5, 0, 1048577, 5, 0, 1048578, 5, 0, 1376254, 0, 0, 1376255, 0, 0, 1310720, 0, 0, 1310721, 0, 0, 1310722, 0, 0 )
+
+[node name="Spawners" parent="Event" index="1"]
+position = Vector2( -736, 368 )
+
+[node name="enemySpawner" parent="Event/Spawners" index="0" instance=ExtResource( 14 )]
+position = Vector2( 320, -176 )
+spawnOf = "ghost"
+
+[node name="Dialog_event" parent="." index="7" instance=ExtResource( 15 )]
+
+[node name="EventDetector" parent="Dialog_event" index="0"]
+tile_data = PoolIntArray( -196604, 0, 0, -131068, 0, 0, -65532, 0, 0, 4, 0, 0, 65540, 0, 0, 131076, 0, 0 )
+
+[node name="Line1" parent="Dialog_event/Dialog_lines" index="0" instance=ExtResource( 16 )]
+margin_bottom = 1.0
+text = "HOLAAAAAA!!!!"
+
+[node name="Line2" parent="Dialog_event/Dialog_lines" index="1" instance=ExtResource( 16 )]
+margin_top = 5.0
+margin_bottom = 6.0
+text = "NO SE MASTURBEN!!!!!!!!!!!"
+
+[node name="Line3" parent="Dialog_event/Dialog_lines" index="2" instance=ExtResource( 16 )]
+margin_top = 15.0
+margin_bottom = 16.0
+text = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA!!!!!"
+time_between_letters = 0.008
+
+[node name="Line4" parent="Dialog_event/Dialog_lines" index="3" instance=ExtResource( 16 )]
+margin_top = 15.0
+margin_bottom = 16.0
+text = "vuelva pronto."
+time_between_letters = 0.5
+
+[node name="YSort" parent="." index="8"]
 z_index = 1
 
 [node name="Player" parent="YSort" index="0" instance=ExtResource( 9 )]
@@ -219,45 +257,7 @@ collision_layer = 7
 position = Vector2( -32, -163 )
 pickups = [ "HealingPickup", "WeaponPickup" ]
 
-[node name="Event" parent="." index="6" instance=ExtResource( 13 )]
-
-[node name="EventDetector" parent="Event" index="0"]
-tile_data = PoolIntArray( 1114110, 5, 0, 1114111, 5, 0, 1048576, 5, 0, 1048577, 5, 0, 1048578, 5, 0, 1376254, 0, 0, 1376255, 0, 0, 1310720, 0, 0, 1310721, 0, 0, 1310722, 0, 0 )
-
-[node name="Spawners" parent="Event" index="1"]
-position = Vector2( -736, 368 )
-
-[node name="enemySpawner" parent="Event/Spawners" index="0" instance=ExtResource( 14 )]
-position = Vector2( 320, -176 )
-spawnOf = "ghost"
-
-[node name="Dialog_event" parent="." index="7" instance=ExtResource( 15 )]
-
-[node name="EventDetector" parent="Dialog_event" index="0"]
-tile_data = PoolIntArray( -196604, 0, 0, -131068, 0, 0, -65532, 0, 0, 4, 0, 0, 65540, 0, 0, 131076, 0, 0 )
-
-[node name="Line1" parent="Dialog_event/Dialog_lines" index="0" instance=ExtResource( 16 )]
-margin_bottom = 1.0
-text = "HOLAAAAAA!!!!"
-
-[node name="Line2" parent="Dialog_event/Dialog_lines" index="1" instance=ExtResource( 16 )]
-margin_top = 5.0
-margin_bottom = 6.0
-text = "NO SE MASTURBEN!!!!!!!!!!!"
-
-[node name="Line3" parent="Dialog_event/Dialog_lines" index="2" instance=ExtResource( 16 )]
-margin_top = 15.0
-margin_bottom = 16.0
-text = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA!!!!!"
-time_between_letters = 0.008
-
-[node name="Line4" parent="Dialog_event/Dialog_lines" index="3" instance=ExtResource( 16 )]
-margin_top = 15.0
-margin_bottom = 16.0
-text = "vuelva pronto."
-time_between_letters = 0.5
-
-[node name="BgmStreamPlayer" parent="." index="8"]
+[node name="BgmStreamPlayer" parent="." index="9"]
 soundtrack_name = "Ambiental_city"
 
 [editable path="Event"]
