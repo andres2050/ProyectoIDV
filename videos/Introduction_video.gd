@@ -6,11 +6,13 @@ onready var animation_player = get_node("Fading/FadingPlayer")
 onready var video_player = get_node("VideoPlayer")
 onready var label = get_node("Label")
 var canSkip = false
+var isOver = false
 
 var bgm_volume = 0.6
 var sfx_volume = 0.6
 
 func _on_VideoPlayer_finished():
+	isOver = true
 	change_scene_manually()
 
 
@@ -25,8 +27,9 @@ func change_scene_manually():
 	main_node.queue_free()
 		
 func _input(event):
-	if event.is_action_pressed("ui_accept"):
-		if canSkip:
+	if event.is_action_pressed("ui_accept") and !isOver:
+		if canSkip :
+			isOver = true
 			animation_player.play_backwards("Fading")
 			yield(get_tree().create_timer(2),"timeout")
 			_on_VideoPlayer_finished()

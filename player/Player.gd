@@ -85,7 +85,8 @@ func pickup_item(pickup):
 			for _i in range(healAmount):
 				health += 1
 				yield(get_tree().create_timer(0.03),"timeout")
-				if health == maxHealth:
+				if health >= maxHealth:
+					health = maxHealth
 					break
 
 # get velocity -------------------------------------------------

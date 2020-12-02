@@ -17,6 +17,7 @@ func _ready():
 func play_soundtrack(soundtrack,moment):
 	self.stream = load("res://sound/bgm/"+ soundtrack +".ogg")
 	play(moment)
+	volume_db = main_node.bgm_volume
 	
 func change_soundtrack(new_soundtrack):
 		
