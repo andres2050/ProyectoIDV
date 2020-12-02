@@ -16,11 +16,12 @@ func _on_VideoPlayer_finished():
 
 func change_scene_manually():
 	var next_scene = load("res://scenes/"+ scene + ".tscn").instance()
-	get_tree().get_root().add_child(next_scene)
 	var main_node = self
 	while(main_node.get_parent() != get_tree().get_root()):
-		print(main_node.get_parent(), get_tree().get_root())
 		main_node = main_node.get_parent()
+	next_scene.bgm_volume = main_node.bgm_volume
+	next_scene.sfx_volume = main_node.sfx_volume
+	get_tree().get_root().add_child(next_scene)
 	main_node.queue_free()
 		
 func _input(event):

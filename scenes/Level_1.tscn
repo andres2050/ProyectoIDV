@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://prefabs/Level_prefab/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://prefabs/SceneObjects/obstacles/Box.tscn" type="PackedScene" id=6]
 [ext_resource path="res://prefabs/SceneObjects/test_objects/wall_plane_front.tscn" type="PackedScene" id=7]
 [ext_resource path="res://prefabs/SceneObjects/test_objects/wall_plane_back.tscn" type="PackedScene" id=8]
+[ext_resource path="res://prefabs/SceneObjects/obstacles/Open_bin.tscn" type="PackedScene" id=9]
 
 [node name="Main" instance=ExtResource( 1 )]
 
@@ -142,6 +143,10 @@ position = Vector2( -936, -499 )
 
 [node name="House_square7" parent="YSort/alley_west" index="13" instance=ExtResource( 4 )]
 position = Vector2( -752, -403 )
+
+[node name="Open_bin" parent="YSort/alley_west" index="14" instance=ExtResource( 9 )]
+position = Vector2( -912, -707 )
+scale = Vector2( -1, 1 )
 
 [node name="near_warehouse" type="YSort" parent="YSort" index="4"]
 position = Vector2( -312, -1059 )
