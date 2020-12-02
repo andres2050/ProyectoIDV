@@ -61,7 +61,6 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="Defeat"]
-visible = false
 margin_right = 1360.0
 margin_bottom = 768.0
 color = Color( 0.117647, 0.117647, 0.117647, 0 )

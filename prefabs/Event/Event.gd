@@ -17,7 +17,8 @@ var bgm_player
 var scenario
 var tilemap
 func _ready():
-	spawners = get_tree().get_nodes_in_group("spawner")
+	yield(get_tree().create_timer(0.1),"timeout")
+	spawners = get_node("Spawners").get_children()
 	var aux = get_tree().get_nodes_in_group("bgm_player")
 	if(aux.size() > 0):
 		bgm_player = aux[0]
@@ -25,11 +26,10 @@ func _ready():
 	if (aux.size() > 0):
 		scenario = aux[0]
 	tilemap = get_node("EventDetector")
-	
+	tilemap.visible = false
 	obstacles = tilemap.get_used_cells_by_id(1)
 	leftDoors = tilemap.get_used_cells_by_id(3)
 	rightDoors = tilemap.get_used_cells_by_id(5)
-
 
 func Start_Event():
 	if canSpawn: 

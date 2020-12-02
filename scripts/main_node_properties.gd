@@ -12,6 +12,10 @@ func _ready():
 	sfx_players = get_tree().get_nodes_in_group("sfx_player")
 	change_bgm_volume(bgm_volume)
 	change_sfx_volume(sfx_volume)
+	yield(get_tree().create_timer(0.01),"timeout")
+	var scenario = get_tree().get_nodes_in_group("Scenario")
+	if scenario.size() > 0:
+		scenario[0].visible = true
 
 func change_bgm_volume(new_volume):
 	bgm_volume = new_volume
