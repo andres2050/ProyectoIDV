@@ -9,15 +9,17 @@ var spawnCount = 0
 var spawnRate = 1
 
 var event
-var path_to_event = "/root/Main/"
+var path_to_event = "/root/"
 var scenario
-
+var main_node = self
 func _ready():
+	while(main_node.get_parent() != get_tree().get_root()):
+		main_node = main_node.get_parent()
+		
 	if (get_tree().get_nodes_in_group("Scenario").size() >0):
 		scenario = get_tree().get_nodes_in_group("Scenario")[0]
 	event = get_node("../..")
-	path_to_event += event.get_name()
-	
+	path_to_event += (main_node.get_name() + "/" + event.get_name())
 	enemy = load("res://enemies/" + spawnOf + ".tscn")
 #	match spawnOf:
 #		"ghost":

@@ -1,11 +1,17 @@
 extends Node2D
 
 onready var labels = get_node("Dialog_lines").get_children()
-onready var lines = []
-onready var letters_duration = []
-onready var dialog = get_node("/root/Main/ScreenCanvas/Dialog")
-
+var lines = []
+var letters_duration = []
+onready var dialog
 var canStart = true
+
+var main_node = self
+func _ready():
+	while(main_node.get_parent() != get_tree().get_root()):
+		main_node = main_node.get_parent()
+	dialog = main_node.get_node("ScreenCanvas/Dialog")
+
 func Start_Event():
 	if canStart == true:
 		canStart = false
