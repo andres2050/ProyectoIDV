@@ -41,7 +41,7 @@ var playerPosition
 var enemyPosition
 var canMove = true
 var direction
-var attackDistance = 200
+export var attackDistance = 200
 var distance
 func _physics_process(_delta):
 	if canMove:
@@ -107,6 +107,8 @@ func damage_player():
 func die():	
 	if canDie:
 		canDie = false
+		red = 0.5
+		green = 0.5
 		animation_player.play("Die")
 		yield(get_tree().create_timer(animation_player.current_animation_length),"timeout")
 		event.enemyCount -= 1
