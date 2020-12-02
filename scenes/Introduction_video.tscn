@@ -22,7 +22,7 @@ Label/styles/normal = null
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource( 3 )
-scene = "Test_level"
+scene = "Level_1"
 
 [node name="VideoPlayer" type="VideoPlayer" parent="."]
 anchor_right = 1.0

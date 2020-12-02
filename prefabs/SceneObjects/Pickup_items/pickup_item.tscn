@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Test_sprites/weapon.png" type="Texture" id=1]
 [ext_resource path="res://prefabs/SceneObjects/Pickup_items/pickup.gd" type="Script" id=2]
-
+[ext_resource path="res://prefabs/SceneObjects/Pickup_items/pickup_drop.gd" type="Script" id=3]
 
 [node name="PickupItem" type="Sprite"]
 scale = Vector2( 5.06869, 5.06869 )
+z_index = 1
 texture = ExtResource( 1 )
+script = ExtResource( 3 )
 
 [node name="pickupDetector" type="Area2D" parent="." groups=[
 "pickup",

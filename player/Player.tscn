@@ -16,8 +16,6 @@
 [ext_resource path="res://Test_sprites/rightUp.png" type="Texture" id=14]
 [ext_resource path="res://Test_sprites/leftUp.png" type="Texture" id=15]
 
-
-
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 5 ) ],
@@ -40,6 +38,16 @@ animations = [ {
 "name": "rightUp",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "leftDown",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "rightDown",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 15 ) ],
 "loop": true,
 "name": "leftUp",
@@ -48,16 +56,6 @@ animations = [ {
 "frames": [ ExtResource( 10 ) ],
 "loop": true,
 "name": "down",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 8 ) ],
-"loop": true,
-"name": "rightDown",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 9 ) ],
-"loop": true,
-"name": "leftDown",
 "speed": 5.0
 } ]
 
