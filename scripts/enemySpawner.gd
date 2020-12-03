@@ -36,7 +36,7 @@ func _process(_delta):
 		spawnEnemy()
 		yield(get_tree().create_timer(spawnRate), "timeout")
 		canSpawn = true
-	if (event.enemyCount == 0 and event.canSpawn == false):
+	if (event.enemyCount == 0 and event.canStart == false):
 		event.EndEvent()
 
 func spawnEnemy():

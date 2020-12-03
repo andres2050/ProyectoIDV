@@ -1,6 +1,6 @@
 extends Node2D
 
-export var canSpawn = true 
+export var canStart = true 
 export var spawnTime = 1.0
 export(String, "","Start_menu","Ambiental_city", "Combat") var soundtrack
 
@@ -16,8 +16,13 @@ var event_ended = false
 var bgm_player
 var scenario
 var tilemap
+
+var main_node = self
 func _ready():
 	yield(get_tree().create_timer(0.1),"timeout")
+	
+	while (main_node.get_parent() != get_tree().get_root()):
+		main_node = main_node.get_parent()
 	spawners = get_node("Spawners").get_children()
 	var aux = get_tree().get_nodes_in_group("bgm_player")
 	if(aux.size() > 0):
@@ -32,8 +37,8 @@ func _ready():
 	rightDoors = tilemap.get_used_cells_by_id(5)
 
 func Start_Event():
-	if canSpawn: 
-		canSpawn = false
+	if canStart: 
+		canStart = false
 		bgm_player.change_soundtrack(soundtrack)
 		for i in range(spawners.size()):
 			spawners[i].canSpawn = true
@@ -55,6 +60,7 @@ func EndEvent():
 		bgm_player.change_soundtrack("Ambiental_city")
 		Open_doors()
 		Clear_obstacles()
+		main_node.refresh_states()
 		
 func Clear_obstacles():
 	for i in range(obstacles.size()):

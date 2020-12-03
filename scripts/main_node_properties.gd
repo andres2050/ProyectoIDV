@@ -3,6 +3,8 @@ extends Node
 var bgm_volume = 0.6
 var sfx_volume = 0.6
 
+var events_states = []
+var dialog_states = []
 
 var bgm_players = []
 var sfx_players = []
@@ -16,6 +18,13 @@ func _ready():
 	var scenario = get_tree().get_nodes_in_group("Scenario")
 	if scenario.size() > 0:
 		scenario[0].visible = true
+	refresh_events()
+
+func refresh_events():
+	get_node("Scripting").refresh_events()
+
+func refresh_states():
+	get_node("Scripting").refresh_states()
 
 func change_bgm_volume(new_volume):
 	bgm_volume = new_volume
