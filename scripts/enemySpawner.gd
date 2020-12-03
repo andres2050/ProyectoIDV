@@ -19,7 +19,7 @@ func _ready():
 	if (get_tree().get_nodes_in_group("Scenario").size() >0):
 		scenario = get_tree().get_nodes_in_group("Scenario")[0]
 	event = get_node("../..")
-	path_to_event += (main_node.get_name() + "/" + event.get_name())
+	path_to_event += (main_node.get_name() + "/Events/" + event.get_name())
 	enemy = load("res://enemies/" + spawnOf + ".tscn")
 #	match spawnOf:
 #		"ghost":

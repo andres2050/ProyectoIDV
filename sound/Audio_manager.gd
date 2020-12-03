@@ -17,16 +17,16 @@ func _ready():
 func play_soundtrack(soundtrack,moment):
 	self.stream = load("res://sound/bgm/"+ soundtrack +".ogg")
 	play(moment)
-	volume_db = main_node.bgm_volume
+	main_node.change_bgm_volume(main_node.bgm_volume)
 	
 func change_soundtrack(new_soundtrack):
 		
 		while(volume_db > -30):
 			volume_db -= 2
 			yield(get_tree().create_timer(0.05),"timeout")
-		
+			
 		if new_soundtrack != soundtrack_name:
 			resume_moment = get_playback_position()
-			play_soundtrack(new_soundtrack,0)
+			play_soundtrack(new_soundtrack,0.1)
 		else:
 			play_soundtrack(new_soundtrack, resume_moment)

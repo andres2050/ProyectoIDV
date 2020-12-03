@@ -4,7 +4,7 @@
 [ext_resource path="res://prefabs/Event/Dialog_event.gd" type="Script" id=2]
 
 [node name="Dialog_event" type="Node2D" groups=[
-"Event",
+"Dialog_Event",
 ]]
 script = ExtResource( 2 )
 

@@ -1,6 +1,8 @@
 extends CanvasLayer
 
 onready var animation_player = get_node("reference/AnimationPlayer")
+onready var spacebar_animation = get_node("reference/Space_bar/AnimationPlayer")
+onready var spacebar = get_node("reference/Space_bar")
 onready var label = get_node("reference/walkitalki/bubble/Label")
 onready var audio_player = get_node("AudioStreamPlayer")
 var is_animation_over = true
@@ -13,6 +15,8 @@ var showing_text = false
 var answered_call = false 
 
 var dialog_bus = []
+func _ready():
+	spacebar_animation.stop(true)
 
 func Begin_dialog(lines, letters_duration):
 	if !isInDialog:
@@ -23,10 +27,15 @@ func Begin_dialog(lines, letters_duration):
 		
 		answered_call = false 
 		animation_player.play("ring_walkitalki")
+		spacebar_animation.play("show_spacebar")
+		spacebar_animation.queue("press_spacebar")
 		while(!answered_call):
 			yield(get_tree().create_timer(animation_player.current_animation_length),"timeout")
 			animation_player.play("ring_walkitalki")
 		is_animation_over = true
+		spacebar_animation.play_backwards("show_spacebar")
+		yield(get_tree().create_timer(animation_player.current_animation_length),"timeout")
+		spacebar_animation.stop(true)
 		
 		if (is_animation_over):
 			is_animation_over = false

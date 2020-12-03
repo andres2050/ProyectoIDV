@@ -38,6 +38,11 @@ animations = [ {
 "name": "rightUp",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "leftUp",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 9 ) ],
 "loop": true,
 "name": "leftDown",
@@ -46,11 +51,6 @@ animations = [ {
 "frames": [ ExtResource( 8 ) ],
 "loop": true,
 "name": "rightDown",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 15 ) ],
-"loop": true,
-"name": "leftUp",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 10 ) ],
@@ -88,7 +88,8 @@ polygon = PoolVector2Array( 0, -12, -17, -9.017, -27.7758, 0, -21, 9, 0, 14.3716
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2( 0.998784, 1 )
 current = true
-limit_left = -1540
+limit_left = -1400
+limit_bottom = 1040
 limit_smoothed = true
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
