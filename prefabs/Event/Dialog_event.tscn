@@ -5,6 +5,7 @@
 
 [node name="Dialog_event" type="Node2D" groups=[
 "Dialog_Event",
+"Event",
 ]]
 script = ExtResource( 2 )
 

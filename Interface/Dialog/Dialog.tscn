@@ -9,6 +9,7 @@
 [ext_resource path="res://Interface/Animations/ring_walkitalki.tres" type="Animation" id=7]
 [ext_resource path="res://Interface/Hud/Keyboard_keys/spacebar.png" type="Texture" id=8]
 [ext_resource path="res://Color_test.gd" type="Script" id=9]
+[ext_resource path="res://Interface/Animations/show_spacebar.tres" type="Animation" id=10]
 
 [sub_resource type="Animation" id=1]
 tracks/0/type = "bezier"
@@ -36,22 +37,6 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ 0.5, 1.0 ]
-}
-
-[sub_resource type="Animation" id=2]
-resource_name = "show_spacebar"
-length = 0.6
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.5, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( -0.00207599, -0.0096786 ), Vector2( 0.408377, 1.14865 ), Vector2( 0.716216, 0.716216 ), Vector2( 0.82926, 0.588662 ), Vector2( 0.716216, 0.716216 ) ]
 }
 
 [node name="Dialog" type="CanvasLayer"]
@@ -91,7 +76,7 @@ alfa = 0.5
 [node name="AnimationPlayer" type="AnimationPlayer" parent="reference/Space_bar"]
 autoplay = "press_spacebar"
 anims/press_spacebar = SubResource( 3 )
-anims/show_spacebar = SubResource( 2 )
+anims/show_spacebar = ExtResource( 10 )
 
 [node name="walkitalki" type="Sprite" parent="reference"]
 position = Vector2( -90.068, 161.912 )

@@ -19,6 +19,8 @@ func _ready():
 	spacebar_animation.stop(true)
 
 func Begin_dialog(lines, letters_duration):
+	dialogue_lines = lines
+	time_between_letters = letters_duration
 	if !isInDialog:
 		isInDialog = true
 		is_animation_over = false
@@ -32,20 +34,15 @@ func Begin_dialog(lines, letters_duration):
 		while(!answered_call):
 			yield(get_tree().create_timer(animation_player.current_animation_length),"timeout")
 			animation_player.play("ring_walkitalki")
-		is_animation_over = true
 		spacebar_animation.play_backwards("show_spacebar")
 		yield(get_tree().create_timer(animation_player.current_animation_length),"timeout")
 		spacebar_animation.stop(true)
 		
-		if (is_animation_over):
-			is_animation_over = false
-			dialogue_lines = lines
-			time_between_letters = letters_duration
-			animation_player.play("show_bubble")
-			yield(get_tree().create_timer(animation_player.current_animation_length),"timeout")
-			is_animation_over = true
-			if lines.size() > 0:
-				Show_text()
+		animation_player.play("show_bubble")
+		yield(get_tree().create_timer(animation_player.current_animation_length),"timeout")
+		is_animation_over = true
+		if lines.size() > 0:
+			Show_text()
 	else:
 		dialog_bus.push_back([lines, letters_duration])
 

@@ -13,3 +13,4 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+time_between_letters = 0.01
