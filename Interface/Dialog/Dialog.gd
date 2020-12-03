@@ -19,11 +19,11 @@ func _ready():
 	spacebar_animation.stop(true)
 
 func Begin_dialog(lines, letters_duration):
-	dialogue_lines = lines
-	time_between_letters = letters_duration
 	if !isInDialog:
 		isInDialog = true
 		is_animation_over = false
+		dialogue_lines = lines
+		time_between_letters = letters_duration
 		animation_player.play("show_walkitalki")
 		yield(get_tree().create_timer(animation_player.current_animation_length),"timeout")
 		

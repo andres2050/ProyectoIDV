@@ -23,7 +23,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 )
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "press_spacebar"
 loop = true
 tracks/0/type = "value"
@@ -75,7 +75,7 @@ alfa = 0.5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="reference/Space_bar"]
 autoplay = "press_spacebar"
-anims/press_spacebar = SubResource( 3 )
+anims/press_spacebar = SubResource( 2 )
 anims/show_spacebar = ExtResource( 10 )
 
 [node name="walkitalki" type="Sprite" parent="reference"]
