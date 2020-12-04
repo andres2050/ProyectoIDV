@@ -13,7 +13,6 @@ func _ready():
 	dialog_events = main_node.get_node("Dialog_Events").get_children()
 	events_states = get_parent().events_states
 	dialog_states = get_parent().dialog_states
-	
 	refresh_events()
 	refresh_states()
 			

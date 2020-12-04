@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Test_sprites/b.png" type="Texture" id=1]
+[ext_resource path="res://Test_sprites/a.png" type="Texture" id=2]
+[ext_resource path="res://Test_sprites/d.png" type="Texture" id=3]
+[ext_resource path="res://Test_sprites/c.png" type="Texture" id=4]
+[ext_resource path="res://enemies/wave_enemy.gd" type="Script" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="KinematicBody2D" type="KinematicBody2D" groups=[
+"enemy",
+]]
+position = Vector2( -1, 0 )
+collision_layer = 2
+collision_mask = 2
+collision/safe_margin = 1.0
+script = ExtResource( 5 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -0.66217, -16.6865 )
+scale = Vector2( 0.0698612, 0.0698612 )
+frames = SubResource( 1 )
+frame = 1
+playing = true
+__meta__ = {
+"_editor_description_": ""
+}

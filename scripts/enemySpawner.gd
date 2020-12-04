@@ -1,6 +1,6 @@
 extends Node2D
 
-export (String,"", "ghost", "boss", "ghost_fast") var spawnOf
+export (String,"", "ghost", "boss", "ghost_fast", "wave_enemy") var spawnOf
 var enemy
 
 export var maxEnemies = 10
@@ -48,4 +48,6 @@ func spawnEnemy():
 	enemy_instance.position = get_global_position()
 	enemy_instance.path_to_event = path_to_event
 	
+	if spawnOf == "wave_enemy" :
+		enemy_instance.target = get_node("../../entrance").get_global_position()
 	scenario.add_child(enemy_instance)

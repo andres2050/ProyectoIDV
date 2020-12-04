@@ -8,8 +8,9 @@
 [ext_resource path="res://Interface/Animations/show_bubble.tres" type="Animation" id=6]
 [ext_resource path="res://Interface/Animations/ring_walkitalki.tres" type="Animation" id=7]
 [ext_resource path="res://Interface/Hud/Keyboard_keys/spacebar.png" type="Texture" id=8]
-[ext_resource path="res://Color_test.gd" type="Script" id=9]
+[ext_resource path="res://scripts/Color_test.gd" type="Script" id=9]
 [ext_resource path="res://Interface/Animations/show_spacebar.tres" type="Animation" id=10]
+
 
 [sub_resource type="Animation" id=1]
 tracks/0/type = "bezier"

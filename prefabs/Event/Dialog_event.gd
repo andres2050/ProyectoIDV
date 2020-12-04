@@ -18,4 +18,4 @@ func Start_Event():
 		for i in range(labels.size()):
 			lines.push_back(labels[i].text)
 			letters_duration.push_back(labels[i].time_between_letters)
-		dialog.Begin_dialog(lines,letters_duration)
+		dialog.Begin_dialog(lines,letters_duration,"")

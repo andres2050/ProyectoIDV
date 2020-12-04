@@ -9,6 +9,7 @@ var dialog_states = []
 var bgm_players = []
 var sfx_players = []
 
+var scripting
 func _ready():
 	bgm_players = get_tree().get_nodes_in_group("bgm_player")
 	sfx_players = get_tree().get_nodes_in_group("sfx_player")
@@ -18,7 +19,6 @@ func _ready():
 	var scenario = get_tree().get_nodes_in_group("Scenario")
 	if scenario.size() > 0:
 		scenario[0].visible = true
-	refresh_events()
 
 func refresh_events():
 	get_node("Scripting").refresh_events()

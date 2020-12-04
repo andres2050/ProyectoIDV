@@ -9,6 +9,7 @@ var is_animation_over = true
 
 var dialogue_lines = []
 var time_between_letters = []
+var path_to_event
 var actual_line = 0
 var isInDialog = false
 var showing_text = false
@@ -18,12 +19,13 @@ var dialog_bus = []
 func _ready():
 	spacebar_animation.stop(true)
 
-func Begin_dialog(lines, letters_duration):
+func Begin_dialog(lines, letters_duration, event_path):
 	if !isInDialog:
 		isInDialog = true
 		is_animation_over = false
 		dialogue_lines = lines
 		time_between_letters = letters_duration
+		path_to_event = event_path
 		animation_player.play("show_walkitalki")
 		yield(get_tree().create_timer(animation_player.current_animation_length),"timeout")
 		
@@ -44,7 +46,7 @@ func Begin_dialog(lines, letters_duration):
 		if lines.size() > 0:
 			Show_text()
 	else:
-		dialog_bus.push_back([lines, letters_duration])
+		dialog_bus.push_back([lines, letters_duration,event_path])
 
 func End_dialogue():
 	if (is_animation_over == true):
@@ -56,9 +58,12 @@ func End_dialogue():
 		yield(get_tree().create_timer(animation_player.current_animation_length),"timeout")
 		
 		is_animation_over = true
+		if path_to_event != "":
+			get_node(path_to_event).dialog_ended()
 		if dialog_bus.size() > 0:
 			var next_dialog = dialog_bus.pop_front()
-			Begin_dialog(next_dialog[0],next_dialog[1])
+			Begin_dialog(next_dialog[0],next_dialog[1],next_dialog[2])
+		
 
 func Show_text():
 	showing_text = true

@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Interface/Animations/EnterBuilding.tres" type="Animation" id=1]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Fading"
@@ -47,7 +49,7 @@ tracks/3/keys = {
 [node name="Fading" type="ColorRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 0 )
+color = Color( 0.211765, 0, 0, 0.27451 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -55,4 +57,5 @@ __meta__ = {
 [node name="FadingPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Fading"
 method_call_mode = 1
+anims/EnterBuilding = ExtResource( 1 )
 anims/Fading = SubResource( 1 )

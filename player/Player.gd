@@ -11,10 +11,13 @@ var tangent_2 = 2.41421
 export var maxHealth = 100
 onready var health = maxHealth
 export var movementSpeed = 400
+export(float,0,1) var healAmount = 0.7
 var movementDirection = Vector2()
 var playerPosition = Vector2(0,0)
 var initPosition = Vector2(0,0)
 var velocity
+var canMove = true
+var healCharges = 1
 
 func _process(_delta):
 	# rotation start -------------------------------------------------------------------------------
@@ -53,41 +56,49 @@ func _process(_delta):
 	$AnimatedSprite.animation = direction
 	#-----------------------------------------------------------------------------------------------
 	#playerMovement
-	movementDirection = Vector2()
-	
-	if Input.is_action_pressed("ui_left"):
-		movementDirection += Vector2(-1,0)
-	if Input.is_action_pressed("ui_right"):
-		movementDirection += Vector2(1,0)
-	if Input.is_action_pressed("ui_up"):
-		movementDirection += Vector2(0,-1)
-	if Input.is_action_pressed("ui_down"):
-		movementDirection += Vector2(0,1)
-
-	
+	if canMove:
+		movementDirection = Vector2()
+		if Input.is_action_pressed("ui_left"):
+			movementDirection += Vector2(-1,0)
+		if Input.is_action_pressed("ui_right"):
+			movementDirection += Vector2(1,0)
+		if Input.is_action_pressed("ui_up"):
+			movementDirection += Vector2(0,-1)
+		if Input.is_action_pressed("ui_down"):
+			movementDirection += Vector2(0,1)
+	#heal
+		if Input.is_action_just_pressed("heal") and healCharges > 0:
+			heal()
+			
+func heal():
+	healCharges -= 1
+	for _i in range(healAmount*maxHealth):
+		health += 1
+		yield(get_tree().create_timer(0.03),"timeout")
+		if health >= maxHealth:
+			health = maxHealth
+			break
+			
+			
 func _physics_process(_delta):
 	
 	if movementDirection.length() >= 0:
 		movementDirection = movementDirection.normalized()  * movementSpeed
-		movementDirection.y = movementDirection.y * 0.5
-
-		movementDirection = move_and_slide(movementDirection)
+		var move = Vector2(movementDirection.x , movementDirection.y * 0.5)
+		move = move_and_slide(move)
 		
 func damage_health(damage):
 	health=health-damage
 
 func pickup_item(pickup):
-	var healAmount = maxHealth*2/3
 	match pickup:
 		"":
 			pass
 		"heal":
-			for _i in range(healAmount):
-				health += 1
-				yield(get_tree().create_timer(0.03),"timeout")
-				if health >= maxHealth:
-					health = maxHealth
-					break
+			if healCharges < 3:
+				healCharges += 1
+			else:
+				heal()
 
 # get velocity -------------------------------------------------
 #		velocity = playerPosition - initPosition
