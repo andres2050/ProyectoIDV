@@ -9,6 +9,9 @@ var dialog_states = []
 var bgm_players = []
 var sfx_players = []
 
+var chests_states = []
+var player_stats = [false,1]
+
 var scripting
 func _ready():
 	bgm_players = get_tree().get_nodes_in_group("bgm_player")

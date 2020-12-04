@@ -18,6 +18,8 @@ var initPosition = Vector2(0,0)
 var velocity
 var canMove = true
 var healCharges = 1
+var dash_distance = 1300
+var canDash = false
 
 func _process(_delta):
 	# rotation start -------------------------------------------------------------------------------
@@ -67,17 +69,35 @@ func _process(_delta):
 		if Input.is_action_pressed("ui_down"):
 			movementDirection += Vector2(0,1)
 	#heal
+		if Input.is_action_just_pressed("dash") and canDash:
+			canMove = false
+			canDash = false
+			movementDirection = Vector2()
+			var xDirection = xDistance
+			var yDirection = -yDistance
+			var move = Vector2()
+			var t = 0
+			while(t < 1):
+				move = Vector2(xDirection,yDirection).normalized() * (dash_distance)*sqrt(-t+1)
+				move.y *= 0.5
+				move = move_and_slide(move)
+				t += 0.04
+				yield(get_tree().create_timer(0.01),"timeout")
+			canMove = true
+			yield(get_tree().create_timer(1),"timeout")
+			canDash = true
 		if Input.is_action_just_pressed("heal") and healCharges > 0:
 			heal()
 			
 func heal():
-	healCharges -= 1
-	for _i in range(healAmount*maxHealth):
-		health += 1
-		yield(get_tree().create_timer(0.03),"timeout")
-		if health >= maxHealth:
-			health = maxHealth
-			break
+	if health < maxHealth:
+		healCharges -= 1
+		for _i in range(healAmount*maxHealth):
+			health += 1
+			yield(get_tree().create_timer(0.03),"timeout")
+			if health >= maxHealth:
+				health = maxHealth
+				break
 			
 			
 func _physics_process(_delta):
@@ -99,6 +119,17 @@ func pickup_item(pickup):
 				healCharges += 1
 			else:
 				heal()
+		"weapon":
+			unlock_ability()
+			
+func unlock_ability():
+	var weapon = get_node("Weapon")
+	weapon.interface.show_next_ability()
+	if weapon.weapon_level < 4:
+		weapon.upgrade_weapon()
+	else:
+		canDash = true
+	get_node("../../").refresh_states()
 
 # get velocity -------------------------------------------------
 #		velocity = playerPosition - initPosition

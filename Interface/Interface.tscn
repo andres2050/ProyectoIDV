@@ -1,12 +1,45 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Interface/healthBar/HealthBar.gd" type="Script" id=1]
 [ext_resource path="res://Interface/healthBar/bg.png" type="Texture" id=2]
 [ext_resource path="res://Interface/healthBar/fill.png" type="Texture" id=3]
+[ext_resource path="res://Interface/healthBar/bg_3.png" type="Texture" id=4]
+[ext_resource path="res://Interface/healthBar/fill_3.png" type="Texture" id=5]
+[ext_resource path="res://Interface/Hud/Keyboard_keys/q.png" type="Texture" id=6]
+[ext_resource path="res://Interface/Hud/Keyboard_keys/2.png" type="Texture" id=7]
+[ext_resource path="res://Interface/Hud/Keyboard_keys/4.png" type="Texture" id=8]
+[ext_resource path="res://Interface/Hud/Keyboard_keys/1.png" type="Texture" id=9]
+[ext_resource path="res://Interface/Hud/Keyboard_keys/3.png" type="Texture" id=10]
+[ext_resource path="res://Interface/Hud/Keyboard_keys/mouse2.png" type="Texture" id=11]
+[ext_resource path="res://Interface/Hud/Keyboard_keys/mouse.png" type="Texture" id=12]
+
+[sub_resource type="Animation" id=1]
+resource_name = "needs_healing"
+length = 0.3
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 15, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -15, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 )
+}
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 12 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="Interface" type="Control"]
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -16,12 +49,78 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -198.0
+margin_left = -195.003
 margin_top = -53.0
-margin_right = 198.0
+margin_right = 200.997
 texture_under = ExtResource( 2 )
 texture_progress = ExtResource( 3 )
-script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="HealCharges" type="TextureProgress" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -590.888
+margin_top = -53.0
+margin_right = -396.888
+max_value = 3.0
+value = 1.0
+texture_over = ExtResource( 4 )
+texture_progress = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="HealCharges"]
+position = Vector2( -28.9612, 20.4916 )
+rotation = 0.261799
+scale = Vector2( 0.817773, 0.817773 )
+texture = ExtResource( 6 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HealCharges/Sprite"]
+anims/needs_healing = SubResource( 1 )
+
+[node name="ReferenceRect" type="ReferenceRect" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -678.561
+margin_top = -724.806
+margin_right = -674.561
+margin_bottom = -720.806
+border_color = Color( 1, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Node2D" type="Node2D" parent="ReferenceRect"]
+position = Vector2( -1.88773, -30.204 )
+scale = Vector2( 0.726681, 0.726681 )
+
+[node name="1" type="Sprite" parent="ReferenceRect/Node2D"]
+position = Vector2( 62.508, 50 )
+texture = ExtResource( 9 )
+
+[node name="2" type="Sprite" parent="ReferenceRect/Node2D"]
+position = Vector2( 151.57, 50 )
+texture = ExtResource( 7 )
+
+[node name="3" type="Sprite" parent="ReferenceRect/Node2D"]
+position = Vector2( 241.658, 50 )
+texture = ExtResource( 10 )
+
+[node name="4" type="Sprite" parent="ReferenceRect/Node2D"]
+position = Vector2( 332.435, 50 )
+texture = ExtResource( 8 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ReferenceRect/Node2D"]
+visible = false
+position = Vector2( 422.144, 58.4757 )
+frames = SubResource( 2 )
+frame = 1
+speed_scale = 0.5
+playing = true

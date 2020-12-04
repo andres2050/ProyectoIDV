@@ -23,11 +23,11 @@ func _on_Hitbox_area_entered(area):
 		enemy.damage_health(bulletDamage, knockbackForce)
 		if !canPierce:
 			get_parent().queue_free()
-		canHit = true
-		canPierce = false
+		else:
+			canHit = true
 	
 
 
 func _on_Hitbox_body_entered(body):
-	if !body.is_in_group("player"):
+	if !body.is_in_group("player") and !body.is_in_group("enemy"):
 		get_parent().queue_free()

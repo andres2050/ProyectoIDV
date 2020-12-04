@@ -15,6 +15,7 @@ const angleOpening = PI/24
 
 onready var scenario =  get_tree().get_nodes_in_group("Scenario")[0]
 onready var player = get_parent()
+onready var interface = get_node("../../../ScreenCanvas/Interface")
 
 export var yOffSet= 10
 export var radius = 30
@@ -22,6 +23,7 @@ export var radius = 30
 var x = 0
 var y = 0
 
+var weapon_level = 1
 func _process(_delta):
 	
 	if Input.is_action_pressed("fire"):
@@ -34,18 +36,24 @@ func _process(_delta):
 					superFastShot()
 				3:
 					multiShot()
-				
+				4:
+					piercingShoot()
 				
 	if(Input.is_action_pressed("shot1")):
 		shootMode = 1
-	elif(Input.is_action_pressed("shot2")):
+		interface.update_abilities(shootMode)
+	elif(Input.is_action_pressed("shot2") and weapon_level >= 2):
 		shootMode = 2
-	elif(Input.is_action_pressed("shot3")):
+		interface.update_abilities(shootMode)
+	elif(Input.is_action_pressed("shot3") and weapon_level >= 3):
 		shootMode = 3
-		
-		
-		
+		interface.update_abilities(shootMode)
+	elif(Input.is_action_pressed("shot4") and weapon_level >= 4):
+		shootMode = 4
+		interface.update_abilities(shootMode)
 
+func upgrade_weapon():
+	weapon_level +=1
 
 func _physics_process(_delta):
 	
@@ -64,10 +72,10 @@ func _physics_process(_delta):
 #shooting modes -----------------------------------------------------------------------------------
 func normalShot():
 	var bulletSpeed = default_bulletSpeed * 1000
-	var fireCooldown = default_fireCooldown* 0.3
-	var bulletDamage = default_bulletDamage * 7.5
+	var fireCooldown = default_fireCooldown* 0.2
+	var bulletDamage = default_bulletDamage * 6
 	var direction = Vector2(x,y)
-	var knockbackForce = 10
+	var knockbackForce = 7
 	
 	instantiateBullet(bulletDamage, bulletSpeed, direction, !canPierce, knockbackForce)
 
@@ -78,11 +86,11 @@ func superFastShot():
 	var bulletSpeed = default_bulletSpeed * 1000
 	var fireCooldown = default_fireCooldown * 0.01
 	var bulletDamage = default_bulletDamage * 0.2
-	var knockbackForce = 1.5
+	var knockbackForce = 1.7
 	
 	var direction = Vector2(x,y)	
 	
-	instantiateBullet(bulletDamage, bulletSpeed, direction, canPierce, knockbackForce)
+	instantiateBullet(bulletDamage, bulletSpeed, direction, !canPierce, knockbackForce)
 
 	yield(get_tree().create_timer(fireCooldown), "timeout")
 	canFire = true
@@ -90,9 +98,9 @@ func superFastShot():
 func multiShot():
 	
 	var bulletSpeed = default_bulletSpeed * 1000
-	var fireCooldown = default_fireCooldown* 0.8
+	var fireCooldown = default_fireCooldown* 0.6
 	var bulletDamage = default_bulletDamage * 4.5
-	var knockbackForce = 3.5
+	var knockbackForce = 5
 	var direction = Vector2(x,y)
 	var angle
 	
@@ -120,7 +128,16 @@ func multiShot():
 	canFire = true
 
 func piercingShoot():
-	print("piercingShoot")
+	var bulletSpeed = default_bulletSpeed * 1000
+	var fireCooldown = default_fireCooldown* 0.8
+	var bulletDamage = default_bulletDamage * 19
+	var direction = Vector2(x,y)
+	var knockbackForce = 40
+	
+	instantiateBullet(bulletDamage, bulletSpeed, direction, canPierce, knockbackForce)
+
+	yield(get_tree().create_timer(fireCooldown), "timeout")
+	canFire = true
 	
 func instantiateBullet(bulletDamage, bulletSpeed, direction, canPierce, knockbackForce):
 	bullet_instance = bullet.instance()

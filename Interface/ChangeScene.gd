@@ -19,6 +19,10 @@ func change_scene_manually():
 		main_node = main_node.get_parent()
 	next_scene.bgm_volume = main_node.bgm_volume
 	next_scene.sfx_volume = main_node.sfx_volume
+	next_scene.events_states = main_node.events_states
+	next_scene.dialog_states = main_node.dialog_states
+	next_scene.player_stats = main_node.player_stats
+	
 	get_tree().get_root().add_child(next_scene)
 	main_node.queue_free()
 		

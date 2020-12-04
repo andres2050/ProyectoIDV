@@ -60,6 +60,7 @@ func End_dialogue():
 		is_animation_over = true
 		if path_to_event != "":
 			get_node(path_to_event).dialog_ended()
+		isInDialog = false
 		if dialog_bus.size() > 0:
 			var next_dialog = dialog_bus.pop_front()
 			Begin_dialog(next_dialog[0],next_dialog[1],next_dialog[2])
@@ -98,7 +99,6 @@ func _input(event):
 					yield(get_tree().create_timer(0.1),"timeout")
 					Show_text()
 				else:
-					isInDialog = false
 					actual_line=0
 					End_dialogue()
 		else:

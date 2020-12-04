@@ -47,6 +47,5 @@ z_index = 1
 
 [node name="Dialog_Events" type="Node2D" parent="."]
 z_index = 1
-[connection signal="tree_exiting" from="ScreenCanvas/Show_keys" to="Scripting" method="_on_Show_keys_tree_exiting"]
 
 [editable path="ScreenCanvas"]
