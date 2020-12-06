@@ -1,8 +1,7 @@
 extends KinematicBody2D
 
 export var health = 15
-export var enemyMovementSpeed = 450
-export var attackDistance = 200
+export var enemyMovementSpeed = 300
 onready var defaultMovementSpeed = enemyMovementSpeed
 export var damage = 10
 
@@ -11,10 +10,10 @@ var canDamage = true
 var canDie = true
 
 var path_to_event
+
 var animation_player
 var event
 var player
-
 func _ready():
 	animation_player = get_node("AnimationPlayer")
 	event = get_node(path_to_event)
@@ -29,17 +28,18 @@ var playerPosition
 var enemyPosition
 var canMove = true
 var direction
+export var attackDistance = 200
 var distance
+
 func _physics_process(_delta):
 	if canMove:
 		attackMoment = 0
-		playerPosition = player.get_global_position()
+		playerPosition = player.get_global_position() + player.move*0.3
 		enemyPosition = get_global_position()
 		
 		direction = Vector2(playerPosition.x - enemyPosition.x , (playerPosition.y - enemyPosition.y) * 2)
 		
 		distance = sqrt((direction.x * direction.x) + (direction.y * direction.y))
-		
 		if (distance < attackDistance):
 			canMove = false
 		else:
@@ -66,7 +66,7 @@ func attack(movement):
 		$AnimatedSprite.flip_h = movement.x < 0	
 	else:
 		canMove = true
-		
+
 
 func damage_health(incoming_damage, knockbackForce):
 		
@@ -83,18 +83,15 @@ func damage_health(incoming_damage, knockbackForce):
 		get_node("Hurtbox/CollisionShape2D").queue_free()
 		yield(get_tree().create_timer(animation_player.current_animation_length),"timeout")
 		die()
-	
+
 func damage_player():
 	if canDamage == true:
 		pass
 
-
-func die():	
+func die():
 	if canDie:
 		canDie = false
 		animation_player.play("Die")
 		yield(get_tree().create_timer(animation_player.current_animation_length),"timeout")
 		event.enemyCount -= 1
 		queue_free()
-
-

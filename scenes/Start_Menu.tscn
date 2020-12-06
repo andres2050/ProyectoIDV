@@ -38,20 +38,25 @@ __meta__ = {
 }
 
 [node name="StartButton" parent="ReferenceRect" instance=ExtResource( 2 )]
-margin_top = -90.0875
-margin_right = 86.5
-margin_bottom = -39.0875
+margin_left = -79.8572
+margin_top = -96.0
+margin_right = 106.143
+margin_bottom = -31.0
 text = "START"
 scene = "Introduction_video"
 animation_path = NodePath("../../Fading/FadingPlayer")
 
 [node name="Volume_button" parent="ReferenceRect" instance=ExtResource( 7 )]
+margin_left = 166.0
+margin_top = 266.0
+margin_right = 362.0
+margin_bottom = 326.0
 
 [node name="Exit" parent="ReferenceRect" instance=ExtResource( 2 )]
-margin_left = -41.5
-margin_top = 129.365
-margin_right = 63.5
-margin_bottom = 180.365
+margin_left = -51.0
+margin_top = 125.0
+margin_right = 72.0
+margin_bottom = 185.0
 text = "EXIT"
 animation_path = NodePath("../../Fading/FadingPlayer")
 

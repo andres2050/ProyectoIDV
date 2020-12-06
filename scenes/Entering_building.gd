@@ -24,7 +24,7 @@ func _ready():
 	dialog = main_node.get_node("ScreenCanvas/Dialog")
 	animation_player  = main_node.get_node("ScreenCanvas/Fading/FadingPlayer")
 	node_path = "/root/"+ main_node.get_name()+"/"+ get_parent().get_name()+"/"+ get_name()
-	entrance = get_node("entrance").get_global_position()
+	entrance = get_node("target").get_global_position()
 	in_node = get_node("in").get_global_position()
 	spawners = get_node("spawners").get_children()
 	
@@ -46,10 +46,11 @@ func Start_Event():
 
 var wave_enemies = []
 func dialog_ended():
+	player.canMove = false
 	var player_position = player.get_global_position()
 	var move = Vector2(entrance.x - player_position.x , (entrance.y - player_position.y)*2)
 	player.movementDirection = move
-	wave_enemies = get_tree().get_nodes_in_group("enemy")
+	wave_enemies = get_tree().get_nodes_in_group("wave_enemy")
 	for i in range(wave_enemies.size()):
 		wave_enemies[i].isPaused = false
 	
@@ -58,7 +59,6 @@ var event_ended =false
 func EndEvent():
 	if event_ended == false:
 		event_ended = true
-		bgm_player.change_soundtrack("Ambiental_city")
 		main_node.refresh_states()
 
 var canEnter = true
@@ -71,8 +71,11 @@ func _on_entrance_body_entered(body):
 func _on_in_body_entered(body):
 	if body.is_in_group("player") and canEnter:
 		canEnter = false
+		main_node.save_player_position()
 		player.canMove = true
+		bgm_player.change_soundtrack("In_Station")
 		animation_player.play("EnterBuilding")
 		for i in range(wave_enemies.size()):
 			wave_enemies[i].queue_free()
 		wave_enemies = []
+		EndEvent()

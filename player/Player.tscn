@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://player/shoot.gd" type="Script" id=1]
 [ext_resource path="res://player/Player.gd" type="Script" id=2]
@@ -15,27 +15,23 @@
 [ext_resource path="res://prefabs/Event/EventTrigger.gd" type="Script" id=13]
 [ext_resource path="res://Test_sprites/rightUp.png" type="Texture" id=14]
 [ext_resource path="res://Test_sprites/leftUp.png" type="Texture" id=15]
+[ext_resource path="res://enemies/receive_damage_animation.tres" type="Animation" id=16]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "right",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "left",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "right",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "up",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 14 ) ],
-"loop": true,
-"name": "rightUp",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 15 ) ],
@@ -48,14 +44,19 @@ animations = [ {
 "name": "leftDown",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "down",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 8 ) ],
 "loop": true,
 "name": "rightDown",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 10 ) ],
+"frames": [ ExtResource( 14 ) ],
 "loop": true,
-"name": "down",
+"name": "rightUp",
 "speed": 5.0
 } ]
 
@@ -126,6 +127,9 @@ script = ExtResource( 3 )
 rotation = -0.804593
 scale = Vector2( 1.48324, 1.48324 )
 shape = SubResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/receive_damage_animation = ExtResource( 16 )
 [connection signal="body_entered" from="EventTrigger" to="EventTrigger" method="_on_EventTrigger_body_entered"]
 [connection signal="body_entered" from="Hurtbox" to="Hurtbox" method="_on_Hurtbox_body_entered"]
 [connection signal="body_exited" from="Hurtbox" to="Hurtbox" method="_on_Hurtbox_body_exited"]

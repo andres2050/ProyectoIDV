@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Test_sprites/wall_small.png" type="Texture" id=1]
+[ext_resource path="res://prefabs/SceneObjects/_Object_prefab.tscn" type="PackedScene" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 4.90884, 35.5472 )
+
+[node name="wall_simple" instance=ExtResource( 2 )]
+
+[node name="Sprite" parent="." index="0"]
+position = Vector2( 0, -72.5009 )
+scale = Vector2( 0.385165, 0.385165 )
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 500, 163, 400 )
+
+[node name="CollisionShape2D" parent="Detect_player" index="0"]
+visible = false
+position = Vector2( 0.8909, -75.7082 )
+shape = SubResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2"]
+position = Vector2( 0.259888, -385.145 )
+polygon = PoolVector2Array( -32.1115, 385.18, 0.0441589, 400.753, 31.4901, 384.935, -0.393692, 367.697 )
+__meta__ = {
+"_editor_description_": ""
+}

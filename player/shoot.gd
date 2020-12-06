@@ -26,19 +26,6 @@ var y = 0
 var weapon_level = 1
 func _process(_delta):
 	
-	if Input.is_action_pressed("fire"):
-		if canFire == true:
-			canFire = false
-			match shootMode:
-				1:
-					normalShot()
-				2:
-					superFastShot()
-				3:
-					multiShot()
-				4:
-					piercingShoot()
-				
 	if(Input.is_action_pressed("shot1")):
 		shootMode = 1
 		interface.update_abilities(shootMode)
@@ -67,6 +54,19 @@ func _physics_process(_delta):
 
 	position = Vector2(x, y - yOffSet)
 	
+	if Input.is_action_pressed("fire"):
+		if canFire == true:
+			canFire = false
+			match shootMode:
+				1:
+					normalShot()
+				2:
+					superFastShot()
+				3:
+					multiShot()
+				4:
+					piercingShoot()
+				
 
 
 #shooting modes -----------------------------------------------------------------------------------

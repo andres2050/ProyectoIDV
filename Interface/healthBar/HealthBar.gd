@@ -39,8 +39,10 @@ func update_abilities(shootMode):
 			abilities[i].modulate.a = 1
 
 func show_next_ability():
-	for i in range(abilities.size()):
+	for i in range(abilities.size()-1):
 		if !abilities[i].visible:
 			abilities[i].visible = true
 			break
-	
+
+func show_dash_ability():
+	get_node("ReferenceRect/Node2D/AnimatedSprite").visible = true

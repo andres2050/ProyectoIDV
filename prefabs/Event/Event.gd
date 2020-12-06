@@ -2,7 +2,7 @@ extends Node2D
 
 export var canStart = true 
 export var spawnTime = 1.0
-export(String, "","Start_menu","Ambiental_city", "Combat") var soundtrack
+export(String, "","Start_menu","Ambiental_city", "Combat", "In_Station") var soundtrack
 
 var spawners
 var obstacles
@@ -39,7 +39,8 @@ func _ready():
 func Start_Event():
 	if canStart: 
 		canStart = false
-		bgm_player.change_soundtrack(soundtrack)
+		if soundtrack != "":
+			bgm_player.change_soundtrack(soundtrack)
 		for i in range(spawners.size()):
 			spawners[i].canSpawn = true
 			spawners[i].spawnRate = spawnTime
@@ -57,7 +58,8 @@ func Start_Event():
 func EndEvent():
 	if event_ended == false:
 		event_ended = true
-		bgm_player.change_soundtrack("Ambiental_city")
+		if soundtrack != "":
+			bgm_player.change_soundtrack("Ambiental_city")
 		Open_doors()
 		Clear_obstacles()
 		main_node.refresh_states()

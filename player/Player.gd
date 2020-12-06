@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 var direction = "down" #default
-var distanceTangent
+var distanceTangent = 0
 
 var xDistance = 0
 var yDistance = 0
@@ -11,6 +11,7 @@ var tangent_2 = 2.41421
 export var maxHealth = 100
 onready var health = maxHealth
 export var movementSpeed = 400
+onready var animation_player = get_node("AnimationPlayer")
 export(float,0,1) var healAmount = 0.7
 var movementDirection = Vector2()
 var playerPosition = Vector2(0,0)
@@ -20,6 +21,11 @@ var canMove = true
 var healCharges = 1
 var dash_distance = 1300
 var canDash = false
+
+var b = .0
+var a = .0
+var dash = Vector2()
+var isDashing = false
 
 func _process(_delta):
 	# rotation start -------------------------------------------------------------------------------
@@ -68,24 +74,24 @@ func _process(_delta):
 			movementDirection += Vector2(0,-1)
 		if Input.is_action_pressed("ui_down"):
 			movementDirection += Vector2(0,1)
-	#heal
+	#dash ----------------------------------------------------------------------------
 		if Input.is_action_just_pressed("dash") and canDash:
+			
 			canMove = false
-			canDash = false
 			movementDirection = Vector2()
-			var xDirection = xDistance
-			var yDirection = -yDistance
-			var move = Vector2()
-			var t = 0
-			while(t < 1):
-				move = Vector2(xDirection,yDirection).normalized() * (dash_distance)*sqrt(-t+1)
-				move.y *= 0.5
-				move = move_and_slide(move)
-				t += 0.04
-				yield(get_tree().create_timer(0.01),"timeout")
-			canMove = true
-			yield(get_tree().create_timer(1),"timeout")
-			canDash = true
+			var x = xDistance
+			var y = -yDistance
+			var h2 = sqrt(pow(x,2) + pow(2*y,2))
+			if h2 == 0 :
+				h2 =0.001
+			b = (2*y) / (h2*2)
+			if y == 0 :
+				y =0.001
+			a = x*b/y
+			t+=0.04
+			isDashing = true
+			
+	#heal ----------------------------------------------------------------------------
 		if Input.is_action_just_pressed("heal") and healCharges > 0:
 			heal()
 			
@@ -98,16 +104,38 @@ func heal():
 			if health >= maxHealth:
 				health = maxHealth
 				break
-			
-			
-func _physics_process(_delta):
 	
-	if movementDirection.length() >= 0:
+func stop_moving():
+	while(isDashing):
+		yield(get_tree().create_timer(0.1),"timeout")
+	canMove = false
+	movementDirection = Vector2(0,0)
+			
+var move = Vector2()
+
+var t = 0
+func _physics_process(_delta):
+	move = Vector2(0,0)
+	if movementDirection.length() > 0:
 		movementDirection = movementDirection.normalized()  * movementSpeed
-		var move = Vector2(movementDirection.x , movementDirection.y * 0.5)
+		move = Vector2(movementDirection.x , movementDirection.y * 0.5)
 		move = move_and_slide(move)
 		
+	if isDashing:
+		if t >0 and t<1:
+			canDash = false
+			dash = Vector2(a,b) * (dash_distance)*sqrt(-t+1)
+			dash = move_and_slide(dash)
+			t += 0.04
+		else:
+			isDashing = false
+			canMove = true
+			yield(get_tree().create_timer(0.1),"timeout")
+			canDash = true
+			t=0
+		
 func damage_health(damage):
+	animation_player.play("receive_damage_animation")
 	health=health-damage
 
 func pickup_item(pickup):
@@ -119,16 +147,22 @@ func pickup_item(pickup):
 				healCharges += 1
 			else:
 				heal()
+				healCharges +=1
 		"weapon":
-			unlock_ability()
+			upgrade_weapon()
+		"dash":
+			unlock_dash()
 			
-func unlock_ability():
+func upgrade_weapon():
 	var weapon = get_node("Weapon")
-	weapon.interface.show_next_ability()
 	if weapon.weapon_level < 4:
+		weapon.interface.show_next_ability()
 		weapon.upgrade_weapon()
-	else:
-		canDash = true
+	
+func unlock_dash():
+	canDash = true
+	var weapon = get_node("Weapon")
+	weapon.interface.show_dash_ability()
 	get_node("../../").refresh_states()
 
 # get velocity -------------------------------------------------

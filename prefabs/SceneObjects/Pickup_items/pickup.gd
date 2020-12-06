@@ -1,6 +1,6 @@
 extends Area2D
 
-export(String, "", "heal", "buff","weapon")var pickupType
+export(String, "", "heal", "buff","weapon", "dash")var pickupType
 
 
 func _on_pickupDetector_body_entered(body):

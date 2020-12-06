@@ -7,7 +7,7 @@ func _on_Area2D_body_entered(body):
 		entered = true
 		while(modulate.a > 0.4 and entered):
 			yield(get_tree().create_timer(smooth_fade),"timeout")
-			modulate.a -= 0.03
+			modulate.a -= 0.06
 		
 
 

@@ -20,22 +20,24 @@ height = 35.9461
 
 [sub_resource type="Animation" id=3]
 resource_name = "Die"
-length = 0.5
-tracks/0/type = "bezier"
-tracks/0/path = NodePath(".:alfa")
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.5 )
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.501961, 0.501961, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
 [sub_resource type="Animation" id=4]
 length = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:blue")
+tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -44,40 +46,24 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0, 1.0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:green")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, 1.0 ]
+"values": [ Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
 [node name="ghost" type="KinematicBody2D" groups=[
 "enemy",
+"zombie",
 ]]
 position = Vector2( -1, 0 )
 collision_layer = 2
 collision_mask = 2
 collision/safe_margin = 1.0
 script = ExtResource( 2 )
-alfa = 0.0
-blue = 0.0
-green = 0.0
 health = 20
-enemyMovementSpeed = 450
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -0.66217, -16.6865 )
 scale = Vector2( 0.0698612, 0.0698612 )
 frames = SubResource( 1 )
-frame = 2
 playing = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]

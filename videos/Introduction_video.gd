@@ -13,6 +13,10 @@ var sfx_volume = 0.6
 var events_states = []
 var dialog_states = []
 var player_stats = []
+var player_position = Vector2()
+
+func _ready():
+	video_player.volume_db = (bgm_volume*40)-40
 
 func _on_VideoPlayer_finished():
 	isOver = true

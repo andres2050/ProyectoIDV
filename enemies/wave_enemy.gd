@@ -23,6 +23,8 @@ func _physics_process(_delta):
 		move = direction.normalized()
 		$AnimatedSprite.flip_h = move.x < 0	
 		move = move_and_slide(move*movement_speed)
+	if get_global_position() == target :
+		queue_free()
 
 func resume():
 	isPaused = false

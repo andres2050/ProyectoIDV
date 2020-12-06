@@ -2,7 +2,7 @@ extends StaticBody2D
 
 var closed = true
 var scenario
-export(Array,String, "","HealingPickup", "WeaponPickup")var pickups = []
+export(Array,String, "","HealingPickup", "WeaponPickup", "dashpickup")var pickups = []
 var drops = []
 func _ready():
 	yield(get_tree().create_timer(0.01),"timeout")

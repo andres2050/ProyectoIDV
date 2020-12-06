@@ -11,8 +11,11 @@ var sfx_players = []
 
 var chests_states = []
 var player_stats = [false,1]
+var player_position = Vector2()
 
 var scripting
+var player
+
 func _ready():
 	bgm_players = get_tree().get_nodes_in_group("bgm_player")
 	sfx_players = get_tree().get_nodes_in_group("sfx_player")
@@ -21,7 +24,12 @@ func _ready():
 	yield(get_tree().create_timer(0.01),"timeout")
 	var scenario = get_tree().get_nodes_in_group("Scenario")
 	if scenario.size() > 0:
-		scenario[0].visible = true
+		scenario[0].visible = true	
+	var aux = get_tree().get_nodes_in_group("player")
+	if aux.size() > 0:
+		player = aux[0]
+		if player_position != Vector2():
+			player.position = player_position
 
 func refresh_events():
 	get_node("Scripting").refresh_events()
@@ -29,15 +37,18 @@ func refresh_events():
 func refresh_states():
 	get_node("Scripting").refresh_states()
 
+func save_player_position():
+	player_position = player.get_global_position()
+
 func change_bgm_volume(new_volume):
 	bgm_volume = new_volume
 	for i in range(bgm_players.size()):
 		if (bgm_players[i] != null):
-			bgm_players[i].volume_db = (sqrt(bgm_volume) * 40)-30
+			bgm_players[i].volume_db = (sqrt(bgm_volume) * 40)-40
 			
 	
 func change_sfx_volume(new_volume):
 	sfx_volume = new_volume
 	for i in range(sfx_players.size()):
 		if (sfx_players[i] != null):
-			sfx_players[i].volume_db = (sqrt(sfx_volume) * 40)-30
+			sfx_players[i].volume_db = (sqrt(sfx_volume) * 40)-40

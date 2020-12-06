@@ -15,13 +15,17 @@ var isInDialog = false
 var showing_text = false
 var answered_call = false 
 
+var player
 var dialog_bus = []
 func _ready():
 	spacebar_animation.stop(true)
+	yield(get_tree().create_timer(0,01),"timeout")
+	player = get_tree().get_nodes_in_group("player")[0]
 
 func Begin_dialog(lines, letters_duration, event_path):
 	if !isInDialog:
 		isInDialog = true
+		player.stop_moving()
 		is_animation_over = false
 		dialogue_lines = lines
 		time_between_letters = letters_duration
@@ -36,9 +40,7 @@ func Begin_dialog(lines, letters_duration, event_path):
 		while(!answered_call):
 			yield(get_tree().create_timer(animation_player.current_animation_length),"timeout")
 			animation_player.play("ring_walkitalki")
-		spacebar_animation.play_backwards("show_spacebar")
 		yield(get_tree().create_timer(animation_player.current_animation_length),"timeout")
-		spacebar_animation.stop(true)
 		
 		animation_player.play("show_bubble")
 		yield(get_tree().create_timer(animation_player.current_animation_length),"timeout")
@@ -50,12 +52,16 @@ func Begin_dialog(lines, letters_duration, event_path):
 
 func End_dialogue():
 	if (is_animation_over == true):
+		if path_to_event == "":
+			player.canMove = true
 		is_animation_over = false
 		Hide_text()
+		spacebar_animation.play_backwards("show_spacebar")
 		animation_player.play_backwards("show_bubble")
 		yield(get_tree().create_timer(animation_player.current_animation_length),"timeout")
 		animation_player.play_backwards("show_walkitalki")
 		yield(get_tree().create_timer(animation_player.current_animation_length),"timeout")
+		spacebar_animation.stop(true)
 		
 		is_animation_over = true
 		if path_to_event != "":

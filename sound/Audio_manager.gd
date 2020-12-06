@@ -4,7 +4,7 @@ var main_node = self
 var volume = 0
 var resume_moment = 0
 
-export(String, "","Start_menu","Ambiental_city", "Combat") var soundtrack_name
+export(String, "","Start_menu","Ambiental_city", "Combat", "In_Station") var soundtrack_name
 
 
 func _ready():
@@ -20,13 +20,20 @@ func play_soundtrack(soundtrack,moment):
 	main_node.change_bgm_volume(main_node.bgm_volume)
 	
 func change_soundtrack(new_soundtrack):
-		
-		while(volume_db > -30):
+		while(volume_db > -40):
 			volume_db -= 2
 			yield(get_tree().create_timer(0.05),"timeout")
 			
 		if new_soundtrack != soundtrack_name:
 			resume_moment = get_playback_position()
 			play_soundtrack(new_soundtrack,0.1)
+			volume_db = -40
+			while(volume_db < (main_node.bgm_volume*40)-40 ):
+				volume_db += 2
+				yield(get_tree().create_timer(0.05),"timeout")
 		else:
 			play_soundtrack(new_soundtrack, resume_moment)
+			volume_db = -40
+			while(volume_db < (main_node.bgm_volume*40)-40 ):
+				volume_db += 2
+				yield(get_tree().create_timer(0.05),"timeout")

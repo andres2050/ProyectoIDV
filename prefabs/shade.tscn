@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Test_sprites/shade2.png" type="Texture" id=1]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -79.8001, -285.138 )
+scale = Vector2( 2.11433, 2.11433 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_editor_description_": ""
+}
