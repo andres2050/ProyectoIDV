@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Test_sprites/test_compass.png" type="Texture" id=1]
+[ext_resource path="res://Interface/Hud/compass.gd" type="Script" id=2]
+
+[node name="compass" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="compass" type="Sprite" parent="."]
+position = Vector2( 1294.15, 69.9817 )
+scale = Vector2( 0.503443, 0.503443 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 86, 123, 257, 257 )
+
+[node name="nail" type="Node2D" parent="."]
+position = Vector2( 1294.15, 69.982 )
+
+[node name="nail_sprite" type="Sprite" parent="nail"]
+position = Vector2( 22.8922, 0 )
+rotation = 1.5708
+scale = Vector2( 0.285842, 0.285842 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 605, 129, 31, 306 )

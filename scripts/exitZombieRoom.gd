@@ -39,4 +39,11 @@ func Start_Event():
 		for i in range(obstacles.size()):
 			scenario.set_cellv(obstacles[i],0)
 			tilemap.set_cellv(obstacles[i],-1)
-			
+		EndEvent()
+
+func EndEvent():
+	var main_node = self
+	while(main_node.get_parent() != get_tree().get_root()):
+		main_node = main_node.get_parent()
+	main_node.refresh_states()
+	main_node.save_player_position()

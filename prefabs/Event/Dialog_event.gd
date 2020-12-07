@@ -5,7 +5,7 @@ var lines = []
 var letters_duration = []
 onready var dialog
 var canStart = true
-
+var event_path = ""
 var main_node = self
 func _ready():
 	while(main_node.get_parent() != get_tree().get_root()):
@@ -18,4 +18,4 @@ func Start_Event():
 		for i in range(labels.size()):
 			lines.push_back(labels[i].text)
 			letters_duration.push_back(labels[i].time_between_letters)
-		dialog.Begin_dialog(lines,letters_duration,"")
+		dialog.Begin_dialog(lines,letters_duration, event_path)

@@ -19,14 +19,14 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "left",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "left",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 7 ) ],
@@ -44,9 +44,9 @@ animations = [ {
 "name": "leftDown",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 10 ) ],
+"frames": [ ExtResource( 14 ) ],
 "loop": true,
-"name": "down",
+"name": "rightUp",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 8 ) ],
@@ -54,9 +54,9 @@ animations = [ {
 "name": "rightDown",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 14 ) ],
+"frames": [ ExtResource( 10 ) ],
 "loop": true,
-"name": "rightUp",
+"name": "down",
 "speed": 5.0
 } ]
 

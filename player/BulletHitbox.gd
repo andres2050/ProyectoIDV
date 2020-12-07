@@ -29,5 +29,5 @@ func _on_Hitbox_area_entered(area):
 
 
 func _on_Hitbox_body_entered(body):
-	if !body.is_in_group("player") and !body.is_in_group("enemy"):
+	if !body.is_in_group("player") and !body.is_in_group("enemy") and !body.is_in_group("scenario_collisions"):
 		get_parent().queue_free()

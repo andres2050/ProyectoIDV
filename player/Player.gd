@@ -99,9 +99,11 @@ func heal():
 	if health < maxHealth:
 		healCharges -= 1
 		for _i in range(healAmount*maxHealth):
+			if health <=0:
+				break
 			health += 1
 			yield(get_tree().create_timer(0.03),"timeout")
-			if health >= maxHealth:
+			if health >= maxHealth :
 				health = maxHealth
 				break
 	
@@ -130,13 +132,32 @@ func _physics_process(_delta):
 		else:
 			isDashing = false
 			canMove = true
-			yield(get_tree().create_timer(0.1),"timeout")
+			yield(get_tree().create_timer(0.4),"timeout")
 			canDash = true
 			t=0
 		
 func damage_health(damage):
 	animation_player.play("receive_damage_animation")
 	health=health-damage
+
+func receive_damage(enemy_position):
+	var hitForce = 500
+	canMove = false
+	canDash = false
+	isDashing = false
+	t=0
+	movementDirection = Vector2()
+	var moment = .0
+	var hit_direction = (position - enemy_position).normalized()
+	hit_direction.y *= 0.5
+	var hit
+	while(moment < 1):
+		hit = hit_direction*sqrt(-moment+1)*hitForce
+		hit = move_and_slide(hit)
+		moment+=0.04
+		yield(get_tree().create_timer(0.01),"timeout")
+	canMove = true
+	canDash = true
 
 func pickup_item(pickup):
 	match pickup:
