@@ -16,6 +16,9 @@ var main_node = self
 var dialog
 var entrance
 var in_node
+var collisions
+onready var tilemap = get_node("EventDetector")
+var door
 func _ready():
 	while(main_node.get_parent() != get_tree().get_root()):
 		main_node = main_node.get_parent()
@@ -27,6 +30,8 @@ func _ready():
 	entrance = get_node("target").get_global_position()
 	in_node = get_node("in").get_global_position()
 	spawners = get_node("spawners").get_children()
+	collisions = main_node.get_node("Collisions")
+	door = tilemap.get_used_cells_by_id(1)
 	
 	
 func Start_Event(): 
@@ -42,7 +47,8 @@ func Start_Event():
 		
 		for i in range(spawners.size()):
 			spawners[i].canSpawn = true
-		
+		for i in range(door.size()):
+			collisions.set_cellv(door[i],-1)
 
 var wave_enemies = []
 func dialog_ended():
@@ -59,6 +65,9 @@ var event_ended =false
 func EndEvent():
 	if event_ended == false:
 		event_ended = true
+		for i in range(door.size()):
+			collisions.set_cellv(door[i],0)
+		
 		main_node.refresh_states()
 
 var canEnter = true
