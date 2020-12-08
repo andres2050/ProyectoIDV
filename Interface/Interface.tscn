@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Interface/healthBar/HealthBar.gd" type="Script" id=1]
 [ext_resource path="res://Interface/healthBar/bg.png" type="Texture" id=2]
@@ -13,20 +13,47 @@
 [ext_resource path="res://Interface/Hud/Keyboard_keys/mouse2.png" type="Texture" id=11]
 [ext_resource path="res://Interface/Hud/Keyboard_keys/mouse.png" type="Texture" id=12]
 [ext_resource path="res://sound/sfx/ui/low_health_alert.wav" type="AudioStream" id=13]
+[ext_resource path="res://Interface/Hud/Keyboard_keys/exclamation.png" type="Texture" id=14]
 
 [sub_resource type="Animation" id=1]
 resource_name = "needs_healing"
-length = 0.3
+length = 0.8
 loop = true
-tracks/0/type = "bezier"
-tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/type = "value"
+tracks/0/path = NodePath("../../HealthBar/alert:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"points": PoolRealArray( 15, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -15, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 )
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0.803922, 0.952941, 0.345098 ), Color( 1, 0.803922, 0.952941, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 15.0, 0.0, -15.0, 0.0, 15.0, 0.0, -15.0, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../exclamation:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.627451 ), Color( 1, 1, 1, 0.105882 ) ]
 }
 
 [sub_resource type="SpriteFrames" id=2]
@@ -64,6 +91,12 @@ __meta__ = {
 ]]
 stream = ExtResource( 13 )
 
+[node name="alert" type="Sprite" parent="HealthBar"]
+visible = false
+modulate = Color( 1, 0.803922, 0.952941, 0.00694233 )
+position = Vector2( 197.82, 26.4387 )
+texture = ExtResource( 3 )
+
 [node name="HealCharges" type="TextureProgress" parent="."]
 anchor_left = 0.5
 anchor_top = 1.0
@@ -82,12 +115,19 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="HealCharges"]
 position = Vector2( -28.9612, 20.4916 )
-rotation = 0.261799
+rotation = 0.240733
 scale = Vector2( 0.817773, 0.817773 )
 texture = ExtResource( 6 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="HealCharges/Sprite"]
 anims/needs_healing = SubResource( 1 )
+
+[node name="exclamation" type="Sprite" parent="HealCharges"]
+visible = false
+modulate = Color( 1, 1, 1, 0.116375 )
+position = Vector2( -30.0195, -70.2063 )
+scale = Vector2( 0.340252, 0.340252 )
+texture = ExtResource( 14 )
 
 [node name="ReferenceRect" type="ReferenceRect" parent="."]
 anchor_left = 0.5
@@ -127,6 +167,5 @@ texture = ExtResource( 8 )
 visible = false
 position = Vector2( 422.144, 58.4757 )
 frames = SubResource( 2 )
-frame = 1
 speed_scale = 0.5
 playing = true

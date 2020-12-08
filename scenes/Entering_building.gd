@@ -63,11 +63,11 @@ func dialog_ended():
 
 var event_ended =false
 func EndEvent():
-	if event_ended == false:
+	if !event_ended:
 		event_ended = true
 		for i in range(door.size()):
 			collisions.set_cellv(door[i],0)
-		
+		main_node.soundtrack = "In_Station"
 		main_node.refresh_states()
 
 var canEnter = true
@@ -82,7 +82,6 @@ func _on_in_body_entered(body):
 		canEnter = false
 		main_node.save_player_position()
 		player.canMove = true
-		bgm_player.change_soundtrack("In_Station")
 		animation_player.play("EnterBuilding")
 		for i in range(wave_enemies.size()):
 			wave_enemies[i].queue_free()

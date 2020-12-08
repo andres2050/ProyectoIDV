@@ -2,12 +2,10 @@ extends Node2D
 
 var main_node = self
 
-var warehouse_walls
 func _ready():
 	modulate.a = 1
 	while (main_node.get_parent() != get_tree().get_root()):
 		main_node = main_node.get_parent()
-	warehouse_walls = main_node.get_node("YSort/warehouse_walls")
 
 
 var is_in = false

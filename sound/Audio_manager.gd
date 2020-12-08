@@ -20,20 +20,20 @@ func play_soundtrack(soundtrack,moment):
 	main_node.change_bgm_volume(main_node.bgm_volume)
 	
 func change_soundtrack(new_soundtrack):
-		while(volume_db > -40):
-			volume_db -= 2
+		while(volume_db > -80):
+			volume_db -= 4
 			yield(get_tree().create_timer(0.05),"timeout")
 			
 		if new_soundtrack != soundtrack_name:
 			resume_moment = get_playback_position()
 			play_soundtrack(new_soundtrack,0.1)
-			volume_db = -40
-			while(volume_db < (main_node.bgm_volume*40)-40 ):
-				volume_db += 2
+			volume_db = -80
+			while(volume_db < (main_node.bgm_volume*80)-80 ):
+				volume_db += 4
 				yield(get_tree().create_timer(0.05),"timeout")
 		else:
 			play_soundtrack(new_soundtrack, resume_moment)
-			volume_db = -40
-			while(volume_db < (main_node.bgm_volume*40)-40 ):
-				volume_db += 2
+			volume_db = -80
+			while(volume_db < (main_node.bgm_volume*80)-80):
+				volume_db += 4
 				yield(get_tree().create_timer(0.05),"timeout")

@@ -34,7 +34,7 @@ func Start_Event():
 				spawners[i][t].stop_spawning()
 		enemies = get_tree().get_nodes_in_group("zombie")
 		for i in range(enemies.size()):
-			enemies[i].die()
+			enemies[i].queue_free()
 			
 		for i in range(obstacles.size()):
 			scenario.set_cellv(obstacles[i],0)

@@ -4,7 +4,7 @@
 [ext_resource path="res://prefabs/SceneObjects/_Object_prefab.tscn" type="PackedScene" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 4.90884, 35.5472 )
+extents = Vector2( 16.7256, 58.6511 )
 
 [node name="wall_simple" instance=ExtResource( 2 )]
 

@@ -12,7 +12,7 @@ var canDie = true
 
 var sfx_path = "res://sound/sfx/enemy/"
 var sfx_dash = load(sfx_path + "enemy_dash.ogg")
-var sfx_die = load(sfx_path + "enemy_die.ogg")
+var sfx_die = load(sfx_path + "enemy_die.wav")
 
 var path_to_event
 var animation_player
@@ -29,7 +29,7 @@ func _process(_delta):
 	if (enemyMovementSpeed < defaultMovementSpeed and !isdead):
 		enemyMovementSpeed += 15
 
-onready var sfx = get_node("AudioStreamPlayer")
+onready var sfx = get_node("sfx_player")
 
 var playerPosition
 var enemyPosition

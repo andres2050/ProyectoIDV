@@ -7,6 +7,7 @@ var xDistance = 0
 var yDistance = 0
 var tangent_1 = 0.41421
 var tangent_2 = 2.41421
+
 var sfx_path = "res://sound/sfx/player/"
 var sfx_dash = load(sfx_path + "player_dash.ogg")
 var sfx_heal = load(sfx_path + "heal.ogg")
@@ -99,22 +100,28 @@ func _process(_delta):
 			isDashing = true
 			
 	#heal ----------------------------------------------------------------------------
+	if !isHealing:
 		if Input.is_action_just_pressed("heal") and healCharges > 0:
 			heal()
-			
+
+var isHealing = false
 func heal():
 	if health < maxHealth:
 		sfx.stream = sfx_heal
 		sfx.play()
 		healCharges -= 1
+		isHealing = true
 		for _i in range(healAmount*maxHealth):
 			if health <=0:
+				isHealing = false
 				break
 			health += 1
-			yield(get_tree().create_timer(0.03),"timeout")
+			yield(get_tree().create_timer(0.025),"timeout")
 			if health >= maxHealth :
 				health = maxHealth
+				isHealing = false
 				break
+		isHealing = false
 	
 func stop_moving():
 	while(isDashing):
@@ -150,6 +157,7 @@ func damage_health(damage):
 	health=health-damage
 
 func receive_damage(enemy_position):
+	health= health -5
 	var hitForce = 500
 	canMove = false
 	canDash = false

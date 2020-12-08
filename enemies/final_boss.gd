@@ -12,6 +12,13 @@ var jump_shade_instance
 var dash_shade = preload("res://enemies/boss/dash_shade.tscn")
 var dash_shade_instance
 
+var sfx_path = "res://sound/sfx/boss/"
+var sfx_dash = load(sfx_path + "boss_dash.ogg")
+var sfx_jump = load(sfx_path + "jump.wav")
+var sfx_death = load(sfx_path + "bossDeath.wav")
+
+onready var sfx = get_node("sfx_player")
+
 var isdead = false
 var canDamage = true
 var canDie = true
@@ -95,6 +102,8 @@ func jump_attack():
 		attack_t += attack_distance/30
 		yield(get_tree().create_timer(0.01),"timeout")
 	yield(get_tree().create_timer(0.05),"timeout")
+	sfx.stream = sfx_jump
+	sfx.play()
 	jump_hitbox.disabled = false
 	yield(get_tree().create_timer(0.1),"timeout")
 	jump_hitbox.disabled = true
@@ -107,6 +116,8 @@ func dash_attack():
 	dash_shade_instance.player = player
 	get_parent().add_child(dash_shade_instance)
 	yield(get_tree().create_timer(0.5),"timeout")
+	sfx.stream = sfx_dash
+	sfx.play()
 	attack_position = (player.position - position)*1.2
 	attack_distance = sqrt(pow(attack_position.x,2) + pow(attack_position.y , 2) )
 	attack_t = 0
@@ -142,9 +153,9 @@ func damage_player():
 
 func die():	
 	if canDie:
+		sfx.stream = sfx_death
+		sfx.play()
 		canDie = false
 		animation_player.play("boss_die")
 		event.EndEvent()
 		yield(get_tree().create_timer(animation_player.current_animation_length),"timeout")
-
-

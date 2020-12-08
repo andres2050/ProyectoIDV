@@ -4,10 +4,14 @@ export var canStart = true
 export var spawnTime = 1.0
 export(String, "","Start_menu","Ambiental_city", "Combat", "In_Station") var soundtrack
 
+export(String, "","Start_menu","Ambiental_city", "Combat", "In_Station") var exit_soundtrack
+
 var spawners
 var obstacles
 var leftDoors
 var rightDoors
+
+export(bool) var save_at_end = true
 
 var enemyCount = 0
 
@@ -58,11 +62,12 @@ func Start_Event():
 func EndEvent():
 	if event_ended == false:
 		event_ended = true
-		if soundtrack != "":
-			bgm_player.change_soundtrack("Ambiental_city")
+		if exit_soundtrack != "":
+			bgm_player.change_soundtrack(exit_soundtrack)
 		Open_doors()
 		Clear_obstacles()
-		main_node.refresh_states()
+		if save_at_end:
+			main_node.refresh_states()
 		
 func Clear_obstacles():
 	for i in range(obstacles.size()):

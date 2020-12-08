@@ -14,6 +14,7 @@ var events_states = []
 var dialog_states = []
 var player_stats = []
 var player_position = Vector2()
+var soundtrack = ""
 
 func _ready():
 	video_player.volume_db = (bgm_volume*40)-40
@@ -33,6 +34,8 @@ func change_scene_manually():
 	next_scene.events_states = main_node.events_states
 	next_scene.dialog_states = main_node.dialog_states
 	next_scene.player_stats = main_node.player_stats
+	next_scene.soundtrack = main_node.soundtrack
+	
 	get_tree().get_root().add_child(next_scene)
 	main_node.queue_free()
 		

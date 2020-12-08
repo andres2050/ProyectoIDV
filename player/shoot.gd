@@ -111,7 +111,7 @@ func superFastShot():
 func multiShot():
 	
 	var bulletSpeed = default_bulletSpeed * 1000
-	var fireCooldown = default_fireCooldown* 0.6
+	var fireCooldown = default_fireCooldown* 0.7
 	var bulletDamage = default_bulletDamage * 4.5
 	var knockbackForce = 5
 	var direction = Vector2(x,y)
@@ -141,8 +141,8 @@ func multiShot():
 	canFire = true
 
 func piercingShoot():
-	var bulletSpeed = default_bulletSpeed * 1000
-	var fireCooldown = default_fireCooldown* 0.8
+	var bulletSpeed = default_bulletSpeed * 1200
+	var fireCooldown = default_fireCooldown* 1
 	var bulletDamage = default_bulletDamage * 19
 	var direction = Vector2(x,y)
 	var knockbackForce = 40

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://prefabs/Level_prefab/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=2]
@@ -25,8 +25,10 @@
 [ext_resource path="res://Test_sprites/boss_room.png" type="Texture" id=23]
 [ext_resource path="res://Interface/Animations/screen_vibration.tres" type="Animation" id=24]
 [ext_resource path="res://Interface/Animations/explosion.tres" type="Animation" id=25]
-[ext_resource path="res://Test_sprites/isotiles beta 4.png" type="Texture" id=26]
-[ext_resource path="res://Test_sprites/isotiles beta 4.2.png" type="Texture" id=27]
+[ext_resource path="res://prefabs/SceneObjects/buildings/building_wide.tscn" type="PackedScene" id=26]
+[ext_resource path="res://prefabs/SceneObjects/obstacles/block.tscn" type="PackedScene" id=27]
+[ext_resource path="res://prefabs/SceneObjects/Obstacles.gd" type="Script" id=28]
+[ext_resource path="res://prefabs/end.tscn" type="PackedScene" id=29]
 
 [sub_resource type="Animation" id=1]
 resource_name = "fade_black_shade"
@@ -45,11 +47,12 @@ tracks/0/keys = {
 [node name="Main" instance=ExtResource( 1 )]
 
 [node name="Floor" parent="." index="1"]
-tile_data = PoolIntArray( -2162692, 0, 0, -2162691, 0, 0, -2162690, 0, 0, -2162689, 0, 0, -2228224, 0, 0, -2097156, 0, 0, -2097155, 0, 0, -2097154, 0, 0, -2097153, 0, 0, -2162688, 0, 0, -2031620, 0, 0, -2031619, 0, 0, -2031618, 0, 0, -2031617, 0, 0, -2097152, 0, 0, -1966084, 0, 0, -1966083, 0, 0, -1966082, 0, 0, -1966081, 0, 0, -2031616, 0, 0, -1376272, 0, 0, -1376271, 0, 0, -1376270, 0, 0, -1376269, 0, 0, -1376268, 0, 0, -1376267, 0, 0, -1376266, 0, 0, -1376265, 0, 0, -1376264, 0, 0, -1376263, 0, 0, -1376262, 0, 0, -1376261, 0, 0, -1376260, 0, 0, -1376259, 0, 0, -1376258, 0, 0, -1376257, 0, 0, -1441792, 0, 0, -1441791, 0, 0, -1310736, 0, 0, -1310735, 5, 0, -1310734, 5, 0, -1310733, 5, 0, -1310732, 5, 0, -1310731, 5, 0, -1310730, 5, 0, -1310729, 5, 0, -1310728, 5, 0, -1310727, 5, 0, -1310726, 5, 0, -1310725, 5, 0, -1310724, 5, 0, -1310723, 5, 0, -1310722, 0, 0, -1310721, 5, 0, -1376256, 5, 0, -1376255, 0, 0, -1245200, 0, 0, -1245199, 5, 0, -1245198, 5, 0, -1245197, 5, 0, -1245196, 5, 0, -1245195, 5, 0, -1245194, 5, 0, -1245193, 5, 0, -1245192, 5, 0, -1245191, 5, 0, -1245190, 5, 0, -1245189, 5, 0, -1245188, 5, 0, -1245187, 5, 0, -1245186, 0, 0, -1245185, 5, 0, -1310720, 5, 0, -1310719, 0, 0, -1179664, 0, 0, -1179663, 5, 0, -1179662, 5, 0, -1179661, 5, 0, -1179660, 5, 0, -1179659, 5, 0, -1179658, 5, 0, -1179657, 5, 0, -1179656, 5, 0, -1179655, 5, 0, -1179654, 5, 0, -1179653, 5, 0, -1179652, 5, 0, -1179651, 5, 0, -1179650, 0, 0, -1179649, 5, 0, -1245184, 5, 0, -1245183, 0, 0, -1114128, 0, 0, -1114127, 5, 0, -1114126, 5, 0, -1114125, 5, 0, -1114124, 5, 0, -1114123, 5, 0, -1114122, 5, 0, -1114121, 5, 0, -1114120, 5, 0, -1114119, 5, 0, -1114118, 5, 0, -1114117, 5, 0, -1114116, 5, 0, -1114115, 5, 0, -1114114, 0, 0, -1114113, 5, 0, -1179648, 5, 0, -1179647, 0, 0, -1048592, 0, 0, -1048591, 5, 0, -1048590, 5, 0, -1048589, 5, 0, -1048588, 5, 0, -1048587, 5, 0, -1048586, 5, 0, -1048585, 5, 0, -1048584, 5, 0, -1048583, 5, 0, -1048582, 5, 0, -1048581, 5, 0, -1048580, 5, 0, -1048579, 5, 0, -1048578, 0, 0, -1048577, 5, 0, -1114112, 5, 0, -1114111, 0, 0, -983056, 0, 0, -983055, 0, 0, -983054, 0, 0, -983053, 0, 0, -983052, 0, 0, -983051, 0, 0, -983050, 0, 0, -983049, 0, 0, -983048, 0, 0, -983047, 0, 0, -983046, 0, 0, -983045, 0, 0, -983044, 0, 0, -983043, 0, 0, -983042, 0, 0, -983041, 5, 0, -1048576, 5, 0, -1048575, 0, 0, -917515, 0, 0, -917514, 5, 0, -917513, 5, 0, -917512, 5, 0, -917511, 5, 0, -917510, 5, 0, -917509, 5, 0, -917508, 5, 0, -917507, 5, 0, -917506, 5, 0, -917505, 5, 0, -983040, 5, 0, -983039, 0, 0, -851979, 0, 0, -851978, 5, 0, -851977, 5, 0, -851976, 5, 0, -851975, 5, 0, -851974, 5, 0, -851973, 5, 0, -851972, 5, 0, -851971, 5, 0, -851970, 5, 0, -851969, 5, 0, -917504, 5, 0, -917503, 0, 0, -786443, 0, 0, -786442, 0, 0, -786441, 0, 0, -786440, 0, 0, -786439, 0, 0, -786438, 0, 0, -786437, 0, 0, -786436, 0, 0, -786435, 0, 0, -786434, 0, 0, -786433, 5, 0, -851968, 5, 0, -851967, 0, 0, -720903, 0, 0, -720902, 4, 0, -720901, 4, 0, -720900, 4, 0, -720899, 4, 0, -720898, 0, 0, -720897, 5, 0, -786432, 5, 0, -786431, 0, 0, -786430, 0, 0, -786429, 0, 0, -786428, 0, 0, -786427, 0, 0, -655367, 0, 0, -655366, 4, 0, -655365, 4, 0, -655364, 4, 0, -655363, 4, 0, -655362, 0, 0, -655361, 5, 0, -720896, 5, 0, -720895, 0, 0, -720894, 0, 0, -720893, 0, 0, -720892, 0, 0, -720891, 0, 0, -589831, 0, 0, -589830, 4, 0, -589829, 4, 0, -589828, 4, 0, -589827, 4, 0, -589826, 0, 0, -589825, 5, 0, -655360, 5, 0, -655359, 0, 0, -655358, 0, 0, -655357, 0, 0, -655356, 0, 0, -655355, 0, 0, -524295, 0, 0, -524294, 4, 0, -524293, 4, 0, -524292, 4, 0, -524291, 4, 0, -524290, 0, 0, -524289, 5, 0, -589824, 5, 0, -589823, 0, 0, -589822, 0, 0, -589821, 0, 0, -589820, 0, 0, -589819, 0, 0, -458759, 0, 0, -458758, 4, 0, -458757, 4, 0, -458756, 4, 0, -458755, 4, 0, -458754, 0, 0, -458753, 5, 0, -524288, 5, 0, -524287, 0, 0, -393223, 0, 0, -393222, 0, 0, -393221, 0, 0, -393220, 0, 0, -393219, 0, 0, -393218, 0, 0, -393217, 5, 0, -458752, 5, 0, -458751, 0, 0, -458750, 0, 0, -458749, 0, 0, -458748, 0, 0, -458747, 0, 0, -458746, 0, 0, -458745, 0, 0, -458744, 0, 0, -458743, 0, 0, -458742, 0, 0, -458741, 0, 0, -327687, 0, 0, -327686, 5, 0, -327685, 5, 0, -327684, 5, 0, -327683, 5, 0, -327682, 5, 0, -327681, 5, 0, -393216, 5, 0, -393215, 5, 0, -393214, 5, 0, -393213, 5, 0, -393212, 5, 0, -393211, 5, 0, -393210, 5, 0, -393209, 5, 0, -393208, 5, 0, -393207, 5, 0, -393206, 5, 0, -393205, 0, 0, -262151, 0, 0, -262150, 5, 0, -262149, 5, 0, -262148, 5, 0, -262147, 5, 0, -262146, 5, 0, -262145, 5, 0, -327680, 5, 0, -327679, 536870917, 0, -327678, 536870917, 0, -327677, 536870917, 0, -327676, 536870917, 0, -327675, 536870917, 0, -327674, 536870917, 0, -327673, 536870917, 0, -327672, 536870917, 0, -327671, 536870917, 0, -327670, 536870917, 0, -327669, 0, 0, -196615, 0, 0, -196614, 0, 0, -196613, 0, 0, -196612, 0, 0, -196611, 0, 0, -196610, 0, 0, -196609, 5, 0, -262144, 5, 0, -262143, 536870912, 0, -262142, 536870912, 0, -262141, 536870912, 0, -262140, 536870912, 0, -262139, 0, 0, -262138, 536870912, 0, -262137, 536870912, 0, -262136, 536870912, 0, -262135, 536870912, 0, -262134, 536870912, 0, -262133, 0, 0, -131077, 0, 0, -131074, 0, 0, -131073, 5, 0, -196608, 5, 0, -196607, 536870912, 0, -196604, 0, 0, -196603, 0, 0, -65543, 0, 0, -65542, 0, 0, -65541, 0, 0, -65538, 0, 0, -65537, 5, 0, -131072, 5, 0, -131071, 536870912, 0, -131068, 0, 0, -131067, 0, 0, -7, 0, 0, -6, 0, 0, -5, 0, 0, -2, 0, 0, -1, 5, 0, -65536, 5, 0, -65535, 536870912, 0, -65532, 0, 0, -65531, 0, 0, 65534, 0, 0, 65535, 5, 0, 0, 5, 0, 1, 536870912, 0, 4, 0, 0, 5, 0, 0, 131070, 0, 0, 131071, 5, 0, 65536, 5, 0, 65537, 536870912, 0, 196606, 0, 0, 196607, 5, 0, 131072, 5, 0, 131073, 536870912, 0, 262142, 0, 0, 262143, 5, 0, 196608, 5, 0, 196609, 0, 0, 327678, 0, 0, 327679, 5, 0, 262144, 5, 0, 262145, 0, 0, 393214, 0, 0, 393215, 5, 0, 327680, 5, 0, 327681, 0, 0, 458750, 0, 0, 458751, 5, 0, 393216, 5, 0, 393217, 0, 0, 524286, 0, 0, 524287, 5, 0, 458752, 5, 0, 458753, 0, 0, 589823, 5, 0, 524288, 5, 0, 524289, 0, 0, 589824, 5, 0, 589825, 0, 0, 655361, 0, 0 )
+tile_data = PoolIntArray( -2228241, 2, 0, -2228240, 2, 0, -2228239, 2, 0, -2228238, 2, 0, -2228237, 2, 0, -2228236, 2, 0, -2228235, 2, 0, -2228234, 2, 0, -2228233, 2, 0, -2228232, 2, 0, -2228231, 2, 0, -2228230, 2, 0, -2228229, 2, 0, -2228228, 2, 0, -2228227, 2, 0, -2228226, 2, 0, -2228225, 2, 0, -2293760, 2, 0, -2293759, 2, 0, -2162705, 2, 0, -2228223, 2, 0, -2097169, 2, 0, -2162687, 2, 0, -2031633, 2, 0, -2097151, 2, 0, -1966097, 2, 0, -2031615, 2, 0, -1900561, 2, 0, -1966079, 2, 0, -1835025, 2, 0, -1835024, 2, 0, -1835023, 2, 0, -1835022, 2, 0, -1835021, 2, 0, -1835020, 2, 0, -1900543, 2, 0, -1769489, 2, 0, -1769488, 2, 0, -1769487, 2, 0, -1769486, 2, 0, -1769485, 2, 0, -1769484, 2, 0, -1835007, 2, 0, -1703953, 2, 0, -1769471, 2, 0, -1638417, 2, 0, -1703935, 2, 0, -1572881, 2, 0, -1638399, 2, 0, -1507345, 2, 0, -1572863, 2, 0, -1441809, 2, 0, -1507327, 2, 0, -1376272, 0, 0, -1376271, 0, 0, -1376270, 0, 0, -1376269, 0, 0, -1376268, 0, 0, -1376267, 0, 0, -1376266, 0, 0, -1376265, 0, 0, -1376264, 0, 0, -1376263, 0, 0, -1376262, 0, 0, -1376261, 0, 0, -1376260, 0, 0, -1376259, 0, 0, -1376258, 0, 0, -1376257, 0, 0, -1441792, 0, 0, -1441791, 0, 0, -1310736, 0, 0, -1310735, 1, 0, -1310734, 1, 0, -1310733, 1, 0, -1310732, 1, 0, -1310731, 1, 0, -1310730, 1, 0, -1310729, 1, 0, -1310728, 1, 0, -1310727, 1, 0, -1310726, 1, 0, -1310725, 1, 0, -1310724, 1, 0, -1310723, 1, 0, -1310722, 0, 0, -1310721, 2, 0, -1376256, 2, 0, -1376255, 0, 0, -1245200, 0, 0, -1245199, 1, 0, -1245198, 1, 0, -1245197, 1, 0, -1245196, 1, 0, -1245195, 1, 0, -1245194, 1, 0, -1245193, 1, 0, -1245192, 1, 0, -1245191, 1, 0, -1245190, 1, 0, -1245189, 1, 0, -1245188, 1, 0, -1245187, 1, 0, -1245186, 0, 0, -1245185, 2, 0, -1310720, 2, 0, -1310719, 0, 0, -1179664, 0, 0, -1179663, 1, 0, -1179662, 1, 0, -1179661, 1, 0, -1179660, 1, 0, -1179659, 1, 0, -1179658, 1, 0, -1179657, 1, 0, -1179656, 1, 0, -1179655, 1, 0, -1179654, 1, 0, -1179653, 1, 0, -1179652, 1, 0, -1179651, 1, 0, -1179650, 0, 0, -1179649, 2, 0, -1245184, 2, 0, -1245183, 0, 0, -1114128, 0, 0, -1114127, 1, 0, -1114126, 1, 0, -1114125, 1, 0, -1114124, 1, 0, -1114123, 1, 0, -1114122, 1, 0, -1114121, 1, 0, -1114120, 1, 0, -1114119, 1, 0, -1114118, 1, 0, -1114117, 1, 0, -1114116, 1, 0, -1114115, 1, 0, -1114114, 0, 0, -1114113, 2, 0, -1179648, 2, 0, -1179647, 0, 0, -1048592, 0, 0, -1048591, 1, 0, -1048590, 1, 0, -1048589, 1, 0, -1048588, 1, 0, -1048587, 1, 0, -1048586, 1, 0, -1048585, 1, 0, -1048584, 1, 0, -1048583, 1, 0, -1048582, 1, 0, -1048581, 1, 0, -1048580, 1, 0, -1048579, 1, 0, -1048578, 0, 0, -1048577, 2, 0, -1114112, 2, 0, -1114111, 0, 0, -983056, 0, 0, -983055, 0, 0, -983054, 0, 0, -983053, 0, 0, -983052, 0, 0, -983051, 0, 0, -983050, 0, 0, -983049, 0, 0, -983048, 0, 0, -983047, 0, 0, -983046, 0, 0, -983045, 0, 0, -983044, 0, 0, -983043, 0, 0, -983042, 0, 0, -983041, 2, 0, -1048576, 2, 0, -1048575, 0, 0, -917515, 0, 0, -917514, 2, 0, -917513, 2, 0, -917512, 2, 0, -917511, 2, 0, -917510, 2, 0, -917509, 2, 0, -917508, 2, 0, -917507, 2, 0, -917506, 2, 0, -917505, 2, 0, -983040, 2, 0, -983039, 0, 0, -851979, 0, 0, -851978, 2, 0, -851977, 2, 0, -851976, 2, 0, -851975, 2, 0, -851974, 2, 0, -851973, 2, 0, -851972, 2, 0, -851971, 2, 0, -851970, 2, 0, -851969, 2, 0, -917504, 2, 0, -917503, 0, 0, -786443, 0, 0, -786442, 0, 0, -786441, 0, 0, -786440, 0, 0, -786439, 0, 0, -786438, 0, 0, -786437, 0, 0, -786436, 0, 0, -786435, 0, 0, -786434, 0, 0, -786433, 2, 0, -851968, 2, 0, -851967, 0, 0, -720903, 0, 0, -720902, 3, 0, -720901, 3, 0, -720900, 3, 0, -720899, 3, 0, -720898, 0, 0, -720897, 2, 0, -786432, 2, 0, -786431, 0, 0, -786430, 0, 0, -786429, 0, 0, -786428, 0, 0, -786427, 0, 0, -655367, 0, 0, -655366, 3, 0, -655365, 3, 0, -655364, 3, 0, -655363, 3, 0, -655362, 0, 0, -655361, 2, 0, -720896, 2, 0, -720895, 0, 0, -720894, 0, 0, -720893, 0, 0, -720892, 0, 0, -720891, 0, 0, -589831, 0, 0, -589830, 3, 0, -589829, 3, 0, -589828, 3, 0, -589827, 3, 0, -589826, 0, 0, -589825, 2, 0, -655360, 2, 0, -655359, 0, 0, -655358, 0, 0, -655357, 0, 0, -655356, 0, 0, -655355, 0, 0, -524295, 0, 0, -524294, 3, 0, -524293, 3, 0, -524292, 3, 0, -524291, 3, 0, -524290, 0, 0, -524289, 2, 0, -589824, 2, 0, -589823, 0, 0, -589822, 0, 0, -589821, 0, 0, -589820, 0, 0, -589819, 0, 0, -458759, 0, 0, -458758, 3, 0, -458757, 3, 0, -458756, 3, 0, -458755, 3, 0, -458754, 0, 0, -458753, 2, 0, -524288, 2, 0, -524287, 0, 0, -393223, 0, 0, -393222, 0, 0, -393221, 0, 0, -393220, 0, 0, -393219, 0, 0, -393218, 0, 0, -393217, 2, 0, -458752, 2, 0, -458751, 0, 0, -458750, 0, 0, -458749, 0, 0, -458748, 0, 0, -458747, 0, 0, -458746, 0, 0, -458745, 0, 0, -458744, 0, 0, -458743, 0, 0, -458742, 0, 0, -458741, 0, 0, -327687, 0, 0, -327686, 2, 0, -327685, 2, 0, -327684, 2, 0, -327683, 2, 0, -327682, 2, 0, -327681, 2, 0, -393216, 2, 0, -393215, 2, 0, -393214, 2, 0, -393213, 2, 0, -393212, 2, 0, -393211, 2, 0, -393210, 2, 0, -393209, 2, 0, -393208, 2, 0, -393207, 2, 0, -393206, 2, 0, -393205, 0, 0, -262151, 0, 0, -262150, 2, 0, -262149, 2, 0, -262148, 2, 0, -262147, 2, 0, -262146, 2, 0, -262145, 2, 0, -327680, 2, 0, -327679, 2, 0, -327678, 2, 0, -327677, 2, 0, -327676, 2, 0, -327675, 2, 0, -327674, 2, 0, -327673, 2, 0, -327672, 2, 0, -327671, 2, 0, -327670, 2, 0, -327669, 0, 0, -196615, 0, 0, -196614, 0, 0, -196613, 0, 0, -196612, 0, 0, -196611, 0, 0, -196610, 0, 0, -196609, 2, 0, -262144, 2, 0, -262143, 536870912, 0, -262142, 536870912, 0, -262141, 536870912, 0, -262140, 536870912, 0, -262139, 0, 0, -262138, 536870912, 0, -262137, 536870912, 0, -262136, 536870912, 0, -262135, 536870912, 0, -262134, 536870912, 0, -262133, 0, 0, -131077, 0, 0, -131074, 0, 0, -131073, 2, 0, -196608, 2, 0, -196607, 536870912, 0, -196604, 0, 0, -196603, 0, 0, -65543, 0, 0, -65542, 0, 0, -65541, 0, 0, -65538, 0, 0, -65537, 2, 0, -131072, 2, 0, -131071, 536870912, 0, -131068, 0, 0, -131067, 0, 0, -7, 0, 0, -6, 0, 0, -5, 0, 0, -2, 0, 0, -1, 2, 0, -65536, 2, 0, -65535, 536870912, 0, -65532, 0, 0, -65531, 0, 0, 65534, 0, 0, 65535, 2, 0, 0, 2, 0, 1, 536870912, 0, 4, 0, 0, 5, 0, 0, 131070, 0, 0, 131071, 2, 0, 65536, 2, 0, 65537, 536870912, 0, 196606, 0, 0, 196607, 2, 0, 131072, 2, 0, 131073, 536870912, 0, 262142, 0, 0, 262143, 2, 0, 196608, 2, 0, 196609, 0, 0, 327678, 0, 0, 327679, 2, 0, 262144, 2, 0, 262145, 0, 0, 393214, 0, 0, 393215, 2, 0, 327680, 2, 0, 327681, 0, 0, 458750, 0, 0, 458751, 2, 0, 393216, 2, 0, 393217, 0, 0, 524286, 0, 0, 524287, 2, 0, 458752, 2, 0, 458753, 0, 0, 589823, 2, 0, 524288, 2, 0, 524289, 0, 0, 589824, 2, 0, 589825, 0, 0, 655361, 0, 0 )
 
 [node name="Collisions" type="TileMap" parent="." index="2" groups=[
 "scenario_collisions",
 ]]
+visible = false
 mode = 1
 tile_set = ExtResource( 5 )
 cell_size = Vector2( 64, 32 )
@@ -62,7 +65,7 @@ tile_data = PoolIntArray( -12189784, 0, 0, -12189783, 0, 0, -12189782, 0, 0, -12
 [node name="compass" parent="ScreenCanvas" index="4" instance=ExtResource( 19 )]
 
 [node name="Player" parent="YSort" index="0" instance=ExtResource( 2 )]
-position = Vector2( 4686.61, -3460.2 )
+position = Vector2( -774.7, 313.708 )
 
 [node name="begining" type="YSort" parent="YSort" index="1"]
 position = Vector2( -280, -211 )
@@ -71,41 +74,69 @@ position = Vector2( -280, -211 )
 position = Vector2( -440, 168 )
 collision_layer = 7
 
-[node name="Building_tall" parent="YSort/begining" index="1" instance=ExtResource( 3 )]
-position = Vector2( -296, 96 )
-collision_layer = 7
-
-[node name="Building_tall3" parent="YSort/begining" index="2" instance=ExtResource( 3 )]
+[node name="Building_tall3" parent="YSort/begining" index="1" instance=ExtResource( 3 )]
 position = Vector2( -736, 312 )
 collision_layer = 7
 
-[node name="House_square" parent="YSort/begining" index="3" instance=ExtResource( 4 )]
-position = Vector2( -176, 32 )
+[node name="Building_tall5" parent="YSort/begining" index="2" instance=ExtResource( 3 )]
+position = Vector2( -1134, 512 )
 collision_layer = 7
 
-[node name="House_square2" parent="YSort/begining" index="4" instance=ExtResource( 4 )]
-position = Vector2( 104, -104 )
-collision_layer = 7
-
-[node name="House_square3" parent="YSort/begining" index="5" instance=ExtResource( 4 )]
-position = Vector2( 224, -168 )
-collision_layer = 7
-
-[node name="House_square4" parent="YSort/begining" index="6" instance=ExtResource( 4 )]
+[node name="House_square4" parent="YSort/begining" index="3" instance=ExtResource( 4 )]
 position = Vector2( -600, 240 )
 collision_layer = 7
 
-[node name="House_square5" parent="YSort/begining" index="7" instance=ExtResource( 4 )]
+[node name="House_square5" parent="YSort/begining" index="4" instance=ExtResource( 4 )]
 position = Vector2( -888, 384 )
 collision_layer = 7
 
-[node name="House_square6" parent="YSort/begining" index="8" instance=ExtResource( 4 )]
+[node name="House_square6" parent="YSort/begining" index="5" instance=ExtResource( 4 )]
 position = Vector2( -1016, 448 )
 collision_layer = 7
 
-[node name="Building_tall2" parent="YSort/begining" index="9" instance=ExtResource( 3 )]
+[node name="Building_tall2" parent="YSort/begining" index="6" instance=ExtResource( 3 )]
 position = Vector2( -24, -40 )
 collision_layer = 7
+
+[node name="block" parent="YSort/begining" index="7" instance=ExtResource( 27 )]
+position = Vector2( -952.975, 521.815 )
+scale = Vector2( -1, 1 )
+
+[node name="block2" parent="YSort/begining" index="8" instance=ExtResource( 27 )]
+position = Vector2( -840.654, 579.391 )
+scale = Vector2( -1, 1 )
+
+[node name="block3" parent="YSort/begining" index="9" instance=ExtResource( 27 )]
+position = Vector2( -725.501, 637.911 )
+scale = Vector2( -1, 1 )
+
+[node name="block4" parent="YSort/begining" index="10" instance=ExtResource( 27 )]
+position = Vector2( -613.18, 696.431 )
+scale = Vector2( -1, 1 )
+
+[node name="block5" parent="YSort/begining" index="11" instance=ExtResource( 27 )]
+position = Vector2( -498.971, 752.12 )
+scale = Vector2( -1, 1 )
+
+[node name="block6" parent="YSort/begining" index="12" instance=ExtResource( 27 )]
+position = Vector2( -498.971, 752.12 )
+scale = Vector2( -1, 1 )
+
+[node name="block7" parent="YSort/begining" index="13" instance=ExtResource( 27 )]
+position = Vector2( -388.098, 808.817 )
+scale = Vector2( -1, 1 )
+
+[node name="_Object_prefab" parent="YSort/begining" index="14" instance=ExtResource( 26 )]
+position = Vector2( -249.128, 32.5889 )
+
+[node name="_Object_prefab4" parent="YSort/begining" index="15" instance=ExtResource( 26 )]
+position = Vector2( 157.581, -169.576 )
+
+[node name="_Object_prefab2" parent="YSort/begining" index="16" instance=ExtResource( 26 )]
+position = Vector2( 111.964, 658.881 )
+
+[node name="_Object_prefab3" parent="YSort/begining" index="17" instance=ExtResource( 26 )]
+position = Vector2( 703.796, 396.678 )
 
 [node name="begining2" type="YSort" parent="YSort" index="2"]
 position = Vector2( 648, 125 )
@@ -114,115 +145,121 @@ position = Vector2( 648, 125 )
 position = Vector2( -440, 168 )
 collision_layer = 7
 
-[node name="Building_tall" parent="YSort/begining2" index="1" instance=ExtResource( 3 )]
-position = Vector2( -296, 96 )
+[node name="Building_tall6" parent="YSort/begining2" index="1" instance=ExtResource( 3 )]
+position = Vector2( -1138, 508 )
 collision_layer = 7
 
-[node name="Building_tall3" parent="YSort/begining2" index="2" instance=ExtResource( 3 )]
-position = Vector2( -736, 312 )
+[node name="Building_tall8" parent="YSort/begining2" index="2" instance=ExtResource( 3 )]
+position = Vector2( -1698, 766 )
 collision_layer = 7
 
-[node name="House_square" parent="YSort/begining2" index="3" instance=ExtResource( 4 )]
-position = Vector2( -176, 32 )
+[node name="Building_tall9" parent="YSort/begining2" index="3" instance=ExtResource( 3 )]
+position = Vector2( -1840, 838 )
 collision_layer = 7
 
-[node name="House_square2" parent="YSort/begining2" index="4" instance=ExtResource( 4 )]
+[node name="Building_tall7" parent="YSort/begining2" index="4" instance=ExtResource( 3 )]
+position = Vector2( -1390, 642 )
+collision_layer = 7
+
+[node name="House_square2" parent="YSort/begining2" index="5" instance=ExtResource( 4 )]
 position = Vector2( 104, -104 )
 collision_layer = 7
 
-[node name="House_square4" parent="YSort/begining2" index="5" instance=ExtResource( 4 )]
+[node name="House_square4" parent="YSort/begining2" index="6" instance=ExtResource( 4 )]
 position = Vector2( -600, 240 )
-collision_layer = 7
-
-[node name="House_square5" parent="YSort/begining2" index="6" instance=ExtResource( 4 )]
-position = Vector2( -888, 384 )
 collision_layer = 7
 
 [node name="House_square6" parent="YSort/begining2" index="7" instance=ExtResource( 4 )]
 position = Vector2( -1016, 448 )
 collision_layer = 7
 
-[node name="Building_tall2" parent="YSort/begining2" index="8" instance=ExtResource( 3 )]
+[node name="House_square7" parent="YSort/begining2" index="8" instance=ExtResource( 4 )]
+position = Vector2( -1264, 578 )
+collision_layer = 7
+
+[node name="House_square8" parent="YSort/begining2" index="9" instance=ExtResource( 4 )]
+position = Vector2( -1534, 716 )
+collision_layer = 7
+
+[node name="House_square9" parent="YSort/begining2" index="10" instance=ExtResource( 4 )]
+position = Vector2( -1976, 944 )
+collision_layer = 7
+
+[node name="Building_tall2" parent="YSort/begining2" index="11" instance=ExtResource( 3 )]
 position = Vector2( -24, -40 )
 collision_layer = 7
 
-[node name="Building_tall5" parent="YSort/begining2" index="9" instance=ExtResource( 3 )]
+[node name="Building_tall5" parent="YSort/begining2" index="12" instance=ExtResource( 3 )]
 position = Vector2( 256, -160 )
 scale = Vector2( -1, 1 )
 collision_layer = 7
 
 [node name="alley_west" type="YSort" parent="YSort" index="3"]
 
-[node name="Building_tall5" parent="YSort/alley_west" index="0" instance=ExtResource( 3 )]
-position = Vector2( -88, -531 )
-rotation = 3.14159
-scale = Vector2( 1, -1 )
-collision_layer = 7
-
-[node name="Building_tall6" parent="YSort/alley_west" index="1" instance=ExtResource( 3 )]
+[node name="Building_tall6" parent="YSort/alley_west" index="0" instance=ExtResource( 3 )]
 position = Vector2( -496, -747 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
 collision_layer = 7
 
-[node name="Building_tall8" parent="YSort/alley_west" index="2" instance=ExtResource( 3 )]
+[node name="Building_tall8" parent="YSort/alley_west" index="1" instance=ExtResource( 3 )]
 position = Vector2( -752, -755 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
 collision_layer = 7
 
-[node name="Building_tall7" parent="YSort/alley_west" index="3" instance=ExtResource( 3 )]
+[node name="Building_tall7" parent="YSort/alley_west" index="2" instance=ExtResource( 3 )]
 position = Vector2( -384, -523 )
 rotation = 3.14159
 scale = Vector2( -1, -1 )
 collision_layer = 7
 
-[node name="Building_tall3" parent="YSort/alley_west" index="4" instance=ExtResource( 3 )]
+[node name="Building_tall3" parent="YSort/alley_west" index="3" instance=ExtResource( 3 )]
 position = Vector2( 80, -451 )
 collision_layer = 7
 
-[node name="Building_tall4" parent="YSort/alley_west" index="5" instance=ExtResource( 3 )]
+[node name="Building_tall4" parent="YSort/alley_west" index="4" instance=ExtResource( 3 )]
 position = Vector2( -544, -443 )
 collision_layer = 7
 
-[node name="Building_tall9" parent="YSort/alley_west" index="6" instance=ExtResource( 3 )]
+[node name="Building_tall9" parent="YSort/alley_west" index="5" instance=ExtResource( 3 )]
 position = Vector2( -1096, -579 )
 scale = Vector2( -1, 1 )
 collision_layer = 7
 
-[node name="House_square" parent="YSort/alley_west" index="7" instance=ExtResource( 4 )]
-position = Vector2( -224, -595 )
-collision_layer = 7
-
-[node name="House_square3" parent="YSort/alley_west" index="8" instance=ExtResource( 4 )]
+[node name="House_square3" parent="YSort/alley_west" index="6" instance=ExtResource( 4 )]
 position = Vector2( -1120, -683 )
 collision_layer = 7
 
-[node name="House_square4" parent="YSort/alley_west" index="9" instance=ExtResource( 4 )]
+[node name="House_square4" parent="YSort/alley_west" index="7" instance=ExtResource( 4 )]
 position = Vector2( -984, -755 )
 collision_layer = 7
 
-[node name="House_square2" parent="YSort/alley_west" index="10" instance=ExtResource( 4 )]
+[node name="House_square2" parent="YSort/alley_west" index="8" instance=ExtResource( 4 )]
 position = Vector2( -232, -451 )
 collision_layer = 7
 
-[node name="House_square5" parent="YSort/alley_west" index="11" instance=ExtResource( 4 )]
+[node name="House_square5" parent="YSort/alley_west" index="9" instance=ExtResource( 4 )]
 position = Vector2( -600, -683 )
 collision_layer = 7
 
-[node name="House_square6" parent="YSort/alley_west" index="12" instance=ExtResource( 4 )]
+[node name="House_square6" parent="YSort/alley_west" index="10" instance=ExtResource( 4 )]
 position = Vector2( -936, -499 )
 collision_layer = 7
 
-[node name="House_square7" parent="YSort/alley_west" index="13" instance=ExtResource( 4 )]
+[node name="House_square7" parent="YSort/alley_west" index="11" instance=ExtResource( 4 )]
 position = Vector2( -752, -403 )
 collision_layer = 7
 
-[node name="Open_bin" parent="YSort/alley_west" index="14" instance=ExtResource( 9 )]
+[node name="Open_bin" parent="YSort/alley_west" index="12" instance=ExtResource( 9 )]
 position = Vector2( -912, -707 )
 scale = Vector2( -1, 1 )
 collision_layer = 7
 pickups = [ "HealingPickup", "HealingPickup" ]
+
+[node name="_Object_prefab5" parent="YSort/alley_west" index="13" instance=ExtResource( 26 )]
+position = Vector2( -115.977, -545.57 )
+scale = Vector2( -1, 1 )
 
 [node name="near_warehouse" type="YSort" parent="YSort" index="4"]
 position = Vector2( -312, -1059 )
@@ -366,6 +403,7 @@ position = Vector2( 672, 16 )
 pickups = [ "HealingPickup", "WeaponPickup" ]
 
 [node name="warehouse_walls" type="YSort" parent="YSort" index="6"]
+modulate = Color( 0.513726, 0.360784, 0.286275, 1 )
 position = Vector2( 896, -763 )
 
 [node name="wall_simple113" parent="YSort/warehouse_walls" index="0" instance=ExtResource( 17 )]
@@ -741,134 +779,128 @@ position = Vector2( 928, 840 )
 scale = Vector2( -1, 1 )
 collision_layer = 7
 
-[node name="Building_tall12" parent="YSort/begining_right" index="14" instance=ExtResource( 3 )]
-position = Vector2( 880, 48 )
+[node name="Building_tall13" parent="YSort/begining_right" index="14" instance=ExtResource( 3 )]
+position = Vector2( 1147.46, 160.881 )
 scale = Vector2( -1, 1 )
 collision_layer = 7
 
-[node name="House_square12" parent="YSort/begining_right" index="15" instance=ExtResource( 4 )]
-position = Vector2( 1056, 112 )
+[node name="House_square13" parent="YSort/begining_right" index="15" instance=ExtResource( 4 )]
+position = Vector2( 1299.02, 238.361 )
 scale = Vector2( -1, 1 )
 collision_layer = 7
 
-[node name="Building_tall13" parent="YSort/begining_right" index="16" instance=ExtResource( 3 )]
-position = Vector2( 1184, 176 )
+[node name="Building_tall14" parent="YSort/begining_right" index="16" instance=ExtResource( 3 )]
+position = Vector2( 1434.58, 309.921 )
 scale = Vector2( -1, 1 )
 collision_layer = 7
 
-[node name="House_square13" parent="YSort/begining_right" index="17" instance=ExtResource( 4 )]
-position = Vector2( 1328, 256 )
+[node name="House_square14" parent="YSort/begining_right" index="17" instance=ExtResource( 4 )]
+position = Vector2( 1583.18, 378.96 )
 scale = Vector2( -1, 1 )
 collision_layer = 7
 
-[node name="Building_tall14" parent="YSort/begining_right" index="18" instance=ExtResource( 3 )]
-position = Vector2( 1456, 320 )
+[node name="Building_tall15" parent="YSort/begining_right" index="18" instance=ExtResource( 3 )]
+position = Vector2( 1711.18, 388.784 )
 scale = Vector2( -1, 1 )
 collision_layer = 7
 
-[node name="House_square14" parent="YSort/begining_right" index="19" instance=ExtResource( 4 )]
-position = Vector2( 1592, 384 )
-scale = Vector2( -1, 1 )
-collision_layer = 7
-
-[node name="Building_tall15" parent="YSort/begining_right" index="20" instance=ExtResource( 3 )]
-position = Vector2( 1720, 448 )
-scale = Vector2( -1, 1 )
-collision_layer = 7
-
-[node name="Building_tall16" parent="YSort/begining_right" index="21" instance=ExtResource( 3 )]
+[node name="Building_tall16" parent="YSort/begining_right" index="19" instance=ExtResource( 3 )]
 position = Vector2( 64, -384 )
 scale = Vector2( -1, 1 )
 collision_layer = 7
 
-[node name="House_square15" parent="YSort/begining_right" index="22" instance=ExtResource( 4 )]
+[node name="House_square15" parent="YSort/begining_right" index="20" instance=ExtResource( 4 )]
 position = Vector2( 208, -312 )
 scale = Vector2( -1, 1 )
 collision_layer = 7
 
-[node name="Building_tall17" parent="YSort/begining_right" index="23" instance=ExtResource( 3 )]
+[node name="Building_tall17" parent="YSort/begining_right" index="21" instance=ExtResource( 3 )]
 position = Vector2( 336, -248 )
 scale = Vector2( -1, 1 )
 collision_layer = 7
 
-[node name="House_square16" parent="YSort/begining_right" index="24" instance=ExtResource( 4 )]
+[node name="House_square16" parent="YSort/begining_right" index="22" instance=ExtResource( 4 )]
 position = Vector2( 480, -168 )
 scale = Vector2( -1, 1 )
 collision_layer = 7
 
-[node name="Building_tall18" parent="YSort/begining_right" index="25" instance=ExtResource( 3 )]
+[node name="Building_tall18" parent="YSort/begining_right" index="23" instance=ExtResource( 3 )]
 position = Vector2( 608, -104 )
 scale = Vector2( -1, 1 )
 collision_layer = 7
 
-[node name="House_square17" parent="YSort/begining_right" index="26" instance=ExtResource( 4 )]
+[node name="House_square17" parent="YSort/begining_right" index="24" instance=ExtResource( 4 )]
 position = Vector2( 744, -40 )
 scale = Vector2( -1, 1 )
 collision_layer = 7
 
-[node name="House_square6" parent="YSort/begining_right" index="27" instance=ExtResource( 4 )]
+[node name="House_square6" parent="YSort/begining_right" index="25" instance=ExtResource( 4 )]
 position = Vector2( -552, 224 )
 collision_layer = 7
 
-[node name="Building_tall6" parent="YSort/begining_right" index="28" instance=ExtResource( 3 )]
+[node name="Building_tall6" parent="YSort/begining_right" index="26" instance=ExtResource( 3 )]
 position = Vector2( -680, 288 )
 collision_layer = 7
 
-[node name="House_square7" parent="YSort/begining_right" index="29" instance=ExtResource( 4 )]
+[node name="House_square7" parent="YSort/begining_right" index="27" instance=ExtResource( 4 )]
 position = Vector2( -840, 368 )
 collision_layer = 7
 
-[node name="Building_tall7" parent="YSort/begining_right" index="30" instance=ExtResource( 3 )]
+[node name="Building_tall7" parent="YSort/begining_right" index="28" instance=ExtResource( 3 )]
 position = Vector2( -968, 432 )
 collision_layer = 7
 
-[node name="House_square8" parent="YSort/begining_right" index="31" instance=ExtResource( 4 )]
+[node name="House_square8" parent="YSort/begining_right" index="29" instance=ExtResource( 4 )]
 position = Vector2( -168, 440 )
 collision_layer = 7
 
-[node name="Building_tall8" parent="YSort/begining_right" index="32" instance=ExtResource( 3 )]
+[node name="Building_tall8" parent="YSort/begining_right" index="30" instance=ExtResource( 3 )]
 position = Vector2( -296, 504 )
 collision_layer = 7
 
-[node name="House_square9" parent="YSort/begining_right" index="33" instance=ExtResource( 4 )]
+[node name="House_square9" parent="YSort/begining_right" index="31" instance=ExtResource( 4 )]
 position = Vector2( -440, 584 )
 collision_layer = 7
 
-[node name="Building_tall9" parent="YSort/begining_right" index="34" instance=ExtResource( 3 )]
+[node name="Building_tall9" parent="YSort/begining_right" index="32" instance=ExtResource( 3 )]
 position = Vector2( -568, 648 )
 collision_layer = 7
 
-[node name="Building_tall19" parent="YSort/begining_right" index="35" instance=ExtResource( 3 )]
+[node name="Building_tall19" parent="YSort/begining_right" index="33" instance=ExtResource( 3 )]
 position = Vector2( 1656, 632 )
 collision_layer = 7
 
-[node name="Building_tall20" parent="YSort/begining_right" index="36" instance=ExtResource( 3 )]
+[node name="Building_tall20" parent="YSort/begining_right" index="34" instance=ExtResource( 3 )]
 position = Vector2( 1800, 560 )
 collision_layer = 7
 
-[node name="Building_tall21" parent="YSort/begining_right" index="37" instance=ExtResource( 3 )]
+[node name="Building_tall21" parent="YSort/begining_right" index="35" instance=ExtResource( 3 )]
 position = Vector2( 1360, 776 )
 collision_layer = 7
 
-[node name="House_square18" parent="YSort/begining_right" index="38" instance=ExtResource( 4 )]
+[node name="House_square18" parent="YSort/begining_right" index="36" instance=ExtResource( 4 )]
 position = Vector2( 1496, 704 )
 collision_layer = 7
 
-[node name="House_square21" parent="YSort/begining_right" index="39" instance=ExtResource( 4 )]
+[node name="House_square21" parent="YSort/begining_right" index="37" instance=ExtResource( 4 )]
 position = Vector2( 1912, 496 )
 collision_layer = 7
 
-[node name="House_square19" parent="YSort/begining_right" index="40" instance=ExtResource( 4 )]
+[node name="House_square19" parent="YSort/begining_right" index="38" instance=ExtResource( 4 )]
 position = Vector2( 1208, 848 )
 collision_layer = 7
 
-[node name="House_square20" parent="YSort/begining_right" index="41" instance=ExtResource( 4 )]
+[node name="House_square20" parent="YSort/begining_right" index="39" instance=ExtResource( 4 )]
 position = Vector2( 1080, 912 )
 collision_layer = 7
 
-[node name="Open_bin" parent="YSort/begining_right" index="42" instance=ExtResource( 9 )]
+[node name="Open_bin" parent="YSort/begining_right" index="40" instance=ExtResource( 9 )]
 position = Vector2( 1560, 480 )
 pickups = [ "WeaponPickup" ]
+
+[node name="_Object_prefab" parent="YSort/begining_right" index="41" instance=ExtResource( 26 )]
+position = Vector2( 952.501, 23.9385 )
+scale = Vector2( -1, 1 )
 
 [node name="alley_right" type="YSort" parent="YSort" index="8"]
 position = Vector2( 2528, -563 )
@@ -909,89 +941,83 @@ rotation = 3.14159
 scale = Vector2( 1, -1 )
 collision_layer = 7
 
-[node name="House_square20" parent="YSort/alley_right" index="6" instance=ExtResource( 4 )]
-position = Vector2( 32, 496 )
-rotation = 3.14159
-scale = Vector2( 1, -1 )
-collision_layer = 7
-
-[node name="House_square22" parent="YSort/alley_right" index="7" instance=ExtResource( 4 )]
+[node name="House_square22" parent="YSort/alley_right" index="6" instance=ExtResource( 4 )]
 position = Vector2( 368, 136 )
 rotation = -2.53518e-06
 collision_layer = 7
 
-[node name="Building_tall23" parent="YSort/alley_right" index="8" instance=ExtResource( 3 )]
+[node name="Building_tall23" parent="YSort/alley_right" index="7" instance=ExtResource( 3 )]
 position = Vector2( 248, 192 )
 rotation = -2.53518e-06
 collision_layer = 7
 
-[node name="Building_tall26" parent="YSort/alley_right" index="9" instance=ExtResource( 3 )]
+[node name="Building_tall26" parent="YSort/alley_right" index="8" instance=ExtResource( 3 )]
 position = Vector2( 512, 64 )
 rotation = -2.53518e-06
 collision_layer = 7
 
-[node name="House_square23" parent="YSort/alley_right" index="10" instance=ExtResource( 4 )]
+[node name="House_square23" parent="YSort/alley_right" index="9" instance=ExtResource( 4 )]
 position = Vector2( 120, 272 )
 rotation = -2.53518e-06
 collision_layer = 7
 
-[node name="House_square24" parent="YSort/alley_right" index="11" instance=ExtResource( 4 )]
+[node name="House_square24" parent="YSort/alley_right" index="10" instance=ExtResource( 4 )]
 position = Vector2( -8, 336 )
 rotation = -2.53518e-06
 collision_layer = 7
 
-[node name="House_square28" parent="YSort/alley_right" index="12" instance=ExtResource( 4 )]
+[node name="House_square28" parent="YSort/alley_right" index="11" instance=ExtResource( 4 )]
 position = Vector2( -488, -24 )
 rotation = -2.53518e-06
 collision_layer = 7
 
-[node name="House_square30" parent="YSort/alley_right" index="13" instance=ExtResource( 4 )]
+[node name="House_square30" parent="YSort/alley_right" index="12" instance=ExtResource( 4 )]
 position = Vector2( -224, -144 )
 rotation = -2.53518e-06
 collision_layer = 7
 
-[node name="Building_tall28" parent="YSort/alley_right" index="14" instance=ExtResource( 3 )]
+[node name="Building_tall28" parent="YSort/alley_right" index="13" instance=ExtResource( 3 )]
 position = Vector2( -344, -80 )
 rotation = -2.53518e-06
 collision_layer = 7
 
-[node name="Building_tall29" parent="YSort/alley_right" index="15" instance=ExtResource( 3 )]
+[node name="Building_tall29" parent="YSort/alley_right" index="14" instance=ExtResource( 3 )]
 position = Vector2( -104, -216 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
 collision_layer = 7
 
-[node name="House_square25" parent="YSort/alley_right" index="16" instance=ExtResource( 4 )]
+[node name="House_square25" parent="YSort/alley_right" index="15" instance=ExtResource( 4 )]
 position = Vector2( 248, -160 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
 collision_layer = 7
 
-[node name="House_square29" parent="YSort/alley_right" index="17" instance=ExtResource( 4 )]
+[node name="House_square29" parent="YSort/alley_right" index="16" instance=ExtResource( 4 )]
 position = Vector2( 120, -224 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
 collision_layer = 7
 
-[node name="House_square26" parent="YSort/alley_right" index="18" instance=ExtResource( 4 )]
+[node name="House_square26" parent="YSort/alley_right" index="17" instance=ExtResource( 4 )]
 position = Vector2( -16, -288 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
 collision_layer = 7
 
-[node name="Building_tall25" parent="YSort/alley_right" index="19" instance=ExtResource( 3 )]
+[node name="Building_tall25" parent="YSort/alley_right" index="18" instance=ExtResource( 3 )]
 position = Vector2( 376, -96 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
 collision_layer = 7
 
-[node name="House_square27" parent="YSort/alley_right" index="20" instance=ExtResource( 4 )]
+[node name="House_square27" parent="YSort/alley_right" index="19" instance=ExtResource( 4 )]
 position = Vector2( 520, -16 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
 collision_layer = 7
 
-[node name="Open_bin" parent="YSort/alley_right" index="21" instance=ExtResource( 9 )]
+[node name="Open_bin" parent="YSort/alley_right" index="20" instance=ExtResource( 9 )]
 position = Vector2( 384, 16 )
 pickups = [ "HealingPickup", "WeaponPickup" ]
 
@@ -1053,6 +1079,22 @@ collision_layer = 7
 [node name="House_square17" parent="YSort/road" index="13" instance=ExtResource( 4 )]
 position = Vector2( 4184, -1667 )
 collision_layer = 7
+
+[node name="block" parent="YSort/road" index="14" instance=ExtResource( 27 )]
+position = Vector2( 3553.48, -1964.85 )
+scale = Vector2( -1, 1 )
+
+[node name="block2" parent="YSort/road" index="15" instance=ExtResource( 27 )]
+position = Vector2( 3667.84, -1909.35 )
+scale = Vector2( -1, 1 )
+
+[node name="block3" parent="YSort/road" index="16" instance=ExtResource( 27 )]
+position = Vector2( 3782.2, -1852.17 )
+scale = Vector2( -1, 1 )
+
+[node name="block4" parent="YSort/road" index="17" instance=ExtResource( 27 )]
+position = Vector2( 3894.88, -1794.99 )
+scale = Vector2( -1, 1 )
 
 [node name="square" type="YSort" parent="YSort" index="10"]
 
@@ -1184,6 +1226,7 @@ position = Vector2( 823.324, -3290.53 )
 collision_layer = 7
 
 [node name="station_walls" type="YSort" parent="YSort" index="11"]
+modulate = Color( 0.501961, 0.380392, 0.294118, 1 )
 position = Vector2( 2719.74, -2784.57 )
 
 [node name="wall_simple" parent="YSort/station_walls" index="0" instance=ExtResource( 17 )]
@@ -3386,1437 +3429,2843 @@ position = Vector2( 2716.38, -2886.83 )
 [node name="Open_bin" parent="YSort/station_objects/firstRoom" index="0" instance=ExtResource( 9 )]
 position = Vector2( -1175.72, -646.849 )
 scale = Vector2( -1, 1 )
-pickups = [ "HealingPickup", "HealingPickup" ]
+pickups = [ "HealingPickup", "HealingPickup", "HealingPickup" ]
 
 [node name="cubicles" type="YSort" parent="YSort/station_objects" index="2"]
+modulate = Color( 0.631373, 0.588235, 0.568627, 1 )
 
 [node name="wall_simple" parent="YSort/station_objects/cubicles" index="0" instance=ExtResource( 7 )]
 position = Vector2( 545.468, 400.687 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple2" parent="YSort/station_objects/cubicles" index="1" instance=ExtResource( 7 )]
 position = Vector2( 535.093, 405.994 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple3" parent="YSort/station_objects/cubicles" index="2" instance=ExtResource( 7 )]
 position = Vector2( 524.718, 411.187 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple9" parent="YSort/station_objects/cubicles" index="3" instance=ExtResource( 7 )]
 position = Vector2( 462.978, 442.453 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple10" parent="YSort/station_objects/cubicles" index="4" instance=ExtResource( 7 )]
 position = Vector2( 452.603, 447.761 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple11" parent="YSort/station_objects/cubicles" index="5" instance=ExtResource( 7 )]
 position = Vector2( 442.228, 452.953 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple4" parent="YSort/station_objects/cubicles" index="6" instance=ExtResource( 7 )]
 position = Vector2( 514.343, 416.494 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple5" parent="YSort/station_objects/cubicles" index="7" instance=ExtResource( 7 )]
 position = Vector2( 504.421, 421.46 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple6" parent="YSort/station_objects/cubicles" index="8" instance=ExtResource( 7 )]
 position = Vector2( 494.047, 426.768 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple7" parent="YSort/station_objects/cubicles" index="9" instance=ExtResource( 7 )]
 position = Vector2( 483.671, 431.96 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple8" parent="YSort/station_objects/cubicles" index="10" instance=ExtResource( 7 )]
 position = Vector2( 473.297, 437.268 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple12" parent="YSort/station_objects/cubicles" index="11" instance=ExtResource( 7 )]
 position = Vector2( 484.069, 442.2 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple23" parent="YSort/station_objects/cubicles" index="12" instance=ExtResource( 7 )]
 position = Vector2( 494.414, 447.446 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple24" parent="YSort/station_objects/cubicles" index="13" instance=ExtResource( 7 )]
 position = Vector2( 504.729, 452.652 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple25" parent="YSort/station_objects/cubicles" index="14" instance=ExtResource( 7 )]
 position = Vector2( 515.104, 457.884 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple26" parent="YSort/station_objects/cubicles" index="15" instance=ExtResource( 7 )]
 position = Vector2( 525.449, 463.13 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple27" parent="YSort/station_objects/cubicles" index="16" instance=ExtResource( 7 )]
 position = Vector2( 535.764, 468.337 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple28" parent="YSort/station_objects/cubicles" index="17" instance=ExtResource( 7 )]
 position = Vector2( 545.828, 473.424 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple29" parent="YSort/station_objects/cubicles" index="18" instance=ExtResource( 7 )]
 position = Vector2( 556.173, 478.67 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple30" parent="YSort/station_objects/cubicles" index="19" instance=ExtResource( 7 )]
 position = Vector2( 638.223, 447.538 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple13" parent="YSort/station_objects/cubicles" index="20" instance=ExtResource( 7 )]
 position = Vector2( 627.708, 452.76 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple14" parent="YSort/station_objects/cubicles" index="21" instance=ExtResource( 7 )]
 position = Vector2( 617.333, 457.952 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple15" parent="YSort/station_objects/cubicles" index="22" instance=ExtResource( 7 )]
 position = Vector2( 555.593, 489.219 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple16" parent="YSort/station_objects/cubicles" index="23" instance=ExtResource( 7 )]
 position = Vector2( 545.218, 494.527 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple17" parent="YSort/station_objects/cubicles" index="24" instance=ExtResource( 7 )]
 position = Vector2( 534.843, 499.719 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple18" parent="YSort/station_objects/cubicles" index="25" instance=ExtResource( 7 )]
 position = Vector2( 606.958, 463.26 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple61" parent="YSort/station_objects/cubicles" index="26" instance=ExtResource( 7 )]
 position = Vector2( 524.487, 504.973 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple62" parent="YSort/station_objects/cubicles" index="27" instance=ExtResource( 7 )]
 position = Vector2( 513.971, 510.196 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple63" parent="YSort/station_objects/cubicles" index="28" instance=ExtResource( 7 )]
 position = Vector2( 503.596, 515.388 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple65" parent="YSort/station_objects/cubicles" index="29" instance=ExtResource( 7 )]
 position = Vector2( 432.031, 458.111 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple66" parent="YSort/station_objects/cubicles" index="30" instance=ExtResource( 7 )]
 position = Vector2( 421.515, 463.333 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple67" parent="YSort/station_objects/cubicles" index="31" instance=ExtResource( 7 )]
 position = Vector2( 411.14, 468.525 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple19" parent="YSort/station_objects/cubicles" index="32" instance=ExtResource( 7 )]
 position = Vector2( 597.037, 468.226 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple20" parent="YSort/station_objects/cubicles" index="33" instance=ExtResource( 7 )]
 position = Vector2( 586.662, 473.534 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple21" parent="YSort/station_objects/cubicles" index="34" instance=ExtResource( 7 )]
 position = Vector2( 576.287, 478.726 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple22" parent="YSort/station_objects/cubicles" index="35" instance=ExtResource( 7 )]
 position = Vector2( 565.912, 484.034 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple64" parent="YSort/station_objects/cubicles" index="36" instance=ExtResource( 7 )]
 position = Vector2( 941.754, 198.066 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple68" parent="YSort/station_objects/cubicles" index="37" instance=ExtResource( 7 )]
 position = Vector2( 931.379, 203.373 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple69" parent="YSort/station_objects/cubicles" index="38" instance=ExtResource( 7 )]
 position = Vector2( 921.004, 208.566 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple70" parent="YSort/station_objects/cubicles" index="39" instance=ExtResource( 7 )]
 position = Vector2( 859.264, 239.832 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple71" parent="YSort/station_objects/cubicles" index="40" instance=ExtResource( 7 )]
 position = Vector2( 848.889, 245.14 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple72" parent="YSort/station_objects/cubicles" index="41" instance=ExtResource( 7 )]
 position = Vector2( 838.514, 250.332 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple73" parent="YSort/station_objects/cubicles" index="42" instance=ExtResource( 7 )]
 position = Vector2( 910.629, 213.873 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple74" parent="YSort/station_objects/cubicles" index="43" instance=ExtResource( 7 )]
 position = Vector2( 900.707, 218.839 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple75" parent="YSort/station_objects/cubicles" index="44" instance=ExtResource( 7 )]
 position = Vector2( 890.333, 224.147 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple76" parent="YSort/station_objects/cubicles" index="45" instance=ExtResource( 7 )]
 position = Vector2( 879.957, 229.339 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple77" parent="YSort/station_objects/cubicles" index="46" instance=ExtResource( 7 )]
 position = Vector2( 869.583, 234.647 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple78" parent="YSort/station_objects/cubicles" index="47" instance=ExtResource( 7 )]
 position = Vector2( 880.355, 239.579 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple79" parent="YSort/station_objects/cubicles" index="48" instance=ExtResource( 7 )]
 position = Vector2( 890.7, 244.824 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple80" parent="YSort/station_objects/cubicles" index="49" instance=ExtResource( 7 )]
 position = Vector2( 901.015, 250.031 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple81" parent="YSort/station_objects/cubicles" index="50" instance=ExtResource( 7 )]
 position = Vector2( 911.39, 255.263 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple82" parent="YSort/station_objects/cubicles" index="51" instance=ExtResource( 7 )]
 position = Vector2( 921.735, 260.509 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple83" parent="YSort/station_objects/cubicles" index="52" instance=ExtResource( 7 )]
 position = Vector2( 932.05, 265.716 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple84" parent="YSort/station_objects/cubicles" index="53" instance=ExtResource( 7 )]
 position = Vector2( 942.114, 270.803 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple85" parent="YSort/station_objects/cubicles" index="54" instance=ExtResource( 7 )]
 position = Vector2( 952.459, 276.049 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple86" parent="YSort/station_objects/cubicles" index="55" instance=ExtResource( 7 )]
 position = Vector2( 1034.51, 244.917 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple87" parent="YSort/station_objects/cubicles" index="56" instance=ExtResource( 7 )]
 position = Vector2( 1023.99, 250.139 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple88" parent="YSort/station_objects/cubicles" index="57" instance=ExtResource( 7 )]
 position = Vector2( 1013.62, 255.331 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple89" parent="YSort/station_objects/cubicles" index="58" instance=ExtResource( 7 )]
 position = Vector2( 951.879, 286.598 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple90" parent="YSort/station_objects/cubicles" index="59" instance=ExtResource( 7 )]
 position = Vector2( 941.504, 291.906 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple91" parent="YSort/station_objects/cubicles" index="60" instance=ExtResource( 7 )]
 position = Vector2( 931.129, 297.098 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple92" parent="YSort/station_objects/cubicles" index="61" instance=ExtResource( 7 )]
 position = Vector2( 1003.24, 260.639 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple93" parent="YSort/station_objects/cubicles" index="62" instance=ExtResource( 7 )]
 position = Vector2( 920.772, 302.352 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple94" parent="YSort/station_objects/cubicles" index="63" instance=ExtResource( 7 )]
 position = Vector2( 910.257, 307.575 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple95" parent="YSort/station_objects/cubicles" index="64" instance=ExtResource( 7 )]
 position = Vector2( 899.882, 312.767 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple96" parent="YSort/station_objects/cubicles" index="65" instance=ExtResource( 7 )]
 position = Vector2( 828.316, 255.49 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple97" parent="YSort/station_objects/cubicles" index="66" instance=ExtResource( 7 )]
 position = Vector2( 817.801, 260.712 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple98" parent="YSort/station_objects/cubicles" index="67" instance=ExtResource( 7 )]
 position = Vector2( 807.426, 265.904 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple99" parent="YSort/station_objects/cubicles" index="68" instance=ExtResource( 7 )]
 position = Vector2( 993.323, 265.605 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple100" parent="YSort/station_objects/cubicles" index="69" instance=ExtResource( 7 )]
 position = Vector2( 982.948, 270.913 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple101" parent="YSort/station_objects/cubicles" index="70" instance=ExtResource( 7 )]
 position = Vector2( 972.573, 276.105 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple102" parent="YSort/station_objects/cubicles" index="71" instance=ExtResource( 7 )]
 position = Vector2( 962.198, 281.413 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple103" parent="YSort/station_objects/cubicles" index="72" instance=ExtResource( 7 )]
 position = Vector2( 1191.68, 318.208 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple104" parent="YSort/station_objects/cubicles" index="73" instance=ExtResource( 7 )]
 position = Vector2( 1181.31, 323.515 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple105" parent="YSort/station_objects/cubicles" index="74" instance=ExtResource( 7 )]
 position = Vector2( 1170.93, 328.708 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple106" parent="YSort/station_objects/cubicles" index="75" instance=ExtResource( 7 )]
 position = Vector2( 1109.19, 359.974 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple107" parent="YSort/station_objects/cubicles" index="76" instance=ExtResource( 7 )]
 position = Vector2( 1098.82, 365.282 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple108" parent="YSort/station_objects/cubicles" index="77" instance=ExtResource( 7 )]
 position = Vector2( 1088.44, 370.474 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple109" parent="YSort/station_objects/cubicles" index="78" instance=ExtResource( 7 )]
 position = Vector2( 1160.56, 334.015 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple110" parent="YSort/station_objects/cubicles" index="79" instance=ExtResource( 7 )]
 position = Vector2( 1150.63, 338.981 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple111" parent="YSort/station_objects/cubicles" index="80" instance=ExtResource( 7 )]
 position = Vector2( 1140.26, 344.289 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple112" parent="YSort/station_objects/cubicles" index="81" instance=ExtResource( 7 )]
 position = Vector2( 1129.88, 349.481 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple113" parent="YSort/station_objects/cubicles" index="82" instance=ExtResource( 7 )]
 position = Vector2( 1119.51, 354.789 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple114" parent="YSort/station_objects/cubicles" index="83" instance=ExtResource( 7 )]
 position = Vector2( 1130.28, 359.721 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple115" parent="YSort/station_objects/cubicles" index="84" instance=ExtResource( 7 )]
 position = Vector2( 1140.63, 364.967 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple116" parent="YSort/station_objects/cubicles" index="85" instance=ExtResource( 7 )]
 position = Vector2( 1150.94, 370.173 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple117" parent="YSort/station_objects/cubicles" index="86" instance=ExtResource( 7 )]
 position = Vector2( 1161.32, 375.405 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple118" parent="YSort/station_objects/cubicles" index="87" instance=ExtResource( 7 )]
 position = Vector2( 1171.66, 380.651 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple119" parent="YSort/station_objects/cubicles" index="88" instance=ExtResource( 7 )]
 position = Vector2( 1181.98, 385.858 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple120" parent="YSort/station_objects/cubicles" index="89" instance=ExtResource( 7 )]
 position = Vector2( 1192.04, 390.945 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple121" parent="YSort/station_objects/cubicles" index="90" instance=ExtResource( 7 )]
 position = Vector2( 1202.39, 396.191 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple122" parent="YSort/station_objects/cubicles" index="91" instance=ExtResource( 7 )]
 position = Vector2( 1284.44, 365.059 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple123" parent="YSort/station_objects/cubicles" index="92" instance=ExtResource( 7 )]
 position = Vector2( 1273.92, 370.281 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple124" parent="YSort/station_objects/cubicles" index="93" instance=ExtResource( 7 )]
 position = Vector2( 1263.55, 375.473 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple125" parent="YSort/station_objects/cubicles" index="94" instance=ExtResource( 7 )]
 position = Vector2( 1201.81, 406.74 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple126" parent="YSort/station_objects/cubicles" index="95" instance=ExtResource( 7 )]
 position = Vector2( 1191.43, 412.048 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple127" parent="YSort/station_objects/cubicles" index="96" instance=ExtResource( 7 )]
 position = Vector2( 1181.06, 417.24 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple128" parent="YSort/station_objects/cubicles" index="97" instance=ExtResource( 7 )]
 position = Vector2( 1253.17, 380.781 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple129" parent="YSort/station_objects/cubicles" index="98" instance=ExtResource( 7 )]
 position = Vector2( 1170.7, 422.494 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple130" parent="YSort/station_objects/cubicles" index="99" instance=ExtResource( 7 )]
 position = Vector2( 1160.18, 427.717 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple131" parent="YSort/station_objects/cubicles" index="100" instance=ExtResource( 7 )]
 position = Vector2( 1149.81, 432.909 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple132" parent="YSort/station_objects/cubicles" index="101" instance=ExtResource( 7 )]
 position = Vector2( 1078.24, 375.632 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple133" parent="YSort/station_objects/cubicles" index="102" instance=ExtResource( 7 )]
 position = Vector2( 1067.73, 380.854 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple134" parent="YSort/station_objects/cubicles" index="103" instance=ExtResource( 7 )]
 position = Vector2( 1057.35, 386.046 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple135" parent="YSort/station_objects/cubicles" index="104" instance=ExtResource( 7 )]
 position = Vector2( 1243.25, 385.747 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple136" parent="YSort/station_objects/cubicles" index="105" instance=ExtResource( 7 )]
 position = Vector2( 1232.87, 391.055 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple137" parent="YSort/station_objects/cubicles" index="106" instance=ExtResource( 7 )]
 position = Vector2( 1222.5, 396.247 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple138" parent="YSort/station_objects/cubicles" index="107" instance=ExtResource( 7 )]
 position = Vector2( 1212.12, 401.555 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple247" parent="YSort/station_objects/cubicles" index="108" instance=ExtResource( 7 )]
 position = Vector2( 1439.44, 440.225 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple248" parent="YSort/station_objects/cubicles" index="109" instance=ExtResource( 7 )]
 position = Vector2( 1429.06, 445.532 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple249" parent="YSort/station_objects/cubicles" index="110" instance=ExtResource( 7 )]
 position = Vector2( 1418.69, 450.725 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple250" parent="YSort/station_objects/cubicles" index="111" instance=ExtResource( 7 )]
 position = Vector2( 1356.95, 481.991 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple251" parent="YSort/station_objects/cubicles" index="112" instance=ExtResource( 7 )]
 position = Vector2( 1346.57, 487.299 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple252" parent="YSort/station_objects/cubicles" index="113" instance=ExtResource( 7 )]
 position = Vector2( 1336.2, 492.491 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple253" parent="YSort/station_objects/cubicles" index="114" instance=ExtResource( 7 )]
 position = Vector2( 1408.31, 456.032 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple254" parent="YSort/station_objects/cubicles" index="115" instance=ExtResource( 7 )]
 position = Vector2( 1398.39, 460.998 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple255" parent="YSort/station_objects/cubicles" index="116" instance=ExtResource( 7 )]
 position = Vector2( 1388.01, 466.306 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple256" parent="YSort/station_objects/cubicles" index="117" instance=ExtResource( 7 )]
 position = Vector2( 1377.64, 471.498 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple257" parent="YSort/station_objects/cubicles" index="118" instance=ExtResource( 7 )]
 position = Vector2( 1367.26, 476.806 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple258" parent="YSort/station_objects/cubicles" index="119" instance=ExtResource( 7 )]
 position = Vector2( 1378.04, 481.738 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple259" parent="YSort/station_objects/cubicles" index="120" instance=ExtResource( 7 )]
 position = Vector2( 1388.38, 486.983 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple260" parent="YSort/station_objects/cubicles" index="121" instance=ExtResource( 7 )]
 position = Vector2( 1398.7, 492.19 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple261" parent="YSort/station_objects/cubicles" index="122" instance=ExtResource( 7 )]
 position = Vector2( 1409.07, 497.422 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple262" parent="YSort/station_objects/cubicles" index="123" instance=ExtResource( 7 )]
 position = Vector2( 1419.42, 502.668 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple263" parent="YSort/station_objects/cubicles" index="124" instance=ExtResource( 7 )]
 position = Vector2( 1429.73, 507.875 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple264" parent="YSort/station_objects/cubicles" index="125" instance=ExtResource( 7 )]
 position = Vector2( 1439.8, 512.962 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple265" parent="YSort/station_objects/cubicles" index="126" instance=ExtResource( 7 )]
 position = Vector2( 1450.14, 518.208 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple266" parent="YSort/station_objects/cubicles" index="127" instance=ExtResource( 7 )]
 position = Vector2( 1532.19, 487.075 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple267" parent="YSort/station_objects/cubicles" index="128" instance=ExtResource( 7 )]
 position = Vector2( 1521.68, 492.298 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple268" parent="YSort/station_objects/cubicles" index="129" instance=ExtResource( 7 )]
 position = Vector2( 1511.3, 497.49 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple269" parent="YSort/station_objects/cubicles" index="130" instance=ExtResource( 7 )]
 position = Vector2( 1449.56, 528.757 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple270" parent="YSort/station_objects/cubicles" index="131" instance=ExtResource( 7 )]
 position = Vector2( 1439.19, 534.064 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple271" parent="YSort/station_objects/cubicles" index="132" instance=ExtResource( 7 )]
 position = Vector2( 1428.81, 539.257 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple272" parent="YSort/station_objects/cubicles" index="133" instance=ExtResource( 7 )]
 position = Vector2( 1500.93, 502.798 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple273" parent="YSort/station_objects/cubicles" index="134" instance=ExtResource( 7 )]
 position = Vector2( 1418.45, 544.511 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple274" parent="YSort/station_objects/cubicles" index="135" instance=ExtResource( 7 )]
 position = Vector2( 1407.94, 549.734 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple275" parent="YSort/station_objects/cubicles" index="136" instance=ExtResource( 7 )]
 position = Vector2( 1397.56, 554.926 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple276" parent="YSort/station_objects/cubicles" index="137" instance=ExtResource( 7 )]
 position = Vector2( 1326, 497.648 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple277" parent="YSort/station_objects/cubicles" index="138" instance=ExtResource( 7 )]
 position = Vector2( 1315.48, 502.871 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple278" parent="YSort/station_objects/cubicles" index="139" instance=ExtResource( 7 )]
 position = Vector2( 1305.11, 508.063 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple279" parent="YSort/station_objects/cubicles" index="140" instance=ExtResource( 7 )]
 position = Vector2( 1491, 507.764 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple280" parent="YSort/station_objects/cubicles" index="141" instance=ExtResource( 7 )]
 position = Vector2( 1480.63, 513.072 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple281" parent="YSort/station_objects/cubicles" index="142" instance=ExtResource( 7 )]
 position = Vector2( 1470.25, 518.264 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple282" parent="YSort/station_objects/cubicles" index="143" instance=ExtResource( 7 )]
 position = Vector2( 1459.88, 523.572 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple139" parent="YSort/station_objects/cubicles" index="144" instance=ExtResource( 7 )]
 position = Vector2( 790.306, 525.628 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple140" parent="YSort/station_objects/cubicles" index="145" instance=ExtResource( 7 )]
 position = Vector2( 779.931, 530.936 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple141" parent="YSort/station_objects/cubicles" index="146" instance=ExtResource( 7 )]
 position = Vector2( 769.556, 536.128 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple142" parent="YSort/station_objects/cubicles" index="147" instance=ExtResource( 7 )]
 position = Vector2( 707.816, 567.395 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple143" parent="YSort/station_objects/cubicles" index="148" instance=ExtResource( 7 )]
 position = Vector2( 697.441, 572.702 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple144" parent="YSort/station_objects/cubicles" index="149" instance=ExtResource( 7 )]
 position = Vector2( 687.066, 577.895 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple145" parent="YSort/station_objects/cubicles" index="150" instance=ExtResource( 7 )]
 position = Vector2( 759.181, 541.436 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple146" parent="YSort/station_objects/cubicles" index="151" instance=ExtResource( 7 )]
 position = Vector2( 749.259, 546.402 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple147" parent="YSort/station_objects/cubicles" index="152" instance=ExtResource( 7 )]
 position = Vector2( 738.885, 551.709 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple148" parent="YSort/station_objects/cubicles" index="153" instance=ExtResource( 7 )]
 position = Vector2( 728.509, 556.902 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple149" parent="YSort/station_objects/cubicles" index="154" instance=ExtResource( 7 )]
 position = Vector2( 718.135, 562.209 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple150" parent="YSort/station_objects/cubicles" index="155" instance=ExtResource( 7 )]
 position = Vector2( 728.907, 567.141 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple151" parent="YSort/station_objects/cubicles" index="156" instance=ExtResource( 7 )]
 position = Vector2( 739.252, 572.387 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple152" parent="YSort/station_objects/cubicles" index="157" instance=ExtResource( 7 )]
 position = Vector2( 749.567, 577.594 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple153" parent="YSort/station_objects/cubicles" index="158" instance=ExtResource( 7 )]
 position = Vector2( 759.942, 582.825 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple154" parent="YSort/station_objects/cubicles" index="159" instance=ExtResource( 7 )]
 position = Vector2( 770.287, 588.071 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple155" parent="YSort/station_objects/cubicles" index="160" instance=ExtResource( 7 )]
 position = Vector2( 780.602, 593.278 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple156" parent="YSort/station_objects/cubicles" index="161" instance=ExtResource( 7 )]
 position = Vector2( 790.666, 598.365 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple157" parent="YSort/station_objects/cubicles" index="162" instance=ExtResource( 7 )]
 position = Vector2( 801.011, 603.611 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple158" parent="YSort/station_objects/cubicles" index="163" instance=ExtResource( 7 )]
 position = Vector2( 883.061, 572.479 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple159" parent="YSort/station_objects/cubicles" index="164" instance=ExtResource( 7 )]
 position = Vector2( 872.546, 577.701 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple160" parent="YSort/station_objects/cubicles" index="165" instance=ExtResource( 7 )]
 position = Vector2( 862.171, 582.894 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple161" parent="YSort/station_objects/cubicles" index="166" instance=ExtResource( 7 )]
 position = Vector2( 800.431, 614.16 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple162" parent="YSort/station_objects/cubicles" index="167" instance=ExtResource( 7 )]
 position = Vector2( 790.056, 619.468 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple163" parent="YSort/station_objects/cubicles" index="168" instance=ExtResource( 7 )]
 position = Vector2( 779.681, 624.66 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple164" parent="YSort/station_objects/cubicles" index="169" instance=ExtResource( 7 )]
 position = Vector2( 851.796, 588.201 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple165" parent="YSort/station_objects/cubicles" index="170" instance=ExtResource( 7 )]
 position = Vector2( 769.324, 629.915 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple166" parent="YSort/station_objects/cubicles" index="171" instance=ExtResource( 7 )]
 position = Vector2( 758.809, 635.137 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple167" parent="YSort/station_objects/cubicles" index="172" instance=ExtResource( 7 )]
 position = Vector2( 748.434, 640.329 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple168" parent="YSort/station_objects/cubicles" index="173" instance=ExtResource( 7 )]
 position = Vector2( 676.868, 583.052 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple169" parent="YSort/station_objects/cubicles" index="174" instance=ExtResource( 7 )]
 position = Vector2( 666.353, 588.274 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple170" parent="YSort/station_objects/cubicles" index="175" instance=ExtResource( 7 )]
 position = Vector2( 655.978, 593.467 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple171" parent="YSort/station_objects/cubicles" index="176" instance=ExtResource( 7 )]
 position = Vector2( 841.875, 593.167 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple172" parent="YSort/station_objects/cubicles" index="177" instance=ExtResource( 7 )]
 position = Vector2( 831.5, 598.475 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple173" parent="YSort/station_objects/cubicles" index="178" instance=ExtResource( 7 )]
 position = Vector2( 821.125, 603.667 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple174" parent="YSort/station_objects/cubicles" index="179" instance=ExtResource( 7 )]
 position = Vector2( 810.75, 608.975 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple175" parent="YSort/station_objects/cubicles" index="180" instance=ExtResource( 7 )]
 position = Vector2( 1045.71, 651.002 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple176" parent="YSort/station_objects/cubicles" index="181" instance=ExtResource( 7 )]
 position = Vector2( 1035.34, 656.31 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple177" parent="YSort/station_objects/cubicles" index="182" instance=ExtResource( 7 )]
 position = Vector2( 1024.96, 661.502 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple178" parent="YSort/station_objects/cubicles" index="183" instance=ExtResource( 7 )]
 position = Vector2( 963.221, 692.769 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple179" parent="YSort/station_objects/cubicles" index="184" instance=ExtResource( 7 )]
 position = Vector2( 952.847, 698.076 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple180" parent="YSort/station_objects/cubicles" index="185" instance=ExtResource( 7 )]
 position = Vector2( 942.471, 703.269 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple181" parent="YSort/station_objects/cubicles" index="186" instance=ExtResource( 7 )]
 position = Vector2( 1014.59, 666.81 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple182" parent="YSort/station_objects/cubicles" index="187" instance=ExtResource( 7 )]
 position = Vector2( 1004.67, 671.776 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple183" parent="YSort/station_objects/cubicles" index="188" instance=ExtResource( 7 )]
 position = Vector2( 994.29, 677.083 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple184" parent="YSort/station_objects/cubicles" index="189" instance=ExtResource( 7 )]
 position = Vector2( 983.915, 682.276 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple185" parent="YSort/station_objects/cubicles" index="190" instance=ExtResource( 7 )]
 position = Vector2( 973.54, 687.583 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple186" parent="YSort/station_objects/cubicles" index="191" instance=ExtResource( 7 )]
 position = Vector2( 984.313, 692.515 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple187" parent="YSort/station_objects/cubicles" index="192" instance=ExtResource( 7 )]
 position = Vector2( 994.658, 697.761 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple188" parent="YSort/station_objects/cubicles" index="193" instance=ExtResource( 7 )]
 position = Vector2( 1004.97, 702.968 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple189" parent="YSort/station_objects/cubicles" index="194" instance=ExtResource( 7 )]
 position = Vector2( 1015.35, 708.199 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple190" parent="YSort/station_objects/cubicles" index="195" instance=ExtResource( 7 )]
 position = Vector2( 1025.69, 713.445 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple191" parent="YSort/station_objects/cubicles" index="196" instance=ExtResource( 7 )]
 position = Vector2( 1036.01, 718.652 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple192" parent="YSort/station_objects/cubicles" index="197" instance=ExtResource( 7 )]
 position = Vector2( 1046.07, 723.74 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple193" parent="YSort/station_objects/cubicles" index="198" instance=ExtResource( 7 )]
 position = Vector2( 1056.42, 728.986 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple194" parent="YSort/station_objects/cubicles" index="199" instance=ExtResource( 7 )]
 position = Vector2( 1138.47, 697.853 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple195" parent="YSort/station_objects/cubicles" index="200" instance=ExtResource( 7 )]
 position = Vector2( 1127.95, 703.075 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple196" parent="YSort/station_objects/cubicles" index="201" instance=ExtResource( 7 )]
 position = Vector2( 1117.58, 708.268 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple197" parent="YSort/station_objects/cubicles" index="202" instance=ExtResource( 7 )]
 position = Vector2( 1055.84, 739.534 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple198" parent="YSort/station_objects/cubicles" index="203" instance=ExtResource( 7 )]
 position = Vector2( 1045.46, 744.842 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple199" parent="YSort/station_objects/cubicles" index="204" instance=ExtResource( 7 )]
 position = Vector2( 1035.09, 750.034 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple200" parent="YSort/station_objects/cubicles" index="205" instance=ExtResource( 7 )]
 position = Vector2( 1107.2, 713.575 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple201" parent="YSort/station_objects/cubicles" index="206" instance=ExtResource( 7 )]
 position = Vector2( 1024.73, 755.289 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple202" parent="YSort/station_objects/cubicles" index="207" instance=ExtResource( 7 )]
 position = Vector2( 1014.22, 760.511 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple203" parent="YSort/station_objects/cubicles" index="208" instance=ExtResource( 7 )]
 position = Vector2( 1003.84, 765.704 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple204" parent="YSort/station_objects/cubicles" index="209" instance=ExtResource( 7 )]
 position = Vector2( 932.274, 708.426 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple205" parent="YSort/station_objects/cubicles" index="210" instance=ExtResource( 7 )]
 position = Vector2( 921.759, 713.648 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple206" parent="YSort/station_objects/cubicles" index="211" instance=ExtResource( 7 )]
 position = Vector2( 911.384, 718.841 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple207" parent="YSort/station_objects/cubicles" index="212" instance=ExtResource( 7 )]
 position = Vector2( 1097.28, 718.542 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple208" parent="YSort/station_objects/cubicles" index="213" instance=ExtResource( 7 )]
 position = Vector2( 1086.91, 723.849 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple209" parent="YSort/station_objects/cubicles" index="214" instance=ExtResource( 7 )]
 position = Vector2( 1076.53, 729.042 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple210" parent="YSort/station_objects/cubicles" index="215" instance=ExtResource( 7 )]
 position = Vector2( 1066.16, 734.349 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple211" parent="YSort/station_objects/cubicles" index="216" instance=ExtResource( 7 )]
 position = Vector2( 1299.78, 779.176 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple212" parent="YSort/station_objects/cubicles" index="217" instance=ExtResource( 7 )]
 position = Vector2( 1289.4, 784.483 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple213" parent="YSort/station_objects/cubicles" index="218" instance=ExtResource( 7 )]
 position = Vector2( 1279.03, 789.676 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple214" parent="YSort/station_objects/cubicles" index="219" instance=ExtResource( 7 )]
 position = Vector2( 1217.29, 820.942 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple215" parent="YSort/station_objects/cubicles" index="220" instance=ExtResource( 7 )]
 position = Vector2( 1206.91, 826.25 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple216" parent="YSort/station_objects/cubicles" index="221" instance=ExtResource( 7 )]
 position = Vector2( 1196.54, 831.442 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple217" parent="YSort/station_objects/cubicles" index="222" instance=ExtResource( 7 )]
 position = Vector2( 1268.65, 794.983 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple218" parent="YSort/station_objects/cubicles" index="223" instance=ExtResource( 7 )]
 position = Vector2( 1258.73, 799.949 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple219" parent="YSort/station_objects/cubicles" index="224" instance=ExtResource( 7 )]
 position = Vector2( 1248.36, 805.257 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple220" parent="YSort/station_objects/cubicles" index="225" instance=ExtResource( 7 )]
 position = Vector2( 1237.98, 810.449 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple221" parent="YSort/station_objects/cubicles" index="226" instance=ExtResource( 7 )]
 position = Vector2( 1227.61, 815.757 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple222" parent="YSort/station_objects/cubicles" index="227" instance=ExtResource( 7 )]
 position = Vector2( 1238.38, 820.688 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple223" parent="YSort/station_objects/cubicles" index="228" instance=ExtResource( 7 )]
 position = Vector2( 1248.72, 825.934 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple224" parent="YSort/station_objects/cubicles" index="229" instance=ExtResource( 7 )]
 position = Vector2( 1259.04, 831.141 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple225" parent="YSort/station_objects/cubicles" index="230" instance=ExtResource( 7 )]
 position = Vector2( 1269.41, 836.373 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple226" parent="YSort/station_objects/cubicles" index="231" instance=ExtResource( 7 )]
 position = Vector2( 1279.76, 841.619 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple227" parent="YSort/station_objects/cubicles" index="232" instance=ExtResource( 7 )]
 position = Vector2( 1290.07, 846.825 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple228" parent="YSort/station_objects/cubicles" index="233" instance=ExtResource( 7 )]
 position = Vector2( 1300.14, 851.913 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple229" parent="YSort/station_objects/cubicles" index="234" instance=ExtResource( 7 )]
 position = Vector2( 1310.48, 857.159 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple230" parent="YSort/station_objects/cubicles" index="235" instance=ExtResource( 7 )]
 position = Vector2( 1392.53, 826.026 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple231" parent="YSort/station_objects/cubicles" index="236" instance=ExtResource( 7 )]
 position = Vector2( 1382.02, 831.249 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple232" parent="YSort/station_objects/cubicles" index="237" instance=ExtResource( 7 )]
 position = Vector2( 1371.64, 836.441 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple233" parent="YSort/station_objects/cubicles" index="238" instance=ExtResource( 7 )]
 position = Vector2( 1309.9, 867.708 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple234" parent="YSort/station_objects/cubicles" index="239" instance=ExtResource( 7 )]
 position = Vector2( 1299.53, 873.015 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple235" parent="YSort/station_objects/cubicles" index="240" instance=ExtResource( 7 )]
 position = Vector2( 1289.15, 878.208 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple236" parent="YSort/station_objects/cubicles" index="241" instance=ExtResource( 7 )]
 position = Vector2( 1361.27, 841.749 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple237" parent="YSort/station_objects/cubicles" index="242" instance=ExtResource( 7 )]
 position = Vector2( 1278.8, 883.462 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple238" parent="YSort/station_objects/cubicles" index="243" instance=ExtResource( 7 )]
 position = Vector2( 1268.28, 888.685 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple239" parent="YSort/station_objects/cubicles" index="244" instance=ExtResource( 7 )]
 position = Vector2( 1257.91, 893.877 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple240" parent="YSort/station_objects/cubicles" index="245" instance=ExtResource( 7 )]
 position = Vector2( 1186.34, 836.599 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple241" parent="YSort/station_objects/cubicles" index="246" instance=ExtResource( 7 )]
 position = Vector2( 1175.82, 841.822 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple242" parent="YSort/station_objects/cubicles" index="247" instance=ExtResource( 7 )]
 position = Vector2( 1165.45, 847.014 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple243" parent="YSort/station_objects/cubicles" index="248" instance=ExtResource( 7 )]
 position = Vector2( 1351.35, 846.715 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple244" parent="YSort/station_objects/cubicles" index="249" instance=ExtResource( 7 )]
 position = Vector2( 1340.97, 852.022 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple245" parent="YSort/station_objects/cubicles" index="250" instance=ExtResource( 7 )]
 position = Vector2( 1330.6, 857.215 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple246" parent="YSort/station_objects/cubicles" index="251" instance=ExtResource( 7 )]
 position = Vector2( 1320.22, 862.522 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="secondRoom" type="YSort" parent="YSort/station_objects" index="3"]
 
 [node name="Open_bin" parent="YSort/station_objects/secondRoom" index="0" instance=ExtResource( 9 )]
 position = Vector2( 2371.44, 204.309 )
-pickups = [ "HealingPickup", "dashpickup", "HealingPickup" ]
+pickups = [ "HealingPickup", "dashpickup", "HealingPickup", "HealingPickup" ]
 
 [node name="middleRooms" type="YSort" parent="YSort/station_objects" index="4"]
 
 [node name="Open_bin2" parent="YSort/station_objects/middleRooms" index="0" instance=ExtResource( 9 )]
-position = Vector2( 452.307, -929.122 )
+position = Vector2( 432.707, -954.958 )
 pickups = [ "HealingPickup" ]
 
 [node name="Open_bin3" parent="YSort/station_objects/middleRooms" index="1" instance=ExtResource( 9 )]
-position = Vector2( 512.838, -1402.25 )
+position = Vector2( 500.784, -1428.25 )
 pickups = [ "HealingPickup" ]
 
 [node name="zombieRoom" type="YSort" parent="YSort/station_objects" index="5"]
+modulate = Color( 0.560784, 0.345098, 0.258824, 1 )
 
 [node name="wall_simple283" parent="YSort/station_objects/zombieRoom" index="0" instance=ExtResource( 7 )]
 position = Vector2( 751.91, -1329.78 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple284" parent="YSort/station_objects/zombieRoom" index="1" instance=ExtResource( 7 )]
 position = Vector2( 741.535, -1324.47 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple285" parent="YSort/station_objects/zombieRoom" index="2" instance=ExtResource( 7 )]
 position = Vector2( 731.16, -1319.28 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple286" parent="YSort/station_objects/zombieRoom" index="3" instance=ExtResource( 7 )]
 position = Vector2( 720.803, -1314.03 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple287" parent="YSort/station_objects/zombieRoom" index="4" instance=ExtResource( 7 )]
 position = Vector2( 710.288, -1308.81 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple288" parent="YSort/station_objects/zombieRoom" index="5" instance=ExtResource( 7 )]
 position = Vector2( 699.913, -1303.61 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple289" parent="YSort/station_objects/zombieRoom" index="6" instance=ExtResource( 7 )]
 position = Vector2( 875.299, -1266.97 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple290" parent="YSort/station_objects/zombieRoom" index="7" instance=ExtResource( 7 )]
 position = Vector2( 864.924, -1261.67 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple291" parent="YSort/station_objects/zombieRoom" index="8" instance=ExtResource( 7 )]
 position = Vector2( 854.549, -1256.47 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple292" parent="YSort/station_objects/zombieRoom" index="9" instance=ExtResource( 7 )]
 position = Vector2( 844.193, -1251.22 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple293" parent="YSort/station_objects/zombieRoom" index="10" instance=ExtResource( 7 )]
 position = Vector2( 833.677, -1246 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple294" parent="YSort/station_objects/zombieRoom" index="11" instance=ExtResource( 7 )]
 position = Vector2( 823.302, -1240.8 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple295" parent="YSort/station_objects/zombieRoom" index="12" instance=ExtResource( 7 )]
 position = Vector2( 1003.14, -1204.61 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple296" parent="YSort/station_objects/zombieRoom" index="13" instance=ExtResource( 7 )]
 position = Vector2( 992.768, -1199.3 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple297" parent="YSort/station_objects/zombieRoom" index="14" instance=ExtResource( 7 )]
 position = Vector2( 982.393, -1194.11 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple298" parent="YSort/station_objects/zombieRoom" index="15" instance=ExtResource( 7 )]
 position = Vector2( 972.037, -1188.86 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple299" parent="YSort/station_objects/zombieRoom" index="16" instance=ExtResource( 7 )]
 position = Vector2( 961.521, -1183.63 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple300" parent="YSort/station_objects/zombieRoom" index="17" instance=ExtResource( 7 )]
 position = Vector2( 951.146, -1178.44 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple301" parent="YSort/station_objects/zombieRoom" index="18" instance=ExtResource( 7 )]
 position = Vector2( 1129.34, -1142.7 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple302" parent="YSort/station_objects/zombieRoom" index="19" instance=ExtResource( 7 )]
 position = Vector2( 1118.97, -1137.39 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple303" parent="YSort/station_objects/zombieRoom" index="20" instance=ExtResource( 7 )]
 position = Vector2( 1108.59, -1132.2 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple304" parent="YSort/station_objects/zombieRoom" index="21" instance=ExtResource( 7 )]
 position = Vector2( 1098.24, -1126.95 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple305" parent="YSort/station_objects/zombieRoom" index="22" instance=ExtResource( 7 )]
 position = Vector2( 1087.72, -1121.73 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple306" parent="YSort/station_objects/zombieRoom" index="23" instance=ExtResource( 7 )]
 position = Vector2( 1077.34, -1116.53 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple307" parent="YSort/station_objects/zombieRoom" index="24" instance=ExtResource( 7 )]
 position = Vector2( 1252.53, -1078.79 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple308" parent="YSort/station_objects/zombieRoom" index="25" instance=ExtResource( 7 )]
 position = Vector2( 1242.16, -1073.49 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple309" parent="YSort/station_objects/zombieRoom" index="26" instance=ExtResource( 7 )]
 position = Vector2( 1231.78, -1068.29 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple310" parent="YSort/station_objects/zombieRoom" index="27" instance=ExtResource( 7 )]
 position = Vector2( 1221.43, -1063.04 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple311" parent="YSort/station_objects/zombieRoom" index="28" instance=ExtResource( 7 )]
 position = Vector2( 1210.91, -1057.82 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple312" parent="YSort/station_objects/zombieRoom" index="29" instance=ExtResource( 7 )]
 position = Vector2( 1200.54, -1052.62 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple313" parent="YSort/station_objects/zombieRoom" index="30" instance=ExtResource( 7 )]
 position = Vector2( 1378.03, -1016.29 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple314" parent="YSort/station_objects/zombieRoom" index="31" instance=ExtResource( 7 )]
 position = Vector2( 1367.66, -1010.99 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple315" parent="YSort/station_objects/zombieRoom" index="32" instance=ExtResource( 7 )]
 position = Vector2( 1357.28, -1005.79 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple316" parent="YSort/station_objects/zombieRoom" index="33" instance=ExtResource( 7 )]
 position = Vector2( 1346.93, -1000.54 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple317" parent="YSort/station_objects/zombieRoom" index="34" instance=ExtResource( 7 )]
 position = Vector2( 1336.41, -995.317 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple318" parent="YSort/station_objects/zombieRoom" index="35" instance=ExtResource( 7 )]
 position = Vector2( 1326.04, -990.125 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple319" parent="YSort/station_objects/zombieRoom" index="36" instance=ExtResource( 7 )]
 position = Vector2( 1503.32, -954.112 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple320" parent="YSort/station_objects/zombieRoom" index="37" instance=ExtResource( 7 )]
 position = Vector2( 1492.94, -948.805 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple321" parent="YSort/station_objects/zombieRoom" index="38" instance=ExtResource( 7 )]
 position = Vector2( 1482.57, -943.612 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple322" parent="YSort/station_objects/zombieRoom" index="39" instance=ExtResource( 7 )]
 position = Vector2( 1472.21, -938.358 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple323" parent="YSort/station_objects/zombieRoom" index="40" instance=ExtResource( 7 )]
 position = Vector2( 1461.7, -933.135 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple324" parent="YSort/station_objects/zombieRoom" index="41" instance=ExtResource( 7 )]
 position = Vector2( 1451.32, -927.943 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple325" parent="YSort/station_objects/zombieRoom" index="42" instance=ExtResource( 7 )]
 position = Vector2( 1627.35, -891.254 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple326" parent="YSort/station_objects/zombieRoom" index="43" instance=ExtResource( 7 )]
 position = Vector2( 1616.98, -885.947 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple327" parent="YSort/station_objects/zombieRoom" index="44" instance=ExtResource( 7 )]
 position = Vector2( 1606.6, -880.754 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple328" parent="YSort/station_objects/zombieRoom" index="45" instance=ExtResource( 7 )]
 position = Vector2( 1596.25, -875.5 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple329" parent="YSort/station_objects/zombieRoom" index="46" instance=ExtResource( 7 )]
 position = Vector2( 1585.73, -870.278 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple330" parent="YSort/station_objects/zombieRoom" index="47" instance=ExtResource( 7 )]
 position = Vector2( 1575.35, -865.085 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple331" parent="YSort/station_objects/zombieRoom" index="48" instance=ExtResource( 7 )]
 position = Vector2( 1753.67, -828.594 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple332" parent="YSort/station_objects/zombieRoom" index="49" instance=ExtResource( 7 )]
 position = Vector2( 1743.3, -823.287 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple333" parent="YSort/station_objects/zombieRoom" index="50" instance=ExtResource( 7 )]
 position = Vector2( 1732.92, -818.094 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple334" parent="YSort/station_objects/zombieRoom" index="51" instance=ExtResource( 7 )]
 position = Vector2( 1722.57, -812.84 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple335" parent="YSort/station_objects/zombieRoom" index="52" instance=ExtResource( 7 )]
 position = Vector2( 1712.05, -807.617 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple336" parent="YSort/station_objects/zombieRoom" index="53" instance=ExtResource( 7 )]
 position = Vector2( 1701.67, -802.425 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple337" parent="YSort/station_objects/zombieRoom" index="54" instance=ExtResource( 7 )]
 position = Vector2( 389.319, -1099.04 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple338" parent="YSort/station_objects/zombieRoom" index="55" instance=ExtResource( 7 )]
 position = Vector2( 378.945, -1093.74 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple339" parent="YSort/station_objects/zombieRoom" index="56" instance=ExtResource( 7 )]
 position = Vector2( 368.569, -1088.54 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple340" parent="YSort/station_objects/zombieRoom" index="57" instance=ExtResource( 7 )]
 position = Vector2( 358.213, -1083.29 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple341" parent="YSort/station_objects/zombieRoom" index="58" instance=ExtResource( 7 )]
 position = Vector2( 347.698, -1078.07 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple342" parent="YSort/station_objects/zombieRoom" index="59" instance=ExtResource( 7 )]
 position = Vector2( 337.323, -1072.87 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple343" parent="YSort/station_objects/zombieRoom" index="60" instance=ExtResource( 7 )]
 position = Vector2( 512.709, -1036.23 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple344" parent="YSort/station_objects/zombieRoom" index="61" instance=ExtResource( 7 )]
 position = Vector2( 502.334, -1030.93 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple345" parent="YSort/station_objects/zombieRoom" index="62" instance=ExtResource( 7 )]
 position = Vector2( 491.959, -1025.73 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple346" parent="YSort/station_objects/zombieRoom" index="63" instance=ExtResource( 7 )]
 position = Vector2( 481.602, -1020.48 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple347" parent="YSort/station_objects/zombieRoom" index="64" instance=ExtResource( 7 )]
 position = Vector2( 471.087, -1015.26 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple348" parent="YSort/station_objects/zombieRoom" index="65" instance=ExtResource( 7 )]
 position = Vector2( 460.712, -1010.07 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple349" parent="YSort/station_objects/zombieRoom" index="66" instance=ExtResource( 7 )]
 position = Vector2( 640.553, -973.872 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple350" parent="YSort/station_objects/zombieRoom" index="67" instance=ExtResource( 7 )]
 position = Vector2( 630.178, -968.564 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple351" parent="YSort/station_objects/zombieRoom" index="68" instance=ExtResource( 7 )]
 position = Vector2( 619.803, -963.372 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple352" parent="YSort/station_objects/zombieRoom" index="69" instance=ExtResource( 7 )]
 position = Vector2( 609.446, -958.117 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple353" parent="YSort/station_objects/zombieRoom" index="70" instance=ExtResource( 7 )]
 position = Vector2( 598.931, -952.895 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple354" parent="YSort/station_objects/zombieRoom" index="71" instance=ExtResource( 7 )]
 position = Vector2( 588.556, -947.702 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple355" parent="YSort/station_objects/zombieRoom" index="72" instance=ExtResource( 7 )]
 position = Vector2( 766.751, -911.963 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple356" parent="YSort/station_objects/zombieRoom" index="73" instance=ExtResource( 7 )]
 position = Vector2( 756.376, -906.655 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple357" parent="YSort/station_objects/zombieRoom" index="74" instance=ExtResource( 7 )]
 position = Vector2( 746.001, -901.463 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple358" parent="YSort/station_objects/zombieRoom" index="75" instance=ExtResource( 7 )]
 position = Vector2( 735.645, -896.208 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple359" parent="YSort/station_objects/zombieRoom" index="76" instance=ExtResource( 7 )]
 position = Vector2( 725.13, -890.986 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple360" parent="YSort/station_objects/zombieRoom" index="77" instance=ExtResource( 7 )]
 position = Vector2( 714.754, -885.794 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple361" parent="YSort/station_objects/zombieRoom" index="78" instance=ExtResource( 7 )]
 position = Vector2( 889.943, -848.055 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple362" parent="YSort/station_objects/zombieRoom" index="79" instance=ExtResource( 7 )]
 position = Vector2( 879.568, -842.747 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple363" parent="YSort/station_objects/zombieRoom" index="80" instance=ExtResource( 7 )]
 position = Vector2( 869.193, -837.555 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple364" parent="YSort/station_objects/zombieRoom" index="81" instance=ExtResource( 7 )]
 position = Vector2( 858.836, -832.3 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple365" parent="YSort/station_objects/zombieRoom" index="82" instance=ExtResource( 7 )]
 position = Vector2( 848.321, -827.078 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple366" parent="YSort/station_objects/zombieRoom" index="83" instance=ExtResource( 7 )]
 position = Vector2( 837.946, -821.885 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple367" parent="YSort/station_objects/zombieRoom" index="84" instance=ExtResource( 7 )]
 position = Vector2( 1015.44, -785.555 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple368" parent="YSort/station_objects/zombieRoom" index="85" instance=ExtResource( 7 )]
 position = Vector2( 1005.07, -780.247 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple369" parent="YSort/station_objects/zombieRoom" index="86" instance=ExtResource( 7 )]
 position = Vector2( 994.693, -775.055 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple370" parent="YSort/station_objects/zombieRoom" index="87" instance=ExtResource( 7 )]
 position = Vector2( 984.336, -769.8 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple371" parent="YSort/station_objects/zombieRoom" index="88" instance=ExtResource( 7 )]
 position = Vector2( 973.821, -764.578 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple372" parent="YSort/station_objects/zombieRoom" index="89" instance=ExtResource( 7 )]
 position = Vector2( 963.446, -759.385 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple373" parent="YSort/station_objects/zombieRoom" index="90" instance=ExtResource( 7 )]
 position = Vector2( 1140.73, -723.373 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple374" parent="YSort/station_objects/zombieRoom" index="91" instance=ExtResource( 7 )]
 position = Vector2( 1130.35, -718.065 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple375" parent="YSort/station_objects/zombieRoom" index="92" instance=ExtResource( 7 )]
 position = Vector2( 1119.98, -712.873 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple376" parent="YSort/station_objects/zombieRoom" index="93" instance=ExtResource( 7 )]
 position = Vector2( 1109.62, -707.619 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple377" parent="YSort/station_objects/zombieRoom" index="94" instance=ExtResource( 7 )]
 position = Vector2( 1099.11, -702.396 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple378" parent="YSort/station_objects/zombieRoom" index="95" instance=ExtResource( 7 )]
 position = Vector2( 1088.73, -697.204 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple379" parent="YSort/station_objects/zombieRoom" index="96" instance=ExtResource( 7 )]
 position = Vector2( 1264.76, -660.515 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple380" parent="YSort/station_objects/zombieRoom" index="97" instance=ExtResource( 7 )]
 position = Vector2( 1254.39, -655.208 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple381" parent="YSort/station_objects/zombieRoom" index="98" instance=ExtResource( 7 )]
 position = Vector2( 1244.01, -650.015 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple382" parent="YSort/station_objects/zombieRoom" index="99" instance=ExtResource( 7 )]
 position = Vector2( 1233.66, -644.761 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple383" parent="YSort/station_objects/zombieRoom" index="100" instance=ExtResource( 7 )]
 position = Vector2( 1223.14, -639.538 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple384" parent="YSort/station_objects/zombieRoom" index="101" instance=ExtResource( 7 )]
 position = Vector2( 1212.76, -634.346 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple385" parent="YSort/station_objects/zombieRoom" index="102" instance=ExtResource( 7 )]
 position = Vector2( 1391.08, -597.855 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple386" parent="YSort/station_objects/zombieRoom" index="103" instance=ExtResource( 7 )]
 position = Vector2( 1380.71, -592.547 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple387" parent="YSort/station_objects/zombieRoom" index="104" instance=ExtResource( 7 )]
 position = Vector2( 1370.33, -587.355 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple388" parent="YSort/station_objects/zombieRoom" index="105" instance=ExtResource( 7 )]
 position = Vector2( 1359.97, -582.101 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple389" parent="YSort/station_objects/zombieRoom" index="106" instance=ExtResource( 7 )]
 position = Vector2( 1349.46, -576.878 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple390" parent="YSort/station_objects/zombieRoom" index="107" instance=ExtResource( 7 )]
 position = Vector2( 1339.08, -571.686 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple391" parent="YSort/station_objects/zombieRoom" index="108" instance=ExtResource( 7 )]
 position = Vector2( 451.789, -1130.39 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple392" parent="YSort/station_objects/zombieRoom" index="109" instance=ExtResource( 7 )]
 position = Vector2( 441.414, -1125.08 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple393" parent="YSort/station_objects/zombieRoom" index="110" instance=ExtResource( 7 )]
 position = Vector2( 431.039, -1119.89 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple394" parent="YSort/station_objects/zombieRoom" index="111" instance=ExtResource( 7 )]
 position = Vector2( 420.682, -1114.64 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple395" parent="YSort/station_objects/zombieRoom" index="112" instance=ExtResource( 7 )]
 position = Vector2( 410.167, -1109.41 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple396" parent="YSort/station_objects/zombieRoom" index="113" instance=ExtResource( 7 )]
 position = Vector2( 399.792, -1104.22 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple397" parent="YSort/station_objects/zombieRoom" index="114" instance=ExtResource( 7 )]
 position = Vector2( 575.178, -1067.58 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple398" parent="YSort/station_objects/zombieRoom" index="115" instance=ExtResource( 7 )]
 position = Vector2( 564.803, -1062.27 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple399" parent="YSort/station_objects/zombieRoom" index="116" instance=ExtResource( 7 )]
 position = Vector2( 554.428, -1057.08 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple400" parent="YSort/station_objects/zombieRoom" index="117" instance=ExtResource( 7 )]
 position = Vector2( 544.072, -1051.83 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple401" parent="YSort/station_objects/zombieRoom" index="118" instance=ExtResource( 7 )]
 position = Vector2( 533.556, -1046.6 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple402" parent="YSort/station_objects/zombieRoom" index="119" instance=ExtResource( 7 )]
 position = Vector2( 523.181, -1041.41 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple403" parent="YSort/station_objects/zombieRoom" index="120" instance=ExtResource( 7 )]
 position = Vector2( 703.022, -1005.22 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple404" parent="YSort/station_objects/zombieRoom" index="121" instance=ExtResource( 7 )]
 position = Vector2( 692.647, -999.911 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple405" parent="YSort/station_objects/zombieRoom" index="122" instance=ExtResource( 7 )]
 position = Vector2( 682.272, -994.718 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple406" parent="YSort/station_objects/zombieRoom" index="123" instance=ExtResource( 7 )]
 position = Vector2( 671.916, -989.464 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple407" parent="YSort/station_objects/zombieRoom" index="124" instance=ExtResource( 7 )]
 position = Vector2( 661.4, -984.241 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple408" parent="YSort/station_objects/zombieRoom" index="125" instance=ExtResource( 7 )]
 position = Vector2( 651.025, -979.049 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple409" parent="YSort/station_objects/zombieRoom" index="126" instance=ExtResource( 7 )]
 position = Vector2( 829.22, -943.31 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple410" parent="YSort/station_objects/zombieRoom" index="127" instance=ExtResource( 7 )]
 position = Vector2( 818.846, -938.002 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple411" parent="YSort/station_objects/zombieRoom" index="128" instance=ExtResource( 7 )]
 position = Vector2( 808.47, -932.81 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple412" parent="YSort/station_objects/zombieRoom" index="129" instance=ExtResource( 7 )]
 position = Vector2( 798.114, -927.555 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple413" parent="YSort/station_objects/zombieRoom" index="130" instance=ExtResource( 7 )]
 position = Vector2( 787.599, -922.333 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple414" parent="YSort/station_objects/zombieRoom" index="131" instance=ExtResource( 7 )]
 position = Vector2( 777.224, -917.14 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple415" parent="YSort/station_objects/zombieRoom" index="132" instance=ExtResource( 7 )]
 position = Vector2( 952.412, -879.401 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple416" parent="YSort/station_objects/zombieRoom" index="133" instance=ExtResource( 7 )]
 position = Vector2( 942.037, -874.094 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple417" parent="YSort/station_objects/zombieRoom" index="134" instance=ExtResource( 7 )]
 position = Vector2( 931.662, -868.901 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple418" parent="YSort/station_objects/zombieRoom" index="135" instance=ExtResource( 7 )]
 position = Vector2( 921.305, -863.647 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple419" parent="YSort/station_objects/zombieRoom" index="136" instance=ExtResource( 7 )]
 position = Vector2( 910.79, -858.425 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple420" parent="YSort/station_objects/zombieRoom" index="137" instance=ExtResource( 7 )]
 position = Vector2( 900.415, -853.232 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple421" parent="YSort/station_objects/zombieRoom" index="138" instance=ExtResource( 7 )]
 position = Vector2( 1077.91, -816.901 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple422" parent="YSort/station_objects/zombieRoom" index="139" instance=ExtResource( 7 )]
 position = Vector2( 1067.54, -811.594 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple423" parent="YSort/station_objects/zombieRoom" index="140" instance=ExtResource( 7 )]
 position = Vector2( 1057.16, -806.401 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple424" parent="YSort/station_objects/zombieRoom" index="141" instance=ExtResource( 7 )]
 position = Vector2( 1046.81, -801.147 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple425" parent="YSort/station_objects/zombieRoom" index="142" instance=ExtResource( 7 )]
 position = Vector2( 1036.29, -795.925 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple426" parent="YSort/station_objects/zombieRoom" index="143" instance=ExtResource( 7 )]
 position = Vector2( 1025.92, -790.732 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple427" parent="YSort/station_objects/zombieRoom" index="144" instance=ExtResource( 7 )]
 position = Vector2( 1203.2, -754.72 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple428" parent="YSort/station_objects/zombieRoom" index="145" instance=ExtResource( 7 )]
 position = Vector2( 1192.82, -749.412 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple429" parent="YSort/station_objects/zombieRoom" index="146" instance=ExtResource( 7 )]
 position = Vector2( 1182.45, -744.22 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple430" parent="YSort/station_objects/zombieRoom" index="147" instance=ExtResource( 7 )]
 position = Vector2( 1172.09, -738.965 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple431" parent="YSort/station_objects/zombieRoom" index="148" instance=ExtResource( 7 )]
 position = Vector2( 1161.58, -733.743 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple432" parent="YSort/station_objects/zombieRoom" index="149" instance=ExtResource( 7 )]
 position = Vector2( 1151.2, -728.551 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple433" parent="YSort/station_objects/zombieRoom" index="150" instance=ExtResource( 7 )]
 position = Vector2( 1327.23, -691.862 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple434" parent="YSort/station_objects/zombieRoom" index="151" instance=ExtResource( 7 )]
 position = Vector2( 1316.86, -686.554 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple435" parent="YSort/station_objects/zombieRoom" index="152" instance=ExtResource( 7 )]
 position = Vector2( 1306.48, -681.362 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple436" parent="YSort/station_objects/zombieRoom" index="153" instance=ExtResource( 7 )]
 position = Vector2( 1296.12, -676.107 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple437" parent="YSort/station_objects/zombieRoom" index="154" instance=ExtResource( 7 )]
 position = Vector2( 1285.61, -670.885 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple438" parent="YSort/station_objects/zombieRoom" index="155" instance=ExtResource( 7 )]
 position = Vector2( 1275.23, -665.693 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple439" parent="YSort/station_objects/zombieRoom" index="156" instance=ExtResource( 7 )]
 position = Vector2( 1453.55, -629.202 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple440" parent="YSort/station_objects/zombieRoom" index="157" instance=ExtResource( 7 )]
 position = Vector2( 1443.18, -623.894 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple441" parent="YSort/station_objects/zombieRoom" index="158" instance=ExtResource( 7 )]
 position = Vector2( 1432.8, -618.702 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple442" parent="YSort/station_objects/zombieRoom" index="159" instance=ExtResource( 7 )]
 position = Vector2( 1422.44, -613.447 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple443" parent="YSort/station_objects/zombieRoom" index="160" instance=ExtResource( 7 )]
 position = Vector2( 1411.93, -608.225 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple444" parent="YSort/station_objects/zombieRoom" index="161" instance=ExtResource( 7 )]
 position = Vector2( 1401.55, -603.032 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple445" parent="YSort/station_objects/zombieRoom" index="162" instance=ExtResource( 7 )]
 position = Vector2( 689.681, -1298.37 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple446" parent="YSort/station_objects/zombieRoom" index="163" instance=ExtResource( 7 )]
 position = Vector2( 679.306, -1293.06 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple447" parent="YSort/station_objects/zombieRoom" index="164" instance=ExtResource( 7 )]
 position = Vector2( 668.931, -1287.87 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple448" parent="YSort/station_objects/zombieRoom" index="165" instance=ExtResource( 7 )]
 position = Vector2( 658.574, -1282.62 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple449" parent="YSort/station_objects/zombieRoom" index="166" instance=ExtResource( 7 )]
 position = Vector2( 648.059, -1277.4 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple450" parent="YSort/station_objects/zombieRoom" index="167" instance=ExtResource( 7 )]
 position = Vector2( 637.684, -1272.2 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple451" parent="YSort/station_objects/zombieRoom" index="168" instance=ExtResource( 7 )]
 position = Vector2( 813.07, -1235.56 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple452" parent="YSort/station_objects/zombieRoom" index="169" instance=ExtResource( 7 )]
 position = Vector2( 802.695, -1230.26 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple453" parent="YSort/station_objects/zombieRoom" index="170" instance=ExtResource( 7 )]
 position = Vector2( 792.32, -1225.06 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple454" parent="YSort/station_objects/zombieRoom" index="171" instance=ExtResource( 7 )]
 position = Vector2( 781.964, -1219.81 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple455" parent="YSort/station_objects/zombieRoom" index="172" instance=ExtResource( 7 )]
 position = Vector2( 771.448, -1214.59 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple456" parent="YSort/station_objects/zombieRoom" index="173" instance=ExtResource( 7 )]
 position = Vector2( 761.073, -1209.39 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple457" parent="YSort/station_objects/zombieRoom" index="174" instance=ExtResource( 7 )]
 position = Vector2( 940.914, -1173.2 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple458" parent="YSort/station_objects/zombieRoom" index="175" instance=ExtResource( 7 )]
 position = Vector2( 930.539, -1167.89 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple459" parent="YSort/station_objects/zombieRoom" index="176" instance=ExtResource( 7 )]
 position = Vector2( 920.164, -1162.7 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple460" parent="YSort/station_objects/zombieRoom" index="177" instance=ExtResource( 7 )]
 position = Vector2( 909.808, -1157.45 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple461" parent="YSort/station_objects/zombieRoom" index="178" instance=ExtResource( 7 )]
 position = Vector2( 899.292, -1152.22 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple462" parent="YSort/station_objects/zombieRoom" index="179" instance=ExtResource( 7 )]
 position = Vector2( 888.917, -1147.03 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple463" parent="YSort/station_objects/zombieRoom" index="180" instance=ExtResource( 7 )]
 position = Vector2( 1067.11, -1111.29 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple464" parent="YSort/station_objects/zombieRoom" index="181" instance=ExtResource( 7 )]
 position = Vector2( 1056.74, -1105.98 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple465" parent="YSort/station_objects/zombieRoom" index="182" instance=ExtResource( 7 )]
 position = Vector2( 1046.36, -1100.79 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple466" parent="YSort/station_objects/zombieRoom" index="183" instance=ExtResource( 7 )]
 position = Vector2( 1036.01, -1095.54 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple467" parent="YSort/station_objects/zombieRoom" index="184" instance=ExtResource( 7 )]
 position = Vector2( 1025.49, -1090.32 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple468" parent="YSort/station_objects/zombieRoom" index="185" instance=ExtResource( 7 )]
 position = Vector2( 1015.12, -1085.12 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple469" parent="YSort/station_objects/zombieRoom" index="186" instance=ExtResource( 7 )]
 position = Vector2( 1190.3, -1047.38 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple470" parent="YSort/station_objects/zombieRoom" index="187" instance=ExtResource( 7 )]
 position = Vector2( 1179.93, -1042.08 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple471" parent="YSort/station_objects/zombieRoom" index="188" instance=ExtResource( 7 )]
 position = Vector2( 1169.55, -1036.88 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple472" parent="YSort/station_objects/zombieRoom" index="189" instance=ExtResource( 7 )]
 position = Vector2( 1159.2, -1031.63 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple473" parent="YSort/station_objects/zombieRoom" index="190" instance=ExtResource( 7 )]
 position = Vector2( 1148.68, -1026.41 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple474" parent="YSort/station_objects/zombieRoom" index="191" instance=ExtResource( 7 )]
 position = Vector2( 1138.31, -1021.22 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple475" parent="YSort/station_objects/zombieRoom" index="192" instance=ExtResource( 7 )]
 position = Vector2( 1315.8, -984.884 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple476" parent="YSort/station_objects/zombieRoom" index="193" instance=ExtResource( 7 )]
 position = Vector2( 1305.43, -979.577 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple477" parent="YSort/station_objects/zombieRoom" index="194" instance=ExtResource( 7 )]
 position = Vector2( 1295.05, -974.384 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple478" parent="YSort/station_objects/zombieRoom" index="195" instance=ExtResource( 7 )]
 position = Vector2( 1284.7, -969.13 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple479" parent="YSort/station_objects/zombieRoom" index="196" instance=ExtResource( 7 )]
 position = Vector2( 1274.18, -963.907 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple480" parent="YSort/station_objects/zombieRoom" index="197" instance=ExtResource( 7 )]
 position = Vector2( 1263.81, -958.715 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple481" parent="YSort/station_objects/zombieRoom" index="198" instance=ExtResource( 7 )]
 position = Vector2( 1441.09, -922.703 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple482" parent="YSort/station_objects/zombieRoom" index="199" instance=ExtResource( 7 )]
 position = Vector2( 1430.72, -917.395 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple483" parent="YSort/station_objects/zombieRoom" index="200" instance=ExtResource( 7 )]
 position = Vector2( 1420.34, -912.203 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple484" parent="YSort/station_objects/zombieRoom" index="201" instance=ExtResource( 7 )]
 position = Vector2( 1409.98, -906.948 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple485" parent="YSort/station_objects/zombieRoom" index="202" instance=ExtResource( 7 )]
 position = Vector2( 1399.47, -901.726 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple486" parent="YSort/station_objects/zombieRoom" index="203" instance=ExtResource( 7 )]
 position = Vector2( 1389.09, -896.533 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple487" parent="YSort/station_objects/zombieRoom" index="204" instance=ExtResource( 7 )]
 position = Vector2( 1565.12, -859.845 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple488" parent="YSort/station_objects/zombieRoom" index="205" instance=ExtResource( 7 )]
 position = Vector2( 1554.75, -854.537 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple489" parent="YSort/station_objects/zombieRoom" index="206" instance=ExtResource( 7 )]
 position = Vector2( 1544.37, -849.345 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple490" parent="YSort/station_objects/zombieRoom" index="207" instance=ExtResource( 7 )]
 position = Vector2( 1534.02, -844.09 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple491" parent="YSort/station_objects/zombieRoom" index="208" instance=ExtResource( 7 )]
 position = Vector2( 1523.5, -838.868 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple492" parent="YSort/station_objects/zombieRoom" index="209" instance=ExtResource( 7 )]
 position = Vector2( 1513.13, -833.676 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple493" parent="YSort/station_objects/zombieRoom" index="210" instance=ExtResource( 7 )]
 position = Vector2( 1691.44, -797.185 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple494" parent="YSort/station_objects/zombieRoom" index="211" instance=ExtResource( 7 )]
 position = Vector2( 1681.07, -791.877 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple495" parent="YSort/station_objects/zombieRoom" index="212" instance=ExtResource( 7 )]
 position = Vector2( 1670.69, -786.685 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple496" parent="YSort/station_objects/zombieRoom" index="213" instance=ExtResource( 7 )]
 position = Vector2( 1660.34, -781.43 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple497" parent="YSort/station_objects/zombieRoom" index="214" instance=ExtResource( 7 )]
 position = Vector2( 1649.82, -776.208 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="wall_simple498" parent="YSort/station_objects/zombieRoom" index="215" instance=ExtResource( 7 )]
 position = Vector2( 1639.45, -771.015 )
+collision_layer = 0
+collision_mask = 7
+script = ExtResource( 28 )
 
 [node name="preBossRoom" type="YSort" parent="YSort/station_objects" index="6"]
 
 [node name="Open_bin2" parent="YSort/station_objects/preBossRoom" index="0" instance=ExtResource( 9 )]
 position = Vector2( 2296.23, -530.202 )
-pickups = [ "WeaponPickup", "WeaponPickup", "WeaponPickup", "dashpickup" ]
+pickups = [ "HealingPickup", "HealingPickup", "HealingPickup" ]
 
 [node name="in" type="Area2D" parent="YSort/station_objects/preBossRoom" index="1"]
 
@@ -4825,43 +6274,12 @@ polygon = PoolVector2Array( 1864.14, -616.18, 1703.62, -537.608, 1730.56, -521.8
 
 [node name="bossRoom" type="YSort" parent="YSort/station_objects" index="7"]
 
-[node name="Sprite" type="Sprite" parent="YSort" index="13"]
-position = Vector2( 1372.74, -917.413 )
-scale = Vector2( 0.535957, 0.535957 )
-texture = ExtResource( 27 )
-region_enabled = true
-region_rect = Rect2( 1842, 993, 381, 469 )
-
-[node name="Sprite2" type="Sprite" parent="YSort" index="14"]
-position = Vector2( 47.622, -87.3071 )
-texture = ExtResource( 26 )
-region_enabled = true
-region_rect = Rect2( 1313, 480, 353, 181 )
-
-[node name="Sprite3" type="Sprite" parent="YSort" index="15"]
-texture = ExtResource( 26 )
-region_enabled = true
-
-[node name="Sprite4" type="Sprite" parent="YSort" index="16"]
-texture = ExtResource( 26 )
-region_enabled = true
-
-[node name="Sprite5" type="Sprite" parent="YSort" index="17"]
-texture = ExtResource( 26 )
-region_enabled = true
-
-[node name="Sprite6" type="Sprite" parent="YSort" index="18"]
-texture = ExtResource( 26 )
-region_enabled = true
-
-[node name="Sprite7" type="Sprite" parent="YSort" index="19"]
-texture = ExtResource( 26 )
-region_enabled = true
-
 [node name="BgmStreamPlayer" parent="." index="7"]
 soundtrack_name = "Ambiental_city"
 
 [node name="Event" parent="Events" index="0" instance=ExtResource( 10 )]
+visible = false
+exit_soundtrack = "Ambiental_city"
 
 [node name="EventDetector" parent="Events/Event" index="0"]
 tile_data = PoolIntArray( -2555915, 5, 0, -2555914, 5, 0, -2555913, 5, 0, -2555912, 5, 0, -2555911, 5, 0, -2555910, 5, 0, -2555909, 5, 0, -2555908, 5, 0, -2555907, 5, 0, -2555906, 5, 0, -2555905, 5, 0, -2621440, 5, 0, -2621439, 5, 0, -2621438, 5, 0, -2621437, 5, 0, -2621436, 5, 0, -2621435, 5, 0, -2621434, 5, 0, -2621433, 5, 0, -2621432, 5, 0, -2621431, 5, 0, -2555894, 3, 0, -2424844, 0, 0, -2490358, 3, 0, -2359308, 0, 0, -2424822, 3, 0, -2293772, 0, 0, -2359286, 3, 0, -2228236, 0, 0, -2293750, 3, 0, -2162700, 0, 0, -2228214, 3, 0, -2097164, 0, 0, -2031628, 0, 0, -2097141, 3, 0, -1966092, 0, 0, -2031605, 3, 0, -1900556, 0, 0, -1966069, 3, 0, -1835020, 0, 0, -1900533, 3, 0, -1769484, 0, 0, -1834997, 3, 0, -1703948, 0, 0, -1769461, 3, 0, -1638412, 0, 0, -1703925, 3, 0, -1572876, 0, 0, -1638389, 3, 0, -1507340, 0, 0, -1572853, 3, 0, -1441804, 0, 0, -1507317, 3, 0, -1376268, 0, 0, -1441782, 3, 0, -1310732, 0, 0, -1376246, 3, 0, -1245196, 0, 0, -1310710, 3, 0, -1179660, 0, 0, -1245174, 3, 0, -1114124, 0, 0, -1179638, 3, 0, -983050, 5, 0, -983049, 5, 0, -983048, 5, 0, -983047, 5, 0, -983046, 5, 0, -983045, 5, 0, -983044, 5, 0, -983043, 5, 0, -983042, 5, 0, -983041, 5, 0, -1048576, 5, 0, -1048575, 5, 0, -1048574, 5, 0, -1048573, 5, 0, -1048572, 5, 0, -1048571, 5, 0, -1048570, 5, 0, -1048569, 5, 0, -1048568, 5, 0, -1048567, 5, 0 )
@@ -4894,7 +6312,63 @@ position = Vector2( 64, -336 )
 spawnOf = "ghost"
 maxEnemies = 1
 
-[node name="Event2" parent="Events" index="1" instance=ExtResource( 10 )]
+[node name="running_zombi" parent="Events" index="1" instance=ExtResource( 10 )]
+visible = false
+soundtrack = ""
+
+[node name="EventDetector" parent="Events/running_zombi" index="0"]
+tile_data = PoolIntArray( -917515, 0, 0, -917514, 0, 0, -917513, 0, 0, -917512, 0, 0, -917511, 0, 0, -917510, 0, 0, -917509, 0, 0, -917508, 0, 0, -917507, 0, 0, -917506, 0, 0, -917505, 0, 0, -983040, 0, 0, -983039, 0, 0, -983038, 0, 0, -983037, 0, 0, -983036, 0, 0, -983035, 0, 0, -983034, 0, 0, -983033, 0, 0, -983032, 0, 0 )
+
+[node name="target" type="Area2D" parent="Events/running_zombi" index="1"]
+position = Vector2( -179.986, -723.028 )
+collision_layer = 0
+collision_mask = 2
+script = ExtResource( 18 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Events/running_zombi/target" index="0"]
+position = Vector2( 13.5875, -0.385498 )
+scale = Vector2( 0.598626, 0.598626 )
+polygon = PoolVector2Array( -39.6736, -8.40918, -24.6736, 18.8408, -2.92358, -7.65918 )
+
+[node name="enemySpawner" parent="Events/running_zombi/Spawners" index="0" instance=ExtResource( 11 )]
+position = Vector2( 2727.94, 612.196 )
+spawnOf = "wave_enemy"
+maxEnemies = 1
+movement_speed = 1200
+
+[node name="running_zombi2" parent="Events" index="2" instance=ExtResource( 10 )]
+visible = false
+soundtrack = ""
+
+[node name="EventDetector" parent="Events/running_zombi2" index="0"]
+tile_data = PoolIntArray( -2555915, 0, 0, -2555914, 0, 0, -2555913, 0, 0, -2555912, 0, 0, -2555911, 0, 0, -2555910, 0, 0, -2555909, 0, 0, -2555908, 0, 0, -2555907, 0, 0, -2555906, 0, 0, -2555905, 0, 0, -2621440, 0, 0, -2621439, 0, 0, -2621438, 0, 0, -2621437, 0, 0, -2621436, 0, 0, -2621435, 0, 0, -2621434, 0, 0, -2621433, 0, 0, -2621432, 0, 0, -2621431, 0, 0, -2621430, 0, 0 )
+
+[node name="target" type="Area2D" parent="Events/running_zombi2" index="1"]
+position = Vector2( 1818.3, -571.706 )
+collision_layer = 0
+collision_mask = 2
+script = ExtResource( 18 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Events/running_zombi2/target" index="0"]
+position = Vector2( 13.5875, -0.385498 )
+scale = Vector2( 0.598626, 0.598626 )
+polygon = PoolVector2Array( -39.6736, -8.40918, -24.6736, 18.8408, -2.92358, -7.65918 )
+
+[node name="enemySpawner" parent="Events/running_zombi2/Spawners" index="0" instance=ExtResource( 11 )]
+position = Vector2( 1020.53, -962.5 )
+spawnOf = "wave_enemy"
+maxEnemies = 1
+movement_speed = 1200
+
+[node name="Event2" parent="Events" index="3" instance=ExtResource( 10 )]
+visible = false
+exit_soundtrack = "Ambiental_city"
 
 [node name="EventDetector" parent="Events/Event2" index="0"]
 tile_data = PoolIntArray( -2490357, 3, 0, -2490327, 0, 0, -2424821, 3, 0, -2424791, 0, 0, -2359285, 3, 0, -2359255, 0, 0, -2293749, 3, 0, -2293719, 0, 0, -2228213, 3, 0, -2228183, 0, 0, -2162647, 0, 0, -2097140, 3, 0, -2097111, 0, 0, -2031604, 3, 0, -2031575, 0, 0, -1966068, 3, 0, -1966039, 0, 0, -1900532, 3, 0, -1900503, 0, 0, -1834996, 3, 0, -1834967, 0, 0, -1769460, 3, 0, -1769431, 0, 0, -1703924, 3, 0, -1703895, 0, 0, -1638388, 3, 0, -1638359, 0, 0, -1572852, 3, 0, -1572823, 0, 0, -1507316, 3, 0, -1507287, 0, 0, -1441781, 3, 0, -1441751, 0, 0, -1376245, 3, 0, -1376215, 0, 0, -1310709, 3, 0, -1310679, 0, 0, -1245173, 3, 0, -1245143, 0, 0, -1179637, 3, 0, -1179607, 0, 0 )
@@ -4910,19 +6384,21 @@ maxEnemies = 2
 [node name="enemySpawner2" parent="Events/Event2/Spawners" index="1" instance=ExtResource( 11 )]
 position = Vector2( -728, -72 )
 spawnOf = "ghost"
-maxEnemies = 2
+maxEnemies = 1
 
 [node name="enemySpawner3" parent="Events/Event2/Spawners" index="2" instance=ExtResource( 11 )]
 position = Vector2( -328, -416 )
 spawnOf = "boss"
-maxEnemies = 2
+maxEnemies = 1
 
 [node name="enemySpawner4" parent="Events/Event2/Spawners" index="3" instance=ExtResource( 11 )]
 position = Vector2( 1048, 560 )
 spawnOf = "ghost"
 maxEnemies = 2
 
-[node name="Event3" parent="Events" index="2" instance=ExtResource( 10 )]
+[node name="Event3" parent="Events" index="4" instance=ExtResource( 10 )]
+visible = false
+exit_soundtrack = "Ambiental_city"
 
 [node name="EventDetector" parent="Events/Event3" index="0"]
 tile_data = PoolIntArray( -3801107, 0, 0, -3801105, 3, 0, -3735571, 0, 0, -3735569, 3, 0, -3670035, 0, 0, -3670033, 3, 0, -3604499, 0, 0, -3604497, 3, 0, -3538963, 0, 0, -3538961, 3, 0, -3473427, 0, 0, -3473425, 3, 0, -3407891, 0, 0, -3407889, 3, 0, -3342355, 0, 0, -3342353, 3, 0, -3276819, 0, 0, -3276817, 3, 0, -3211283, 0, 0, -3211281, 3, 0, -3145747, 0, 0, -3145745, 3, 0, -3080211, 0, 0, -3080209, 3, 0, -3014675, 0, 0, -3014673, 3, 0, -2949139, 0, 0, -2949137, 3, 0 )
@@ -4945,7 +6421,9 @@ position = Vector2( -824, 0 )
 spawnOf = "ghost"
 maxEnemies = 2
 
-[node name="Event4" parent="Events" index="3" instance=ExtResource( 10 )]
+[node name="Event4" parent="Events" index="5" instance=ExtResource( 10 )]
+visible = false
+exit_soundtrack = "Ambiental_city"
 
 [node name="EventDetector" parent="Events/Event4" index="0"]
 tile_data = PoolIntArray( -3670000, 0, 0, -3669999, 0, 0, -3669998, 0, 0, -3669997, 0, 0, -3669996, 0, 0, -3669995, 0, 0, -3669994, 0, 0, -3669993, 0, 0, -3669992, 0, 0, -3669991, 0, 0, -3669990, 0, 0, -3669989, 0, 0, -3669988, 0, 0, -3669987, 0, 0, -3145717, 3, 0, -3080181, 3, 0, -3014645, 3, 0, -2949109, 3, 0 )
@@ -4963,9 +6441,10 @@ position = Vector2( -96, 272 )
 spawnOf = "boss"
 maxEnemies = 1
 
-[node name="Enter_Building" type="Node2D" parent="Events" index="4" groups=[
+[node name="Enter_Building" type="Node2D" parent="Events" index="6" groups=[
 "Event",
 ]]
+visible = false
 script = ExtResource( 15 )
 
 [node name="EventDetector" parent="Events/Enter_Building" index="0" instance=ExtResource( 14 )]
@@ -5000,13 +6479,13 @@ text = "parece haber zombis mas inteligentes cerca de alli."
 position = Vector2( 1653.93, -2194.56 )
 
 [node name="enemySpawner" parent="Events/Enter_Building/spawners" index="0" instance=ExtResource( 11 )]
-position = Vector2( -432, 88 )
+position = Vector2( -414.02, 108.977 )
 spawnOf = "wave_enemy"
 maxEnemies = 1
 pauseOnSpawn = true
 
 [node name="enemySpawner8" parent="Events/Enter_Building/spawners" index="1" instance=ExtResource( 11 )]
-position = Vector2( -592, -224 )
+position = Vector2( -870.685, 30.7122 )
 spawnOf = "wave_enemy"
 maxEnemies = 1
 pauseOnSpawn = true
@@ -5018,19 +6497,19 @@ maxEnemies = 1
 pauseOnSpawn = true
 
 [node name="enemySpawner10" parent="Events/Enter_Building/spawners" index="3" instance=ExtResource( 11 )]
-position = Vector2( -504, -1080 )
+position = Vector2( -504, -1026.06 )
 spawnOf = "wave_enemy"
 maxEnemies = 1
 pauseOnSpawn = true
 
 [node name="enemySpawner11" parent="Events/Enter_Building/spawners" index="4" instance=ExtResource( 11 )]
-position = Vector2( -576, -912 )
+position = Vector2( -1064.45, -732.203 )
 spawnOf = "wave_enemy"
 maxEnemies = 1
 pauseOnSpawn = true
 
 [node name="enemySpawner12" parent="Events/Enter_Building/spawners" index="5" instance=ExtResource( 11 )]
-position = Vector2( -632, -664 )
+position = Vector2( -793.817, -631.037 )
 spawnOf = "wave_enemy"
 maxEnemies = 1
 pauseOnSpawn = true
@@ -5048,13 +6527,13 @@ maxEnemies = 1
 pauseOnSpawn = true
 
 [node name="enemySpawner15" parent="Events/Enter_Building/spawners" index="8" instance=ExtResource( 11 )]
-position = Vector2( -504, -24 )
+position = Vector2( -372.149, 614.279 )
 spawnOf = "wave_enemy"
 maxEnemies = 1
 pauseOnSpawn = true
 
 [node name="enemySpawner16" parent="Events/Enter_Building/spawners" index="9" instance=ExtResource( 11 )]
-position = Vector2( -344, 144 )
+position = Vector2( -344, 329.79 )
 spawnOf = "wave_enemy"
 maxEnemies = 1
 pauseOnSpawn = true
@@ -5066,25 +6545,25 @@ maxEnemies = 1
 pauseOnSpawn = true
 
 [node name="enemySpawner18" parent="Events/Enter_Building/spawners" index="11" instance=ExtResource( 11 )]
-position = Vector2( 0, 256 )
+position = Vector2( -758.143, 235.024 )
 spawnOf = "wave_enemy"
 maxEnemies = 1
 pauseOnSpawn = true
 
 [node name="enemySpawner19" parent="Events/Enter_Building/spawners" index="12" instance=ExtResource( 11 )]
-position = Vector2( 152, 256 )
+position = Vector2( 122.034, 294.956 )
 spawnOf = "wave_enemy"
 maxEnemies = 1
 pauseOnSpawn = true
 
 [node name="enemySpawner20" parent="Events/Enter_Building/spawners" index="13" instance=ExtResource( 11 )]
-position = Vector2( 384, 272 )
+position = Vector2( -1162.25, -528.096 )
 spawnOf = "wave_enemy"
 maxEnemies = 1
 pauseOnSpawn = true
 
 [node name="enemySpawner21" parent="Events/Enter_Building/spawners" index="14" instance=ExtResource( 11 )]
-position = Vector2( 560, 272 )
+position = Vector2( 811.716, 787.418 )
 spawnOf = "wave_enemy"
 maxEnemies = 1
 pauseOnSpawn = true
@@ -5096,13 +6575,13 @@ maxEnemies = 1
 pauseOnSpawn = true
 
 [node name="enemySpawner23" parent="Events/Enter_Building/spawners" index="16" instance=ExtResource( 11 )]
-position = Vector2( 736, 272 )
+position = Vector2( 1113.57, 682.536 )
 spawnOf = "wave_enemy"
 maxEnemies = 1
 pauseOnSpawn = true
 
 [node name="enemySpawner24" parent="Events/Enter_Building/spawners" index="17" instance=ExtResource( 11 )]
-position = Vector2( 912, 256 )
+position = Vector2( 1478.36, 384.854 )
 spawnOf = "wave_enemy"
 maxEnemies = 1
 pauseOnSpawn = true
@@ -5114,7 +6593,7 @@ maxEnemies = 1
 pauseOnSpawn = true
 
 [node name="enemySpawner26" parent="Events/Enter_Building/spawners" index="19" instance=ExtResource( 11 )]
-position = Vector2( 1248, 192 )
+position = Vector2( -10.5781, 524.624 )
 spawnOf = "wave_enemy"
 maxEnemies = 1
 pauseOnSpawn = true
@@ -5126,31 +6605,31 @@ maxEnemies = 1
 pauseOnSpawn = true
 
 [node name="enemySpawner28" parent="Events/Enter_Building/spawners" index="21" instance=ExtResource( 11 )]
-position = Vector2( 256, 296 )
+position = Vector2( 253.003, 313.98 )
 spawnOf = "wave_enemy"
 maxEnemies = 1
 pauseOnSpawn = true
 
 [node name="enemySpawner4" parent="Events/Enter_Building/spawners" index="22" instance=ExtResource( 11 )]
-position = Vector2( 360, 128 )
+position = Vector2( 335.755, 542.075 )
 spawnOf = "wave_enemy"
 maxEnemies = 1
 pauseOnSpawn = true
 
 [node name="enemySpawner2" parent="Events/Enter_Building/spawners" index="23" instance=ExtResource( 11 )]
-position = Vector2( -536, -1016 )
+position = Vector2( -754.753, -956.068 )
 spawnOf = "wave_enemy"
 maxEnemies = 1
 pauseOnSpawn = true
 
 [node name="enemySpawner3" parent="Events/Enter_Building/spawners" index="24" instance=ExtResource( 11 )]
-position = Vector2( -648, -536 )
+position = Vector2( 544.652, 767.527 )
 spawnOf = "wave_enemy"
 maxEnemies = 1
 pauseOnSpawn = true
 
 [node name="enemySpawner5" parent="Events/Enter_Building/spawners" index="25" instance=ExtResource( 11 )]
-position = Vector2( 1552, 24 )
+position = Vector2( 1495.06, 659.282 )
 spawnOf = "wave_enemy"
 maxEnemies = 1
 pauseOnSpawn = true
@@ -5162,19 +6641,20 @@ maxEnemies = 1
 pauseOnSpawn = true
 
 [node name="enemySpawner7" parent="Events/Enter_Building/spawners" index="27" instance=ExtResource( 11 )]
-position = Vector2( 800, 120 )
+position = Vector2( 2051.9, 360.135 )
 spawnOf = "wave_enemy"
 maxEnemies = 1
 pauseOnSpawn = true
 
-[node name="Event5" parent="Events" index="5" instance=ExtResource( 10 )]
-soundtrack = ""
+[node name="in_building" parent="Events" index="7" instance=ExtResource( 10 )]
+visible = false
+soundtrack = "In_Station"
 
-[node name="EventDetector" parent="Events/Event5" index="0"]
+[node name="EventDetector" parent="Events/in_building" index="0"]
 position = Vector2( 2784, -3539 )
 tile_data = PoolIntArray( 1966095, 0, 0, 1966096, 0, 0 )
 
-[node name="target" type="Area2D" parent="Events/Event5" index="1"]
+[node name="target" type="Area2D" parent="Events/in_building" index="1"]
 position = Vector2( 1945.22, -3182.49 )
 collision_layer = 0
 collision_mask = 2
@@ -5183,21 +6663,22 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Events/Event5/target" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Events/in_building/target" index="0"]
 position = Vector2( 13.5875, -0.385498 )
 scale = Vector2( 0.598626, 0.598626 )
 polygon = PoolVector2Array( -39.6736, -8.40918, -24.6736, 18.8408, -2.92358, -7.65918 )
 
-[node name="Spawners" parent="Events/Event5" index="2"]
+[node name="Spawners" parent="Events/in_building" index="2"]
 position = Vector2( 2226.8, -2851.73 )
 
-[node name="enemySpawner" parent="Events/Event5/Spawners" index="0" instance=ExtResource( 11 )]
+[node name="enemySpawner" parent="Events/in_building/Spawners" index="0" instance=ExtResource( 11 )]
 position = Vector2( 2116.78, 638.798 )
 spawnOf = "wave_enemy"
 maxEnemies = 1
-movement_speed = 1200
+movement_speed = 1500
 
-[node name="firstRoom" parent="Events" index="6" instance=ExtResource( 10 )]
+[node name="firstRoom" parent="Events" index="8" instance=ExtResource( 10 )]
+visible = false
 soundtrack = ""
 
 [node name="EventDetector" parent="Events/firstRoom" index="0"]
@@ -5216,18 +6697,22 @@ position = Vector2( 546, 28 )
 spawnOf = "enemy_smarter"
 maxEnemies = 1
 
-[node name="enterCubicles" parent="Events" index="7" instance=ExtResource( 10 )]
+[node name="enterCubicles" parent="Events" index="9" instance=ExtResource( 10 )]
+visible = false
 soundtrack = ""
+save_at_end = false
 
 [node name="EventDetector" parent="Events/enterCubicles" index="0"]
-tile_data = PoolIntArray( -8847393, 1, 0, -8847392, 0, 0, -8781857, 1, 0, -8781856, 0, 0, -8716321, 1, 0, -8716320, 0, 0, -8650785, 1, 0, -8650784, 0, 0, -8585249, 1, 0, -8585248, 0, 0, -8519713, 1, 0, -8519712, 0, 0, -8454177, 1, 0, -8454176, 0, 0 )
+tile_data = PoolIntArray( -8912928, 0, 0, -8847393, 1, 0, -8847391, 0, 0, -8781857, 1, 0, -8781855, 0, 0, -8716321, 1, 0, -8716319, 0, 0, -8650785, 1, 0, -8650783, 0, 0, -8585249, 1, 0, -8585247, 0, 0, -8519713, 1, 0, -8519711, 0, 0, -8454177, 1, 0, -8454175, 0, 0, -8388640, 0, 0 )
 
 [node name="Spawners" parent="Events/enterCubicles" index="1"]
 position = Vector2( -345.068, 339.412 )
 
-[node name="Cubicles" parent="Events" index="8" instance=ExtResource( 10 )]
+[node name="Cubicles" parent="Events" index="10" instance=ExtResource( 10 )]
+visible = false
 position = Vector2( 3508.97, -3203.22 )
 soundtrack = ""
+save_at_end = false
 
 [node name="EventDetector" parent="Events/Cubicles" index="0"]
 tile_data = PoolIntArray( 1179667, 0, 0, 1245203, 0, 0, 1310739, 0, 0, 1376275, 0, 0, 1441811, 0, 0, 1507347, 0, 0, 1572883, 0, 0, 1638419, 0, 0 )
@@ -5245,9 +6730,11 @@ position = Vector2( -54.3423, 296.105 )
 spawnOf = "enemy_smarter"
 maxEnemies = 1
 
-[node name="Cubicles2" parent="Events" index="9" instance=ExtResource( 10 )]
+[node name="Cubicles2" parent="Events" index="11" instance=ExtResource( 10 )]
+visible = false
 position = Vector2( 3508.97, -3203.22 )
 soundtrack = ""
+save_at_end = false
 
 [node name="EventDetector" parent="Events/Cubicles2" index="0"]
 tile_data = PoolIntArray( 786457, 0, 0 )
@@ -5260,9 +6747,11 @@ position = Vector2( 621, 56 )
 spawnOf = "enemy_smarter"
 maxEnemies = 1
 
-[node name="Cubicles3" parent="Events" index="10" instance=ExtResource( 10 )]
+[node name="Cubicles3" parent="Events" index="12" instance=ExtResource( 10 )]
+visible = false
 position = Vector2( 3508.97, -3203.22 )
 soundtrack = ""
+save_at_end = false
 
 [node name="EventDetector" parent="Events/Cubicles3" index="0"]
 tile_data = PoolIntArray( 1179676, 0, 0, 1245212, 0, 0, 1310748, 0, 0, 1376284, 0, 0, 1441820, 0, 0, 1507356, 0, 0, 1572892, 0, 0, 1638428, 0, 0, 2031645, 0, 0, 2097181, 0, 0 )
@@ -5275,8 +6764,10 @@ position = Vector2( 776.876, 213.574 )
 spawnOf = "enemy_smarter"
 maxEnemies = 1
 
-[node name="Cubicles4" parent="Events" index="11" instance=ExtResource( 10 )]
+[node name="Cubicles4" parent="Events" index="13" instance=ExtResource( 10 )]
+visible = false
 soundtrack = ""
+save_at_end = false
 
 [node name="EventDetector" parent="Events/Cubicles4" index="0"]
 tile_data = PoolIntArray( -9109512, 0, 0, -9109511, 0, 0, -9109510, 0, 0, -9109509, 0, 0, -9109508, 0, 0, -9109507, 0, 0, -9109506, 0, 0, -9109505, 0, 0, -9175040, 0, 0, -9175039, 0, 0, -9175038, 0, 0, -9175037, 0, 0, -9175036, 0, 0 )
@@ -5289,7 +6780,8 @@ position = Vector2( 708.552, 527.027 )
 spawnOf = "enemy_smarter"
 maxEnemies = 1
 
-[node name="Cubicles5" parent="Events" index="12" instance=ExtResource( 10 )]
+[node name="Cubicles5" parent="Events" index="14" instance=ExtResource( 10 )]
+visible = false
 soundtrack = ""
 
 [node name="EventDetector" parent="Events/Cubicles5" index="0"]
@@ -5303,7 +6795,8 @@ position = Vector2( 129.479, 204.23 )
 spawnOf = "enemy_smarter"
 maxEnemies = 1
 
-[node name="secondRoom" parent="Events" index="13" instance=ExtResource( 10 )]
+[node name="secondRoom" parent="Events" index="15" instance=ExtResource( 10 )]
+visible = false
 soundtrack = ""
 
 [node name="EventDetector" parent="Events/secondRoom" index="0"]
@@ -5327,7 +6820,8 @@ position = Vector2( -453.131, -316.762 )
 spawnOf = "boss"
 maxEnemies = 2
 
-[node name="zombieRoom" parent="Events" index="14" instance=ExtResource( 10 )]
+[node name="zombieRoom" parent="Events" index="16" instance=ExtResource( 10 )]
+visible = false
 soundtrack = ""
 
 [node name="EventDetector" parent="Events/zombieRoom" index="0"]
@@ -5351,7 +6845,8 @@ position = Vector2( -266.127, 103.901 )
 spawnOf = "boss"
 maxEnemies = 1
 
-[node name="zombieRoom2" parent="Events" index="15" instance=ExtResource( 10 )]
+[node name="zombieRoom2" parent="Events" index="17" instance=ExtResource( 10 )]
+visible = false
 soundtrack = ""
 
 [node name="EventDetector" parent="Events/zombieRoom2" index="0"]
@@ -5375,7 +6870,8 @@ position = Vector2( -266.127, 103.901 )
 spawnOf = "boss"
 maxEnemies = 1
 
-[node name="zombieRoom3" parent="Events" index="16" instance=ExtResource( 10 )]
+[node name="zombieRoom3" parent="Events" index="18" instance=ExtResource( 10 )]
+visible = false
 soundtrack = ""
 
 [node name="EventDetector" parent="Events/zombieRoom3" index="0"]
@@ -5399,7 +6895,8 @@ position = Vector2( -266.127, 103.901 )
 spawnOf = "boss"
 maxEnemies = 1
 
-[node name="zombieRoom4" parent="Events" index="17" instance=ExtResource( 10 )]
+[node name="zombieRoom4" parent="Events" index="19" instance=ExtResource( 10 )]
+visible = false
 soundtrack = ""
 
 [node name="EventDetector" parent="Events/zombieRoom4" index="0"]
@@ -5423,21 +6920,23 @@ position = Vector2( -266.127, 103.901 )
 spawnOf = "boss"
 maxEnemies = 1
 
-[node name="exitZombieRoom" type="Node2D" parent="Events" index="18" groups=[
+[node name="exitZombieRoom" type="Node2D" parent="Events" index="20" groups=[
 "Event",
 ]]
 script = ExtResource( 20 )
 
 [node name="EventDetector" parent="Events/exitZombieRoom" index="0" instance=ExtResource( 14 )]
-tile_data = PoolIntArray( -11796519, 1, 0, -11796518, 0, 0, -11730983, 1, 0, -11730982, 0, 0, -11665447, 1, 0, -11665446, 0, 0, -11599911, 1, 0, -11599910, 0, 0, -11534375, 1, 0, -11534374, 0, 0 )
+visible = false
+tile_data = PoolIntArray( -11796518, 0, 0, -11730983, 1, 0, -11730981, 0, 0, -11665447, 1, 0, -11665445, 0, 0, -11599910, 0, 0 )
 
-[node name="enter_boss_room" type="Node2D" parent="Events" index="19" groups=[
+[node name="enter_boss_room" type="Node2D" parent="Events" index="21" groups=[
 "Event",
 ]]
 script = ExtResource( 22 )
 
 [node name="EventDetector" parent="Events/enter_boss_room" index="0" instance=ExtResource( 14 )]
-tile_data = PoolIntArray( -11665426, 0, 0, -11665425, 0, 0, -11599891, 1, 0, -11599889, 0, 0, -11534355, 1, 0, -11534353, 0, 0, -11468819, 1, 0, -11468817, 0, 0, -11403283, 1, 0, -11403281, 0, 0, -11337747, 1, 0, -11337745, 0, 0, -11272211, 1, 0, -11272209, 0, 0, -11206675, 1, 0, -11206673, 0, 0, -11141138, 0, 0, -11141137, 0, 0 )
+visible = false
+tile_data = PoolIntArray( -11665426, 0, 0, -11599891, 1, 0, -11599889, 0, 0, -11534355, 1, 0, -11534353, 0, 0, -11468819, 1, 0, -11468817, 0, 0, -11403283, 1, 0, -11403281, 0, 0, -11337747, 1, 0, -11337745, 0, 0, -11272211, 1, 0, -11272209, 0, 0, -11206675, 1, 0, -11206673, 0, 0, -11141137, 0, 0, -11075602, 0, 0 )
 
 [node name="spawner" type="Node2D" parent="Events/enter_boss_room" index="1"]
 
@@ -5447,6 +6946,7 @@ spawnOf = "final_boss"
 maxEnemies = 1
 
 [node name="shades" type="Node2D" parent="Events/enter_boss_room" index="2"]
+visible = false
 position = Vector2( 5205.15, -2966.68 )
 
 [node name="black_shade" type="Sprite" parent="Events/enter_boss_room/shades" index="0"]
@@ -5457,11 +6957,10 @@ scale = Vector2( 0.58353, 0.58353 )
 texture = ExtResource( 21 )
 
 [node name="white_shade" type="Sprite" parent="Events/enter_boss_room/shades" index="1"]
-visible = false
 modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 181.406, 38.582 )
-scale = Vector2( 0.58353, 0.58353 )
-z_index = 3
+position = Vector2( 192.097, 70.6543 )
+scale = Vector2( 0.523987, 0.523987 )
+z_index = 1
 texture = ExtResource( 21 )
 
 [node name="boss_room" type="Sprite" parent="Events/enter_boss_room/shades" index="2"]
@@ -5471,6 +6970,10 @@ position = Vector2( 203.058, 53.9629 )
 scale = Vector2( 0.344434, 0.344435 )
 texture = ExtResource( 23 )
 
+[node name="white_explosion" type="Sprite" parent="Events/enter_boss_room/shades" index="3"]
+scale = Vector2( -1.72916e-05, -8.54867e-06 )
+texture = ExtResource( 21 )
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Events/enter_boss_room" index="3"]
 anims/explosion = ExtResource( 25 )
 anims/fade_black_shade = SubResource( 1 )
@@ -5478,27 +6981,64 @@ anims/screen_vibration = ExtResource( 24 )
 
 [node name="last_call" parent="Events/enter_boss_room" index="4" instance=ExtResource( 13 )]
 
-[node name="Line1" parent="Events/enter_boss_room/last_call/Dialog_lines" index="0" instance=ExtResource( 12 )]
-text = "buen trabajo soldado."
+[node name="sfx_player_1" type="AudioStreamPlayer" parent="Events/enter_boss_room" index="5" groups=[
+"sfx_player",
+]]
 
-[node name="Line2" parent="Events/enter_boss_room/last_call/Dialog_lines" index="1" instance=ExtResource( 12 )]
-text = "gracias a tu sacrificio la infestacion ya no se esparcira mas."
+[node name="sfx_player_2" type="AudioStreamPlayer" parent="Events/enter_boss_room" index="6" groups=[
+"sfx_player",
+]]
 
-[node name="Line3" parent="Events/enter_boss_room/last_call/Dialog_lines" index="2" instance=ExtResource( 12 )]
-text = "hmm, ahora que lo pienso olvide decirte que ibas a una muerte segura."
-
-[node name="Line4" parent="Events/enter_boss_room/last_call/Dialog_lines" index="3" instance=ExtResource( 12 )]
-text = "hehe, mala mia."
-time_between_letters = 0.05
+[node name="Dialog_Events" parent="." index="10"]
+visible = false
 
 [node name="First_call" parent="Dialog_Events" index="0" instance=ExtResource( 13 )]
+
+[node name="Line1" parent="Dialog_Events/First_call/Dialog_lines" index="0" instance=ExtResource( 12 )]
+text = "veo que has llegado a la ciudad"
+
+[node name="Line2" parent="Dialog_Events/First_call/Dialog_lines" index="1" instance=ExtResource( 12 )]
+text = "entonces presta atencion."
+
+[node name="Line3" parent="Dialog_Events/First_call/Dialog_lines" index="2" instance=ExtResource( 12 )]
+text = "tu objetivo es eliminar el origen de la infestacion"
+
+[node name="Line4" parent="Dialog_Events/First_call/Dialog_lines" index="3" instance=ExtResource( 12 )]
+text = "tu brujula apunta al edificio en el que se encuentra."
+
+[node name="Line5" parent="Dialog_Events/First_call/Dialog_lines" index="4" instance=ExtResource( 12 )]
+text = "pero te re comiendo que explores la ciudad y busques contenedores azules."
+
+[node name="Line6" parent="Dialog_Events/First_call/Dialog_lines" index="5" instance=ExtResource( 12 )]
+text = "los anteriores soldados que enviamos han ido dejando cosas utiles."
+
+[node name="Line7" parent="Dialog_Events/First_call/Dialog_lines" index="6" instance=ExtResource( 12 )]
+text = "eso es todo, buena suerte."
 
 [node name="Dialog_event2" parent="Dialog_Events" index="1" instance=ExtResource( 13 )]
 
 [node name="EventDetector" parent="Dialog_Events/Dialog_event2" index="0"]
 tile_data = PoolIntArray( -917515, 0, 0, -917514, 0, 0, -917513, 0, 0, -917512, 0, 0, -917511, 0, 0, -917510, 0, 0, -917509, 0, 0, -917508, 0, 0, -917507, 0, 0, -917506, 0, 0, -917505, 0, 0, -983040, 0, 0, -983039, 0, 0, -983038, 0, 0, -983037, 0, 0, -983036, 0, 0, -983035, 0, 0, -983034, 0, 0, -983033, 0, 0, -983032, 0, 0, -983031, 0, 0 )
 
+[node name="Line1" parent="Dialog_Events/Dialog_event2/Dialog_lines" index="0" instance=ExtResource( 12 )]
+text = "solo llamaba para recordarte que no te distraigas ni por un momento."
+
+[node name="Line2" parent="Dialog_Events/Dialog_event2/Dialog_lines" index="1" instance=ExtResource( 12 )]
+text = "puede costarte caro."
+
 [node name="Dialog_event3" parent="Dialog_Events" index="2" instance=ExtResource( 13 )]
+
+[node name="EventDetector" parent="Dialog_Events/Dialog_event3" index="0"]
+tile_data = PoolIntArray( -10223625, 0, 0, -10223624, 0, 0, -10223623, 0, 0, -10223622, 0, 0, -10223621, 0, 0, -10223620, 0, 0, -10223619, 0, 0, -10223618, 0, 0, -10223617, 0, 0, -10289152, 0, 0, -10289151, 0, 0, -10289150, 0, 0, -10289149, 0, 0, -10289148, 0, 0 )
+
+[node name="Line1" parent="Dialog_Events/Dialog_event3/Dialog_lines" index="0" instance=ExtResource( 12 )]
+text = "veo que ya estas cerca de tu objetivo."
+
+[node name="Line2" parent="Dialog_Events/Dialog_event3/Dialog_lines" index="1" instance=ExtResource( 12 )]
+text = "probablemente encuentres un objeto que te permite avanzar mas rapido."
+
+[node name="Line3" parent="Dialog_Events/Dialog_event3/Dialog_lines" index="2" instance=ExtResource( 12 )]
+text = "mas te vale que aprendas a usarlo o no llegaras muy lejos."
 
 [node name="Dialog_event4" parent="Dialog_Events" index="3" instance=ExtResource( 13 )]
 
@@ -5511,13 +7051,9 @@ tile_data = PoolIntArray( -10551378, 0, 0, -10485842, 0, 0, -10420306, 0, 0, -10
 text = "TEN CUIDADO!!"
 
 [node name="Line2" parent="Dialog_Events/beforeZombieRoom/Dialog_lines" index="1" instance=ExtResource( 12 )]
-text = "la siguiente sala esta infestada de enemigos"
-
-[node name="Line3" parent="Dialog_Events/beforeZombieRoom/Dialog_lines" index="2" instance=ExtResource( 12 )]
-text = "NO luches, CORRE!! YA CASI LLEGAS AL OBJETIVO."
+text = "si ves que la situacion se pone muy dificil mejor no luches y corre a la siguiente sala."
 
 [node name="warehouse" parent="." index="11" instance=ExtResource( 16 )]
-visible = false
 position = Vector2( 1020.97, -1184.9 )
 script = ExtResource( 8 )
 
@@ -5533,12 +7069,18 @@ polygon = PoolVector2Array( -808.092, 32.9567, -146.011, 363.997, 668.241, -49.8
 "compass_target",
 ]]
 position = Vector2( 3795.14, -3039.92 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="13"]
+
+[node name="end" parent="." index="14" instance=ExtResource( 29 )]
 [connection signal="tree_exiting" from="ScreenCanvas/Show_keys" to="Scripting" method="_on_Show_keys_tree_exiting"]
 [connection signal="body_entered" from="YSort/station_objects/preBossRoom/in" to="ScreenCanvas/compass" method="_on_in_body_entered"]
+[connection signal="body_entered" from="Events/running_zombi/target" to="Events/running_zombi/target" method="_on_target_body_entered"]
+[connection signal="body_entered" from="Events/running_zombi2/target" to="Events/running_zombi2/target" method="_on_target_body_entered"]
 [connection signal="body_entered" from="Events/Enter_Building/target" to="Events/Enter_Building" method="_on_entrance_body_entered"]
-[connection signal="body_entered" from="Events/Enter_Building/in" to="ScreenCanvas/compass" method="_on_in_body_entered"]
 [connection signal="body_entered" from="Events/Enter_Building/in" to="Events/Enter_Building" method="_on_in_body_entered"]
-[connection signal="body_entered" from="Events/Event5/target" to="Events/Event5/target" method="_on_target_body_entered"]
+[connection signal="body_entered" from="Events/Enter_Building/in" to="ScreenCanvas/compass" method="_on_in_body_entered"]
+[connection signal="body_entered" from="Events/in_building/target" to="Events/in_building/target" method="_on_target_body_entered"]
 [connection signal="body_entered" from="warehouse/Area2D" to="warehouse" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="warehouse/Area2D" to="warehouse" method="_on_Area2D_body_exited"]
 
@@ -5546,13 +7088,17 @@ position = Vector2( 3795.14, -3039.92 )
 
 [editable path="Events/Event"]
 
+[editable path="Events/running_zombi"]
+
+[editable path="Events/running_zombi2"]
+
 [editable path="Events/Event2"]
 
 [editable path="Events/Event3"]
 
 [editable path="Events/Event4"]
 
-[editable path="Events/Event5"]
+[editable path="Events/in_building"]
 
 [editable path="Events/firstRoom"]
 

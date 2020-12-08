@@ -9,6 +9,14 @@ var obstacles
 
 var enemyCount = 0
 
+var sfx_path = "res://sound/sfx/explosions/"
+var sfx_explosion_big = load(sfx_path + "explosion_big.wav")
+var sfx_explosion_chunky = load(sfx_path + "explosion_chunky.wav")
+var sfx_explosion_low_frequency = load(sfx_path + "explosion_low_frequency.ogg")
+
+onready var sfx1 = get_node("sfx_player_1")
+onready var sfx2 = get_node("sfx_player_2")
+
 var event_ended = false
 var bgm_player
 var scenario
@@ -17,6 +25,7 @@ var event_path = "/root/"
 
 onready var anim_player = get_node("AnimationPlayer")
 onready var shades = get_node("shades")
+onready var white_explosion = get_node("shades/white_explosion")
 var player
 onready var dialog_event = get_node("last_call")
 
@@ -39,7 +48,7 @@ func _ready():
 	obstacles = tilemap.get_used_cells_by_id(1)
 	event_path += main_node.get_name() +"/Events/enter_boss_room"
 	dialog_event.event_path = event_path
-	
+	shades.visible = true
 
 func Start_Event():
 	if canStart: 
@@ -74,15 +83,24 @@ func EndEvent():
 	if event_ended == false:
 		event_ended = true
 		anim_player.play("screen_vibration")
-		dialog_event.Start_Event()
+		while(!player.canMove):
+			yield(get_tree().create_timer(0.1),"timeout")
 		player.canMove = false
-		
+		sfx2.stream = sfx_explosion_low_frequency
+		sfx2.play()
+		dialog_event.Start_Event()
 		
 func dialog_ended():
+	white_explosion.set_global_position(get_tree().get_nodes_in_group("boss")[0].get_global_position()) 
 	anim_player.play("explosion")
+	sfx1.stream = sfx_explosion_big
+	sfx1.play()
+	sfx2.stream = sfx_explosion_chunky
+	yield(get_tree().create_timer(3),"timeout")
+	sfx2.play()
+	main_node.end()
+	
 		
-func Clear_obstacles():
-	pass
 #	for i in range(obstacles.size()):
 #		scenario.set_cellv(obstacles[i],-1)
 

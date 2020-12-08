@@ -43,7 +43,7 @@ margin_top = -96.0
 margin_right = 106.143
 margin_bottom = -31.0
 text = "START"
-scene = "Introduction_video"
+scene = "Level_1"
 animation_path = NodePath("../../Fading/FadingPlayer")
 
 [node name="Volume_button" parent="ReferenceRect" instance=ExtResource( 7 )]

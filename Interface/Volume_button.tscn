@@ -102,6 +102,11 @@ value = 60.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="sfx_player" type="AudioStreamPlayer" parent="VBoxContainer" groups=[
+"sfx_player",
+]]
+[connection signal="mouse_entered" from="." to="VBoxContainer" method="_on_Volume_button_mouse_entered"]
 [connection signal="pressed" from="." to="VBoxContainer" method="_on_Volume_button_pressed"]
 [connection signal="value_changed" from="VBoxContainer/Bgm/Control/bgm_ScrollBar" to="VBoxContainer" method="_on_bgm_ScrollBar_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/Sfx/Control/sfx_HScrollBar" to="VBoxContainer" method="_on_sfx_HScrollBar_value_changed"]

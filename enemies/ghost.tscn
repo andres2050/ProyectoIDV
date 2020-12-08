@@ -65,7 +65,6 @@ health = 20
 position = Vector2( -0.66217, -16.6865 )
 scale = Vector2( 0.0698612, 0.0698612 )
 frames = SubResource( 1 )
-frame = 3
 playing = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
@@ -91,7 +90,7 @@ shape = SubResource( 2 )
 anims/Die = SubResource( 3 )
 anims/ReceiveDamage = SubResource( 4 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." groups=[
+[node name="sfx_player" type="AudioStreamPlayer" parent="." groups=[
 "sfx_player",
 ]]
 stream = ExtResource( 7 )

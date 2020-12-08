@@ -25,4 +25,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 scene = "Test_level"
+
+[node name="sfx_player" type="AudioStreamPlayer" parent="." groups=[
+"sfx_player",
+]]
+[connection signal="mouse_entered" from="." to="." method="_on_ChangeSceneButton_mouse_entered"]
 [connection signal="pressed" from="." to="." method="_on_Button_pressed"]

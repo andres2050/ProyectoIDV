@@ -1,7 +1,7 @@
 extends Node
 
-var bgm_volume = 0.6
-var sfx_volume = 0.6
+var bgm_volume = 0.7
+var sfx_volume = 0.7
 
 var events_states = []
 var dialog_states = []
@@ -15,6 +15,8 @@ var player_position = Vector2()
 
 var scripting
 var player
+
+var soundtrack = ""
 
 func _ready():
 	bgm_players = get_tree().get_nodes_in_group("bgm_player")
@@ -30,6 +32,9 @@ func _ready():
 		player = aux[0]
 		if player_position != Vector2():
 			player.position = player_position
+	if soundtrack != "":
+		for i in range(bgm_players.size()):
+			bgm_players[i].change_soundtrack(soundtrack)
 
 func refresh_events():
 	get_node("Scripting").refresh_events()
@@ -44,11 +49,14 @@ func change_bgm_volume(new_volume):
 	bgm_volume = new_volume
 	for i in range(bgm_players.size()):
 		if (bgm_players[i] != null):
-			bgm_players[i].volume_db = (sqrt(bgm_volume) * 40)-40
+			bgm_players[i].volume_db = (sqrt(bgm_volume) * 80)-80
 			
 	
 func change_sfx_volume(new_volume):
 	sfx_volume = new_volume
 	for i in range(sfx_players.size()):
 		if (sfx_players[i] != null):
-			sfx_players[i].volume_db = (sqrt(sfx_volume) * 40)-40
+			sfx_players[i].volume_db = (sqrt(sfx_volume) * 80)-80
+
+func end():
+	get_node("end").end()
