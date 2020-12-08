@@ -7,6 +7,10 @@ var xDistance = 0
 var yDistance = 0
 var tangent_1 = 0.41421
 var tangent_2 = 2.41421
+var sfx_path = "res://sound/sfx/player/"
+var sfx_dash = load(sfx_path + "player_dash.ogg")
+var sfx_heal = load(sfx_path + "heal.ogg")
+var sfx_pickup = load(sfx_path + "pickup.wav")
 
 export var maxHealth = 100
 onready var health = maxHealth
@@ -21,6 +25,8 @@ var canMove = true
 var healCharges = 1
 var dash_distance = 1300
 var canDash = false
+
+onready var sfx = get_node("sfx_player")
 
 var b = .0
 var a = .0
@@ -76,7 +82,8 @@ func _process(_delta):
 			movementDirection += Vector2(0,1)
 	#dash ----------------------------------------------------------------------------
 		if Input.is_action_just_pressed("dash") and canDash:
-			
+			sfx.stream = sfx_dash
+			sfx.play()
 			canMove = false
 			movementDirection = Vector2()
 			var x = xDistance
@@ -97,6 +104,8 @@ func _process(_delta):
 			
 func heal():
 	if health < maxHealth:
+		sfx.stream = sfx_heal
+		sfx.play()
 		healCharges -= 1
 		for _i in range(healAmount*maxHealth):
 			if health <=0:
@@ -160,6 +169,8 @@ func receive_damage(enemy_position):
 	canDash = true
 
 func pickup_item(pickup):
+	sfx.stream = sfx_pickup
+	sfx.play()
 	match pickup:
 		"":
 			pass

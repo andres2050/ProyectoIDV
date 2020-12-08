@@ -2,6 +2,11 @@ extends Sprite
 
 
 var bullet = preload("res://prefabs/bullet.tscn")
+var path_to_shoots = "res://sound/sfx/shoots/"
+var shot1 = load(path_to_shoots + "1.wav")
+var shot2 = load(path_to_shoots + "2.wav")
+var shot3 = load(path_to_shoots + "3.wav")
+var shot4 = load(path_to_shoots + "4.ogg")
 var bullet_instance
 export var default_bulletSpeed = 1.0
 export var default_fireCooldown = 1.0
@@ -22,21 +27,25 @@ export var radius = 30
 
 var x = 0
 var y = 0
-
+onready var sfx = get_node("sfx_player")
 var weapon_level = 1
 func _process(_delta):
 	
 	if(Input.is_action_pressed("shot1")):
 		shootMode = 1
+		sfx.stream = shot1
 		interface.update_abilities(shootMode)
 	elif(Input.is_action_pressed("shot2") and weapon_level >= 2):
 		shootMode = 2
+		sfx.stream = shot2
 		interface.update_abilities(shootMode)
 	elif(Input.is_action_pressed("shot3") and weapon_level >= 3):
 		shootMode = 3
+		sfx.stream = shot3
 		interface.update_abilities(shootMode)
 	elif(Input.is_action_pressed("shot4") and weapon_level >= 4):
 		shootMode = 4
+		sfx.stream = shot4
 		interface.update_abilities(shootMode)
 
 func upgrade_weapon():
@@ -59,12 +68,16 @@ func _physics_process(_delta):
 			canFire = false
 			match shootMode:
 				1:
+					sfx.play()
 					normalShot()
 				2:
+					sfx.play()
 					superFastShot()
 				3:
+					sfx.play()
 					multiShot()
 				4:
+					sfx.play()
 					piercingShoot()
 				
 

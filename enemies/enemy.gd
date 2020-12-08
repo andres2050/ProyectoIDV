@@ -10,6 +10,10 @@ var isdead = false
 var canDamage = true
 var canDie = true
 
+var sfx_path = "res://sound/sfx/enemy/"
+var sfx_dash = load(sfx_path + "enemy_dash.ogg")
+var sfx_die = load(sfx_path + "enemy_die.ogg")
+
 var path_to_event
 var animation_player
 var event
@@ -24,6 +28,8 @@ func _ready():
 func _process(_delta):
 	if (enemyMovementSpeed < defaultMovementSpeed and !isdead):
 		enemyMovementSpeed += 15
+
+onready var sfx = get_node("AudioStreamPlayer")
 
 var playerPosition
 var enemyPosition
@@ -41,6 +47,8 @@ func _physics_process(_delta):
 		distance = sqrt((direction.x * direction.x) + (direction.y * direction.y))
 		
 		if (distance < attackDistance):
+			sfx.stream = sfx_dash
+			sfx.play()
 			canMove = false
 		else:
 			move(direction.normalized())
@@ -91,6 +99,8 @@ func damage_player():
 
 func die():	
 	if canDie:
+		sfx.stream = sfx_die
+		sfx.play()
 		canDie = false
 		animation_player.play("Die")
 		yield(get_tree().create_timer(animation_player.current_animation_length),"timeout")

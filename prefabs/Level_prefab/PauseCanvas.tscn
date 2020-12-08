@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Interface/Volume_button.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Interface/Pause.gd" type="Script" id=2]
+[ext_resource path="res://sound/sfx/ui/pausar.wav" type="AudioStream" id=3]
 [ext_resource path="res://Interface/ChangeSceneButton.tscn" type="PackedScene" id=4]
 
 [node name="PauseCanvas" type="CanvasLayer"]
@@ -36,3 +37,8 @@ margin_left = 612.139
 margin_top = 305.984
 margin_right = 779.139
 margin_bottom = 356.984
+
+[node name="sfx_player" type="AudioStreamPlayer2D" parent="Pause" groups=[
+"sfx_player",
+]]
+stream = ExtResource( 3 )

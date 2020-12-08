@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Interface/healthBar/HealthBar.gd" type="Script" id=1]
 [ext_resource path="res://Interface/healthBar/bg.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Interface/Hud/Keyboard_keys/3.png" type="Texture" id=10]
 [ext_resource path="res://Interface/Hud/Keyboard_keys/mouse2.png" type="Texture" id=11]
 [ext_resource path="res://Interface/Hud/Keyboard_keys/mouse.png" type="Texture" id=12]
+[ext_resource path="res://sound/sfx/ui/low_health_alert.wav" type="AudioStream" id=13]
 
 [sub_resource type="Animation" id=1]
 resource_name = "needs_healing"
@@ -57,6 +58,11 @@ texture_progress = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="sfx_player" type="AudioStreamPlayer" parent="HealthBar" groups=[
+"sfx_player",
+]]
+stream = ExtResource( 13 )
 
 [node name="HealCharges" type="TextureProgress" parent="."]
 anchor_left = 0.5
@@ -121,5 +127,6 @@ texture = ExtResource( 8 )
 visible = false
 position = Vector2( 422.144, 58.4757 )
 frames = SubResource( 2 )
+frame = 1
 speed_scale = 0.5
 playing = true

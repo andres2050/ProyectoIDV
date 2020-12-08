@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://prefabs/Level_prefab/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=2]
@@ -25,6 +25,8 @@
 [ext_resource path="res://Test_sprites/boss_room.png" type="Texture" id=23]
 [ext_resource path="res://Interface/Animations/screen_vibration.tres" type="Animation" id=24]
 [ext_resource path="res://Interface/Animations/explosion.tres" type="Animation" id=25]
+[ext_resource path="res://Test_sprites/isotiles beta 4.png" type="Texture" id=26]
+[ext_resource path="res://Test_sprites/isotiles beta 4.2.png" type="Texture" id=27]
 
 [sub_resource type="Animation" id=1]
 resource_name = "fade_black_shade"
@@ -60,7 +62,7 @@ tile_data = PoolIntArray( -12189784, 0, 0, -12189783, 0, 0, -12189782, 0, 0, -12
 [node name="compass" parent="ScreenCanvas" index="4" instance=ExtResource( 19 )]
 
 [node name="Player" parent="YSort" index="0" instance=ExtResource( 2 )]
-position = Vector2( -789.801, 366.752 )
+position = Vector2( 4686.61, -3460.2 )
 
 [node name="begining" type="YSort" parent="YSort" index="1"]
 position = Vector2( -280, -211 )
@@ -2921,448 +2923,457 @@ position = Vector2( 1955.81, -782.148 )
 [node name="wall_simple630" parent="YSort/station_walls" index="578" instance=ExtResource( 17 )]
 position = Vector2( 1862.97, -734.904 )
 
-[node name="wall_simple631" parent="YSort/station_walls" index="579" instance=ExtResource( 17 )]
-position = Vector2( 1572.8, -590.14 )
+[node name="wall_simple782" parent="YSort/station_walls" index="579" instance=ExtResource( 17 )]
+position = Vector2( 1831.97, -718.904 )
 
-[node name="wall_simple632" parent="YSort/station_walls" index="580" instance=ExtResource( 17 )]
-position = Vector2( 1665.91, -637.036 )
+[node name="wall_simple631" parent="YSort/station_walls" index="580" instance=ExtResource( 17 )]
+position = Vector2( 1570.68, -588.021 )
 
-[node name="wall_simple765" parent="YSort/station_walls" index="581" instance=ExtResource( 17 )]
-position = Vector2( 1603.44, -605.714 )
+[node name="wall_simple632" parent="YSort/station_walls" index="581" instance=ExtResource( 17 )]
+position = Vector2( 1663.79, -634.917 )
 
-[node name="wall_simple766" parent="YSort/station_walls" index="582" instance=ExtResource( 17 )]
-position = Vector2( 1634.79, -621.636 )
+[node name="wall_simple783" parent="YSort/station_walls" index="582" instance=ExtResource( 17 )]
+position = Vector2( 1694.71, -650.377 )
 
-[node name="wall_simple767" parent="YSort/station_walls" index="583" instance=ExtResource( 17 )]
-position = Vector2( 1541.94, -574.392 )
+[node name="wall_simple784" parent="YSort/station_walls" index="583" instance=ExtResource( 17 )]
+position = Vector2( 1724.44, -665.242 )
 
-[node name="wall_simple503" parent="YSort/station_walls" index="584" instance=ExtResource( 17 )]
+[node name="wall_simple765" parent="YSort/station_walls" index="584" instance=ExtResource( 17 )]
+position = Vector2( 1601.32, -603.595 )
+
+[node name="wall_simple766" parent="YSort/station_walls" index="585" instance=ExtResource( 17 )]
+position = Vector2( 1632.67, -619.517 )
+
+[node name="wall_simple767" parent="YSort/station_walls" index="586" instance=ExtResource( 17 )]
+position = Vector2( 1539.82, -572.273 )
+
+[node name="wall_simple503" parent="YSort/station_walls" index="587" instance=ExtResource( 17 )]
 position = Vector2( 137.347, -577.063 )
 
-[node name="wall_simple657" parent="YSort/station_walls" index="585" instance=ExtResource( 17 )]
+[node name="wall_simple657" parent="YSort/station_walls" index="588" instance=ExtResource( 17 )]
 position = Vector2( 230.451, -623.959 )
 
-[node name="wall_simple658" parent="YSort/station_walls" index="586" instance=ExtResource( 17 )]
+[node name="wall_simple658" parent="YSort/station_walls" index="589" instance=ExtResource( 17 )]
 position = Vector2( 261.314, -639.827 )
 
-[node name="wall_simple659" parent="YSort/station_walls" index="587" instance=ExtResource( 17 )]
+[node name="wall_simple659" parent="YSort/station_walls" index="590" instance=ExtResource( 17 )]
 position = Vector2( 292.657, -655.749 )
 
-[node name="wall_simple660" parent="YSort/station_walls" index="588" instance=ExtResource( 17 )]
+[node name="wall_simple660" parent="YSort/station_walls" index="591" instance=ExtResource( 17 )]
 position = Vector2( 323.96, -670.845 )
 
-[node name="wall_simple661" parent="YSort/station_walls" index="589" instance=ExtResource( 17 )]
+[node name="wall_simple661" parent="YSort/station_walls" index="592" instance=ExtResource( 17 )]
 position = Vector2( 167.988, -592.637 )
 
-[node name="wall_simple662" parent="YSort/station_walls" index="590" instance=ExtResource( 17 )]
+[node name="wall_simple662" parent="YSort/station_walls" index="593" instance=ExtResource( 17 )]
 position = Vector2( 199.331, -608.559 )
 
-[node name="wall_simple663" parent="YSort/station_walls" index="591" instance=ExtResource( 17 )]
+[node name="wall_simple663" parent="YSort/station_walls" index="594" instance=ExtResource( 17 )]
 position = Vector2( 106.487, -561.314 )
 
-[node name="wall_simple590" parent="YSort/station_walls" index="592" instance=ExtResource( 17 )]
+[node name="wall_simple590" parent="YSort/station_walls" index="595" instance=ExtResource( 17 )]
 position = Vector2( 388.347, -926.063 )
 
-[node name="wall_simple740" parent="YSort/station_walls" index="593" instance=ExtResource( 17 )]
+[node name="wall_simple740" parent="YSort/station_walls" index="596" instance=ExtResource( 17 )]
 position = Vector2( 481.451, -972.959 )
 
-[node name="wall_simple741" parent="YSort/station_walls" index="594" instance=ExtResource( 17 )]
+[node name="wall_simple741" parent="YSort/station_walls" index="597" instance=ExtResource( 17 )]
 position = Vector2( 512.314, -988.827 )
 
-[node name="wall_simple749" parent="YSort/station_walls" index="595" instance=ExtResource( 17 )]
+[node name="wall_simple749" parent="YSort/station_walls" index="598" instance=ExtResource( 17 )]
 position = Vector2( 543.657, -1004.75 )
 
-[node name="wall_simple750" parent="YSort/station_walls" index="596" instance=ExtResource( 17 )]
+[node name="wall_simple750" parent="YSort/station_walls" index="599" instance=ExtResource( 17 )]
 position = Vector2( 418.988, -941.637 )
 
-[node name="wall_simple751" parent="YSort/station_walls" index="597" instance=ExtResource( 17 )]
+[node name="wall_simple751" parent="YSort/station_walls" index="600" instance=ExtResource( 17 )]
 position = Vector2( 450.331, -957.559 )
 
-[node name="wall_simple752" parent="YSort/station_walls" index="598" instance=ExtResource( 17 )]
+[node name="wall_simple752" parent="YSort/station_walls" index="601" instance=ExtResource( 17 )]
 position = Vector2( 357.487, -910.314 )
 
-[node name="wall_simple664" parent="YSort/station_walls" index="599" instance=ExtResource( 17 )]
+[node name="wall_simple664" parent="YSort/station_walls" index="602" instance=ExtResource( 17 )]
 position = Vector2( 75.374, -545.051 )
 
-[node name="wall_simple665" parent="YSort/station_walls" index="600" instance=ExtResource( 17 )]
+[node name="wall_simple665" parent="YSort/station_walls" index="603" instance=ExtResource( 17 )]
 position = Vector2( 46.4751, -530.736 )
 
-[node name="wall_simple666" parent="YSort/station_walls" index="601" instance=ExtResource( 17 )]
+[node name="wall_simple666" parent="YSort/station_walls" index="604" instance=ExtResource( 17 )]
 position = Vector2( 15.6152, -514.988 )
 
-[node name="wall_simple667" parent="YSort/station_walls" index="602" instance=ExtResource( 17 )]
+[node name="wall_simple667" parent="YSort/station_walls" index="605" instance=ExtResource( 17 )]
 position = Vector2( -13.8157, -499.986 )
 
-[node name="wall_simple591" parent="YSort/station_walls" index="603" instance=ExtResource( 17 )]
+[node name="wall_simple591" parent="YSort/station_walls" index="606" instance=ExtResource( 17 )]
 position = Vector2( 712.91, -318.844 )
 
-[node name="wall_simple753" parent="YSort/station_walls" index="604" instance=ExtResource( 17 )]
+[node name="wall_simple753" parent="YSort/station_walls" index="607" instance=ExtResource( 17 )]
 position = Vector2( 806.015, -365.74 )
 
-[node name="wall_simple754" parent="YSort/station_walls" index="605" instance=ExtResource( 17 )]
+[node name="wall_simple754" parent="YSort/station_walls" index="608" instance=ExtResource( 17 )]
 position = Vector2( 836.877, -381.609 )
 
-[node name="wall_simple755" parent="YSort/station_walls" index="606" instance=ExtResource( 17 )]
+[node name="wall_simple755" parent="YSort/station_walls" index="609" instance=ExtResource( 17 )]
 position = Vector2( 868.22, -397.531 )
 
-[node name="wall_simple756" parent="YSort/station_walls" index="607" instance=ExtResource( 17 )]
+[node name="wall_simple756" parent="YSort/station_walls" index="610" instance=ExtResource( 17 )]
 position = Vector2( 743.552, -334.418 )
 
-[node name="wall_simple757" parent="YSort/station_walls" index="608" instance=ExtResource( 17 )]
+[node name="wall_simple757" parent="YSort/station_walls" index="611" instance=ExtResource( 17 )]
 position = Vector2( 774.894, -350.34 )
 
-[node name="wall_simple758" parent="YSort/station_walls" index="609" instance=ExtResource( 17 )]
+[node name="wall_simple758" parent="YSort/station_walls" index="612" instance=ExtResource( 17 )]
 position = Vector2( 682.05, -303.096 )
 
-[node name="wall_simple759" parent="YSort/station_walls" index="610" instance=ExtResource( 17 )]
+[node name="wall_simple759" parent="YSort/station_walls" index="613" instance=ExtResource( 17 )]
 position = Vector2( 650.938, -286.833 )
 
-[node name="wall_simple760" parent="YSort/station_walls" index="611" instance=ExtResource( 17 )]
+[node name="wall_simple760" parent="YSort/station_walls" index="614" instance=ExtResource( 17 )]
 position = Vector2( 622.039, -272.518 )
 
-[node name="wall_simple761" parent="YSort/station_walls" index="612" instance=ExtResource( 17 )]
+[node name="wall_simple761" parent="YSort/station_walls" index="615" instance=ExtResource( 17 )]
 position = Vector2( 591.179, -256.77 )
 
-[node name="wall_simple762" parent="YSort/station_walls" index="613" instance=ExtResource( 17 )]
+[node name="wall_simple762" parent="YSort/station_walls" index="616" instance=ExtResource( 17 )]
 position = Vector2( 560.066, -240.506 )
 
-[node name="wall_simple763" parent="YSort/station_walls" index="614" instance=ExtResource( 17 )]
+[node name="wall_simple763" parent="YSort/station_walls" index="617" instance=ExtResource( 17 )]
 position = Vector2( 536.834, -228.855 )
 
-[node name="wall_simple764" parent="YSort/station_walls" index="615" instance=ExtResource( 17 )]
+[node name="wall_simple764" parent="YSort/station_walls" index="618" instance=ExtResource( 17 )]
 position = Vector2( 505.191, -212.592 )
 
-[node name="wall_simple668" parent="YSort/station_walls" index="616" instance=ExtResource( 17 )]
+[node name="wall_simple668" parent="YSort/station_walls" index="619" instance=ExtResource( 17 )]
 position = Vector2( -32.4099, -490.268 )
 
-[node name="wall_simple500" parent="YSort/station_walls" index="617" instance=ExtResource( 17 )]
+[node name="wall_simple500" parent="YSort/station_walls" index="620" instance=ExtResource( 17 )]
 position = Vector2( 2055.39, -187.339 )
 
-[node name="wall_simple501" parent="YSort/station_walls" index="618" instance=ExtResource( 17 )]
+[node name="wall_simple501" parent="YSort/station_walls" index="621" instance=ExtResource( 17 )]
 position = Vector2( 2086.03, -202.913 )
 
-[node name="wall_simple502" parent="YSort/station_walls" index="619" instance=ExtResource( 17 )]
+[node name="wall_simple502" parent="YSort/station_walls" index="622" instance=ExtResource( 17 )]
 position = Vector2( 2117.37, -218.835 )
 
-[node name="wall_simple506" parent="YSort/station_walls" index="620" instance=ExtResource( 17 )]
+[node name="wall_simple506" parent="YSort/station_walls" index="623" instance=ExtResource( 17 )]
 position = Vector2( 2024.53, -171.591 )
 
-[node name="wall_simple507" parent="YSort/station_walls" index="621" instance=ExtResource( 17 )]
+[node name="wall_simple507" parent="YSort/station_walls" index="624" instance=ExtResource( 17 )]
 position = Vector2( 1993.41, -155.327 )
 
-[node name="wall_simple349" parent="YSort/station_walls" index="622" instance=ExtResource( 17 )]
+[node name="wall_simple349" parent="YSort/station_walls" index="625" instance=ExtResource( 17 )]
 position = Vector2( 3265.52, -34.7029 )
 
-[node name="wall_simple350" parent="YSort/station_walls" index="623" instance=ExtResource( 17 )]
+[node name="wall_simple350" parent="YSort/station_walls" index="626" instance=ExtResource( 17 )]
 position = Vector2( 3296.38, -50.571 )
 
-[node name="wall_simple351" parent="YSort/station_walls" index="624" instance=ExtResource( 17 )]
+[node name="wall_simple351" parent="YSort/station_walls" index="627" instance=ExtResource( 17 )]
 position = Vector2( 3327.72, -66.4929 )
 
-[node name="wall_simple352" parent="YSort/station_walls" index="625" instance=ExtResource( 17 )]
+[node name="wall_simple352" parent="YSort/station_walls" index="628" instance=ExtResource( 17 )]
 position = Vector2( 3359.02, -82.1838 )
 
-[node name="wall_simple353" parent="YSort/station_walls" index="626" instance=ExtResource( 17 )]
+[node name="wall_simple353" parent="YSort/station_walls" index="629" instance=ExtResource( 17 )]
 position = Vector2( 3390.37, -98.1057 )
 
-[node name="wall_simple354" parent="YSort/station_walls" index="627" instance=ExtResource( 17 )]
+[node name="wall_simple354" parent="YSort/station_walls" index="630" instance=ExtResource( 17 )]
 position = Vector2( 3421.54, -113.741 )
 
-[node name="wall_simple356" parent="YSort/station_walls" index="628" instance=ExtResource( 17 )]
+[node name="wall_simple356" parent="YSort/station_walls" index="631" instance=ExtResource( 17 )]
 position = Vector2( 3203.05, -3.38086 )
 
-[node name="wall_simple357" parent="YSort/station_walls" index="629" instance=ExtResource( 17 )]
+[node name="wall_simple357" parent="YSort/station_walls" index="632" instance=ExtResource( 17 )]
 position = Vector2( 3234.4, -19.3027 )
 
-[node name="wall_simple692" parent="YSort/station_walls" index="630" instance=ExtResource( 17 )]
+[node name="wall_simple692" parent="YSort/station_walls" index="633" instance=ExtResource( 17 )]
 position = Vector2( -267.683, -1236.09 )
 
-[node name="wall_simple693" parent="YSort/station_walls" index="631" instance=ExtResource( 17 )]
+[node name="wall_simple693" parent="YSort/station_walls" index="634" instance=ExtResource( 17 )]
 position = Vector2( -236.82, -1251.96 )
 
-[node name="wall_simple694" parent="YSort/station_walls" index="632" instance=ExtResource( 17 )]
+[node name="wall_simple694" parent="YSort/station_walls" index="635" instance=ExtResource( 17 )]
 position = Vector2( -205.478, -1267.88 )
 
-[node name="wall_simple695" parent="YSort/station_walls" index="633" instance=ExtResource( 17 )]
+[node name="wall_simple695" parent="YSort/station_walls" index="636" instance=ExtResource( 17 )]
 position = Vector2( -174.174, -1283.57 )
 
-[node name="wall_simple696" parent="YSort/station_walls" index="634" instance=ExtResource( 17 )]
+[node name="wall_simple696" parent="YSort/station_walls" index="637" instance=ExtResource( 17 )]
 position = Vector2( -142.832, -1299.49 )
 
-[node name="wall_simple697" parent="YSort/station_walls" index="635" instance=ExtResource( 17 )]
+[node name="wall_simple697" parent="YSort/station_walls" index="638" instance=ExtResource( 17 )]
 position = Vector2( -111.663, -1315.13 )
 
-[node name="wall_simple715" parent="YSort/station_walls" index="636" instance=ExtResource( 17 )]
+[node name="wall_simple715" parent="YSort/station_walls" index="639" instance=ExtResource( 17 )]
 position = Vector2( -453.199, -1142.14 )
 
-[node name="wall_simple721" parent="YSort/station_walls" index="637" instance=ExtResource( 17 )]
+[node name="wall_simple721" parent="YSort/station_walls" index="640" instance=ExtResource( 17 )]
 position = Vector2( -483.914, -1126.41 )
 
-[node name="wall_simple722" parent="YSort/station_walls" index="638" instance=ExtResource( 17 )]
+[node name="wall_simple722" parent="YSort/station_walls" index="641" instance=ExtResource( 17 )]
 position = Vector2( -506.593, -1115.07 )
 
-[node name="wall_simple716" parent="YSort/station_walls" index="639" instance=ExtResource( 17 )]
+[node name="wall_simple716" parent="YSort/station_walls" index="642" instance=ExtResource( 17 )]
 position = Vector2( -422.336, -1158.01 )
 
-[node name="wall_simple717" parent="YSort/station_walls" index="640" instance=ExtResource( 17 )]
+[node name="wall_simple717" parent="YSort/station_walls" index="643" instance=ExtResource( 17 )]
 position = Vector2( -390.994, -1173.93 )
 
-[node name="wall_simple718" parent="YSort/station_walls" index="641" instance=ExtResource( 17 )]
+[node name="wall_simple718" parent="YSort/station_walls" index="644" instance=ExtResource( 17 )]
 position = Vector2( -359.69, -1189.62 )
 
-[node name="wall_simple719" parent="YSort/station_walls" index="642" instance=ExtResource( 17 )]
+[node name="wall_simple719" parent="YSort/station_walls" index="645" instance=ExtResource( 17 )]
 position = Vector2( -328.348, -1205.54 )
 
-[node name="wall_simple720" parent="YSort/station_walls" index="643" instance=ExtResource( 17 )]
+[node name="wall_simple720" parent="YSort/station_walls" index="646" instance=ExtResource( 17 )]
 position = Vector2( -297.179, -1221.18 )
 
-[node name="wall_simple698" parent="YSort/station_walls" index="644" instance=ExtResource( 17 )]
+[node name="wall_simple698" parent="YSort/station_walls" index="647" instance=ExtResource( 17 )]
 position = Vector2( -80.3198, -1331.05 )
 
-[node name="wall_simple699" parent="YSort/station_walls" index="645" instance=ExtResource( 17 )]
+[node name="wall_simple699" parent="YSort/station_walls" index="648" instance=ExtResource( 17 )]
 position = Vector2( 12.7847, -1377.95 )
 
-[node name="wall_simple700" parent="YSort/station_walls" index="646" instance=ExtResource( 17 )]
+[node name="wall_simple700" parent="YSort/station_walls" index="649" instance=ExtResource( 17 )]
 position = Vector2( 43.6475, -1393.81 )
 
-[node name="wall_simple701" parent="YSort/station_walls" index="647" instance=ExtResource( 17 )]
+[node name="wall_simple701" parent="YSort/station_walls" index="650" instance=ExtResource( 17 )]
 position = Vector2( 74.9902, -1409.74 )
 
-[node name="wall_simple702" parent="YSort/station_walls" index="648" instance=ExtResource( 17 )]
+[node name="wall_simple702" parent="YSort/station_walls" index="651" instance=ExtResource( 17 )]
 position = Vector2( 106.294, -1424.83 )
 
-[node name="wall_simple703" parent="YSort/station_walls" index="649" instance=ExtResource( 17 )]
+[node name="wall_simple703" parent="YSort/station_walls" index="652" instance=ExtResource( 17 )]
 position = Vector2( 137.636, -1440.75 )
 
-[node name="wall_simple704" parent="YSort/station_walls" index="650" instance=ExtResource( 17 )]
+[node name="wall_simple704" parent="YSort/station_walls" index="653" instance=ExtResource( 17 )]
 position = Vector2( 168.805, -1456.39 )
 
-[node name="wall_simple705" parent="YSort/station_walls" index="651" instance=ExtResource( 17 )]
+[node name="wall_simple705" parent="YSort/station_walls" index="654" instance=ExtResource( 17 )]
 position = Vector2( 200.148, -1472.31 )
 
-[node name="wall_simple706" parent="YSort/station_walls" index="652" instance=ExtResource( 17 )]
+[node name="wall_simple706" parent="YSort/station_walls" index="655" instance=ExtResource( 17 )]
 position = Vector2( -49.6785, -1346.62 )
 
-[node name="wall_simple707" parent="YSort/station_walls" index="653" instance=ExtResource( 17 )]
+[node name="wall_simple707" parent="YSort/station_walls" index="656" instance=ExtResource( 17 )]
 position = Vector2( -18.3357, -1362.55 )
 
-[node name="wall_simple708" parent="YSort/station_walls" index="654" instance=ExtResource( 17 )]
+[node name="wall_simple708" parent="YSort/station_walls" index="657" instance=ExtResource( 17 )]
 position = Vector2( 294.057, -1519.57 )
 
-[node name="wall_simple709" parent="YSort/station_walls" index="655" instance=ExtResource( 17 )]
+[node name="wall_simple709" parent="YSort/station_walls" index="658" instance=ExtResource( 17 )]
 position = Vector2( 324.92, -1535.44 )
 
-[node name="wall_simple710" parent="YSort/station_walls" index="656" instance=ExtResource( 17 )]
+[node name="wall_simple710" parent="YSort/station_walls" index="659" instance=ExtResource( 17 )]
 position = Vector2( 356.263, -1551.36 )
 
-[node name="wall_simple711" parent="YSort/station_walls" index="657" instance=ExtResource( 17 )]
+[node name="wall_simple711" parent="YSort/station_walls" index="660" instance=ExtResource( 17 )]
 position = Vector2( 387.566, -1567.05 )
 
-[node name="wall_simple712" parent="YSort/station_walls" index="658" instance=ExtResource( 17 )]
+[node name="wall_simple712" parent="YSort/station_walls" index="661" instance=ExtResource( 17 )]
 position = Vector2( 418.909, -1582.97 )
 
-[node name="wall_simple713" parent="YSort/station_walls" index="659" instance=ExtResource( 17 )]
+[node name="wall_simple713" parent="YSort/station_walls" index="662" instance=ExtResource( 17 )]
 position = Vector2( 231.594, -1488.25 )
 
-[node name="wall_simple714" parent="YSort/station_walls" index="660" instance=ExtResource( 17 )]
+[node name="wall_simple714" parent="YSort/station_walls" index="663" instance=ExtResource( 17 )]
 position = Vector2( 262.937, -1504.17 )
 
-[node name="wall_simple723" parent="YSort/station_walls" index="661" instance=ExtResource( 17 )]
+[node name="wall_simple723" parent="YSort/station_walls" index="664" instance=ExtResource( 17 )]
 position = Vector2( 485.945, -1423.08 )
 
-[node name="wall_simple724" parent="YSort/station_walls" index="662" instance=ExtResource( 17 )]
+[node name="wall_simple724" parent="YSort/station_walls" index="665" instance=ExtResource( 17 )]
 position = Vector2( 516.808, -1438.95 )
 
-[node name="wall_simple725" parent="YSort/station_walls" index="663" instance=ExtResource( 17 )]
+[node name="wall_simple725" parent="YSort/station_walls" index="666" instance=ExtResource( 17 )]
 position = Vector2( 548.15, -1454.87 )
 
-[node name="wall_simple726" parent="YSort/station_walls" index="664" instance=ExtResource( 17 )]
+[node name="wall_simple726" parent="YSort/station_walls" index="667" instance=ExtResource( 17 )]
 position = Vector2( 579.454, -1470.56 )
 
-[node name="wall_simple727" parent="YSort/station_walls" index="665" instance=ExtResource( 17 )]
+[node name="wall_simple727" parent="YSort/station_walls" index="668" instance=ExtResource( 17 )]
 position = Vector2( 610.796, -1486.48 )
 
-[node name="wall_simple729" parent="YSort/station_walls" index="666" instance=ExtResource( 17 )]
+[node name="wall_simple729" parent="YSort/station_walls" index="669" instance=ExtResource( 17 )]
 position = Vector2( 319.824, -1340.68 )
 
-[node name="wall_simple733" parent="YSort/station_walls" index="667" instance=ExtResource( 17 )]
+[node name="wall_simple733" parent="YSort/station_walls" index="670" instance=ExtResource( 17 )]
 position = Vector2( -23.4795, -1166.87 )
 
-[node name="wall_simple735" parent="YSort/station_walls" index="668" instance=ExtResource( 17 )]
+[node name="wall_simple735" parent="YSort/station_walls" index="671" instance=ExtResource( 17 )]
 position = Vector2( 7.3833, -1182.74 )
 
-[node name="wall_simple736" parent="YSort/station_walls" index="669" instance=ExtResource( 17 )]
+[node name="wall_simple736" parent="YSort/station_walls" index="672" instance=ExtResource( 17 )]
 position = Vector2( 38.7261, -1198.66 )
 
-[node name="wall_simple737" parent="YSort/station_walls" index="670" instance=ExtResource( 17 )]
+[node name="wall_simple737" parent="YSort/station_walls" index="673" instance=ExtResource( 17 )]
 position = Vector2( 70.0298, -1214.35 )
 
-[node name="wall_simple738" parent="YSort/station_walls" index="671" instance=ExtResource( 17 )]
+[node name="wall_simple738" parent="YSort/station_walls" index="674" instance=ExtResource( 17 )]
 position = Vector2( 101.372, -1230.27 )
 
-[node name="wall_simple739" parent="YSort/station_walls" index="672" instance=ExtResource( 17 )]
+[node name="wall_simple739" parent="YSort/station_walls" index="675" instance=ExtResource( 17 )]
 position = Vector2( -54.5999, -1151.47 )
 
-[node name="wall_simple747" parent="YSort/station_walls" index="673" instance=ExtResource( 17 )]
+[node name="wall_simple747" parent="YSort/station_walls" index="676" instance=ExtResource( 17 )]
 position = Vector2( -85.7126, -1135.21 )
 
-[node name="wall_simple748" parent="YSort/station_walls" index="674" instance=ExtResource( 17 )]
+[node name="wall_simple748" parent="YSort/station_walls" index="677" instance=ExtResource( 17 )]
 position = Vector2( -116.825, -1119.65 )
 
-[node name="wall_simple728" parent="YSort/station_walls" index="675" instance=ExtResource( 17 )]
+[node name="wall_simple728" parent="YSort/station_walls" index="678" instance=ExtResource( 17 )]
 position = Vector2( 195.853, -1277.62 )
 
-[node name="wall_simple730" parent="YSort/station_walls" index="676" instance=ExtResource( 17 )]
+[node name="wall_simple730" parent="YSort/station_walls" index="679" instance=ExtResource( 17 )]
 position = Vector2( 226.715, -1293.48 )
 
-[node name="wall_simple731" parent="YSort/station_walls" index="677" instance=ExtResource( 17 )]
+[node name="wall_simple731" parent="YSort/station_walls" index="680" instance=ExtResource( 17 )]
 position = Vector2( 258.058, -1309.41 )
 
-[node name="wall_simple732" parent="YSort/station_walls" index="678" instance=ExtResource( 17 )]
+[node name="wall_simple732" parent="YSort/station_walls" index="681" instance=ExtResource( 17 )]
 position = Vector2( 289.362, -1325.1 )
 
-[node name="wall_simple734" parent="YSort/station_walls" index="679" instance=ExtResource( 17 )]
+[node name="wall_simple734" parent="YSort/station_walls" index="682" instance=ExtResource( 17 )]
 position = Vector2( 164.732, -1262.22 )
 
-[node name="wall_simple265" parent="YSort/station_walls" index="680" instance=ExtResource( 17 )]
+[node name="wall_simple265" parent="YSort/station_walls" index="683" instance=ExtResource( 17 )]
 position = Vector2( -1579.08, -576.115 )
 
-[node name="wall_simple266" parent="YSort/station_walls" index="681" instance=ExtResource( 17 )]
+[node name="wall_simple266" parent="YSort/station_walls" index="684" instance=ExtResource( 17 )]
 position = Vector2( -1548.21, -592.578 )
 
-[node name="wall_simple267" parent="YSort/station_walls" index="682" instance=ExtResource( 17 )]
+[node name="wall_simple267" parent="YSort/station_walls" index="685" instance=ExtResource( 17 )]
 position = Vector2( -1516.87, -608.5 )
 
-[node name="wall_simple268" parent="YSort/station_walls" index="683" instance=ExtResource( 17 )]
+[node name="wall_simple268" parent="YSort/station_walls" index="686" instance=ExtResource( 17 )]
 position = Vector2( -1485.57, -624.345 )
 
-[node name="wall_simple269" parent="YSort/station_walls" index="684" instance=ExtResource( 17 )]
+[node name="wall_simple269" parent="YSort/station_walls" index="687" instance=ExtResource( 17 )]
 position = Vector2( -1622.94, -554.052 )
 
-[node name="wall_simple270" parent="YSort/station_walls" index="685" instance=ExtResource( 17 )]
+[node name="wall_simple270" parent="YSort/station_walls" index="688" instance=ExtResource( 17 )]
 position = Vector2( -1591.63, -569.898 )
 
-[node name="wall_simple271" parent="YSort/station_walls" index="686" instance=ExtResource( 17 )]
+[node name="wall_simple271" parent="YSort/station_walls" index="689" instance=ExtResource( 17 )]
 position = Vector2( -1454.23, -640.267 )
 
-[node name="wall_simple272" parent="YSort/station_walls" index="687" instance=ExtResource( 17 )]
+[node name="wall_simple272" parent="YSort/station_walls" index="690" instance=ExtResource( 17 )]
 position = Vector2( -1423.06, -656.218 )
 
-[node name="wall_simple273" parent="YSort/station_walls" index="688" instance=ExtResource( 17 )]
+[node name="wall_simple273" parent="YSort/station_walls" index="691" instance=ExtResource( 17 )]
 position = Vector2( -1392.42, -672.139 )
 
-[node name="wall_simple281" parent="YSort/station_walls" index="689" instance=ExtResource( 17 )]
+[node name="wall_simple281" parent="YSort/station_walls" index="692" instance=ExtResource( 17 )]
 position = Vector2( 1835.09, 685.988 )
 
-[node name="wall_simple282" parent="YSort/station_walls" index="690" instance=ExtResource( 17 )]
+[node name="wall_simple282" parent="YSort/station_walls" index="693" instance=ExtResource( 17 )]
 position = Vector2( 1865.95, 670.12 )
 
-[node name="wall_simple283" parent="YSort/station_walls" index="691" instance=ExtResource( 17 )]
+[node name="wall_simple283" parent="YSort/station_walls" index="694" instance=ExtResource( 17 )]
 position = Vector2( 1897.3, 654.198 )
 
-[node name="wall_simple284" parent="YSort/station_walls" index="692" instance=ExtResource( 17 )]
+[node name="wall_simple284" parent="YSort/station_walls" index="695" instance=ExtResource( 17 )]
 position = Vector2( 1928.6, 638.352 )
 
-[node name="wall_simple285" parent="YSort/station_walls" index="693" instance=ExtResource( 17 )]
+[node name="wall_simple285" parent="YSort/station_walls" index="696" instance=ExtResource( 17 )]
 position = Vector2( 1959.94, 622.43 )
 
-[node name="wall_simple286" parent="YSort/station_walls" index="694" instance=ExtResource( 17 )]
+[node name="wall_simple286" parent="YSort/station_walls" index="697" instance=ExtResource( 17 )]
 position = Vector2( 1991.11, 606.48 )
 
-[node name="wall_simple287" parent="YSort/station_walls" index="695" instance=ExtResource( 17 )]
+[node name="wall_simple287" parent="YSort/station_walls" index="698" instance=ExtResource( 17 )]
 position = Vector2( 2022.46, 590.558 )
 
-[node name="wall_simple296" parent="YSort/station_walls" index="696" instance=ExtResource( 17 )]
+[node name="wall_simple296" parent="YSort/station_walls" index="699" instance=ExtResource( 17 )]
 position = Vector2( 1616.21, 797.499 )
 
-[node name="wall_simple297" parent="YSort/station_walls" index="697" instance=ExtResource( 17 )]
+[node name="wall_simple297" parent="YSort/station_walls" index="700" instance=ExtResource( 17 )]
 position = Vector2( 1647.07, 781.743 )
 
-[node name="wall_simple298" parent="YSort/station_walls" index="698" instance=ExtResource( 17 )]
+[node name="wall_simple298" parent="YSort/station_walls" index="701" instance=ExtResource( 17 )]
 position = Vector2( 1678.42, 765.821 )
 
-[node name="wall_simple299" parent="YSort/station_walls" index="699" instance=ExtResource( 17 )]
+[node name="wall_simple299" parent="YSort/station_walls" index="702" instance=ExtResource( 17 )]
 position = Vector2( 1709.72, 749.976 )
 
-[node name="wall_simple300" parent="YSort/station_walls" index="700" instance=ExtResource( 17 )]
+[node name="wall_simple300" parent="YSort/station_walls" index="703" instance=ExtResource( 17 )]
 position = Vector2( 1741.06, 734.054 )
 
-[node name="wall_simple301" parent="YSort/station_walls" index="701" instance=ExtResource( 17 )]
+[node name="wall_simple301" parent="YSort/station_walls" index="704" instance=ExtResource( 17 )]
 position = Vector2( 1772.23, 718.104 )
 
-[node name="wall_simple302" parent="YSort/station_walls" index="702" instance=ExtResource( 17 )]
+[node name="wall_simple302" parent="YSort/station_walls" index="705" instance=ExtResource( 17 )]
 position = Vector2( 1803.58, 702.182 )
 
-[node name="wall_simple303" parent="YSort/station_walls" index="703" instance=ExtResource( 17 )]
+[node name="wall_simple303" parent="YSort/station_walls" index="706" instance=ExtResource( 17 )]
 position = Vector2( 1399.02, 908.855 )
 
-[node name="wall_simple304" parent="YSort/station_walls" index="704" instance=ExtResource( 17 )]
+[node name="wall_simple304" parent="YSort/station_walls" index="707" instance=ExtResource( 17 )]
 position = Vector2( 1429.88, 892.392 )
 
-[node name="wall_simple305" parent="YSort/station_walls" index="705" instance=ExtResource( 17 )]
+[node name="wall_simple305" parent="YSort/station_walls" index="708" instance=ExtResource( 17 )]
 position = Vector2( 1461.23, 876.47 )
 
-[node name="wall_simple306" parent="YSort/station_walls" index="706" instance=ExtResource( 17 )]
+[node name="wall_simple306" parent="YSort/station_walls" index="709" instance=ExtResource( 17 )]
 position = Vector2( 1492.53, 860.625 )
 
-[node name="wall_simple307" parent="YSort/station_walls" index="707" instance=ExtResource( 17 )]
+[node name="wall_simple307" parent="YSort/station_walls" index="710" instance=ExtResource( 17 )]
 position = Vector2( 1355.16, 930.917 )
 
-[node name="wall_simple308" parent="YSort/station_walls" index="708" instance=ExtResource( 17 )]
+[node name="wall_simple308" parent="YSort/station_walls" index="711" instance=ExtResource( 17 )]
 position = Vector2( 1386.47, 915.072 )
 
-[node name="wall_simple309" parent="YSort/station_walls" index="709" instance=ExtResource( 17 )]
+[node name="wall_simple309" parent="YSort/station_walls" index="712" instance=ExtResource( 17 )]
 position = Vector2( 1523.87, 844.703 )
 
-[node name="wall_simple310" parent="YSort/station_walls" index="710" instance=ExtResource( 17 )]
+[node name="wall_simple310" parent="YSort/station_walls" index="713" instance=ExtResource( 17 )]
 position = Vector2( 1555.04, 828.752 )
 
-[node name="wall_simple311" parent="YSort/station_walls" index="711" instance=ExtResource( 17 )]
+[node name="wall_simple311" parent="YSort/station_walls" index="714" instance=ExtResource( 17 )]
 position = Vector2( 1585.68, 812.831 )
 
-[node name="wall_simple274" parent="YSort/station_walls" index="712" instance=ExtResource( 17 )]
+[node name="wall_simple274" parent="YSort/station_walls" index="715" instance=ExtResource( 17 )]
 position = Vector2( -472.474, -462.978 )
 
-[node name="wall_simple275" parent="YSort/station_walls" index="713" instance=ExtResource( 17 )]
+[node name="wall_simple275" parent="YSort/station_walls" index="716" instance=ExtResource( 17 )]
 position = Vector2( -441.611, -478.846 )
 
-[node name="wall_simple276" parent="YSort/station_walls" index="714" instance=ExtResource( 17 )]
+[node name="wall_simple276" parent="YSort/station_walls" index="717" instance=ExtResource( 17 )]
 position = Vector2( -410.268, -494.768 )
 
-[node name="wall_simple277" parent="YSort/station_walls" index="715" instance=ExtResource( 17 )]
+[node name="wall_simple277" parent="YSort/station_walls" index="718" instance=ExtResource( 17 )]
 position = Vector2( -378.965, -510.614 )
 
-[node name="wall_simple278" parent="YSort/station_walls" index="716" instance=ExtResource( 17 )]
+[node name="wall_simple278" parent="YSort/station_walls" index="719" instance=ExtResource( 17 )]
 position = Vector2( -347.622, -526.535 )
 
-[node name="wall_simple279" parent="YSort/station_walls" index="717" instance=ExtResource( 17 )]
+[node name="wall_simple279" parent="YSort/station_walls" index="720" instance=ExtResource( 17 )]
 position = Vector2( -316.453, -542.486 )
 
-[node name="wall_simple280" parent="YSort/station_walls" index="718" instance=ExtResource( 17 )]
+[node name="wall_simple280" parent="YSort/station_walls" index="721" instance=ExtResource( 17 )]
 position = Vector2( -285.111, -558.407 )
 
-[node name="wall_simple288" parent="YSort/station_walls" index="719" instance=ExtResource( 17 )]
+[node name="wall_simple288" parent="YSort/station_walls" index="722" instance=ExtResource( 17 )]
 position = Vector2( -908.544, -240.111 )
 
-[node name="wall_simple289" parent="YSort/station_walls" index="720" instance=ExtResource( 17 )]
+[node name="wall_simple289" parent="YSort/station_walls" index="723" instance=ExtResource( 17 )]
 position = Vector2( -877.681, -256.573 )
 
-[node name="wall_simple290" parent="YSort/station_walls" index="721" instance=ExtResource( 17 )]
+[node name="wall_simple290" parent="YSort/station_walls" index="724" instance=ExtResource( 17 )]
 position = Vector2( -846.339, -272.495 )
 
-[node name="wall_simple291" parent="YSort/station_walls" index="722" instance=ExtResource( 17 )]
+[node name="wall_simple291" parent="YSort/station_walls" index="725" instance=ExtResource( 17 )]
 position = Vector2( -815.035, -288.341 )
 
-[node name="wall_simple292" parent="YSort/station_walls" index="723" instance=ExtResource( 17 )]
+[node name="wall_simple292" parent="YSort/station_walls" index="726" instance=ExtResource( 17 )]
 position = Vector2( -722.099, -335.088 )
 
-[node name="wall_simple293" parent="YSort/station_walls" index="724" instance=ExtResource( 17 )]
+[node name="wall_simple293" parent="YSort/station_walls" index="727" instance=ExtResource( 17 )]
 position = Vector2( -921.101, -233.894 )
 
-[node name="wall_simple294" parent="YSort/station_walls" index="725" instance=ExtResource( 17 )]
+[node name="wall_simple294" parent="YSort/station_walls" index="728" instance=ExtResource( 17 )]
 position = Vector2( -783.693, -304.263 )
 
-[node name="wall_simple295" parent="YSort/station_walls" index="726" instance=ExtResource( 17 )]
+[node name="wall_simple295" parent="YSort/station_walls" index="729" instance=ExtResource( 17 )]
 position = Vector2( -752.524, -320.213 )
 
 [node name="station_objects" type="YSort" parent="YSort" index="12"]
@@ -4805,7 +4816,7 @@ position = Vector2( 1639.45, -771.015 )
 
 [node name="Open_bin2" parent="YSort/station_objects/preBossRoom" index="0" instance=ExtResource( 9 )]
 position = Vector2( 2296.23, -530.202 )
-pickups = [ "HealingPickup" ]
+pickups = [ "WeaponPickup", "WeaponPickup", "WeaponPickup", "dashpickup" ]
 
 [node name="in" type="Area2D" parent="YSort/station_objects/preBossRoom" index="1"]
 
@@ -4813,6 +4824,39 @@ pickups = [ "HealingPickup" ]
 polygon = PoolVector2Array( 1864.14, -616.18, 1703.62, -537.608, 1730.56, -521.893, 1891.07, -601.588 )
 
 [node name="bossRoom" type="YSort" parent="YSort/station_objects" index="7"]
+
+[node name="Sprite" type="Sprite" parent="YSort" index="13"]
+position = Vector2( 1372.74, -917.413 )
+scale = Vector2( 0.535957, 0.535957 )
+texture = ExtResource( 27 )
+region_enabled = true
+region_rect = Rect2( 1842, 993, 381, 469 )
+
+[node name="Sprite2" type="Sprite" parent="YSort" index="14"]
+position = Vector2( 47.622, -87.3071 )
+texture = ExtResource( 26 )
+region_enabled = true
+region_rect = Rect2( 1313, 480, 353, 181 )
+
+[node name="Sprite3" type="Sprite" parent="YSort" index="15"]
+texture = ExtResource( 26 )
+region_enabled = true
+
+[node name="Sprite4" type="Sprite" parent="YSort" index="16"]
+texture = ExtResource( 26 )
+region_enabled = true
+
+[node name="Sprite5" type="Sprite" parent="YSort" index="17"]
+texture = ExtResource( 26 )
+region_enabled = true
+
+[node name="Sprite6" type="Sprite" parent="YSort" index="18"]
+texture = ExtResource( 26 )
+region_enabled = true
+
+[node name="Sprite7" type="Sprite" parent="YSort" index="19"]
+texture = ExtResource( 26 )
+region_enabled = true
 
 [node name="BgmStreamPlayer" parent="." index="7"]
 soundtrack_name = "Ambiental_city"
@@ -5294,28 +5338,18 @@ position = Vector2( 3178.75, -4140.63 )
 
 [node name="enemySpawner" parent="Events/zombieRoom/Spawners" index="0" instance=ExtResource( 11 )]
 position = Vector2( 354.172, -15.9639 )
-spawnOf = "ghost"
-maxEnemies = 5
+spawnOf = "boss"
+maxEnemies = 1
 
 [node name="enemySpawner2" parent="Events/zombieRoom/Spawners" index="1" instance=ExtResource( 11 )]
 position = Vector2( 253.786, -84.8857 )
-spawnOf = "ghost"
-maxEnemies = 5
+spawnOf = "boss"
+maxEnemies = 1
 
 [node name="enemySpawner3" parent="Events/zombieRoom/Spawners" index="2" instance=ExtResource( 11 )]
 position = Vector2( -266.127, 103.901 )
-spawnOf = "ghost"
-maxEnemies = 5
-
-[node name="enemySpawner4" parent="Events/zombieRoom/Spawners" index="3" instance=ExtResource( 11 )]
-position = Vector2( -156.751, 162.335 )
-spawnOf = "ghost"
-maxEnemies = 5
-
-[node name="enemySpawner5" parent="Events/zombieRoom/Spawners" index="4" instance=ExtResource( 11 )]
-position = Vector2( -2.42505, 223.766 )
-spawnOf = "ghost"
-maxEnemies = 5
+spawnOf = "boss"
+maxEnemies = 1
 
 [node name="zombieRoom2" parent="Events" index="15" instance=ExtResource( 10 )]
 soundtrack = ""
@@ -5328,28 +5362,18 @@ position = Vector2( 3541.34, -3950.34 )
 
 [node name="enemySpawner" parent="Events/zombieRoom2/Spawners" index="0" instance=ExtResource( 11 )]
 position = Vector2( 354.172, -15.9639 )
-spawnOf = "ghost"
-maxEnemies = 5
+spawnOf = "boss"
+maxEnemies = 1
 
 [node name="enemySpawner2" parent="Events/zombieRoom2/Spawners" index="1" instance=ExtResource( 11 )]
 position = Vector2( 253.786, -84.8857 )
-spawnOf = "ghost"
-maxEnemies = 5
+spawnOf = "boss"
+maxEnemies = 1
 
 [node name="enemySpawner3" parent="Events/zombieRoom2/Spawners" index="2" instance=ExtResource( 11 )]
 position = Vector2( -266.127, 103.901 )
-spawnOf = "ghost"
-maxEnemies = 5
-
-[node name="enemySpawner4" parent="Events/zombieRoom2/Spawners" index="3" instance=ExtResource( 11 )]
-position = Vector2( -156.751, 162.335 )
-spawnOf = "ghost"
-maxEnemies = 5
-
-[node name="enemySpawner5" parent="Events/zombieRoom2/Spawners" index="4" instance=ExtResource( 11 )]
-position = Vector2( -2.42505, 223.766 )
-spawnOf = "ghost"
-maxEnemies = 5
+spawnOf = "boss"
+maxEnemies = 1
 
 [node name="zombieRoom3" parent="Events" index="16" instance=ExtResource( 10 )]
 soundtrack = ""
@@ -5362,28 +5386,18 @@ position = Vector2( 3918.92, -3767.55 )
 
 [node name="enemySpawner" parent="Events/zombieRoom3/Spawners" index="0" instance=ExtResource( 11 )]
 position = Vector2( 354.172, -15.9639 )
-spawnOf = "ghost"
-maxEnemies = 5
+spawnOf = "boss"
+maxEnemies = 1
 
 [node name="enemySpawner2" parent="Events/zombieRoom3/Spawners" index="1" instance=ExtResource( 11 )]
 position = Vector2( 253.786, -84.8857 )
-spawnOf = "ghost"
-maxEnemies = 5
+spawnOf = "boss"
+maxEnemies = 1
 
 [node name="enemySpawner3" parent="Events/zombieRoom3/Spawners" index="2" instance=ExtResource( 11 )]
 position = Vector2( -266.127, 103.901 )
-spawnOf = "ghost"
-maxEnemies = 5
-
-[node name="enemySpawner4" parent="Events/zombieRoom3/Spawners" index="3" instance=ExtResource( 11 )]
-position = Vector2( -156.751, 162.335 )
-spawnOf = "ghost"
-maxEnemies = 5
-
-[node name="enemySpawner5" parent="Events/zombieRoom3/Spawners" index="4" instance=ExtResource( 11 )]
-position = Vector2( -2.42505, 223.766 )
-spawnOf = "ghost"
-maxEnemies = 5
+spawnOf = "boss"
+maxEnemies = 1
 
 [node name="zombieRoom4" parent="Events" index="17" instance=ExtResource( 10 )]
 soundtrack = ""
@@ -5392,27 +5406,22 @@ soundtrack = ""
 tile_data = PoolIntArray( -11927601, 0, 0, -11862065, 0, 0, -11796529, 0, 0, -11730993, 0, 0, -11665457, 0, 0, -11599921, 0, 0, -11534385, 0, 0 )
 
 [node name="Spawners" parent="Events/zombieRoom4" index="1"]
-position = Vector2( 4290.59, -3581.08 )
+position = Vector2( 4288.47, -3578.96 )
 
 [node name="enemySpawner" parent="Events/zombieRoom4/Spawners" index="0" instance=ExtResource( 11 )]
 position = Vector2( 354.172, -15.9639 )
-spawnOf = "ghost"
-maxEnemies = 5
+spawnOf = "boss"
+maxEnemies = 1
 
 [node name="enemySpawner2" parent="Events/zombieRoom4/Spawners" index="1" instance=ExtResource( 11 )]
 position = Vector2( 131.573, -134.023 )
-spawnOf = "ghost"
-maxEnemies = 5
+spawnOf = "boss"
+maxEnemies = 1
 
 [node name="enemySpawner3" parent="Events/zombieRoom4/Spawners" index="2" instance=ExtResource( 11 )]
 position = Vector2( -266.127, 103.901 )
-spawnOf = "ghost"
-maxEnemies = 5
-
-[node name="enemySpawner4" parent="Events/zombieRoom4/Spawners" index="3" instance=ExtResource( 11 )]
-position = Vector2( -156.751, 162.335 )
-spawnOf = "ghost"
-maxEnemies = 5
+spawnOf = "boss"
+maxEnemies = 1
 
 [node name="exitZombieRoom" type="Node2D" parent="Events" index="18" groups=[
 "Event",
@@ -5448,6 +5457,7 @@ scale = Vector2( 0.58353, 0.58353 )
 texture = ExtResource( 21 )
 
 [node name="white_shade" type="Sprite" parent="Events/enter_boss_room/shades" index="1"]
+visible = false
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 181.406, 38.582 )
 scale = Vector2( 0.58353, 0.58353 )

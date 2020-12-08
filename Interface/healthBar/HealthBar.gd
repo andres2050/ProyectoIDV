@@ -7,6 +7,10 @@ onready var health_bar = get_node("HealthBar")
 onready var heal_charges = get_node("HealCharges")
 onready var abilities = get_node("ReferenceRect/Node2D").get_children()
 onready var animation_player = get_node("HealCharges/Sprite/AnimationPlayer")
+
+
+onready var sfx = get_node("HealthBar/sfx_player")
+
 func _ready():
 	yield(get_tree().create_timer(0.03),"timeout")
 	for i in range(abilities.size()):
@@ -23,12 +27,19 @@ func _process(_delta):
 		heal_charges.get_node("Sprite").visible = true
 	if player.health < 50:
 		animation_player.play("needs_healing")
+		alert()
 	else:
 		animation_player.stop(true)
 	if player.canDash:
 		if Input.is_action_just_pressed("dash"):
 			abilities[4].visible = false
-				
+
+var canAlert = true
+func alert():
+	if canAlert:
+		canAlert = false
+		sfx.play()
+		yield(get_tree().create_timer(1),"timeout")
 
 func update_abilities(shootMode):
 	shootMode -= 1

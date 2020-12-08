@@ -4,7 +4,12 @@ onready var animation_player = get_node("reference/AnimationPlayer")
 onready var spacebar_animation = get_node("reference/Space_bar/AnimationPlayer")
 onready var spacebar = get_node("reference/Space_bar")
 onready var label = get_node("reference/walkitalki/bubble/Label")
-onready var audio_player = get_node("AudioStreamPlayer")
+
+var sfx_path = "res://sound/sfx/ui/"
+var sfx_call = load(sfx_path + "call.ogg")
+var sfx_text = load(sfx_path + "text_sound.wav")
+onready var sfx = get_node("AudioStreamPlayer")
+
 var is_animation_over = true
 
 var dialogue_lines = []
@@ -31,6 +36,8 @@ func Begin_dialog(lines, letters_duration, event_path):
 		time_between_letters = letters_duration
 		path_to_event = event_path
 		animation_player.play("show_walkitalki")
+		sfx.stream = sfx_call
+		sfx.play()
 		yield(get_tree().create_timer(animation_player.current_animation_length),"timeout")
 		
 		answered_call = false 
@@ -38,9 +45,9 @@ func Begin_dialog(lines, letters_duration, event_path):
 		spacebar_animation.play("show_spacebar")
 		spacebar_animation.queue("press_spacebar")
 		while(!answered_call):
-			yield(get_tree().create_timer(animation_player.current_animation_length),"timeout")
 			animation_player.play("ring_walkitalki")
-		yield(get_tree().create_timer(animation_player.current_animation_length),"timeout")
+			yield(get_tree().create_timer(animation_player.current_animation_length),"timeout")
+		sfx.stream = sfx_text
 		
 		animation_player.play("show_bubble")
 		yield(get_tree().create_timer(animation_player.current_animation_length),"timeout")
@@ -81,7 +88,7 @@ func Show_text():
 	for _i in range (line_text.length()): 
 		if actual_line_aux == actual_line and showing_text:
 			if(text_aux.left(1) != " "): 
-				audio_player.play()
+				sfx.play()
 			label.text += text_aux.left(1)
 			text_aux.erase(0,1)
 			yield(get_tree().create_timer(letter_duration),"timeout")
