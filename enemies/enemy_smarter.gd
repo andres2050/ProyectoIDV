@@ -20,7 +20,11 @@ onready var sfx = get_node("sfx_player")
 var animation_player
 var event
 var player
+
+var main_node = self
 func _ready():
+	while(main_node.get_parent() != get_tree().get_root()):
+		main_node = main_node.get_parent()
 	animation_player = get_node("AnimationPlayer")
 	event = get_node(path_to_event)
 #export var path_to_player: NodePath
@@ -29,6 +33,7 @@ func _ready():
 func _process(_delta):
 	if (enemyMovementSpeed < defaultMovementSpeed and !isdead):
 		enemyMovementSpeed += 15
+	sfx.volume_db = (40*main_node.sfx_volume)-40
 
 var playerPosition
 var enemyPosition

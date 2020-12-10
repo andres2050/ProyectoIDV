@@ -2,7 +2,7 @@ extends Node2D
 
 export var canStart = true 
 export var spawnTime = 1.0
-export(String, "","Start_menu","Ambiental_city", "Combat", "In_Station") var soundtrack
+export(String, "","Start_menu","Ambiental_city", "Combat", "In_Station", "Final_Boss") var soundtrack
 
 var spawner
 var obstacles

@@ -33,8 +33,9 @@ func _ready():
 		if player_position != Vector2():
 			player.position = player_position
 	if soundtrack != "":
-		for i in range(bgm_players.size()):
-			bgm_players[i].change_soundtrack(soundtrack)
+		if bgm_players[0] != null:
+			for i in range(bgm_players.size()):
+				bgm_players[i].play_soundtrack(soundtrack,0)
 
 func refresh_events():
 	get_node("Scripting").refresh_events()
@@ -44,6 +45,7 @@ func refresh_states():
 
 func save_player_position():
 	player_position = player.get_global_position()
+ 
 
 func change_bgm_volume(new_volume):
 	bgm_volume = new_volume

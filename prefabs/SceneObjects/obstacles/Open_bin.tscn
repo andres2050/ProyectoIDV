@@ -48,8 +48,8 @@ frames = SubResource( 1 )
 animation = "closed"
 
 [node name="Area2D" type="Area2D" parent="."]
-visible = false
-position = Vector2( 0, -37.7092 )
+position = Vector2( 0.561233, -24.8009 )
+scale = Vector2( 1.05789, 1.05789 )
 collision_layer = 0
 collision_mask = 2
 __meta__ = {
@@ -64,10 +64,9 @@ __meta__ = {
 }
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-visible = false
-position = Vector2( 5.74603, -52.224 )
+position = Vector2( 2.93988, -32.581 )
 scale = Vector2( 0.903935, 0.903935 )
-polygon = PoolVector2Array( -54.6914, 38.9177, -5.1615, 67.2583, 34.0386, 44.7447, 34.1067, 35.3372, -5.1615, 16.1392 )
+polygon = PoolVector2Array( -54.6914, 38.9177, -5.1615, 67.2583, 38.2675, 42.9762, 38.2675, 31.8005, -1.46842, 12.5534 )
 
 [node name="sfx_player" type="AudioStreamPlayer" parent="." groups=[
 "sfx_player",

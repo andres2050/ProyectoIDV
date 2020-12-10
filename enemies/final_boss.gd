@@ -33,7 +33,10 @@ onready var dash_hitbox = get_node("dash_hitbox")
 var phase = 0
 var isAttacking = true
 
+var main_node = self
 func _ready():
+	while(main_node.get_parent() != get_tree().get_root()):
+		main_node = main_node.get_parent()
 	event = get_node(path_to_event)
 	get_node("CollisionPolygon2D").queue_free()
 	animation_player = get_node("AnimationPlayer")
@@ -68,7 +71,8 @@ func _process(_delta):
 				isAttacking = false
 	else:
 		pass
-
+	
+	sfx.volume_db = (60*sqrt(main_node.sfx_volume))-60
 #func _physics_process(_delta):
 #	if Input.is_action_just_pressed("shot1") and !isAttacking:
 #		isAttacking = true

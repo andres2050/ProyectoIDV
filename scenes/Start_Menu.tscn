@@ -1,12 +1,80 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=20 format=2]
 
-[ext_resource path="res://Interface/fondo.png" type="Texture" id=1]
+[ext_resource path="res://Textures/background/HighresScreenshot00004.png" type="Texture" id=1]
 [ext_resource path="res://Interface/ChangeSceneButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Interface/Fading.tscn" type="PackedScene" id=3]
 [ext_resource path="res://sound/bgm/Start_menu.ogg" type="AudioStream" id=4]
 [ext_resource path="res://sound/Audio_manager.gd" type="Script" id=5]
 [ext_resource path="res://scripts/main_node_properties.gd" type="Script" id=6]
 [ext_resource path="res://Interface/Volume_button.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Interface/theme/font/Halloweins.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://Interface/theme/font/Scary Halloween Font.ttf" type="DynamicFontData" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+size = 150
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=2]
+
+[sub_resource type="Theme" id=3]
+default_font = SubResource( 2 )
+Label/colors/font_color = Color( 1, 1, 1, 1 )
+Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+Label/constants/line_spacing = 3
+Label/constants/shadow_as_outline = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/fonts/font = SubResource( 1 )
+Label/styles/normal = null
+
+[sub_resource type="DynamicFont" id=4]
+size = 150
+font_data = ExtResource( 8 )
+
+[sub_resource type="Theme" id=5]
+Label/colors/font_color = Color( 0.615686, 0.0941176, 0.0784314, 1 )
+Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+Label/constants/line_spacing = 3
+Label/constants/shadow_as_outline = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/fonts/font = SubResource( 4 )
+Label/styles/normal = null
+
+[sub_resource type="DynamicFont" id=6]
+size = 100
+font_data = ExtResource( 9 )
+
+[sub_resource type="Theme" id=7]
+Label/colors/font_color = Color( 1, 1, 1, 1 )
+Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+Label/constants/line_spacing = 3
+Label/constants/shadow_as_outline = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/fonts/font = SubResource( 6 )
+Label/styles/normal = null
+
+[sub_resource type="DynamicFont" id=8]
+size = 100
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=9]
+
+[sub_resource type="Theme" id=10]
+default_font = SubResource( 9 )
+Label/colors/font_color = Color( 0.239216, 0.458824, 0.105882, 1 )
+Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+Label/constants/line_spacing = 3
+Label/constants/shadow_as_outline = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/fonts/font = SubResource( 8 )
+Label/styles/normal = null
 
 [node name="Start_Menu" type="Control"]
 anchor_right = 1.0
@@ -17,21 +85,20 @@ __meta__ = {
 }
 
 [node name="fondo" type="Sprite" parent="."]
-position = Vector2( 680.69, 386.24 )
-scale = Vector2( 1.05954, 1.03301 )
+position = Vector2( 850.704, 375.614 )
+scale = Vector2( 0.700632, 0.68309 )
 texture = ExtResource( 1 )
 
 [node name="Fading" parent="." instance=ExtResource( 3 )]
+visible = false
 
 [node name="ReferenceRect" type="ReferenceRect" parent="."]
-anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -250.0
-margin_top = -250.0
-margin_right = 250.0
-margin_bottom = 250.0
+margin_left = 8.00903
+margin_top = -272.692
+margin_right = 508.009
+margin_bottom = 227.308
 border_color = Color( 0, 0, 0, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -71,5 +138,48 @@ soundtrack_name = "Start_menu"
 [node name="SfxAudioPlayer" type="AudioStreamPlayer" parent="." groups=[
 "sfx_player",
 ]]
+
+[node name="zombie_land_1_w" type="Label" parent="."]
+margin_left = 613.42
+margin_top = 110.52
+margin_right = 1231.42
+margin_bottom = 311.52
+theme = SubResource( 3 )
+text = "ZomBie-LanD"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="zombie_land_1_g" type="Label" parent="."]
+margin_left = 618.373
+margin_top = 114.557
+margin_right = 1197.37
+margin_bottom = 302.557
+theme = SubResource( 5 )
+text = "ZomBie-LanD"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="zombie_land_2_w" type="Label" parent="."]
+visible = false
+margin_left = 520.347
+margin_top = 152.45
+margin_right = 1234.35
+margin_bottom = 258.45
+theme = SubResource( 7 )
+text = "zombie land"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="zombie_land_3_g" type="Label" parent="."]
+visible = false
+margin_left = 527.907
+margin_top = 154.97
+margin_right = 1228.91
+margin_bottom = 260.97
+theme = SubResource( 10 )
+text = "zombie land"
 
 [editable path="Fading"]

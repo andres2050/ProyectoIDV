@@ -4,7 +4,7 @@ var main_node = self
 var volume = 0
 var resume_moment = 0
 
-export(String, "","Start_menu","Ambiental_city", "Combat", "In_Station") var soundtrack_name
+export(String, "","Start_menu","Ambiental_city", "Combat", "In_Station", "Final_Boss") var soundtrack_name
 
 
 func _ready():
@@ -17,7 +17,6 @@ func _ready():
 func play_soundtrack(soundtrack,moment):
 	self.stream = load("res://sound/bgm/"+ soundtrack +".ogg")
 	play(moment)
-	main_node.change_bgm_volume(main_node.bgm_volume)
 	
 func change_soundtrack(new_soundtrack):
 		while(volume_db > -80):

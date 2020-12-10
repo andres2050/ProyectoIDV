@@ -5,7 +5,11 @@
 
 [node name="ghost" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+health = 17
 enemyMovementSpeed = 550
 attackDistance = 300
+
+[node name="AnimatedSprite" parent="." index="0"]
+frame = 1
 
 [editable path="Hurtbox"]

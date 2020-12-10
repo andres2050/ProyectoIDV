@@ -9,6 +9,9 @@ var enemyCount = 0
 var lines = []
 var letters_duration = []
 
+var obstacle = preload("res://prefabs/SceneObjects/obstacles/obstacle.tscn")
+var obstacle_instances=[]
+
 var animation_player
 onready var labels = get_node("Dialog_lines").get_children()
 var node_path
@@ -16,7 +19,7 @@ var main_node = self
 var dialog
 var entrance
 var in_node
-var collisions
+var scenario
 onready var tilemap = get_node("EventDetector")
 var door
 func _ready():
@@ -30,8 +33,12 @@ func _ready():
 	entrance = get_node("target").get_global_position()
 	in_node = get_node("in").get_global_position()
 	spawners = get_node("spawners").get_children()
-	collisions = main_node.get_node("Collisions")
+	scenario = main_node.get_node("YSort")
 	door = tilemap.get_used_cells_by_id(1)
+	for i in range(door.size()):
+		obstacle_instances.push_back(obstacle.instance())
+		obstacle_instances[i].position = tilemap.map_to_world(door[i])
+		scenario.add_child(obstacle_instances[i])
 	
 	
 func Start_Event(): 
@@ -47,8 +54,7 @@ func Start_Event():
 		
 		for i in range(spawners.size()):
 			spawners[i].canSpawn = true
-		for i in range(door.size()):
-			collisions.set_cellv(door[i],-1)
+			
 
 var wave_enemies = []
 func dialog_ended():
@@ -57,17 +63,26 @@ func dialog_ended():
 	var move = Vector2(entrance.x - player_position.x , (entrance.y - player_position.y)*2)
 	player.movementDirection = move
 	wave_enemies = get_tree().get_nodes_in_group("wave_enemy")
-	for i in range(wave_enemies.size()):
-		wave_enemies[i].isPaused = false
+	for _i in range(wave_enemies.size()):
+		wave_enemies[_i].isPaused = false
+	
+	for _i in range(obstacle_instances.size()):
+		var aux = obstacle_instances.pop_front()
+		aux.queue_free()
+		yield(get_tree().create_timer(0.01),"timeout")
 	
 
 var event_ended =false
 func EndEvent():
 	if !event_ended:
 		event_ended = true
-		for i in range(door.size()):
-			collisions.set_cellv(door[i],0)
 		main_node.soundtrack = "In_Station"
+		
+		for i in range(door.size()):
+			obstacle_instances.push_back(obstacle.instance())
+			obstacle_instances[i].position = tilemap.map_to_world(door[i])
+			scenario.add_child(obstacle_instances[i])
+			yield(get_tree().create_timer(0.01),"timeout")
 		main_node.refresh_states()
 
 var canEnter = true
