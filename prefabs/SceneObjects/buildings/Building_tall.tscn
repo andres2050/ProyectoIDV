@@ -18,9 +18,6 @@ region_rect = Rect2( 842, 0, 228, 389 )
 visible = false
 polygon = PoolVector2Array( -112.008, 21.0128, -18.8534, 66.2358, 46.9602, 34.6167, 88.059, 56.1647, 110.989, 44.4017, 91.0056, 12.5449, 114.642, 0.215965, 0.71701, -55.3791, -112.017, 0.0285721 )
 
-[node name="Detect_player" parent="." index="2"]
-visible = false
-
 [node name="CollisionShape2D" parent="Detect_player" index="0"]
 position = Vector2( -0.840881, -143.793 )
 shape = SubResource( 1 )

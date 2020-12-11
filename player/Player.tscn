@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://player/shoot.gd" type="Script" id=1]
 [ext_resource path="res://player/Player.gd" type="Script" id=2]
@@ -6,7 +6,7 @@
 [ext_resource path="res://Test_sprites/left.png" type="Texture" id=4]
 [ext_resource path="res://Test_sprites/right.png" type="Texture" id=5]
 [ext_resource path="res://Test_sprites/weapon.png" type="Texture" id=6]
-[ext_resource path="res://Test_sprites/up.png" type="Texture" id=7]
+[ext_resource path="res://player/sprites/camino_1.png" type="Texture" id=7]
 [ext_resource path="res://Test_sprites/rightDown.png" type="Texture" id=8]
 [ext_resource path="res://Test_sprites/leftDown.png" type="Texture" id=9]
 [ext_resource path="res://Test_sprites/down.png" type="Texture" id=10]
@@ -17,20 +17,22 @@
 [ext_resource path="res://Test_sprites/leftUp.png" type="Texture" id=15]
 [ext_resource path="res://enemies/receive_damage_animation.tres" type="Animation" id=16]
 [ext_resource path="res://sound/sfx/shoots/1.wav" type="AudioStream" id=17]
+[ext_resource path="res://player/sprites/camino3.png" type="Texture" id=18]
+[ext_resource path="res://player/sprites/camino2.png" type="Texture" id=19]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "right",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "left",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ) ],
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 18 ), ExtResource( 7 ), ExtResource( 19 ) ],
 "loop": true,
 "name": "up",
 "speed": 5.0
@@ -40,9 +42,9 @@ animations = [ {
 "name": "rightUp",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 10 ) ],
+"frames": [ ExtResource( 8 ) ],
 "loop": true,
-"name": "down",
+"name": "rightDown",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 15 ) ],
@@ -50,14 +52,14 @@ animations = [ {
 "name": "leftUp",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 8 ) ],
-"loop": true,
-"name": "rightDown",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 9 ) ],
 "loop": true,
 "name": "leftDown",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "down",
 "speed": 5.0
 } ]
 
@@ -80,6 +82,7 @@ position = Vector2( 0, -13.3948 )
 scale = Vector2( 0.271239, 0.271239 )
 frames = SubResource( 1 )
 animation = "rightUp"
+playing = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 rotation = 1.5708

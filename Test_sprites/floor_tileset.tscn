@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Test_sprites/isotiles beta 4.2.png" type="Texture" id=1]
+[ext_resource path="res://Test_sprites/isotiles2.png" type="Texture" id=2]
 
 [node name="Node2D" type="Node2D"]
 
@@ -26,3 +27,9 @@ region_rect = Rect2( 0, 520, 353, 179 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 1313, 534, 353, 181 )
+
+[node name="Sprite5" type="Sprite" parent="."]
+position = Vector2( 1527.75, 0 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 108, 646, 325, 166 )

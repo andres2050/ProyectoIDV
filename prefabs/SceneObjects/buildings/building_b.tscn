@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://prefabs/SceneObjects/_Object_prefab.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Test_sprites/isotiles2.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 77.6113, 166.449 )
+
+[node name="_Object_prefab" instance=ExtResource( 1 )]
+
+[node name="Sprite" parent="." index="0"]
+position = Vector2( 0.420471, -167.489 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 621, 134, 226, 451 )
+
+[node name="CollisionShape2D" parent="Detect_player" index="0"]
+position = Vector2( 0, -183.287 )
+shape = SubResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2"]
+visible = false
+polygon = PoolVector2Array( -112.066, 1.61345, 0.194122, -50.9426, 112.454, 1.19299, 1.03502, 57.5331 )

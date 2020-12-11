@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/introduction_text.gd" type="Script" id=1]
+[ext_resource path="res://Interface/theme/font/Comfortaa-Bold.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+font_data = ExtResource( 2 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+Label/colors/font_color = Color( 1, 1, 1, 1 )
+Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+Label/constants/line_spacing = 3
+Label/constants/shadow_as_outline = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/fonts/font = null
+Label/styles/normal = null
+RichTextLabel/colors/default_color = Color( 1, 1, 1, 1 )
+RichTextLabel/colors/font_color_selected = Color( 0.49, 0.49, 0.49, 1 )
+RichTextLabel/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+RichTextLabel/colors/selection_color = Color( 0.1, 0.1, 1, 0.8 )
+RichTextLabel/constants/line_separation = 1
+RichTextLabel/constants/shadow_as_outline = 0
+RichTextLabel/constants/shadow_offset_x = 1
+RichTextLabel/constants/shadow_offset_y = 1
+RichTextLabel/constants/table_hseparation = 3
+RichTextLabel/constants/table_vseparation = 3
+RichTextLabel/fonts/bold_font = null
+RichTextLabel/fonts/bold_italics_font = null
+RichTextLabel/fonts/italics_font = null
+RichTextLabel/fonts/mono_font = null
+RichTextLabel/fonts/normal_font = null
+RichTextLabel/styles/focus = null
+RichTextLabel/styles/normal = null
+
+[node name="Node2D" type="Node2D"]
+modulate = Color( 0.737255, 0.737255, 0.737255, 1 )
+script = ExtResource( 1 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 242.909
+margin_top = 769.211
+margin_right = 1127.91
+margin_bottom = 2027.21
+theme = SubResource( 2 )
+text = "20XX, el gobierno lo sabia, las fuerzas armadas los sabian, y llegó el momento, un terrible virus, no identificado, ha comenzado a acechar en cada ciudad, en cada parte del mundo, y en ese momento, el caos es inminente y crudo, robos, asesinatos, todo lo posible para poder sobrevivir.
+
+la poblacion, sin saber lo que les depara, sin ayuda de fuerzas militares y del gobierno se estan haciendo de armas, y ahora estan comenzando a prepararse para lo que es una transformacion del virus, en donde la persona que lo posee, ronda por el mundo, sin un alma, sin saber que hace, y en el que su unico objetivo, es devorar, y aqui estas tu, eres bienvenido al nuevo grupo de reconocimiento, del pueblo para el pueblo.
+
+SOBREVIVE!"
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -135,9 +135,13 @@ var t = 0
 func _physics_process(_delta):
 	move = Vector2(0,0)
 	if movementDirection.length() > 0:
+		$AnimatedSprite.playing = true
 		movementDirection = movementDirection.normalized()  * movementSpeed
 		move = Vector2(movementDirection.x , movementDirection.y * 0.5)
 		move = move_and_slide(move)
+	else:
+		$AnimatedSprite.playing = false
+		$AnimatedSprite.frame = 0
 		
 	if isDashing:
 		if t >0 and t<1:
