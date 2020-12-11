@@ -45,7 +45,7 @@ func _ready():
 	for i in range(obstacles.size()):
 		obstacles_position.push_back(tilemap.map_to_world(obstacles[i]))
 		obstacle_instances.push_back(obstacle.instance())
-		obstacle_instances[i].position = obstacles_position[i]
+		obstacle_instances[i].call_deferred("set","position",obstacles_position[i])
 		
 
 func Start_Event():

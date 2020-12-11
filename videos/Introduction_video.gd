@@ -22,6 +22,8 @@ func _ready():
 
 func _on_VideoPlayer_finished():
 	isOver = true
+	animation_player.play_backwards("Fading")
+	yield(get_tree().create_timer(animation_player.current_animation_length),"timeout")
 	change_scene_manually()
 
 

@@ -53,14 +53,14 @@ func _process(_delta):
 		elif distanceTangent > tangent_2 or distanceTangent < -tangent_2:
 				direction = "up"
 		elif distanceTangent > -tangent_2 and distanceTangent < -tangent_1:
-				direction = "leftUp"
+				direction = "rightUp"
 		elif distanceTangent > -tangent_1 and distanceTangent < 0:
-				direction = "left"
+				direction = "right"
 	else:
 		if distanceTangent < tangent_1 and distanceTangent > 0:
-				direction = "left"
+				direction = "right"
 		elif distanceTangent > tangent_1 and distanceTangent < tangent_2:
-				direction = "leftDown"
+				direction = "rightDown"
 		elif distanceTangent > tangent_2 or distanceTangent < -tangent_2:
 				direction = "down"
 		elif distanceTangent > -tangent_2 and distanceTangent < -tangent_1:
@@ -68,6 +68,7 @@ func _process(_delta):
 		elif distanceTangent > -tangent_1 and distanceTangent < -0.001:
 				direction = "right"
 	
+	$AnimatedSprite.flip_h =  xDistance < 0
 	$AnimatedSprite.animation = direction
 	#-----------------------------------------------------------------------------------------------
 	#playerMovement

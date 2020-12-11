@@ -28,7 +28,7 @@ tracks/1/keys = {
 }
 
 [node name="Sprite" type="Sprite"]
-modulate = Color( 0.984314, 0, 0, 0.196078 )
+modulate = Color( 0.984314, 0, 0, 0.545098 )
 position = Vector2( -6.72715, 3.36358 )
 scale = Vector2( 0.355665, 0.177833 )
 texture = ExtResource( 1 )

@@ -7,6 +7,8 @@ var spawners = []
 onready var tilemap = get_node("EventDetector")
 var obstacles
 var scenario
+var obstacle = preload("res://prefabs/SceneObjects/obstacles/obstacle.tscn")
+var obstacle_instances=[]
 
 func _ready():
 	var events = get_parent()
@@ -20,9 +22,7 @@ func _ready():
 		
 	obstacles = tilemap.get_used_cells_by_id(1)
 	yield(get_tree().create_timer(0.01),"timeout")
-	var aux = get_tree().get_nodes_in_group("scenario_collisions")
-	if (aux.size() > 0):
-		scenario = aux[0]
+	scenario = get_node("../../YSort")
 
 
 var enemies

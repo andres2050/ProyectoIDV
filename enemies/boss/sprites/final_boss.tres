@@ -19,6 +19,16 @@ animations = [ {
 "name": "prepunch",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "punch",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "prejump",
@@ -27,15 +37,5 @@ animations = [ {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
 "name": "standing",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "punch",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 2 ) ],
-"loop": true,
-"name": "jump",
 "speed": 5.0
 } ]

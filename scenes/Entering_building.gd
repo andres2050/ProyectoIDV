@@ -37,7 +37,7 @@ func _ready():
 	door = tilemap.get_used_cells_by_id(1)
 	for i in range(door.size()):
 		obstacle_instances.push_back(obstacle.instance())
-		obstacle_instances[i].position = tilemap.map_to_world(door[i])
+		obstacle_instances[i].call_deferred("set","position",tilemap.map_to_world(door[i])) 
 		scenario.add_child(obstacle_instances[i])
 	
 	

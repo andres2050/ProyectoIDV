@@ -4,7 +4,7 @@
 [ext_resource path="res://prefabs/SceneObjects/_Object_prefab.tscn" type="PackedScene" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 17.4907, 126.001 )
+extents = Vector2( 17.4907, 67.9555 )
 
 [node name="wall_simple" instance=ExtResource( 2 )]
 
@@ -13,9 +13,11 @@ position = Vector2( 0, -72.8854 )
 scale = Vector2( 0.385165, 0.385165 )
 texture = ExtResource( 1 )
 
+[node name="Detect_player" parent="." index="1"]
+visible = true
+
 [node name="CollisionShape2D" parent="Detect_player" index="0"]
-visible = false
-position = Vector2( 0.8909, -140.762 )
+position = Vector2( 0.8909, -77.6948 )
 shape = SubResource( 1 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2"]

@@ -1,10 +1,10 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://player/shoot.gd" type="Script" id=1]
 [ext_resource path="res://player/Player.gd" type="Script" id=2]
 [ext_resource path="res://player/ReceiveDamage.gd" type="Script" id=3]
 [ext_resource path="res://Test_sprites/left.png" type="Texture" id=4]
-[ext_resource path="res://Test_sprites/right.png" type="Texture" id=5]
+[ext_resource path="res://player/sprites/caminader3.png" type="Texture" id=5]
 [ext_resource path="res://Test_sprites/weapon.png" type="Texture" id=6]
 [ext_resource path="res://player/sprites/camino_1.png" type="Texture" id=7]
 [ext_resource path="res://Test_sprites/rightDown.png" type="Texture" id=8]
@@ -19,6 +19,8 @@
 [ext_resource path="res://sound/sfx/shoots/1.wav" type="AudioStream" id=17]
 [ext_resource path="res://player/sprites/camino3.png" type="Texture" id=18]
 [ext_resource path="res://player/sprites/camino2.png" type="Texture" id=19]
+[ext_resource path="res://player/sprites/caminader2.png" type="Texture" id=20]
+[ext_resource path="res://player/sprites/caminader1.png" type="Texture" id=21]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -27,7 +29,7 @@ animations = [ {
 "name": "left",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ) ],
+"frames": [ ExtResource( 21 ), ExtResource( 5 ), ExtResource( 21 ), ExtResource( 20 ) ],
 "loop": true,
 "name": "right",
 "speed": 5.0
@@ -78,11 +80,11 @@ collision/safe_margin = 2.0
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 0, -13.3948 )
-scale = Vector2( 0.271239, 0.271239 )
+position = Vector2( 3.08676, -24.6194 )
+scale = Vector2( 0.342844, 0.342844 )
 frames = SubResource( 1 )
-animation = "rightUp"
-playing = true
+animation = "right"
+frame = 3
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 rotation = 1.5708
@@ -110,6 +112,7 @@ editor_draw_limits = true
 editor_draw_drag_margin = true
 
 [node name="EventTrigger" parent="." instance=ExtResource( 12 )]
+visible = false
 collision_layer = 4
 collision_mask = 0
 script = ExtResource( 13 )
@@ -131,6 +134,7 @@ default_bulletDamage = 0.75
 stream = ExtResource( 17 )
 
 [node name="Hurtbox" parent="." instance=ExtResource( 11 )]
+visible = false
 scale = Vector2( 0.944666, 0.944666 )
 collision_mask = 2
 script = ExtResource( 3 )

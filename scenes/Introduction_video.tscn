@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://videos/final.webm" type="VideoStream" id=1]
+[ext_resource path="res://videos/finalAlargado.webm" type="VideoStream" id=1]
 [ext_resource path="res://Interface/Fading.tscn" type="PackedScene" id=2]
 [ext_resource path="res://videos/Introduction_video.gd" type="Script" id=3]
 [ext_resource path="res://Interface/theme/font/Comfortaa-Bold.ttf" type="DynamicFontData" id=4]
@@ -59,6 +59,13 @@ stream = ExtResource( 5 )
 autoplay = true
 
 [node name="Node2D" parent="." instance=ExtResource( 6 )]
+
+[node name="RichTextLabel" parent="Node2D" index="0"]
+text = "20XX, el gobierno lo sabia, las fuerzas armadas lo sabian, y llegó el momento, un terrible virus, no identificado, ha comenzado a acechar en cada ciudad, en cada parte del mundo, y en ese momento, el caos es inminente y crudo, robos, asesinatos, todo lo posible para poder sobrevivir.
+
+la poblacion, sin saber lo que les depara, sin ayuda de fuerzas militares y del gobierno se estan haciendo de armas, y ahora estan comenzando a prepararse para lo que es una transformacion del virus, en donde la persona que lo posee, ronda por el mundo, sin un alma, sin saber que hace, y en el que su unico objetivo, es devorar, y aqui estas tu, eres bienvenido al nuevo grupo de reconocimiento, del pueblo para el pueblo.
+
+SOBREVIVE!"
 [connection signal="finished" from="VideoPlayer" to="." method="_on_VideoPlayer_finished"]
 
 [editable path="Node2D"]
