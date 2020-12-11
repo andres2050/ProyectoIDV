@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://enemies/ghost.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Test_sprites/black2.png" type="Texture" id=2]
@@ -7,10 +7,21 @@
 [ext_resource path="res://Test_sprites/black4.png" type="Texture" id=5]
 [ext_resource path="res://enemies/final_boss.gd" type="Script" id=6]
 [ext_resource path="res://enemies/boss/CanvasLayer.tscn" type="PackedScene" id=7]
+[ext_resource path="res://enemies/sprites/run1.png" type="Texture" id=8]
 [ext_resource path="res://Test_sprites/b.png" type="Texture" id=9]
 [ext_resource path="res://Test_sprites/a.png" type="Texture" id=10]
 [ext_resource path="res://Test_sprites/c.png" type="Texture" id=11]
 [ext_resource path="res://Test_sprites/d.png" type="Texture" id=12]
+[ext_resource path="res://enemies/sprites/run2.png" type="Texture" id=13]
+[ext_resource path="res://enemies/sprites/run3.png" type="Texture" id=14]
+[ext_resource path="res://enemies/sprites/run4.png" type="Texture" id=15]
+[ext_resource path="res://enemies/sprites/run5.png" type="Texture" id=16]
+[ext_resource path="res://enemies/sprites/run6.png" type="Texture" id=17]
+[ext_resource path="res://enemies/boss/sprites/preparing_punch.png" type="Texture" id=18]
+[ext_resource path="res://enemies/boss/sprites/standing.png" type="Texture" id=19]
+[ext_resource path="res://enemies/boss/sprites/jump.png" type="Texture" id=20]
+[ext_resource path="res://enemies/boss/sprites/prejump.png" type="Texture" id=21]
+[ext_resource path="res://enemies/boss/sprites/punching.png" type="Texture" id=22]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -23,10 +34,47 @@ animations = [ {
 "loop": true,
 "name": "init",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "zombie",
+"speed": 5.0
 } ]
 
-[sub_resource type="Animation" id=2]
-resource_name = "Appearance"
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ) ],
+"loop": true,
+"name": "prepunch",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 20 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 21 ) ],
+"loop": true,
+"name": "prejump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 22 ) ],
+"loop": true,
+"name": "punch",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 19 ) ],
+"loop": true,
+"name": "standing",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=3]
 length = 4.0
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("AnimatedSprite:modulate:r")
@@ -71,8 +119,7 @@ tracks/3/keys = {
 "values": [ "init", "default" ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "boss_die"
+[sub_resource type="Animation" id=4]
 length = 1.5
 loop = true
 tracks/0/type = "value"
@@ -112,10 +159,10 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="CircleShape2D" id=4]
+[sub_resource type="CircleShape2D" id=5]
 radius = 237.654
 
-[sub_resource type="CircleShape2D" id=5]
+[sub_resource type="CircleShape2D" id=6]
 radius = 103.971
 
 [node name="final_boss" groups=[
@@ -127,19 +174,27 @@ script = ExtResource( 6 )
 health = 250
 
 [node name="AnimatedSprite" parent="." index="0"]
+visible = false
 position = Vector2( -0.66217, -75.5481 )
 scale = Vector2( 0.322851, 0.322851 )
 frames = SubResource( 1 )
 animation = "init"
-frame = 3
 
-[node name="CollisionPolygon2D" parent="." index="1"]
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="." index="1"]
+modulate = Color( 0.329412, 0.427451, 0.333333, 1 )
+position = Vector2( -3.25905, -121.021 )
+scale = Vector2( 0.42873, 0.42873 )
+frames = SubResource( 2 )
+animation = "standing"
+playing = true
+
+[node name="CollisionPolygon2D" parent="." index="2"]
 position = Vector2( 0.420448, -3.08951 )
 scale = Vector2( 7.52683, 7.52683 )
 polygon = PoolVector2Array( -0.34167, -0.483559, -0.0256782, 1.2544, 1.39629, 0.148426 )
 disabled = true
 
-[node name="Hurtbox" parent="." index="2"]
+[node name="Hurtbox" parent="." index="3"]
 position = Vector2( 0, -75.6645 )
 scale = Vector2( 5.00868, 5.04382 )
 
@@ -147,21 +202,22 @@ scale = Vector2( 5.00868, 5.04382 )
 position = Vector2( 0, 0 )
 disabled = true
 
-[node name="AnimationPlayer" parent="." index="3"]
-anims/Appearance = SubResource( 2 )
-anims/boss_die = SubResource( 3 )
+[node name="AnimationPlayer" parent="." index="4"]
+anims/Appearance = SubResource( 3 )
+anims/boss_die = SubResource( 4 )
 
-[node name="jump_hitbox" type="CollisionShape2D" parent="." index="4"]
+[node name="jump_hitbox" type="CollisionShape2D" parent="." index="5"]
 scale = Vector2( 1, 0.5 )
-shape = SubResource( 4 )
-disabled = true
-
-[node name="dash_hitbox" type="CollisionShape2D" parent="." index="5"]
-scale = Vector2( 1, 0.5 )
-z_index = 1
 shape = SubResource( 5 )
 disabled = true
 
-[node name="CanvasLayer" parent="." index="7" instance=ExtResource( 7 )]
+[node name="dash_hitbox" type="CollisionShape2D" parent="." index="6"]
+scale = Vector2( 1, 0.5 )
+z_index = 1
+shape = SubResource( 6 )
+disabled = true
+
+[node name="CanvasLayer" parent="." index="8" instance=ExtResource( 7 )]
+layer = 1
 
 [editable path="Hurtbox"]

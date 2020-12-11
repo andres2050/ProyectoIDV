@@ -20,14 +20,14 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "left",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "left",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 7 ) ],
@@ -40,24 +40,24 @@ animations = [ {
 "name": "rightUp",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 8 ) ],
-"loop": true,
-"name": "rightDown",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 10 ) ],
 "loop": true,
 "name": "down",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ) ],
-"loop": true,
-"name": "leftDown",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 15 ) ],
 "loop": true,
 "name": "leftUp",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "rightDown",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "leftDown",
 "speed": 5.0
 } ]
 
@@ -82,7 +82,6 @@ frames = SubResource( 1 )
 animation = "rightUp"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2( -1.04715, -0.860046 )
 rotation = 1.5708
 scale = Vector2( 1.1181, 1.1181 )
 shape = SubResource( 2 )

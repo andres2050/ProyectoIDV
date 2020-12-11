@@ -29,7 +29,7 @@ var path_to_event = ""
 var event
 onready var jump_hitbox = get_node("jump_hitbox")
 onready var dash_hitbox = get_node("dash_hitbox")
-
+onready var sprite = get_node("AnimatedSprite2")
 var phase = 0
 var isAttacking = true
 
@@ -45,9 +45,11 @@ func _ready():
 	yield(get_tree().create_timer(animation_player.current_animation_length +1),"timeout")
 	get_node("Hurtbox/CollisionShape2D").disabled = false
 	isAttacking = false
+	sprite.set_animation("standing")
 
 func _process(_delta):
 	if !isAttacking and canDie:
+		sprite.set_animation("standing")
 		match phase:
 			0:
 				dash_attack()
@@ -71,7 +73,7 @@ func _process(_delta):
 				isAttacking = false
 	else:
 		pass
-	
+	$AnimatedSprite2.flip_h = attack_position.x > 0
 	sfx.volume_db = (60*sqrt(main_node.sfx_volume))-60
 #func _physics_process(_delta):
 #	if Input.is_action_just_pressed("shot1") and !isAttacking:
@@ -81,19 +83,19 @@ func _process(_delta):
 #		isAttacking = true
 #		dash_attack()
 	
-func move(_movement):
-	pass
 
 var attack_t = .0
 var attack_position = Vector2()
 var attack_distance = .0
 
 func jump_attack():
+	sprite.set_animation("prejump")
 	isAttacking = true
 	jump_shade_instance = jump_shade.instance()
 	jump_shade_instance.player = player
 	get_parent().add_child(jump_shade_instance)
 	yield(get_tree().create_timer(0.5),"timeout")
+	sprite.set_animation("jump")
 	attack_position = player.position - position
 	attack_distance = sqrt(pow(attack_position.x,2) + pow(attack_position.y , 2) )
 	attack_t = 0
@@ -101,25 +103,29 @@ func jump_attack():
 	var jump = Vector2()
 	while(attack_t < attack_distance):
 		height = (2 * attack_t) - attack_distance
-		jump = Vector2(attack_position.x/30 , (attack_position.y + 2*height)/30)
+		jump = Vector2(attack_position.x/30 , (attack_position.y + 3*height)/30)
 		position += jump
 		attack_t += attack_distance/30
 		yield(get_tree().create_timer(0.01),"timeout")
 	yield(get_tree().create_timer(0.05),"timeout")
+	sprite.set_animation("prejump")
 	sfx.stream = sfx_jump
 	sfx.play()
 	jump_hitbox.disabled = false
 	yield(get_tree().create_timer(0.1),"timeout")
 	jump_hitbox.disabled = true
 	isAttacking = false
+	
 
 func dash_attack():
+	sprite.set_animation("prepunch")
 	isAttacking = true
 	dash_shade_instance = dash_shade.instance()
 	dash_shade_instance.position = position
 	dash_shade_instance.player = player
 	get_parent().add_child(dash_shade_instance)
 	yield(get_tree().create_timer(0.5),"timeout")
+	sprite.set_animation("punch")
 	sfx.stream = sfx_dash
 	sfx.play()
 	attack_position = (player.position - position)*1.2

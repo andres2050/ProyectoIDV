@@ -21,7 +21,7 @@ var move
 func _physics_process(_delta):
 	if distance > movement_speed*2 or !isPaused:
 		move = direction.normalized()
-		$AnimatedSprite.flip_h = move.x < 0	
+		$AnimatedSprite.flip_h = move.x > 0	
 		move = move_and_slide(move*movement_speed)
 	if get_global_position() == target :
 		queue_free()

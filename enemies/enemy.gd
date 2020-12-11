@@ -65,7 +65,7 @@ func move(movement):
 	movement = movement * enemyMovementSpeed
 	movement.y = movement.y * 0.5
 	movement = move_and_slide(movement)
-	$AnimatedSprite.flip_h = movement.x < 0
+	$AnimatedSprite.flip_h = movement.x > 0
 
 var attackMoment = 0
 var attackVelocity
@@ -77,7 +77,7 @@ func attack(movement):
 		movement = movement*attackVelocity
 		movement.y = movement.y *0.5
 		movement = move_and_slide(movement)
-		$AnimatedSprite.flip_h = movement.x < 0	
+		$AnimatedSprite.flip_h = movement.x > 0	
 	else:
 		canMove = true
 		

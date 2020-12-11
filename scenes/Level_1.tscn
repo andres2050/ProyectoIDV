@@ -64,7 +64,7 @@ tile_data = PoolIntArray( -12189784, 0, 0, -12189783, 0, 0, -12189782, 0, 0, -12
 [node name="compass" parent="ScreenCanvas" index="4" instance=ExtResource( 19 )]
 
 [node name="Player" parent="YSort" index="0" instance=ExtResource( 2 )]
-position = Vector2( -533.129, 263.977 )
+position = Vector2( 4737.47, -3368.05 )
 
 [node name="begining" type="YSort" parent="YSort" index="1"]
 position = Vector2( -280, -211 )
@@ -5680,8 +5680,8 @@ position = Vector2( 3795.14, -3039.92 )
 [connection signal="body_entered" from="Events/running_zombi/target" to="Events/running_zombi/target" method="_on_target_body_entered"]
 [connection signal="body_entered" from="Events/running_zombi2/target" to="Events/running_zombi2/target" method="_on_target_body_entered"]
 [connection signal="body_entered" from="Events/Enter_Building/target" to="Events/Enter_Building" method="_on_entrance_body_entered"]
-[connection signal="body_entered" from="Events/Enter_Building/in" to="Events/Enter_Building" method="_on_in_body_entered"]
 [connection signal="body_entered" from="Events/Enter_Building/in" to="ScreenCanvas/compass" method="_on_in_body_entered"]
+[connection signal="body_entered" from="Events/Enter_Building/in" to="Events/Enter_Building" method="_on_in_body_entered"]
 [connection signal="body_entered" from="Events/in_building/target" to="Events/in_building/target" method="_on_target_body_entered"]
 [connection signal="body_entered" from="warehouse/Area2D" to="warehouse" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="warehouse/Area2D" to="warehouse" method="_on_Area2D_body_exited"]

@@ -83,10 +83,10 @@ __meta__ = {
 [node name="ButtonBacktoTitleScreen" parent="Defeat/Buttons" instance=ExtResource( 4 )]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 250.676
+margin_left = 136.641
 margin_top = -103.226
-margin_right = 566.676
-margin_bottom = -62.2263
+margin_right = 614.641
+margin_bottom = -9.22601
 text = "Back to title screen"
 scene = "Start_Menu"
 animation = "DeadFading"
@@ -95,10 +95,10 @@ animation_path = NodePath("../../ColorRect/DefeatAnimationPlayer")
 [node name="ButtonRetry" parent="Defeat/Buttons" instance=ExtResource( 4 )]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = -465.176
+margin_left = -579.211
 margin_top = -104.908
-margin_right = -348.176
-margin_bottom = -53.908
+margin_right = -445.211
+margin_bottom = -10.908
 text = "Retry"
 scene = "Level_1"
 animation = "DeadFading"

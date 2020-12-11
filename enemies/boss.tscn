@@ -9,6 +9,6 @@ enemyMovementSpeed = 350
 attackDistance = 400
 
 [node name="AnimatedSprite" parent="." index="0"]
-frame = 3
+frame = 1
 
 [editable path="Hurtbox"]

@@ -1,20 +1,22 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Test_sprites/b.png" type="Texture" id=1]
-[ext_resource path="res://Test_sprites/a.png" type="Texture" id=2]
-[ext_resource path="res://Test_sprites/d.png" type="Texture" id=3]
-[ext_resource path="res://Test_sprites/c.png" type="Texture" id=4]
+[ext_resource path="res://enemies/sprites/run1.png" type="Texture" id=1]
+[ext_resource path="res://enemies/sprites/run2.png" type="Texture" id=2]
+[ext_resource path="res://enemies/sprites/run3.png" type="Texture" id=3]
+[ext_resource path="res://enemies/sprites/run4.png" type="Texture" id=4]
 [ext_resource path="res://enemies/wave_enemy.gd" type="Script" id=5]
+[ext_resource path="res://enemies/sprites/run5.png" type="Texture" id=6]
+[ext_resource path="res://enemies/sprites/run6.png" type="Texture" id=7]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 3 ) ],
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=2]
+[sub_resource type="CapsuleShape2D" id=8]
 radius = 5.44875
 height = 7.63317
 
@@ -32,10 +34,11 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -0.66217, -16.6865 )
-scale = Vector2( 0.0698612, 0.0698612 )
-frames = SubResource( 1 )
-frame = 1
+position = Vector2( -0.549367, -26.6721 )
+scale = Vector2( 0.347767, 0.347767 )
+frames = SubResource( 7 )
+frame = 5
+speed_scale = 2.0
 playing = true
 __meta__ = {
 "_editor_description_": ""
@@ -43,4 +46,4 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = -1.57079
-shape = SubResource( 2 )
+shape = SubResource( 8 )

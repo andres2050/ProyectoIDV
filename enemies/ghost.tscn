@@ -1,27 +1,28 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://prefabs/Hurtbox.tscn" type="PackedScene" id=1]
 [ext_resource path="res://enemies/enemy.gd" type="Script" id=2]
-[ext_resource path="res://Test_sprites/a.png" type="Texture" id=3]
-[ext_resource path="res://Test_sprites/c.png" type="Texture" id=4]
-[ext_resource path="res://Test_sprites/d.png" type="Texture" id=5]
-[ext_resource path="res://Test_sprites/b.png" type="Texture" id=6]
+[ext_resource path="res://enemies/sprites/run1.png" type="Texture" id=3]
+[ext_resource path="res://enemies/sprites/run2.png" type="Texture" id=4]
+[ext_resource path="res://enemies/sprites/run3.png" type="Texture" id=5]
+[ext_resource path="res://enemies/sprites/run4.png" type="Texture" id=6]
 [ext_resource path="res://sound/sfx/enemy/enemy_dash.ogg" type="AudioStream" id=7]
+[ext_resource path="res://enemies/sprites/run5.png" type="Texture" id=8]
+[ext_resource path="res://enemies/sprites/run6.png" type="Texture" id=9]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=2]
-radius = 8.71621
-height = 35.6948
+[sub_resource type="CapsuleShape2D" id=8]
+radius = 10.7988
+height = 47.6487
 
-[sub_resource type="Animation" id=3]
-resource_name = "Die"
+[sub_resource type="Animation" id=9]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:modulate")
@@ -36,7 +37,7 @@ tracks/0/keys = {
 "values": [ Color( 0.501961, 0.501961, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=10]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:modulate")
@@ -62,15 +63,16 @@ script = ExtResource( 2 )
 health = 20
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -0.66217, -16.6865 )
-scale = Vector2( 0.0698612, 0.0698612 )
-frames = SubResource( 1 )
-frame = 2
+position = Vector2( -0.549367, -26.6721 )
+scale = Vector2( 0.347767, 0.347767 )
+frames = SubResource( 7 )
+frame = 1
+speed_scale = 1.5
 playing = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2( 0.420448, 0.327332 )
-scale = Vector2( 0.439979, 0.439979 )
+position = Vector2( 3.73833, 3.00882 )
+scale = Vector2( 0.542806, 0.542806 )
 polygon = PoolVector2Array( 24, 0, 15, 9, 0, 12, -15, 9, -24, 0, -15, -9, 0, -11, 15, -9 )
 __meta__ = {
 "_editor_description_": ""
@@ -83,13 +85,13 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
-position = Vector2( 0.749153, -17.2305 )
+position = Vector2( 3.69228, -27.3213 )
 scale = Vector2( 0.9624, 0.900826 )
-shape = SubResource( 2 )
+shape = SubResource( 8 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Die = SubResource( 3 )
-anims/ReceiveDamage = SubResource( 4 )
+anims/Die = SubResource( 9 )
+anims/ReceiveDamage = SubResource( 10 )
 
 [node name="sfx_player" type="AudioStreamPlayer" parent="." groups=[
 "sfx_player",
