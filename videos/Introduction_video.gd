@@ -5,6 +5,7 @@ export(String,"none", "Test_level","Start_Menu","Level_0", "Level_1") var scene
 onready var animation_player = get_node("Fading/FadingPlayer") 
 onready var video_player = get_node("VideoPlayer")
 onready var label = get_node("Label")
+onready var audio_player = get_node("AudioStreamPlayer")
 var canSkip = false
 var isOver = false
 
@@ -17,7 +18,7 @@ var player_position = Vector2()
 var soundtrack = ""
 
 func _ready():
-	video_player.volume_db = (bgm_volume*40)-40
+	audio_player.volume_db = (bgm_volume*80)-80
 
 func _on_VideoPlayer_finished():
 	isOver = true

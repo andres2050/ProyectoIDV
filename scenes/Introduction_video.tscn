@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://videos/introduction.webm" type="VideoStream" id=1]
 [ext_resource path="res://Interface/Fading.tscn" type="PackedScene" id=2]
 [ext_resource path="res://videos/Introduction_video.gd" type="Script" id=3]
 [ext_resource path="res://Interface/theme/font/Comfortaa-Bold.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://videos/intro.ogg" type="AudioStream" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 26
@@ -28,6 +29,7 @@ scene = "Level_1"
 anchor_right = 1.0
 anchor_bottom = 1.0
 stream = ExtResource( 1 )
+volume_db = -80.0
 autoplay = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -48,4 +50,8 @@ text = "presiona \"Barra Espaciadora\" de nuevo para saltar..."
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+autoplay = true
 [connection signal="finished" from="VideoPlayer" to="." method="_on_VideoPlayer_finished"]

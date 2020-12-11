@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Textures/background/HighresScreenshot00004.png" type="Texture" id=1]
 [ext_resource path="res://Interface/ChangeSceneButton.tscn" type="PackedScene" id=2]
@@ -8,7 +8,6 @@
 [ext_resource path="res://scripts/main_node_properties.gd" type="Script" id=6]
 [ext_resource path="res://Interface/Volume_button.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Interface/theme/font/Halloweins.ttf" type="DynamicFontData" id=8]
-[ext_resource path="res://Interface/theme/font/Scary Halloween Font.ttf" type="DynamicFontData" id=9]
 [ext_resource path="res://Textures/background/zlart.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=1]
@@ -42,39 +41,6 @@ Label/constants/shadow_as_outline = 0
 Label/constants/shadow_offset_x = 1
 Label/constants/shadow_offset_y = 1
 Label/fonts/font = SubResource( 4 )
-Label/styles/normal = null
-
-[sub_resource type="DynamicFont" id=6]
-size = 100
-font_data = ExtResource( 9 )
-
-[sub_resource type="Theme" id=7]
-Label/colors/font_color = Color( 1, 1, 1, 1 )
-Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
-Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
-Label/constants/line_spacing = 3
-Label/constants/shadow_as_outline = 0
-Label/constants/shadow_offset_x = 1
-Label/constants/shadow_offset_y = 1
-Label/fonts/font = SubResource( 6 )
-Label/styles/normal = null
-
-[sub_resource type="DynamicFont" id=8]
-size = 100
-font_data = ExtResource( 9 )
-
-[sub_resource type="DynamicFont" id=9]
-
-[sub_resource type="Theme" id=10]
-default_font = SubResource( 9 )
-Label/colors/font_color = Color( 0.239216, 0.458824, 0.105882, 1 )
-Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
-Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
-Label/constants/line_spacing = 3
-Label/constants/shadow_as_outline = 0
-Label/constants/shadow_offset_x = 1
-Label/constants/shadow_offset_y = 1
-Label/fonts/font = SubResource( 8 )
 Label/styles/normal = null
 
 [node name="Start_Menu" type="Control"]
@@ -116,7 +82,7 @@ margin_top = -184.001
 margin_right = 106.143
 margin_bottom = -90.0013
 text = "START"
-scene = "Level_1"
+scene = "Introduction_video"
 animation_path = NodePath("../../Fading/FadingPlayer")
 
 [node name="Volume_button" parent="ReferenceRect" instance=ExtResource( 7 )]
@@ -168,26 +134,5 @@ text = "ZomBie-LanD"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="zombie_land_2_w" type="Label" parent="."]
-visible = false
-margin_left = 520.347
-margin_top = 152.45
-margin_right = 1234.35
-margin_bottom = 258.45
-theme = SubResource( 7 )
-text = "zombie land"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="zombie_land_3_g" type="Label" parent="."]
-visible = false
-margin_left = 527.907
-margin_top = 154.97
-margin_right = 1228.91
-margin_bottom = 260.97
-theme = SubResource( 10 )
-text = "zombie land"
 
 [editable path="Fading"]

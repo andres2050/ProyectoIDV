@@ -53,8 +53,9 @@ func refresh_events():
 	if dialog_states.size() > 0:
 		for i in range(dialog_events.size()):
 			dialog_events[i].canStart = dialog_states[i]
-	player.canDash = player_stats[0]
-	player.get_node("Weapon").weapon_level = player_stats[1]
+	if player_stats.size() > 0:
+		player.canDash = player_stats[0]
+		player.get_node("Weapon").weapon_level = player_stats[1]
 	if chests_states.size() > 0:
 		for i in range(chests.size()):
 			chests[i].closed = chests_states[i]

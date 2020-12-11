@@ -29,7 +29,7 @@ var path_to_event = ""
 var event
 onready var jump_hitbox = get_node("jump_hitbox")
 onready var dash_hitbox = get_node("dash_hitbox")
-onready var sprite = get_node("AnimatedSprite2")
+onready var sprite = get_node("AnimatedSprite")
 var phase = 0
 var isAttacking = true
 
@@ -163,6 +163,7 @@ func damage_player():
 
 func die():	
 	if canDie:
+		sprite.set_animation("die")
 		sfx.stream = sfx_death
 		sfx.play()
 		canDie = false
