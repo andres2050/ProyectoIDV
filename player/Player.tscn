@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://player/shoot.gd" type="Script" id=1]
 [ext_resource path="res://player/Player.gd" type="Script" id=2]
@@ -7,13 +7,13 @@
 [ext_resource path="res://player/sprites/caminader3.png" type="Texture" id=5]
 [ext_resource path="res://Test_sprites/weapon.png" type="Texture" id=6]
 [ext_resource path="res://player/sprites/camino_1.png" type="Texture" id=7]
-[ext_resource path="res://Test_sprites/rightDown.png" type="Texture" id=8]
+[ext_resource path="res://player/sprites/caminar_diagonal_abajo_1.png" type="Texture" id=8]
 [ext_resource path="res://Test_sprites/leftDown.png" type="Texture" id=9]
 [ext_resource path="res://player/sprites/caminabajo2.png" type="Texture" id=10]
 [ext_resource path="res://prefabs/Hurtbox.tscn" type="PackedScene" id=11]
 [ext_resource path="res://prefabs/Hitbox.tscn" type="PackedScene" id=12]
 [ext_resource path="res://prefabs/Event/EventTrigger.gd" type="Script" id=13]
-[ext_resource path="res://Test_sprites/rightUp.png" type="Texture" id=14]
+[ext_resource path="res://player/sprites/caminar_diagonal_arriba_1.png" type="Texture" id=14]
 [ext_resource path="res://Test_sprites/leftUp.png" type="Texture" id=15]
 [ext_resource path="res://enemies/receive_damage_animation.tres" type="Animation" id=16]
 [ext_resource path="res://sound/sfx/shoots/1.wav" type="AudioStream" id=17]
@@ -23,6 +23,10 @@
 [ext_resource path="res://player/sprites/caminader1.png" type="Texture" id=21]
 [ext_resource path="res://player/sprites/caminaabajo3.png" type="Texture" id=22]
 [ext_resource path="res://player/sprites/caminabajo1.png" type="Texture" id=23]
+[ext_resource path="res://player/sprites/caminar_diagonal_arriba_2.png" type="Texture" id=24]
+[ext_resource path="res://player/sprites/caminar_diagonal_arriba_3.png" type="Texture" id=25]
+[ext_resource path="res://player/sprites/caminar_diagonal_abajo_2.png" type="Texture" id=26]
+[ext_resource path="res://player/sprites/caminar_diagonal_abajo_3.png" type="Texture" id=27]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -41,12 +45,12 @@ animations = [ {
 "name": "up",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 14 ) ],
+"frames": [ ExtResource( 14 ), ExtResource( 24 ), ExtResource( 14 ), ExtResource( 25 ) ],
 "loop": true,
 "name": "rightUp",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 8 ) ],
+"frames": [ ExtResource( 8 ), ExtResource( 26 ), ExtResource( 8 ), ExtResource( 27 ) ],
 "loop": true,
 "name": "rightDown",
 "speed": 5.0
@@ -85,8 +89,8 @@ script = ExtResource( 2 )
 position = Vector2( 3.08676, -24.6194 )
 scale = Vector2( 0.342844, 0.342844 )
 frames = SubResource( 1 )
-animation = "right"
-frame = 3
+animation = "rightUp"
+frame = 2
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 rotation = 1.5708

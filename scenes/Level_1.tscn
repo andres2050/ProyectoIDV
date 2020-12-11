@@ -57,6 +57,7 @@ tile_data = PoolIntArray( -2162704, 4, 0, -2162703, 4, 0, -2162702, 4, 0, -21627
 [node name="Collisions" type="TileMap" parent="." index="2" groups=[
 "scenario_collisions",
 ]]
+visible = false
 mode = 1
 tile_set = ExtResource( 5 )
 cell_size = Vector2( 64, 32 )
