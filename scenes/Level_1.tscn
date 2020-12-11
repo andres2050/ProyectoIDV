@@ -5403,6 +5403,7 @@ maxEnemies = 1
 movement_speed = 1500
 
 [node name="running_zombi2" parent="Events" index="2" instance=ExtResource( 10 )]
+visible = false
 soundtrack = ""
 
 [node name="EventDetector" parent="Events/running_zombi2" index="0"]
@@ -5506,6 +5507,7 @@ maxEnemies = 1
 [node name="Enter_Building" type="Node2D" parent="Events" index="6" groups=[
 "Event",
 ]]
+visible = false
 script = ExtResource( 15 )
 
 [node name="EventDetector" parent="Events/Enter_Building" index="0" instance=ExtResource( 14 )]
@@ -5854,6 +5856,7 @@ spawnOf = "enemy_smarter"
 maxEnemies = 1
 
 [node name="secondRoom" parent="Events" index="15" instance=ExtResource( 10 )]
+visible = false
 soundtrack = ""
 
 [node name="EventDetector" parent="Events/secondRoom" index="0"]

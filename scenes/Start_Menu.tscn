@@ -11,7 +11,6 @@
 
 [sub_resource type="StreamTexture" id=1]
 flags = 4
-load_path = "res://.import/HighresScreenshot00004.png-44943323cf4c415568171345c18d2530.stex"
 
 [sub_resource type="DynamicFont" id=2]
 size = 150
