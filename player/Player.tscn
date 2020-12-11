@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://player/shoot.gd" type="Script" id=1]
 [ext_resource path="res://player/Player.gd" type="Script" id=2]
@@ -9,7 +9,7 @@
 [ext_resource path="res://player/sprites/camino_1.png" type="Texture" id=7]
 [ext_resource path="res://Test_sprites/rightDown.png" type="Texture" id=8]
 [ext_resource path="res://Test_sprites/leftDown.png" type="Texture" id=9]
-[ext_resource path="res://Test_sprites/down.png" type="Texture" id=10]
+[ext_resource path="res://player/sprites/caminabajo2.png" type="Texture" id=10]
 [ext_resource path="res://prefabs/Hurtbox.tscn" type="PackedScene" id=11]
 [ext_resource path="res://prefabs/Hitbox.tscn" type="PackedScene" id=12]
 [ext_resource path="res://prefabs/Event/EventTrigger.gd" type="Script" id=13]
@@ -21,17 +21,19 @@
 [ext_resource path="res://player/sprites/camino2.png" type="Texture" id=19]
 [ext_resource path="res://player/sprites/caminader2.png" type="Texture" id=20]
 [ext_resource path="res://player/sprites/caminader1.png" type="Texture" id=21]
+[ext_resource path="res://player/sprites/caminaabajo3.png" type="Texture" id=22]
+[ext_resource path="res://player/sprites/caminabajo1.png" type="Texture" id=23]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "left",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 21 ), ExtResource( 5 ), ExtResource( 21 ), ExtResource( 20 ) ],
 "loop": true,
 "name": "right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "left",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 7 ), ExtResource( 18 ), ExtResource( 7 ), ExtResource( 19 ) ],
@@ -59,7 +61,7 @@ animations = [ {
 "name": "leftDown",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 10 ) ],
+"frames": [ ExtResource( 23 ), ExtResource( 10 ), ExtResource( 23 ), ExtResource( 22 ) ],
 "loop": true,
 "name": "down",
 "speed": 5.0

@@ -23,7 +23,7 @@ func _ready():
 func _on_VideoPlayer_finished():
 	isOver = true
 	animation_player.play_backwards("Fading")
-	yield(get_tree().create_timer(animation_player.current_animation_length),"timeout")
+	yield(get_tree().create_timer(3),"timeout")
 	change_scene_manually()
 
 
@@ -46,8 +46,6 @@ func _input(event):
 	if event.is_action_pressed("ui_accept") and !isOver:
 		if canSkip :
 			isOver = true
-			animation_player.play_backwards("Fading")
-			yield(get_tree().create_timer(2),"timeout")
 			_on_VideoPlayer_finished()
 		else:
 			canSkip = true

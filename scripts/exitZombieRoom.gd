@@ -21,6 +21,11 @@ func _ready():
 		spawners.push_back(room_events[i].get_node("Spawners").get_children())
 		
 	obstacles = tilemap.get_used_cells_by_id(1)
+	var obstacles_positions = []
+	for i in range(obstacles.size()):
+		obstacles_positions.push_back(tilemap.map_to_world(obstacles[i]))
+		obstacle_instances.push_back(obstacle.instance())
+		obstacle_instances[i].call_deferred("set","position",obstacles_positions[i])
 	yield(get_tree().create_timer(0.01),"timeout")
 	scenario = get_node("../../YSort")
 
@@ -37,7 +42,7 @@ func Start_Event():
 			enemies[i].die_quiet()
 			
 		for i in range(obstacles.size()):
-			scenario.set_cellv(obstacles[i],0)
+			scenario.add_child(obstacle_instances[i])
 			tilemap.set_cellv(obstacles[i],-1)
 		EndEvent()
 
