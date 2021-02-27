@@ -17,6 +17,8 @@ _global_script_class_icons={
 
 config/name="ProyectoIDV"
 run/main_scene="res://scenes/Start_Menu.tscn"
+run/low_processor_mode=true
+run/low_processor_mode_sleep_usec=16670
 config/icon="res://Textures/PikPng.com_attention-png_1311745.png"
 config/windows_native_icon="res://Textures/zombie_land_icon.ico"
 
